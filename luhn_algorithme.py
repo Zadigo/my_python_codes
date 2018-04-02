@@ -1,3 +1,19 @@
+from argparse import ArgumentParser
+
+def _parse_args():
+    args = ArgumentParser(
+        description='Create a Luhn number'
+    )
+    args.add_argument('number', help='Enter a 7 digit number', type=int)
+    args.parse_args()
+    return args
+
+def Main():
+    arg = _parse_args()
+
+if __name__ == '__main__':
+    Main()
+
 # import itertools as it
 # n
 #  = [9, 7, 2, 4, 8, 7, 0, 8]
