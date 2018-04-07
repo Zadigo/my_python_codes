@@ -1,47 +1,43 @@
-from argparse import ArgumentParser
+import itertools as it
+# from argparse import ArgumentParser
 
-def _parse_args():
-    args = ArgumentParser(
-        description='Create a Luhn number'
-    )
-    args.add_argument('number', help='Enter a 7 digit number', type=int)
-    args.parse_args()
-    return args
+# def _parse_args():
+#     args = ArgumentParser(
+#         description='Create a Luhn number'
+#     )
+#     args.add_argument('number', help='Enter a 7 digit number', type=int)
+#     args.add_argument('-e', '--encrypt', help='Encrypt nuner using 5')
+#     args.parse_args()
+#     return args
 
-def Main():
-    arg = _parse_args()
+# def _create_nubers():
+#     pass
 
-if __name__ == '__main__':
-    Main()
+# def Main():
+#     arg = _parse_args()
+#     if arg:
+#         print('True')
+#         print(arg._get_args())
 
-# import itertools as it
-# n
-#  = [9, 7, 2, 4, 8, 7, 0, 8]
+# if __name__ == '__main__':
+#     Main()
 
-# for a in range(1, len(n), 2):
-#     nun = (n[a]).__add__(n[a])
-#     if nun > 9:
-#         nun = nun - 9
-#     n[a] = nun
+numbers = [9, 7, 2, 4, 8, 7, 0, 8, 6]
 
-# print(n)
+for i in range(1, len(numbers), 2):
+    # We add the number to itself
+    new_number = (numbers[i]).__add__(numbers[i])
 
-# tota = it.accumulate(n)
+    # Number should not be above 9
+    # if so then te have to substract 9
+    if new_number > 9:
+        new_number = new_number - 9
 
-# print(tota)
+    numbers[i] = new_number
 
-# import re
+remainder = sum(numbers) % 10
 
-# SIRET = 828733253
-# SIREN = 82873325300011
-
-# PATTERNS ={
-#     'siret': r'[0-9]{9}',
-#     'siren': r'[0-9]{14}'
-# }
-# print(re.search(PATTERNS['siret'], str(SIRET)).group(0))
-# print(re.search(r'[0-9]{9}', str(SIREN)))
-
-# CO = '1w@Kurri-#2018'
-# PATTERN = r'\d[x-z]\@(Kurri)\-\#(2018)'
-# print(re.search(PATTERN, str(CO)))
+if remainder == 0:
+    print('Your numbers are', numbers)
+else:
+    print('Numbers are not correct. Please change')
