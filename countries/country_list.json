@@ -1,0 +1,181 @@
+{
+    "algeria":{
+        "country_number": 1,
+        "shortname":"alg-algeria",
+        "years": {
+            "2017":"group2"
+        }
+    },
+    "argentina":{
+        "country_number": 2,
+        "shortname":"arg-argentina",
+        "years": {
+            "2017":"group2"
+        }
+    },
+    "australia":{
+        "country_number": 3,
+        "shortname":"aus-australia",
+        "2017":"group3"
+    },
+    "brazil":{
+        "country_number": 4,
+        "shortname":"bra-brazil",
+        "2017":"group1"
+    },
+    "bulgaria":{
+        "country_number": 5,
+        "shortname":"bul-bulgaria",
+        "2017":"group2"
+    },
+    "cameroon":{
+        "country_number": 6,
+        "shortname":"cmr-cameroon",
+        "2017":"group3"
+    },
+    "china":{
+        "country_number": 7,
+        "shortname":"chn-china",
+        "2017":"group1"
+    },
+    "colombia":{
+        "country_number": 8,
+        "shortname":"col-colombia",
+        "2017":"group2"
+    },
+    "croatia":{
+        "country_number": 9,
+        "shortname":"cro-croatia",
+        "2017":"group2"
+    },
+    "czech":{
+        "country_number": 10,
+        "shortname":"cze-czech republic",
+        "2017":"group2"
+    },
+    "dominica":{
+        "country_number": 11,
+        "shortname":"dom-dominican republic",
+        "2017":"group1"
+    },
+    "france":{
+        "country_number": 12,
+        "shortname":"fra-france",
+        "2017":"group3"
+    },
+    "germany":{
+        "country_number": 13,
+        "shortname":"ger-germany",
+        "2017":"group2"
+    },
+    "hungary":{
+        "country_number": 14,
+        "shortname":"hun-hungary",
+        "2017":"group3"
+    },
+    "italy":{
+        "country_number": 15,
+        "shortname":"ita-italy",
+        "2017":"group1"
+    },
+    "japan":{
+        "country_number": 16,
+        "shortname":"jpn-japan",
+        "2017":"group1"
+    },
+    "kazakhstan":{
+        "country_number": 17,
+        "shortname":"kaz-kazakhstan",
+        "2017":"group2"
+    },
+    "korea":{
+        "country_number": 18,
+        "shortname":"kor-korea",
+        "2017":"group2"
+    },
+    "mexico":{
+        "country_number": 19,
+        "shortname":"mex-mexico",
+        "2017":"group3"
+    },
+    "netherlands":{
+        "country_number": 20,
+        "shortname":"ned-netherlands",
+        "2017":"group1"
+    },
+    "poland":{
+        "country_number": 21,
+        "shortname":"pol-poland",
+        "2017":"group2"
+    },
+    "puerto-rico":{
+        "country_number": 22,
+        "shortname":"pur-puerto rico",
+        "2017":"group2"
+    },
+    "russia":{
+        "country_number": 23,
+        "shortname":"rus-russia",
+        "2017":"group1"
+    },
+    "serbia":{
+        "country_number": 24,
+        "shortname":"srb-serbia",
+        "2017":"group1"
+    },
+    "trinidad":{
+        "country_number": 25,
+        "shortname":"tto-trinidad and tobago",
+        "2017":"group3"
+    },
+    "turkey":{
+        "country_number": 26,
+        "shortname":"tur-turkey",
+        "2017":"group1"
+    },
+    "usa":{
+        "country_number": 27,
+        "shortname":"usa-usa",
+        "2017":"group3"
+    },
+    "venezuela":{
+        "country_number": 28,
+        "shortname":"ven-venezuela",
+        "2017":"group3"
+    },
+    "egypt":{
+        "country_number": 29,
+        "shortname":"egy-egypt",
+        "2017":""
+    },
+    "peru":{
+        "country_number": 30,
+        "shortname":"per-peru",
+        "2017":""
+    },
+    "cuba":{
+        "country_number": 31,
+        "shortname":"cub-cuba",
+        "2017":""
+    },
+    "taipei":{
+        "country_number": 32,
+        "shortname":"tpe-chinese taipei",
+        "2017":""
+    },
+    "kenya":{
+        "country_number": 33,
+        "shortname":"ken-kenya",
+        "2017":""
+    },
+    "thailand":{
+        "country_number": 34,
+        "shortname":"tha-thailand",
+        "2017":""
+    },
+    "slovenia":{
+        "country_number": 35,
+        "shortname":"slo-slovenia",
+        "2017":""
+    }
+}
