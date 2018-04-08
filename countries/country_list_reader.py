@@ -27,10 +27,10 @@ class JsonCountryReader(object):
         Creates a named tuple object for the
         class defintions
         """
-        country_etais = namedtuple('Countries', ['details', 'accesse_on'])
-        current_tie = strftime("%Y-%m-%d %H:%M:%S", gmtime())
+        country_details = namedtuple('Countries', ['details', 'accesse_on'])
+        current_time = strftime("%Y-%m-%d %H:%M:%S", gmtime())
         
-        return country_etais(json_result, current_tie) or None
+        return country_details(json_result, current_time) or None
 
     def get_country_details(self, country_name):
         return self._named_tuple_factory(self._this[country_name])
