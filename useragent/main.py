@@ -1,7 +1,6 @@
 from random import randrange
 from collections import namedtuple
 
-__version__  = '0.1.0'
 
 _AGENTS_LIST = [
     "Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0",
@@ -14,15 +13,15 @@ _AGENTS_LIST = [
     "Mozilla/5.0 (iPad; CPU iPhone OS 8_3 like Mac OS X) AppleWebKit/600.1.4 (KHTML, like Gecko) FxiOS/1.0 Mobile/12F69 Safari/600.1.4"
 ]
 
-class UserAgent(object):
-    def get_user_agent(self, agent_index=0):
-        return _AGENTS_LIST[agent_index]
 
-    def get_user_agents(self):
-        agents = namedtuple('Agents', ['headers'])
-        return agents(_AGENTS_LIST)
+def get_user_agent(agent_index=0):
+    return _AGENTS_LIST[agent_index]
 
-    def get_rand_user_agent(self):
-        agent_list_lenght = len(_AGENTS_LIST)
-        return _AGENTS_LIST[randrange(0, agent_list_lenght)]
+def get_user_agents():
+    agents = namedtuple('Agents', ['headers'])
+    return agents(_AGENTS_LIST)
+
+def get_rand_user_agent():
+    agent_list_lenght = len(_AGENTS_LIST)
+    return _AGENTS_LIST[randrange(0, agent_list_lenght)]
         
