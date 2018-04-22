@@ -10,7 +10,7 @@
 ## INSTALL NGINX (OPTIONAL - IF PRESENT)
 `sudo apt-get install nginx`
 
-### EDIT FILES SITES AVAILABLE
+### CREATE FILE IN SITES AVAILABLE
 `sudo nano etc/nginx/sites-available/_site_name_`
   
 Copy these lines:
@@ -34,8 +34,8 @@ server {
 }
 ```
 
-### EDIT FILES SITES ENABLED
-Enter in sites-enabled to create pointer to that file:
+### CREATE FILE IN SITES ENABLED
+Enter in sites-enabled to create file that points towards sites-available:
 `cd /etc/nginx/sites-enabled`
   
 `sudo ln -s ../sites-available/`
