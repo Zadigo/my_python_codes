@@ -33,7 +33,8 @@ server {
     }
 }
 ```
-  
+
+### EDIT FILES SITES ENABLED
 Enter in sites-enabled to create pointer to that file:
 `cd /etc/nginx/sites-enabled`
   
