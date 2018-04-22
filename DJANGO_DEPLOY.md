@@ -59,7 +59,7 @@ Create database:
 ## CLONE, CREATE/START VIRTUALENV, GUNICORN
 Once app is cloned from git, create virtualenv `virtualenv -p python3 environment_name`.
 
-Then start virtualenv and install required packages `pip install -r requirements.txt` then `pip install gunicorn`.
+Then activate it with `source environment_name/bin/activate` and install required packages `pip install -r requirements.txt` then `pip install gunicorn`.
   
 Test:
 `gunicorn project_name.wsgi:application`
