@@ -35,10 +35,7 @@ server {
 ```
 
 ### CREATE FILE IN SITES ENABLED
-Enter in sites-enabled to create file that points towards sites-available:
-`cd /etc/nginx/sites-enabled`
-  
-`sudo ln -s ../sites-available/`
+Enter in sites-enabled `cd /etc/nginx/sites-enabled` to create file that points towards sites-available `sudo ln -s ../sites-available/`.
   
 Test that nginx is allowed on firewall `sudo ufw app list` and reload `service nginx reload`.
 
