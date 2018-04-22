@@ -35,41 +35,36 @@ server {
 ```
   
 Enter in sites-enabled to create pointer to that file:
-  > cd /etc/nginx/sites-enabled
+`cd /etc/nginx/sites-enabled`
   
-  > sudo ln -s ../sites-available/
+`sudo ln -s ../sites-available/`
   
 Test that nginx is allowed on firewall
-  > sudo ufw app list
+`sudo ufw app list`
 
 ## INSTALL PYTHON 3 (OPTIONAL)
-  > sudo apt-get install python-pip // sudo apt-get install python3-pip
+`sudo apt-get install python-pip` or  `sudo apt-get install python3-pip`
   
 ## INSTALL POSTGRESQL (OPTIONAL)
-  > sudo apt-get update
+`sudo apt-get update`
   
-  > sudo apt-get install postgresql postgresql-contrib
+`sudo apt-get install postgresql postgresql-contrib`
 
 Create user (optional):
-  > sudo -u postgres createuser --interactive
+`sudo -u postgres createuser --interactive`
   
 Create database:
-  > createdb `database_name`
-
-Or:
-  > createdb --owner `user_name` `database_name`
+`createdb _database_name_` or `createdb --owner user_name database_name`
 
 ## CLONE, CREATE/START VIRTUALENV, GUNICORN
-Once app is cloned from git, create virtualenv `virtualenv -p python3 _environment_name_`.
+Once app is cloned from git, create virtualenv `virtualenv -p python3 environment_name`.
 
-Then start virtualenv and install required packages `pip install -r requirements.txt` then:
-  
-  > pip install gunicorn
+Then start virtualenv and install required packages `pip install -r requirements.txt` then `pip install gunicorn`.
   
 Test:
-  > gunicorn `project_name`.wsgi:application
+`gunicorn project_name.wsgi:application`
 
 ## COLLECT STATIC & RUN
-  > python3 manage.py collectstatic
+`python3 manage.py collectstatic`
 
   
