@@ -40,8 +40,7 @@ Enter in sites-enabled to create file that points towards sites-available:
   
 `sudo ln -s ../sites-available/`
   
-Test that nginx is allowed on firewall
-`sudo ufw app list`
+Test that nginx is allowed on firewall `sudo ufw app list` and reload `service nginx reload`.
 
 ## INSTALL PYTHON 3 (OPTIONAL)
 `sudo apt-get install python-pip` or  `sudo apt-get install python3-pip`
