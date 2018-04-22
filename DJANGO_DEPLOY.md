@@ -61,7 +61,13 @@ Once app is cloned from git, create virtualenv `virtualenv -p python3 environmen
 
 Activate it with `source environment_name/bin/activate` and install required packages `pip install -r requirements.txt`. Then `pip install gunicorn` and test with `gunicorn project_name.wsgi:application`
 
-## COLLECT STATIC & RUN
+## CONFIGURE COLLECT STATIC & RUN
+Change in applications settings:
+
+`STATIC_ROOT = '/opt/project_name/static/'`
+
+STATIC_URL = '/static/'
+
 `python3 manage.py collectstatic`
 
   
