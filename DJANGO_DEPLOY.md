@@ -35,6 +35,7 @@ server {
     }
 }
 ```
+Then `supervisorctl reread`, `supervisorctl update` then `supervisorctl status`.
 
 ### CREATE FILE IN SITES ENABLED
 Enter in sites-enabled `cd /etc/nginx/sites-enabled` to create file that points towards sites-available `sudo ln -s ../sites-available/`.
@@ -88,5 +89,13 @@ Change in applications settings:
 STATIC_URL = '/static/'
 
 `python3 manage.py collectstatic`
+
+
+monitoring NGINX real time requests
+
+tail -f /var/log/nginx/error.log
+
+non-errors
+tail -f /var/log/nginx/access.log
 
   
