@@ -7,6 +7,8 @@
   
 `apt-get install fail2ban`
 
+`sudo apt-get install supervisor`
+
 ## INSTALL NGINX (OPTIONAL - IF PRESENT)
 `sudo apt-get install nginx`
 
@@ -56,7 +58,9 @@ Create database:
 ## CLONE, CREATE/START VIRTUALENV, GUNICORN
 Once app is cloned from git, create virtualenv `virtualenv -p python3 environment_name`.
 
-Activate it with `source environment_name/bin/activate` and install required packages `pip install -r requirements.txt`. Then `pip install gunicorn` and test with `gunicorn project_name.wsgi:application`
+Activate it with `source environment_name/bin/activate` and install required packages `pip install -r requirements.txt`. Then `pip install gunicorn` and test with `gunicorn project_name.wsgi:application`.
+
+then `gunicorn --bind 0.0.0.0:8000 project_name.wsgi:application`
 
 ## CONFIGURE COLLECT STATIC & RUN
 Change in applications settings:
