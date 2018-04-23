@@ -19,19 +19,16 @@ Copy these lines:
 
 ```
 server {
-    server_name yourdomainorip.com;
-
-    access_log off;
-
+    listen 80;
+    server_name 51.38.34.10;
+    location = /favicon.ico { access_log off; log_not_found off; }
     location /static/ {
-        alias /opt/myenv/static/;
+        root root/site1/octo-carnival/site1/;
     }
-
     location / {
-        proxy_pass http://127.0.0.1:8001;
-        proxy_set_header X-Forwarded-Host $server_name;
-        proxy_set_header X-Real-IP $remote_addr;
-        add_header P3P 'CP="ALL DSP COR PSAa PSDa OUR NOR ONL UNI COM NAV"';
+        include proxy_params;
+        # proxy_pass http://unix:/root/site1/octo-carnival/site1/site1.sock;
+        proxy_pass http://51.38.34.10:8000;
     }
 }
 ```
