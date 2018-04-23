@@ -62,6 +62,24 @@ Activate it with `source environment_name/bin/activate` and install required pac
 
 then `gunicorn --bind 0.0.0.0:8000 project_name.wsgi:application`
 
+create to monitor gunicorn with supervisor `nano /etc/supervisor/conf.d/gunicorn.conf` an write:
+
+```
+[program:gunicorn] 
+directory=/home/django/app-django/app 
+command=/root/.virtualenvs/virtual-env-name/bin/gunicorn --workers 3 --bind unix:/home/django/app-django/app/app.sock app.wsgi:application 
+autostart=true 
+autorestart=true 
+stderr_logfile=/var/log/gunicorn/gunicorn.out.log 
+stdout_logfile=/var/log/gunicorn/gunicorn.err.log 
+user=root 
+group=www-data 
+environment=LANG=en_US.UTF-8,LC_ALL=en_US.UTF-8 
+
+[group:guni] 
+programs:gunicorn
+```
+
 ## CONFIGURE COLLECT STATIC & RUN
 Change in applications settings:
 
