@@ -2,7 +2,7 @@ import sqlite3 as db
 import os
 
 # DATABASE_PATH = os.path.join(os.getcwd(), 'Python\\python_codes\\Banque\\bank_db.db')
-DATABASE_PATH = 'bank_db.db'
+DATABASE_PATH = 'bank.db'
 
 class DataBaseMixins:
     context = None
@@ -37,18 +37,19 @@ class DataBase(DataBaseMixins):
 class DatabaseQueries(DataBase):
     table_name = None
 
+    def select_user(self, **kwargs):
+        SQL = 'SELECT * FROM User_Model WHERE user_name=?'
+        records = super()._cursor().execute(SQL, (kwargs.get('username'),))
+        return list(records) or []
+
     def select_all(self, *args, **kwargs):
         if 'table_name' in kwargs:
-            self.table_name = kwargs.get('table')
+            self.table_name = kwargs.get('table_name')
 
-        records = super()._cursor().execute('SELECT ? FROM ?', (args, self.table_name,))
-        print(records)
-        # if 'records' not in kwargs:
-        #     kwargs['records'] = records
+        SQL = 'SELECT * FROM ' + self.table_name
 
-        # else:
-        #     kwargs.update(records=records)
+        records = super()._cursor().execute(SQL)
+        return list(records) or []
 
-        # return kwargs
 
-print(DatabaseQueries().select_all())
+print(DatabaseQueries().select_all(table_name='User_Model'))
