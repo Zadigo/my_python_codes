@@ -8,13 +8,13 @@ URL = u'https://data.opendatasoft.com/api/records/1.0/search/?dataset=sirene%40p
 class CheckSiret(object):    
     def _check(self, siret_number):
         if siret_number is None or siret_number == '' or siret_number == 0:
-            return False, 'Vous evez entrer un nuéro %s' % (siret_number)
-            # raise TypeError('There was nothing in SIRET')
+            # return False, 'Vous evez entrer un nuéro %s' % (siret_number)
+            raise TypeError('There was nothing in SIRET')
 
         number_length = re.search(r'[0-9]{14}', str(siret_number))
         if number_length is None:
-            return False, 'Vous n\'avez pas entrez 15 nuéro %s' % (siret_number)
-            # raise TypeError('There was nothing in SIRET')
+            # return False, 'Vous n\'avez pas entrez 15 nuéro %s' % (siret_number)
+            raise TypeError('Vous n\'avez pas entrez 15 nuéro %s' % (siret_number)) 
 
         return str(siret_number)
 
