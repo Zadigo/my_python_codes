@@ -1,15 +1,19 @@
-sudo apt update
+``sudo apt update``
 
-apt install postgresql postgresql-contrib
+``apt install postgresql postgresql-contrib``
 
-update-rc.d postgresql enable
+``update-rc.d postgresql enable``
 
-service postgresql start
+``service postgresql start``
 
-cd ../etc/postgresql/9.5/main
+``cd ../etc/postgresql/9.5/main``
 
-edit pg_hba.conf:   all  all  (YOUR IP ADDRESS)/32   trust
+Edit pg_hba.conf:
 
-edit postgresql.conf: listen_addresses = '*' 
+``host all  all  0.0.0.0/0   trust``
 
-service postgresql restart
+Edit postgresql.conf:
+
+``listen_addresses = '*'``
+
+``service postgresql restart``
