@@ -1,6 +1,12 @@
+"""
+This module receives a response, which can
+be the instance of a class in order to
+parse the HTML page in with Beautifulsoup.
+"""
+
 import collections
 from bs4 import BeautifulSoup
-from .responses import BaseResponse
+from responses import BaseResponse
 
 BEAUTY = collections.namedtuple('HTML', ['text'])
 
@@ -20,59 +26,30 @@ class BeautifulResponse(BaseResponse):
         if  Klass is None:
             Klass = self.instance
 
-        else:
-            self.instance = Klass
-
-        if Klass is None or self.instance is None:
-            raise TypeError('Not an instance. Receive none')
-
-        if not isinstance(Klass, BaseResponse):
-            raise TypeError('Not an instance of BaseResponse. Receive %s' % Klass.__class__.__name__)
-
-        assert isinstance(Klass, BaseResponse) is True
-        assert Klass is not None
         # We need to set attributes of the
         # empty instance method otherwise
-        # they are none
+        # they would be none
         Klass.__setattr__('urls', self.urls)
         Klass.__setattr__('useragent', self.useragent)
         
-        # Get requests
         self.responses = Klass.get_response()
-        # assert self.responses is None
 
         # Get the html text elements from
         # each response and return a list
         self.html_tags = [self._soup_factory(response) for response in self.responses if response is not None]
-        # assert self.html_tags is None
-
-
-
-# class ExtractImages(BeautifulResponse):
-#     """
-#     This extracts all images from the html tags
-#     """
-#     def get_images(self, *args):
-#         self.beautify_response()
-#         assert self.html_tags[0] is None
-#         return self.html_tags[0].findAll('img')
-
-class ExtractLinks(BeautifulResponse):
-    """
-    This extracts all images from the html tags
-    """
-    @classmethod
-    def get_links(cls, *args):
-        self = cls
-        cls.beautify_response(self)
-        return cls.html_tags[0].findAll('a')
 
 class ExtractImages(BeautifulResponse):
     """
     This extracts all images from the html tags
     """
-    def get_images(self, *args):
-        self.beautify_response()
+    def get_images(self):
+        super().beautify_response()
         return self.html_tags[0].findAll('img')
 
-
+class ExtractLinks(BeautifulResponse):
+    """
+    This extracts all images from the html tags
+    """
+    def get_images(self):
+        super().beautify_response()
+        return self.html_tags[0].findAll('a')
