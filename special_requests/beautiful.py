@@ -11,7 +11,7 @@ from responses import BaseResponse
 BEAUTY = collections.namedtuple('HTML', ['text'])
 
 class BeautifulResponse(BaseResponse):
-    responses = None
+    response = None
     html_tags = None
     instance = BaseResponse()
 
@@ -26,17 +26,45 @@ class BeautifulResponse(BaseResponse):
         if  Klass is None:
             Klass = self.instance
 
-        # We need to set attributes of the
-        # empty instance method otherwise
-        # they would be none
-        Klass.__setattr__('urls', self.urls)
-        Klass.__setattr__('useragent', self.useragent)
-        
-        self.responses = Klass.get_response()
+        # If instance is a method
+        if not isinstance(Klass, BaseResponse):
+            is_callable = callable(Klass)
+            if is_callable:
+                # We have to pass response in a list
+                # for now otherwise we get a byte response
+                # since Beautiful soup is looking for a list
+                # to iterate over
+                self.response = [Klass()]
+                
+                if self.response:
+                    pass
+                else:
+                    raise TypeError('Response is None.')
+
+            else:
+                raise TypeError('You should pass a function or an instance. Received %s' % Klass)
+
+        else:
+            # We need to set attributes of the
+            # empty instance method otherwise
+            # they would be none
+            Klass.__setattr__('urls', self.urls)
+            Klass.__setattr__('useragent', self.useragent)
+            self.response = Klass.get_response()
+
+        if self.response:
+            # Keep only responses that received a
+            # status_code of 200
+            sorted_response = [response for response in self.response if response.status_code == 200]
+            
+            if len(sorted_response) == 0:
+                return []
+        else:
+            return []
 
         # Get the html text elements from
         # each response and return a list
-        self.html_tags = [self._soup_factory(response) for response in self.responses if response is not None]
+        self.html_tags = [self._soup_factory(single_response) for single_response in sorted_response]
 
 class ExtractImages(BeautifulResponse):
     """
