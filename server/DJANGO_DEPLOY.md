@@ -10,7 +10,8 @@
 `sudo apt-get install supervisor`
 
 ## INSTALL NGINX (OPTIONAL - IF PRESENT)
-`sudo apt-get install nginx`
+[https://docs.nginx.com/nginx/admin-guide/web-server/web-server/]
+`sudo apt-get install nginx` and check that it is allowed on firewall `sudo ufw app list`
 
 ### CREATE FILE IN SITES AVAILABLE
 `sudo nano etc/nginx/sites-available/_site_name_`
@@ -32,12 +33,13 @@ server {
     }
 }
 ```
-Then `supervisorctl reread`, `supervisorctl update` then `supervisorctl status`.
-
 ### CREATE FILE IN SITES ENABLED
-Enter in sites-enabled `cd /etc/nginx/sites-enabled` to create file that points towards sites-available `sudo ln -s ../sites-available/`.
-  
-Test that nginx is allowed on firewall `sudo ufw app list` and reload `service nginx reload`.
+Enter in sites-enabled `cd /etc/nginx/sites-enabled` to create file that points towards sites-available `sudo ln -s ../sites-available/_app_name_`.
+
+## Update Supervisor
+Use `supervisorctl reread`, `supervisorctl update` then `supervisorctl status` to update with the new settings.
+
+Reload NGINX `service nginx reload`.
 
 ## INSTALL PYTHON 3 (OPTIONAL)
 `sudo apt-get install python-pip` or  `sudo apt-get install python3-pip`
@@ -47,20 +49,22 @@ Test that nginx is allowed on firewall `sudo ufw app list` and reload `service n
   
 `sudo apt-get install postgresql postgresql-contrib`
 
-Create user (optional):
+### Create user (optional):
 `sudo -u postgres createuser --interactive`
   
-Create database:
+### Create database:
 `createdb _database_name_` or `createdb --owner user_name database_name`
 
 ## CLONE, CREATE/START VIRTUALENV, GUNICORN
-Once app is cloned from git, create virtualenv `virtualenv -p python3 environment_name`.
+Once app is cloned from git or bitbucket, create virtualenv `virtualenv -p python3 environment_name`.
 
-Activate it with `source environment_name/bin/activate` and install required packages `pip install -r requirements.txt`. Then `pip install gunicorn` and test with `gunicorn project_name.wsgi:application`.
+Activate it with `source environment_name/bin/activate` and install required packages with `pip innstall -r requirements.txt`.
 
-then `gunicorn --bind 0.0.0.0:8000 project_name.wsgi:application`
+Once done, install gunicorn in environment `pip install gunicorn` and test with `gunicorn project_name.wsgi:application`.
 
-create to monitor gunicorn with supervisor `nano /etc/supervisor/conf.d/gunicorn.conf` an write:
+Then run `gunicorn --bind 0.0.0.0:8000 project_name.wsgi:application`
+
+If no errors, create a file to monitor gunicorn with supervisor `nano /etc/supervisor/conf.d/gunicorn.conf` and write the following:
 
 ```
 [program:gunicorn] 
@@ -79,20 +83,19 @@ programs:gunicorn
 ```
 
 ## CONFIGURE COLLECT STATIC & RUN
-Change in applications settings:
+Change the foloowing lines in applications settings:
 
 `STATIC_ROOT = '/opt/project_name/static/'`
 
-STATIC_URL = '/static/'
+`STATIC_URL = '/static/'`
 
 `python3 manage.py collectstatic`
 
 
-monitoring NGINX real time requests
-
-tail -f /var/log/nginx/error.log
+## Monitoring NGINX real time requests
+`tail -f /var/log/nginx/error.log`
 
 non-errors
-tail -f /var/log/nginx/access.log
+`tail -f /var/log/nginx/access.log`
 
   

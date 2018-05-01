@@ -20,3 +20,4 @@ def view(request, *args, **kwargs):
 a = sensitive_post_parameters('a', 'b')
 b = a(view)
 c = b(request, 'test', test='test')
+print(b)
