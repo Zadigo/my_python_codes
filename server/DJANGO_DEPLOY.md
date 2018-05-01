@@ -23,9 +23,11 @@ server {
     listen 80;
     server_name 51.38.34.10;
     location = /favicon.ico { access_log off; log_not_found off; }
+    
     location /static/ {
-        root root/site1/octo-carnival/site1/;
+        root opt/app_name/static;
     }
+    
     location / {
         include proxy_params;
         # proxy_pass http://unix:/root/site1/octo-carnival/site1/site1.sock;
@@ -37,6 +39,7 @@ server {
 Enter in sites-enabled `cd /etc/nginx/sites-enabled` to create file that points towards sites-available `sudo ln -s ../sites-available/_app_name_`.
 
 ## Update Supervisor
+http://supervisord.org/running.html
 Use `supervisorctl reread`, `supervisorctl update` then `supervisorctl status` to update with the new settings.
 
 Reload NGINX `service nginx reload`.
@@ -83,13 +86,13 @@ programs:gunicorn
 ```
 
 ## CONFIGURE COLLECT STATIC & RUN
-Change the foloowing lines in applications settings:
+Change the following lines in applications settings:
 
 `STATIC_ROOT = '/opt/project_name/static/'`
 
 `STATIC_URL = '/static/'`
 
-`python3 manage.py collectstatic`
+And run `python3 manage.py collectstatic` to copy static files to `opt/app_name/static`
 
 
 ## Monitoring NGINX real time requests
