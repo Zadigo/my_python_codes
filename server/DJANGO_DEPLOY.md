@@ -9,19 +9,21 @@
 
 `sudo apt-get install supervisor`
 
-## INSTALL NGINX (OPTIONAL - IF PRESENT)
+## INSTALL NGINX (OPTIONAL - IF NOT PRESENT)
+
 [https://docs.nginx.com/nginx/admin-guide/web-server/web-server/]
+
 `sudo apt-get install nginx` and check that it is allowed on firewall `sudo ufw app list`
 
 ### CREATE FILE IN SITES AVAILABLE
-`sudo nano etc/nginx/sites-available/_site_name_`
+`sudo nano etc/nginx/sites-available/[app_name]` and delete default site `rm -v default`
   
-Copy these lines:
+Copy these lines into the file:
 
 ```
 server {
     listen 80;
-    server_name 51.38.34.10;
+    server_name [server_name];
     location = /favicon.ico { access_log off; log_not_found off; }
     
     location /static/ {
@@ -30,19 +32,20 @@ server {
     
     location / {
         include proxy_params;
-        # proxy_pass http://unix:/root/site1/octo-carnival/site1/site1.sock;
-        proxy_pass http://51.38.34.10:8000;
+        proxy_pass http://unix:/root/[folder_name]/[repository_name]/[app_name].sock;
     }
 }
 ```
 ### CREATE FILE IN SITES ENABLED
-Enter in sites-enabled `cd /etc/nginx/sites-enabled` to create file that points towards sites-available `sudo ln -s ../sites-available/_app_name_`.
+Enter in sites-enabled `cd /etc/nginx/sites-enabled` to create file that points towards sites-available `sudo ln -s ../sites-available/[application_name]`.
 
 ## Update Supervisor
+
 http://supervisord.org/running.html
+
 Use `supervisorctl reread`, `supervisorctl update` then `supervisorctl status` to update with the new settings.
 
-Reload NGINX `service nginx reload`.
+Reload NGINX `service nginx reload` and then eventually `service nginx status`.
 
 ## INSTALL PYTHON 3 (OPTIONAL)
 `sudo apt-get install python-pip` or  `sudo apt-get install python3-pip`
@@ -58,21 +61,21 @@ Reload NGINX `service nginx reload`.
 ### Create database:
 `createdb _database_name_` or `createdb --owner user_name database_name`
 
-## CLONE, CREATE/START VIRTUALENV, GUNICORN
-Once app is cloned from git or bitbucket, create virtualenv `virtualenv -p python3 environment_name`.
+## CREATE/START VIRTUALENV, GUNICORN
+Create virtual environment `virtualenv -p python3 [environment_name]`.
 
-Activate it with `source environment_name/bin/activate` and install required packages with `pip innstall -r requirements.txt`.
+Activate it with `source [enviconment_name]/bin/activate` and install required packages with `pip install -r requirements.txt`.
 
-Once done, install gunicorn in environment `pip install gunicorn` and test with `gunicorn project_name.wsgi:application`.
+Once done, install gunicorn in environment `pip install gunicorn` and test with `gunicorn [project_name].wsgi:application`.
 
-Then run `gunicorn --bind 0.0.0.0:8000 project_name.wsgi:application`
+Then run `gunicorn --bind 0.0.0.0:8000 [project_name].wsgi:application`
 
 If no errors, create a file to monitor gunicorn with supervisor `nano /etc/supervisor/conf.d/gunicorn.conf` and write the following:
 
 ```
 [program:gunicorn] 
-directory=/home/django/app-django/app 
-command=/root/.virtualenvs/virtual-env-name/bin/gunicorn --workers 3 --bind unix:/home/django/app-django/app/app.sock app.wsgi:application 
+directory=/home/ubuntu/[folder_name] 
+command=/root/home/[virtualenv_name]/bin/gunicorn --workers 3 --bind unix:/home/ubuntu/[folder_name]/[repository]/[project_name].sock [project_name].wsgi:application 
 autostart=true 
 autorestart=true 
 stderr_logfile=/var/log/gunicorn/gunicorn.out.log 
@@ -86,13 +89,13 @@ programs:gunicorn
 ```
 
 ## CONFIGURE COLLECT STATIC & RUN
-Change the following lines in applications settings:
+Change the following lines in applications settings in order to collect all the static files:
 
-`STATIC_ROOT = '/opt/project_name/static/'`
+`STATIC_ROOT = '/opt/[project_name]/static/'`
 
 `STATIC_URL = '/static/'`
 
-And run `python3 manage.py collectstatic` to copy static files to `opt/app_name/static`
+And run `python3 manage.py collectstatic` to copy static files to `opt/project_name/static`
 
 
 ## Monitoring NGINX real time requests
@@ -100,5 +103,22 @@ And run `python3 manage.py collectstatic` to copy static files to `opt/app_name/
 
 non-errors
 `tail -f /var/log/nginx/access.log`
+
+## Finally check permissions
+Permissions have to be correct in order for NGINX to access the folders set in the conf file. If not, gives error __502 Bad Gateway__ and error __13 permission denied__ in `nano /var/log/gunicorn/gunicorn.out.log`.
+
+To check permissions to path use `ls -la /home/ubuntu/[folder_name]`.
+
+First, create a group
+`sudo groupadd varwwwusers`
+
+Add user to the group. Generally NGINX is `www-data`
+`sudo adduser www-data varwwwusers`
+
+Change the folder's group to the wwvarusers:
+`sudo chgrp -R varwwwusers /home/ubuntu/[folder_name]`
+
+Finally, change the access mode:
+`sudo chmod -R 760 /home/ubuntu/[folder_name]`
 
   
