@@ -27,7 +27,7 @@ server {
     location = /favicon.ico { access_log off; log_not_found off; }
     
     location /static/ {
-        root opt/app_name/static;
+        root opt/[project_name]/static;
     }
     
     location / {
@@ -37,7 +37,7 @@ server {
 }
 ```
 ### CREATE FILE IN SITES ENABLED
-Enter in sites-enabled `cd /etc/nginx/sites-enabled` to create file that points towards sites-available `sudo ln -s ../sites-available/[application_name]`.
+Enter in sites-enabled `cd /etc/nginx/sites-enabled` to create file that points towards sites-available `sudo ln -s ../sites-available/[choose_a_name]`.
 
 ## Update Supervisor
 
@@ -121,4 +121,12 @@ Change the folder's group to the wwvarusers:
 Finally, change the access mode:
 `sudo chmod -R 760 /home/ubuntu/[folder_name]`
 
+# DEBUGGING COMMANDS
+See all ports `netstat -ntlp | grep LISTEN`
+
+Default NGINX page `/usr/share/nginx/html` or `/var/www/html/index.nginx-debian.html`
+
+Alt to check that path has correct permissions `sudo -u www-data stat /root/site1`
+
+Gunicorn log data: `sudo -u www-data stat /root/site1`
   
