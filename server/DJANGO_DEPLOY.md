@@ -34,6 +34,13 @@ server {
         include proxy_params;
         proxy_pass http://unix:/root/[folder_name]/[repository_name]/[app_name].sock;
     }
+    
+    # caching
+    location ~* \.(css|js|gif|jpe?g|png)$ {
+        expires 168h;
+        add_header Pragma public;
+        add_header Cache-Control "public, must-revalidate, proxy-revalidate";
+    }
 }
 ```
 ### CREATE FILE IN SITES ENABLED
