@@ -1,76 +1,51 @@
 import re
+import requests as req
 from datetime import datetime
 from collections import namedtuple
-import requests as req
 
-URL = u'https://data.opendatasoft.com/api/records/1.0/search/?dataset=sirene%40public&q={siren}'
+VERIFICATION_URL = u'https://data.opendatasoft.com/api/records/1.0/search/?dataset=sirene%40public&q={siren}'
 
-class CheckSiret(object):    
-    def _check(self, siret_number):
-        if siret_number is None or siret_number == '' or siret_number == 0:
-            # return False, 'Vous evez entrer un nuéro %s' % (siret_number)
-            raise TypeError('There was nothing in SIRET')
 
-        number_length = re.search(r'[0-9]{14}', str(siret_number))
+class CheckSiret:
+    def check(self, siret):
+        if not isinstance(siret, int):
+            raise TypeError('Vous devez entrer un numéro: %s' % (siret,))
+
+        number_length = re.search(r'[0-9]{14}', str(siret))
         if number_length is None:
-            # return False, 'Vous n\'avez pas entrez 15 nuéro %s' % (siret_number)
-            raise TypeError('Vous n\'avez pas entrez 15 nuéro %s' % (siret_number)) 
+            raise TypeError('Vous devez avoir un numéro 15 chiffres au lieu de %s' % (siret,))
 
-        return str(siret_number)
+        return number_length.group(0)
 
+def request_decorator(function):
+    entreprise = namedtuple('Entreprise', ['records', 'created_at'])
 
-
-def get_enterprise(siret):
-    errors = []
-    return_value = CheckSiret()._check(siret)
-    if not return_value[0]:
-        errors.append(return_value)
-        return errors
-
-    try:
-        response = req.get(URL.format(siren=siret))
-        # assert response != 200, 'T'
-        
-    except ConnectionAbortedError as error:
-        return 't'
-
-    else:
-        get_json_object = response.json()
-        # assert get_json_object is not None
-        get_records = get_json_object['records']
-        # assert get_records is not None
-
-        entre = namedtuple('Entreprise', ['records', 'created_at'])
-
+    def request_object(self, siret):
         try:
-            create_dict = dict(
-                l1_declaree=get_records[0]['fields']['l1_declaree'],
-                nom_dept=get_records[0]['fields']['nom_dept'],
-                activite=get_records[0]['fields']['section'],
-                categorie=get_records[0]['fields']['categorie']
-            )
-
-        except IndexError:
-            return None
-
+            response = req.get(VERIFICATION_URL.format(siren=siret))
+        except ConnectionAbortedError as error:
+            print('%s' % error.args)
+            raise
         else:
-            return entre(create_dict, datetime.now)
+            if response.status_code == 200:
+                json_object = response.json()
+                records     = json_object['records'][0]['fields']
+                fields      = function(self, siret)
+                search=[]
+                for field in fields:
+                    search.append(records[field])
 
-        # return create_dict
+                return entreprise(search, datetime.now())
+            else:
+                return []
+    return request_object
 
-print(get_enterprise(44146037500088))
+@request_decorator
+def c(r,siret):
+    return ['l1_declaree', 'nom_dept', 'section', 'categorie']
 
+@CheckSiret.check(CheckSiret, siret=44146037500088)
+def t():
+    return 'r'
 
-# a = ur.format(siren='44146037500088')
-
-# response = req.get(a)
-# a = response.json()
-# b = a['records']
-
-# w = dict(
-#     l1_declaree=b[0]['fields']['l1_declaree'],
-#     nom_dept=b[0]['fields']['nom_dept'],
-#     activite=b[0]['fields']['section'],
-#     categorie=b[0]['fields']['categorie']
-# )
-# print(w)
+print(t())
