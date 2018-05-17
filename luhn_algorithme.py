@@ -1,43 +1,38 @@
 import itertools as it
-# from argparse import ArgumentParser
 
-# def _parse_args():
-#     args = ArgumentParser(
-#         description='Create a Luhn number'
-#     )
-#     args.add_argument('number', help='Enter a 7 digit number', type=int)
-#     args.add_argument('-e', '--encrypt', help='Encrypt nuner using 5')
-#     args.parse_args()
-#     return args
+def create_luhn(function):
+    def wrapper():
+        numbers = function()
 
-# def _create_nubers():
-#     pass
+        if not isinstance(numbers, list):
+            raise TypeError('Numbers should a list. Got %s.' % numbers.__class__.__name__)
 
-# def Main():
-#     arg = _parse_args()
-#     if arg:
-#         print('True')
-#         print(arg._get_args())
+        for i in range(1, len(numbers), 2):
+            # We add the number to itself
+            new_number = (numbers[i]).__add__(numbers[i])
 
-# if __name__ == '__main__':
-#     Main()
+            # Number should not be above 9
+            # if so, substract 9
+            if new_number > 9:
+                new_number = new_number - 9
 
-numbers = [9, 7, 2, 4, 8, 7, 0, 8, 6]
+            numbers[i] = new_number
 
-for i in range(1, len(numbers), 2):
-    # We add the number to itself
-    new_number = (numbers[i]).__add__(numbers[i])
+        # Remainder of the sum of all
+        # numbers divided by the 
+        # list count should be 0
+        remainder = sum(numbers) % 10
+        if remainder == 0:
+            return numbers
+        else:
+            return 'Numbers are not correct. Please change'
 
-    # Number should not be above 9
-    # if so then te have to substract 9
-    if new_number > 9:
-        new_number = new_number - 9
+        # Return new number list
+        return numbers
+    return wrapper
 
-    numbers[i] = new_number
+@create_luhn
+def r():
+    return [9, 7, 2, 4, 8, 7, 0, 8, 6]
 
-remainder = sum(numbers) % 10
-
-if remainder == 0:
-    print('Your numbers are', numbers)
-else:
-    print('Numbers are not correct. Please change')
+print(r())
