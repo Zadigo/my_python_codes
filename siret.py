@@ -7,6 +7,10 @@ VERIFICATION_URL = u'https://data.opendatasoft.com/api/records/1.0/search/?datas
 
 
 class CheckSiret:
+    """
+    Use this module to check that the SIRET
+    of an enterprise exists.
+    """
     def check(self, siret):
         if not isinstance(siret, int):
             raise TypeError('Vous devez entrer un numéro: %s' % (siret,))
@@ -17,10 +21,13 @@ class CheckSiret:
 
         return number_length.group(0)
 
-def request_decorator(function):
+def siret_decorator(function):
+    """
+    This
+    """
     entreprise = namedtuple('Entreprise', ['records', 'created_at'])
 
-    def request_object(self, siret):
+    def request_object(siret):
         try:
             response = req.get(VERIFICATION_URL.format(siren=siret))
         except ConnectionAbortedError as error:
@@ -30,7 +37,7 @@ def request_decorator(function):
             if response.status_code == 200:
                 json_object = response.json()
                 records     = json_object['records'][0]['fields']
-                fields      = function(self, siret)
+                fields      = function(siret)
                 search=[]
                 for field in fields:
                     search.append(records[field])
@@ -40,12 +47,6 @@ def request_decorator(function):
                 return []
     return request_object
 
-@request_decorator
-def c(r,siret):
-    return ['l1_declaree', 'nom_dept', 'section', 'categorie']
-
-@CheckSiret.check(CheckSiret, siret=44146037500088)
-def t():
-    return 'r'
-
-print(t())
+# @siret_decorator
+# def c(r,siret):
+#     return ['l1_declaree', 'nom_dept', 'section', 'categorie']
