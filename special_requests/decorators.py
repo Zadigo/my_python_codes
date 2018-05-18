@@ -1,25 +1,20 @@
-def login_required(r):
-    print(r)
+import re
 
-def is_staff(a, b):
-    print(a, b)
+def parser(function):
+    values = function()
+    if isinstance(values, list):
+        pass
 
-def wraps(a):
-    def staff_required(view_func):
-        def _is_staff(request, *args, **kwargs):
-            if not request.user.is_authenticated:
-                return login_required(view_func)(request, *args, **kwargs)
-            elif is_staff(request, request.user):
-                return view_func(request, *args, **kwargs)
-            else:
-                raise TypeError
-        return wraps(view_func)(_is_staff)
+    def parse(**kwargs):
+        if 'pattern' in kwargs:
+            pattern=kwargs['pattern']
+        else:
+            raise TypeError()
+        return [re.search(pattern, str(value)).group(0) for value in values]
+    return parse
 
+@parser
+def par(**kwargs):
+    return ['a','y','u']
 
-def view_func():
-    pass
-
-def request():
-    pass
-
-wraps(view_func)
+print(par(pattern=r'[a-z]+'))

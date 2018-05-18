@@ -9,35 +9,28 @@ is ready to do so.
 >>>     urls = ['']
 >>>     useragent = Your User Agent
 """
+
 import requests
-from useragent import UserAgentMixin
+from special_requests.useragent import UserAgentMixins
 
-class BaseResponse(UserAgentMixin):
-    urls = ['http://www.sawfirst.com']
-    useragent = None
-    
-    def get_response(self, *args, **kwargs):
-        if self.urls is None:
-            raise ValueError('there')
+class BaseResponseMixins:
+    url=''
+    urls=[]
+    def __init__(self):
+        if not isinstance(self.urls, list):
+            raise TypeError('URLs has to be a list. Got %s' % self.urls.__class__)
 
-        if type(self.urls).__name__ != 'list':
-            raise TypeError('Received %s instead of a list' % type(self.urls).__name__)
-
-        if len(self.urls) == 0:
-            raise ValueError('There was no urls got %s' %  self.urls)
-
-        if 'agent' in kwargs:
-            self.useragent = kwargs.get('agent')
-        else:
-            self.useragent = self.get_rand_user_agent()
-        
+class BaseResponse(BaseResponseMixins, UserAgentMixins):
+    def raw_response(self):
         try:
-            # We send the requests to the server
-            responses = [requests.get(url, self.useragent) for url in self.urls]
+            if self.url:
+                response    = [requests.get(self.url, self.get_rand_user_agent())]
+            elif self.urls:
+                response    = [requests.get(url, self.get_rand_user_agent()) for url in self.urls]
+            else:
+                raise requests.exceptions.MissingSchema('There were no urls.')
 
         except ConnectionError as error:
-            print('There was an error. See %s with an adress' % (error.args))
-
-        else:
-            return responses
-        return BaseResponse
+            print('There %s' % error.args)
+        
+        return [resp for resp in response if resp.status_code == 200]
