@@ -14,26 +14,23 @@ class A:
     def __init__(self):
         # Import module
         mod = importlib.import_module(module)
+        self.mod = mod
+        pattern = r'[a-zA-Z]+'
         # e.g. [__attributes__]
-        attrs = dir(mod)
-        for attr in attrs:
-            that = re.search(r'[a-zA-Z]+', attr)
-            if that:
+        for attr in dir(mod):
+            # Get none underscored 
+            # attributes e.g. __file__
+            if re.search(pattern, attr):
                 # Set attributes to class
-                setattr(self, attr, getattr(mod, attr))
+                attr_value = getattr(mod, attr)
+                setattr(self, attr, attr_value)
 
     def __repr__(self):
         # Returns itself automatically
         # on class call
-        return '<%(cls)s: "%(class)s>"' % {
+        return '<%(cls)s: "%(module)s>"' % {
             'cls':self.__class__.__name__,
-            'class':self.__class__,
+            'module':self.mod,
         }
 
-class T(A):
-    def show(self):
-        a = super(T, self)
-        print(a)
-
-p=T()
-p.show()
+print(A())
