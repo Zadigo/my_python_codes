@@ -1,1 +1,3 @@
-from special_requests import responses
+# from special_requests import responses
+from special_requests.responses import BaseResponse
+from special_requests.beautiful import BeautifulResponse

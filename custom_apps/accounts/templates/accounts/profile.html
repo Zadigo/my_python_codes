@@ -1,0 +1,7 @@
+{% if request.user.is_candidat %}
+    {% include "shared/candidats.html" %}
+{% else %}
+    {% include "shared/entreprises.html" %}
+{% endif %}
+
+<a href="{% url 'logout' %}">logout</a>

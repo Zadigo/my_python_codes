@@ -1,0 +1,76 @@
+{
+	"Create basic views": {
+		"prefix": "django-views",
+		"body": [
+			"from django.http import request",
+			"from django.contrib.auth.mixins import LoginRequiredMixin",
+			"from django.views.generic import ListView, CreateView, UpdateView, DetailView, View",
+			"\n",
+			"class ${1}(View):",
+			"\tdef get(self, request):",
+			"\t\treturn render(request, '${2}.html', context)",
+			"\n",
+			"\tdef post(self, request):",
+			"\t\tpass",
+			"\n",
+			"\tcontext = {}",
+			"\n",
+			"class ${1}(ListView):",
+			"\t# ListView",
+			"\tmodel = ${model}",
+			"\tcontext_object_name = '${4}'",
+			"\t# queryset = ",
+			"\ttemplate_name = '${5}.html'",
+			"\n",
+			"\tdef get_queryset(self):",
+			"\t\t# Return results from database to the view",
+			"\t\tqueryset = Model.objects.filter(${})[:20]",
+			"\t\treturn queryset",
+			"\n",
+			"class ${6}(${LoginRequiredMixin,} CreateView):",
+			"\tmodel = ${model}",
+			"\tform_class = {8:form}",
+			"\ttemplate_name = '${9}/${10}.html'",
+			"\tsuccess_url = '/${11}/'",
+			"\n",
+			"class ${12}Update(${LoginRequiredMixin,} UpdateView):",
+			"\tmodel = ${model}",
+			"\tform_class = {13:form}",
+			"\ttemplate_name = '${}/{}.html'",
+			"\tsuccess_url = '/${}/'",
+			"\n",
+			"\tdef get_absolute_url(self):",
+			"\t\treturn reverse('${}', kwargs={'pk': self.pk})"
+		],
+		"description": "Create basic views"
+	},
+	"Return render": {
+		"prefix": "django-return",
+		"body": [
+			"return render(request, '${1}.html', {})"
+		],
+		"description": "Return render"
+	},
+	"Return render context": {
+		"prefix": "django-return-context",
+		"body": [
+			"context = {}",
+			"return render(request, '${1}.html', context)"
+		],
+		"description": "Return render context"
+	},
+	"Decorator": {
+		"prefix": "py-decorator",
+		"body": [
+			"def ${name}(function):",
+			"\tdef ${name}(*args, **kwargs):",
+			"\t\t\tfunction()",
+			"\treturn ${name}",
+			"\n",
+			"@${name}",
+			"def ${to_decorate}():",
+			"\treturn 'To decorate'"
+		],
+		"description": "Decorator"
+	}
+}

@@ -1,0 +1,26 @@
+{% if message or form.errors %}
+    <div id='alert' class="alert alert-{{ message_class }}" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">×</span>
+        </button>
+        {{ message }}
+    </div>          
+{% endif %}
+
+<div class="login-clean">
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="form-group">
+            <input class="form-control" type="email" name="email" placeholder="Email..." />
+        </div>
+        <div class="form-group">
+            <input type="password" name="password" placeholder="Mot de passe..." class="form-control" />
+        </div>
+
+        <div class="form-group">
+            <button class="btn btn-primary btn-block" type="submit">Log In</button>
+        </div>
+        <a class="forgot" href="{% url 'signup' %}">signup</a>
+        <a class="forgot" href="#">Forgot your email or password?</a>
+    </form>
+</div>

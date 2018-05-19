@@ -1,0 +1,24 @@
+{% if message or form.errors %}
+    <div id='alert' class="alert alert-{{ message_class }}" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">×</span>
+        </button>
+        {{ message }}
+    </div>          
+{% endif %}
+
+<div class="login-clean">
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        
+        {% block form_group %}
+            
+        {% endblock form_group %}
+
+        <div class="form-group">
+            <button class="btn btn-primary btn-block" type="submit">Soumettre</button>
+        </div>
+        <a class="forgot" href="{%  %}">Créer un comtpe</a>
+        <a class="forgot" href="#">Forgot your email or password?</a>
+    </form>
+</div>

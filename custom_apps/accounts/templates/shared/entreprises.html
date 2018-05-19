@@ -1,0 +1,49 @@
+{% block body %}
+    <section class="profil">
+        <div class="row">
+                <div class="col-sm-3">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <div class="list-group">
+                                <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                                    Candidature
+                                    <span class="badge badge-primary badge-pill">{{ nombre_offres }}</span>
+                                </a>
+                                <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                                    Entretien
+                                    <span class="badge badge-primary badge-pill">{{ nombre_candidatures_entretien }}</span>
+                                </a>
+                                <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                                    Accepté
+                                    <span class="badge badge-primary badge-pill">{{ nombre_candidatures_accepte }}</span>
+                                </a>
+                                <hr />
+                                <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">Nouveau</a>
+                                <hr />
+                                <a href="#" class="list-group-item list-group-item-action">Aide</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-9">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <div class="list-group">
+                                {% for candidature in toutes_les_candidatures %}
+                                    <div class="list-group-item d-flex justify-content-between align-items-center">
+                                        {{candidature.nom_poste}}
+                                        <span class="badge badge-success badge-pill">{{ candidature.type_contrat}}</span>
+                                        <span class="badge badge-success badge-pill">{{ candidature.statut }}</span>
+                                    </div>
+                                {% empty %}
+                                    <div class="list-group-item d-flex justify-content-between align-items-center">
+                                        Rien à afficher :(
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+{% endblock body %}
