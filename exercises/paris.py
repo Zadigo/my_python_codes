@@ -27,10 +27,8 @@ class A:
 
     def __repr__(self):
         # Returns itself automatically
-        # on class call
-        return '<%(cls)s: "%(module)s>"' % {
+        # on class call ./. Is callable
+        return '<%(cls)s "%(module)s>"' % {
             'cls':self.__class__.__name__,
             'module':self.mod,
         }
-
-print(A())

@@ -1,0 +1,26 @@
+<!doctype html>
+
+<html lang="en">
+    <head>
+        {% include "analytics.html" %}
+
+        <title>{% block title %}title | title{% endblock title %}</title>
+
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        {% include "bootstrap.html" %}
+    </head>
+
+    <body>
+
+        <div class="container">
+            {% block body %}
+
+            {% endblock body %}
+        </div>
+
+        {% include "jquery.html" %}
+    </body>
+</html>
