@@ -26,12 +26,8 @@ class ImageEngine(Engine):
             raise TypeError('There were no images in %s' % 
             self.default)
         
-        value_of_i = has_pictures(self.new_folder)
-        # 
-        if value_of_i:
-            i = value_of_i
-        else:
-            i = 0
+        # Receives an integer
+        i = has_pictures(self.new_folder) or 0
 
         for image in images:
             name, extension = str(image).rsplit('.', 1)

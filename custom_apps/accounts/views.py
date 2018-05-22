@@ -7,6 +7,10 @@ from django.views import View
 
 from django.http import request
 
+from django.core.mail import send_mail, BadHeaderError
+
+from django.conf import settings
+
 
 
 MyUser = get_user_model()
@@ -59,6 +63,49 @@ def login_user(request):
 def logout_user(request):
     logout(request)
     return redirect('login.html')
+
+
+def forgot_password(request):
+    context = {}
+    template_name = 'registration/forgot-password.html'
+
+    if request.method == 'POST':
+        email = request.POST['email']
+
+        user = MyUser.objects.get(email=email)
+
+        if user:
+            # Get user password
+            # user = user.password
+             
+            try:
+                # TODO Email password and username to user
+                send_mail(
+                    'Restauration',
+                    'Veuillez suivre ce lien pour ...',
+                    settings.EMAIL_HOST_USER,
+                    [email],
+                    fail_silently=False,
+                )
+            except BadHeaderError:
+                context['message_type'] = 'danger'
+                context['message'] = ''
+                template_name = 'registration/forgot.html'
+                # return render(request, 'forgot.html', context)
+            else:
+                context['message_type'] = 'success'
+                context['message'] = ''
+                template_name = 'registration/login.html'
+                # return render(request, 'login.html', context)
+        
+        else:
+            context['message_type'] = 'danger'
+            context['message'] = ''
+            # Could not find user
+            template_name = 'registration/forgot-password.html'
+            # return redirect('')
+
+    return render(request, template_name, context)
 
 
 class ProfileView(LoginRequiredMixin, View):

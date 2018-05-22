@@ -18,7 +18,9 @@
         <div class="form-group">
             <button class="btn btn-primary btn-block" type="submit">Soumettre</button>
         </div>
-        <a class="forgot" href="{%  %}">Créer un comtpe</a>
-        <a class="forgot" href="#">Forgot your email or password?</a>
+        {% if request.path != '/accounts/forgot-password' %}
+            <a class="signup" href="{% url 'signup' %}">Créer un comtpe</a>
+            <a class="forgot" href="#">Forgot your email or password?</a>
+        {% endif %}
     </form>
 </div>

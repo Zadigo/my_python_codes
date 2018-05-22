@@ -56,10 +56,6 @@ def has_pictures(folder_path):
     #         # and iterating from there
     #         print(int(name_format.group(1)))
     #         return int(name_format.group(1))
-    #     else:
-    #         return False
-    # else:
-    #     return False
 
 has_pictures(conf.IMAGES_PATHS['new_folder'])
 
