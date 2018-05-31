@@ -1,5 +1,7 @@
-class OrdersMixin:
-    order_type      = None
+from base1 import Database
 
-class BaseOrders(OrdersMixin):
+class Buy(Database):
+    pass
+
+class Sell(Database):
     pass
