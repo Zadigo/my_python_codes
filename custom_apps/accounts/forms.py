@@ -81,3 +81,6 @@ class UserLoginForm(AuthenticationForm):
             raise forms.ValidationError("Passwords don't match")     
 
         return self.cleaned_data
+
+class ChangePasswordForm(forms.Form):
+    email = forms.EmailField()
