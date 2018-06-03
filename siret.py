@@ -3,15 +3,12 @@ import requests as req
 from datetime import datetime
 from collections import namedtuple
 
-VERIFICATION_URL = u'https://data.opendatasoft.com/api/records/1.0/search/?dataset=sirene%40public&q={siren}'
-
-
-class CheckSiret:
-    """
-    Use this module to check that the SIRET
-    of an enterprise exists.
-    """
-    def check(self, siret):
+class BaseCheckSiret:
+    fields = ['l1_declaree', 'nom_dept', 'section', 'categorie']
+    verification_url = u'https://data.opendatasoft.com/api/records/1.0/search/?dataset=sirene%40public&q={siren}'
+    
+    @staticmethod
+    def check(siret):
         if not isinstance(siret, int):
             raise TypeError('Vous devez entrer un numéro: %s' % (siret,))
 
@@ -21,32 +18,38 @@ class CheckSiret:
 
         return number_length.group(0)
 
-def siret_decorator(function):
-    """
-    This
-    """
-    entreprise = namedtuple('Entreprise', ['records', 'created_at'])
+    def get_entreprise(self, siret):
+        """
+        Use this module to check that the SIRET
+        of an enterprise exists and get the
+        informations related to that entreprise
+        in a json format style
+        """
 
-    def request_object(siret):
+        entreprise = namedtuple('Entreprise', ['records', 'created_at'])
+        self.check(siret)
         try:
-            response = req.get(VERIFICATION_URL.format(siren=siret))
+            response = req.get(self.verification_url.format(siren=siret))
         except ConnectionAbortedError as error:
-            print('%s' % error.args)
+            print('There was an error: %s' % error.args)
             raise
         else:
             if response.status_code == 200:
                 json_object = response.json()
                 records     = json_object['records'][0]['fields']
-                fields      = function(siret)
-                search=[]
-                for field in fields:
+                search      = []
+                for field in self.fields:
                     search.append(records[field])
 
                 return entreprise(search, datetime.now())
-            else:
-                return []
-    return request_object
 
-# @siret_decorator
-# def c(r,siret):
-#     return ['l1_declaree', 'nom_dept', 'section', 'categorie']
+class CheckSiret(BaseCheckSiret):
+    """
+    Use this class for subclassing
+    """
+
+class A(CheckSiret):
+    pass
+
+a = A()
+print(a.get_entreprise(51177973800042))
