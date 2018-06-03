@@ -1,7 +1,7 @@
-{% if request.user.is_candidat %}
-    {% include "shared/candidats.html" %}
-{% else %}
-    {% include "shared/entreprises.html" %}
-{% endif %}
-
-<a href="{% url 'logout' %}">logout</a>
+{% extends "accounts/base_accounts.html" %}
+{% block title %}{{ request.user.prenom }}{{ request.user.nom }} | Kurrikulam{% endblock title %}
+{% block body %}
+    <section class="profil">
+        
+    </section>
+{% endblock body %}

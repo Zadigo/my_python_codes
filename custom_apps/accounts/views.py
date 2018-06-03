@@ -1,15 +1,27 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, HttpResponse
 
 from django.contrib.auth import authenticate, login, logout, get_user_model
 from django.contrib.auth.mixins import LoginRequiredMixin
 
 from django.views import View
 
-from django.http import request
+from django.http import request, HttpResponseRedirect
 
 from django.core.mail import send_mail, BadHeaderError
 
 from django.conf import settings
+
+from django.contrib.auth.decorators import login_required, user_passes_test
+
+from django.db.models import Q
+
+# from courses.models import FamilyCourse, TeacherApplication
+
+from accounts.models import MyUserProfile
+
+from accounts.forms import MyUserTeacherProfileForm, MyUserLearnerProfileForm, UserLoginForm, UserCreationForm
+from accounts.forms import UserLoginForm, UserForgotPasswordForm
+
 
 
 
@@ -26,22 +38,21 @@ def signup_user(request):
         password    = request.POST['password']
 
         if MyUser.objects.filter(email__iexact=email).exists():
-            context['message_class']    ='danger'
-            context['message']          ='Il semblerait que vous avez déjà un compte chez nous.'
+            context['alert_class']    ='danger'
+            context['alert']          ='Il semblerait que vous avez déjà un compte chez nous'
         else:
             user = MyUser.objects.create_user(email, nom=nom, prenom=prenom, password=password)
 
             if user:
-                # Message and render login
-                context['message_class']    ='success'
-                context['message']          ='Votre compte a bien été créer'
                 return redirect('/accounts/login/')
 
     return render(request, template_name, context)
 
 
 def login_user(request):
-    context={}
+    context={
+        'form': UserLoginForm,
+    }
     template_name   = 'registration/login.html'
 
     if request.method == 'POST':
@@ -54,8 +65,8 @@ def login_user(request):
             return redirect(request.GET.get('next') or 'profile')
 
         else:
-            context['message_class']    ='danger'
-            context['message']          ='Votre adresse mail ou mot de pass ne sont pas correctes'
+            context['alert_class']    = 'danger'
+            context['alert']          = 'Votre adresse mail ou mot de passe ne sont pas correctes'
 
     return render(request, template_name, context)
 
@@ -66,7 +77,9 @@ def logout_user(request):
 
 
 def forgot_password(request):
-    context = {}
+    context = {
+        'form': UserForgotPasswordForm
+    }
     template_name = 'registration/forgot-password.html'
 
     if request.method == 'POST':
@@ -75,11 +88,7 @@ def forgot_password(request):
         user = MyUser.objects.get(email=email)
 
         if user:
-            # Get user password
-            # user = user.password
-             
             try:
-                # TODO Email password and username to user
                 send_mail(
                     'Restauration',
                     'Veuillez suivre ce lien pour ...',
@@ -88,22 +97,18 @@ def forgot_password(request):
                     fail_silently=False,
                 )
             except BadHeaderError:
-                context['message_type'] = 'danger'
-                context['message'] = ''
+                context['alert_class'] = 'danger'
+                context['alert'] = ''
                 template_name = 'registration/forgot.html'
-                # return render(request, 'forgot.html', context)
             else:
-                context['message_type'] = 'success'
-                context['message'] = ''
+                context['alert_class'] = 'success'
+                context['alert'] = ''
                 template_name = 'registration/login.html'
-                # return render(request, 'login.html', context)
         
         else:
-            context['message_type'] = 'danger'
-            context['message'] = ''
-            # Could not find user
+            context['alert_class'] = 'danger'
+            context['alert'] = ''
             template_name = 'registration/forgot-password.html'
-            # return redirect('')
 
     return render(request, template_name, context)
 
@@ -117,4 +122,12 @@ class ProfileView(LoginRequiredMixin, View):
 
     def post(self, request, *args, **kwargs):
         pass
+
+def accounts_redirection(request):
+    if request.user.is_authenticated:
+        template_name = '/accounts/profile/'
+    else:
+        template_name = '/accounts/signup/.../'
+
+    return redirect(template_name, permanent=False)
 

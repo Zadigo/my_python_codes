@@ -1,5 +1,5 @@
 ######################
-# Custom elements
+
 AUTH_USER_MODEL = 'accounts.MyUser'
 
 AUTHENTICATION_BACKENDS = (
@@ -18,6 +18,14 @@ EMAIL_PORT = 587
 
 EMAIL_USE_LOCALTIME = True
 
-GOOGLE_MAPS_KEY = ''
+# Secret Keys
+GOOGLE_MAPS_SECRET_KEY = ''
+
+LA_POSTE_SECRET_KEY = ''
+
+# Uploading files
+MEDIA_URL = '/media/'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 #####################

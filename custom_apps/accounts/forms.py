@@ -1,13 +1,19 @@
 from django import forms
 
 from django.contrib.auth.forms import AuthenticationForm
-from django.contrib.auth import get_user_model
-
 from django.contrib.auth.forms import ReadOnlyPasswordHashField
+from django.contrib.auth import get_user_model
 
 from django.forms import EmailField
 from django.forms import widgets
+from django.forms import Widget
+
 from django.utils.translation import gettext, gettext_lazy as _
+
+from accounts.models import MyUserProfile
+
+
+
 
 MyUser = get_user_model()
 
@@ -64,13 +70,13 @@ class UserChangeForm(forms.ModelForm):
 
 class UserLoginForm(AuthenticationForm):
     username=EmailField(
-        label= _("Email"),
-        widget=widgets.EmailInput(attrs={'autofocus': True})
+        label=_("Email"),
+        widget=widgets.EmailInput(attrs={'placeholder': 'Email...'})
     )
     password = forms.CharField(
         label= _("Password"),
         strip=False,
-        widget=forms.PasswordInput,
+        widget=forms.PasswordInput(attrs={'placeholder': 'Password...'}),
     )
 
     def clean2(self):
@@ -82,5 +88,17 @@ class UserLoginForm(AuthenticationForm):
 
         return self.cleaned_data
 
-class ChangePasswordForm(forms.Form):
-    email = forms.EmailField()
+class UserForgotPasswordForm(forms.Form):
+    email = EmailField(
+        widget=widgets.EmailInput()
+    )
+
+class MyUserTeacherProfileForm(forms.ModelForm):
+    class Meta:
+        model   = MyUserProfile
+        fields  = []
+
+class MyUserLearnerProfileForm(forms.ModelForm):
+    class Meta:
+        model   = MyUserProfile
+        fields  = []
