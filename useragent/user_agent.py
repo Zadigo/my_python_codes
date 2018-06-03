@@ -2,7 +2,7 @@ from random import randrange
 from collections import namedtuple
 
 
-_AGENTS_LIST = [
+AGENTS_LIST = [
     "Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0",
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:59.0) Gecko/20100101 Firefox/59.0",
     "Mozilla/5.0 (Android 8.0; Mobile; rv:41.0) Gecko/41.0 Firefox/41.0",
@@ -14,13 +14,13 @@ _AGENTS_LIST = [
 ]
 
 def get_user_agent(agent_index=0):
-    return _AGENTS_LIST[agent_index]
+    return AGENTS_LIST[agent_index]
 
 def get_user_agents():
     agents = namedtuple('Agents', ['headers'])
-    return agents(_AGENTS_LIST)
+    return agents(AGENTS_LIST)
 
 def get_rand_user_agent():
     agent_list_lenght = len(_AGENTS_LIST)
-    return _AGENTS_LIST[randrange(0, agent_list_lenght)]
+    return AGENTS_LIST[randrange(0, agent_list_lenght)]
             

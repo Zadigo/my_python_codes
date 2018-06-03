@@ -55,7 +55,7 @@
 		"prefix": "django-return-context",
 		"body": [
 			"context = {}",
-			"return render(request, '${1}.html', context)"
+			"return render(request, '${1}.html', context)",
 		],
 		"description": "Return render context"
 	},
@@ -72,5 +72,79 @@
 			"\treturn 'To decorate'"
 		],
 		"description": "Decorator"
-	}
+	},
+	"Subclass": {
+		"prefix": "py-subclass",
+		"body": [
+			"class ${Name}:",
+			"\tpass",
+			"\n",
+			"class ${Subname}(${Name}):",
+			"\tpass",
+		],
+		"description": "Subclass"
+	},
+	"Urls": {
+		"prefix": "django-urls",
+		"body": [
+			"from django.http import request",
+			"from django.conf.urls import url",
+			"from $1 import views",
+			"\n",
+			"urlpatterns = [",
+			"\turl(r'^${url}', views.${view_name}.as_view(), name='${name}'),",
+			"]",
+		],
+		"description": "Urls"
+	},
+	"Model": {
+		"prefix": "django-model",
+		"body": [
+			"class ${Name}(models.Model):",
+			"\n",
+			"def __str__(self):",
+			"\treturn $1",
+			"\n",
+			"def get_absolute_url(self):",
+			"\treturn reverse('${path}', args=[str(self.pk)])",
+		],
+		"description": "Model"
+	},
+	"Bootstrap Form Control": {
+		"prefix": "django-form-control",
+		"body": [
+			"{% for field in form %}",
+			"\t<div class=\"form-group\">",
+			"\t<label for=\"id_{{ field.name }}\">{{ field.label }}</label>",
+			"\t{{ field|attr:\"class:form-control\" }}",
+			"</div>",
+			"{% endfor %}"
+		],
+		"description": "Bootstrap Form Control"
+	},
+	"Django Extends blocks": {
+		"prefix": "django-extends-blocks",
+		"body": [
+			"{% extends \"${1}.html\" %}",
+			"\n",
+			"{% block ${2} %}",
+			"\n",
+			"{% endblock ${2} %}"
+		],
+		"description": "Django Extends blocks"
+	},
+	"Django Field Tweaks": {
+		"prefix": "django-field-Tweaks",
+		"body": [
+			"{% load widget_tweaks %}",
+			"\n",
+			"{% for field in form %}",
+			"\t<div class=\"form-group\">",
+			"\t<label for=\"id_{{ field.name }}\">{{ field.label }}</label>",
+			"\t{{ field|attr:\"class:form-control\"|attr:\"placeholder: ...\" }}",
+			"\t</div>",
+            "{% endfor %}"
+		],
+		"description": "Django Field Tweaks"
+	},
 }
