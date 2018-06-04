@@ -1,12 +1,12 @@
 import requests as req
 import re
 from collections import namedtuple
+from global_settings import LA_POSTE_SECRET_KEY
 
-SECRET_KEY = 'mzNxDiEp9BKgrW5LItSTjoYzbRHTjXLtmE0rc7cfa8FUus+B4lCaF8r+cyVRdDUW'
 BASE_URL   = 'https://api.laposte.fr/controladresse/v1/adresses?q={adress}'
 
 class CheckAdress:
-    secret_key = SECRET_KEY
+    secret_key = LA_POSTE_SECRET_KEY
     def __init__(self, adress):
         self.REQUEST_URL = BASE_URL.format(
             adress=adress
@@ -16,7 +16,7 @@ class CheckAdress:
         try:
             self.auth_request  = req.get(
                 BASE_URL,
-                headers={'X-Okapi-Key': SECRET_KEY
+                headers={'X-Okapi-Key': self.secret_key
                 }
             )
         except ConnectionError as error:
