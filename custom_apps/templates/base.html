@@ -1,0 +1,64 @@
+{% load static %}
+
+<!doctype html>
+<html lang="fr">
+    <head>
+        <title>{% block title %}{% endblock title %}</title>
+
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        {% block meta_description %}
+            <meta name="description" content="Plateforme de recrutement intelligente à destination des PMEs,
+            des étudiants et nouveaux diplômés de la ville de lille, spécialisés en sciences
+            de gestion. Nous utilisons des algorithmes afin de calculer le degré de pertinence
+            chaque candidatures.">
+        {% endblock meta_description %}
+        {% block meta_keywords %}
+            <meta name="keywords" content="kurrikulam, kurrikulam.com, jobs, 
+            emploi, stages pmes, offres de stage, intelligence artificielle, entreprises, recrutement, 
+            ressources humaines, startups, pme, étudiants, sciences de gestion, lille">
+        {% endblock meta_keywords %}
+        <meta name="author" content="">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" crossorigin="anonymous">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css">
+        <!-- Font -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,600,600i" />
+        <!-- CSS -->
+        <!-- <link rel="stylesheet" href="{% static 'courses/style.css' %}">
+        <link rel="stylesheet" href="{% static 'courses/heros.css' %}">
+        <link rel="stylesheet" href="{% static 'courses/footer.css' %}">
+        <link rel="stylesheet" href="{% static 'courses/courses.css' %}"> -->
+        <link rel="stylesheet" href="{% static 'accounts/profile.css' %}">
+        <link rel="stylesheet" href="{% static 'accounts/login.css' %}">
+    </head>
+
+    <body>
+        {% include 'nav.html' %}
+
+        {% if alert or form.errors %}
+            <div id='alert' class="alert alert-{{ alert_class }}" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+                {{ alert }}
+            </div>
+        {% endif %}
+        
+        <div class="container-fluid">
+            {% block body %}
+            
+            {% endblock body %}
+        </div>
+        
+        {% include "footer.html" %}
+
+        <!-- jQuery, Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" crossorigin="anonymous"></script>
+    </body>
+</html>
