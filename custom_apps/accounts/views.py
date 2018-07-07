@@ -27,6 +27,8 @@ from accounts.forms import UserLoginForm, UserForgotPasswordForm
 
 MyUser = get_user_model()
 
+# Accounts
+
 def signup_user(request):
     context={}
     template_name='registration/signup.html'
@@ -47,7 +49,6 @@ def signup_user(request):
                 return redirect('/accounts/login/')
 
     return render(request, template_name, context)
-
 
 def login_user(request):
     context={
@@ -70,11 +71,9 @@ def login_user(request):
 
     return render(request, template_name, context)
 
-
 def logout_user(request):
     logout(request)
     return redirect('login.html')
-
 
 def forgot_password(request):
     context = {
@@ -113,6 +112,8 @@ def forgot_password(request):
     return render(request, template_name, context)
 
 
+# Profile
+
 class ProfileView(LoginRequiredMixin, View):
     def get(self, request, *args, **kwargs):
         if request.user.is_admin:
@@ -120,8 +121,17 @@ class ProfileView(LoginRequiredMixin, View):
         
         return render(request, 'accounts/profile.html', {})
 
+class ProfileEditView(LoginRequiredMixin, View):
+    def get(self, request, *args, **kwargs):
+        pass
+        
+        return render(request, 'accounts/profile_edit.html', {})
+
     def post(self, request, *args, **kwargs):
         pass
+
+
+# Other
 
 def accounts_redirection(request):
     if request.user.is_authenticated:

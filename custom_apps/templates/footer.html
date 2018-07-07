@@ -5,38 +5,38 @@
             <div class="col-sm-3">
                 <h5>Get started</h5>
                 <ul>
-                    <li><a href="{% url 'learner' %}">{% trans "Accueil" %}</a></li>
-                    <li><a href="{% url 'signup_learner' %}">Sign up</a></li>
-                    <li><a href="#">Downloads</a></li>
+                    <li><a href="{% url '' %}">{% trans "Accueil" %}</a></li>
+                    <li><a href="{% url '' %}">Sign up</a></li>
+                    <li><a href="{% url '' %}">Downloads</a></li>
                 </ul>
             </div>
             <div class="col-sm-3">
                 <h5>About us</h5>
                 <ul>
-                    <li><a href="#">Company Information</a></li>
-                    <li><a href="#">Contact us</a></li>
-                    <li><a href="#">Reviews</a></li>
+                    <li><a href="{% url '' %}">Company Information</a></li>
+                    <li><a href="{% url '' %}">Contact us</a></li>
+                    <li><a href="{% url '' %}">Reviews</a></li>
                 </ul>
             </div>
             <div class="col-sm-3">
                 <h5>Support</h5>
                 <ul>
-                    <li><a href="#">FAQ</a></li>
-                    <li><a href="{% url 'help' %}">FAQ</a></li>
-                    <li><a href="#">Forums</a></li>
+                    <li><a href="{% url '' %}">FAQ</a></li>
+                    <li><a href="{% url '' %}">FAQ</a></li>
+                    <li><a href="{% url '' %}">Forums</a></li>
                 </ul>
             </div>
             <div class="col-sm-3">
                 <h5>Legal</h5>
                 <ul>
-                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="{% url 'cgs' %}">Terms of Service</a></li>
                     <li><a href="{% url 'cgu' %}">Terms of Use</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="{% url '' %}">Privacy Policy</a></li>
                 </ul>
             </div>
         </div>
     </div>
     <div class="footer-copyright">
-        <p>© 2018 iLang</p>
+        <p>{{ company }} © {{ annee }}</p>
     </div>
 </footer>
