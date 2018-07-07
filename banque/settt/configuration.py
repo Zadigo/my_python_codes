@@ -1,5 +1,9 @@
 import os
 
+APPS = [
+    'banque.base1',
+]
+
 BASE_DIR = os.path.dirname(__file__)
 
 DATABASE = {

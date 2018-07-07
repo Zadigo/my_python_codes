@@ -23,6 +23,14 @@ GOOGLE_MAPS_SECRET_KEY = ''
 
 LA_POSTE_SECRET_KEY = ''
 
+# Website general information
+ENTERPRISE_DATA = {
+    'company_name':'Kurrikulam',
+    'annee':'annee',
+    'linkedin':'https://www.linkedin.com/company/kurrikulam/',
+    'twitter':'https://twitter.com/Kurrikulam_Jobs',
+}
+
 # Uploading files
 MEDIA_URL = '/media/'
 
