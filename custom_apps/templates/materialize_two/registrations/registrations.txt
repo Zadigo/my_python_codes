@@ -1,0 +1,12 @@
+# PRIMARY REGISTRATION
+It is the base page to register the user with an email address
+and a password.
+
+
+# SECONDARY REGISTRATION
+The secondary page asks the user to enter additional information
+once the account has been created.
+
+# COMPLETE REGISTRATION
+Does both the primary page and secondary page registration at once
+on the same page.

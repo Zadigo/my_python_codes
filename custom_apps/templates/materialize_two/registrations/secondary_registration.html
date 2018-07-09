@@ -1,0 +1,25 @@
+{% extends "base_registrations.html" %}
+{% block registration_form %}
+    <section class="section accounts-secondary">
+        <div class="row">
+            <div class="col l4 offset-l4">
+                <div class="card">
+                    <div class="card-content">
+                        <form action="/profile/" method="GET" id="accounts-form" enctype="text/plain">
+                            <div class="input-field">
+                                <input type="text" name="nom" id="nom" placeholder="Nom" required>
+                            </div>
+                            <div class="input-field">
+                                <input type="text" name="prenom" id="prenom" placeholder="Prénom" required>
+                            </div>
+                            <div class="input-field">
+                                <input type="text" name="cp" id="code-postal" placeholder="Code postal">
+                            </div>
+                            <button type="submit" class="btn-large wave-effect">Profil</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock registration_form %}

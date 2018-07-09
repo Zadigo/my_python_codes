@@ -14,104 +14,48 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css">
     </head>
     <body>
-        <header class="dashboard">
-            <!-- Sidenav -->
-            <div class="side-nav teal darken-2 hide-on-med-and-down">
-                <ul class="li side-nav-items">
-                    <a href="" class="side-nav-item">
-                        <li><i class="material-icons">person</i>Profile</li>
-                    </a>
-                    <a href="" class="side-nav-item">
-                        <li>Title</li>
-                    </a>
-                    <a href="" class="side-nav-item">
-                        <li>Title</li>
-                    </a>
-                </ul>
-            </div>
-            <!-- Main page -->
-            <section class="section" id="main-page">
-                <div class="container">
-                    <div class="row">
-                        {% block main_page %}
-                            <div class="col s12 m12 l12 x12" id="user-details">
-                                <div class="card-panel center">
+        <header style="background-image:url('fashion-1.jpeg');height:100vh;width:100%;background-position: center;background-repeat: no-repeat;background-size: cover;">
+                <section class="section registrations">
+                        <div class="row">
+                            <div class="col l4 offset-l4">
+                                <div class="card">
                                     <div class="card-content">
-                                        <div class="row">
-                                            <img src="https://unsplash.com/photos/kMgtp2f7yKs" alt="avatar" class="avatar">
-                                            <h4>{{ username }}</h4>
-                                            <p>{{ small_presentation }}</p>
-                                        </div>
-                                        <div class="row">
-                                            <ul class="list-inline center">
-                                                <li id="social-item"><a href="{{ twitter }}"><i class="fab fa-twitter"></i></a></li>
-                                                <li id="social-item"><a href="{{ facebook }}"><i class="fab fa-facebook"></i></a></li>
-                                                <li id="social-item"><a href="{{ linkedin }}"><i class="fab fa-linkedin"></i></a></li>
-                                            </ul>
-                                        </div>
-                                        <!-- Card menu -->
-                                        <div class="row teal" id="card-menu">
-                                            <a href="#profile-details" id="profile-details" data-menu="details">
-                                                <div class="col l4">
-                                                    <i class="material-icons">account_circle</i>
+                                        <form method="POST" id="registration-form" enctype="multipart/form-data">
+                                            {% csrf_token %}
+                                            {% if request.path == '/signup/' %}
+                                                <div class="input-field">
+                                                    <input type="text" name="nom" id="nom" placeholder="Nom">
                                                 </div>
-                                            </a>
-                                            <a href="#skills-details" id="skills-details" data-menu="skills">
-                                                <div class="col l4">
-                                                    <i class="material-icons">stars</i>
+                                                <div class="input-field">
+                                                    <input type="text" name="prenom" id="prenom" placeholder="Prenom">
                                                 </div>
-                                            </a>
-                                            <a href="#contact-details" id="contact-details" data-menu="contact">
-                                                <div class="col l4">
-                                                    <i class="material-icons">email</i>
+                                            {% endif %}
+                                            <div class="input-field">
+                                                <input type="email" name="email" id="email" placeholder="Email">
+                                            </div>
+                                            {% if request.path != "/forgot-password/" %}
+                                                <div class="input-field">
+                                                    <input type="password" name="password" id="password" placeholder="Password">
                                                 </div>
-                                            </a>
-                                        </div>
-                                        <div class="row" id="about-me">
-                                            <h5>About me</h5>
-                                            <p>
-                                                {{ about_me }}
-                                            </p>
-                                            <hr id="hr-profile-card">
-                                            <h5>Hobbies</h5>
-                                            <p>
-                                                {{ hobbies }}
-                                            </p>
-                                        </div>
-                                        <div class="row hide" id="skills">
-                                            <h5>Compétences</h5>
-                                            <p>
-                                                {{ skills }}
-                                            </p>
-                                            <hr>
-                                            <h5>Education</h5>
-                                            <p>
-                                                {{ education }}
-                                            </p>
-                                        </div>
-                                        <div class="row hide" id="contact">
-                                            <h5>Contact</h5>
-                                            <p>
-                                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
-                                                Exercitationem, rerum ab dolorem totam obcaecati, 
-                                                nulla mollitia expedita corrupti sit esse non autem! 
-                                                Dignissimos omnis aliquid repudiandae 
-                                                cupiditate necessitatibus dolorem accusamus.
-                                            </p>
-                                            <hr>
-                                            <a href="/action/?action=entretien" class="btn-large"><i class="material-icons left white-text">favorite</i>Entretien</a>
-                                            <a href="/action/?action=rejeter" class="btn-large"><i class="material-icons left white-text">remove_circle</i>Rejeter</a>
-                                            <a href="/action/?action=snooze" class="btn-large"><i class="material-icons left white-text">hourglass_empty</i>Snooze</a>
-                                        </div>
+                                            {% endif %}
+                                            {% if request.path == '/signup/' %}
+                                                <p>
+                                                    <label>
+                                                        <input type="checkbox" class="filled-in" id="accept-cgu" name="accept-cgu">
+                                                        <span>Vous consentez à suivre nos règles 
+                                                            inscrites dans nos <a href="{% url 'cgu' %}">CGU</a>
+                                                        </span>
+                                                    </label>
+                                                </p>
+                                            {% endif %}
+                                            <button type="submit" class="btn-large wave-effect">{{ registration_button }}</button>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
-                        {% endblock main_page %}
-                    </div>
-                </div>
-            </section>
+                        </div>
+                    </section>
         </header>
-
 
         <!-- jQuery -->
         <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
@@ -123,6 +67,6 @@
             const elem = document.querySelectorAll('.materialboxed');
             M.Materialbox.init(elem, {});
         </script>
-        <script src="dashboard.js"></script>
+        <script src="test.js"></script>
     </body>
 </html>
