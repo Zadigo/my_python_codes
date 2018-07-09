@@ -1,0 +1,11 @@
+<ul class="collection with-header">
+    <li class="collection-header"><h4>Title</h4></li>
+    {% for x in y %}
+        <li class="collection-item">
+            <span class="title">{{ x.content }}</span>
+            <a href="{% url '' x.id %}" class="secondary-content">
+                <i class="material-icons">build</i>
+            </a>
+        </li>
+    {% endfor %}
+</ul>

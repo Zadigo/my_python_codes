@@ -1,0 +1,19 @@
+<nav class="nav-wraper">
+    <div class="container">
+        <a href="{% url 'home' %}" class="brand-logo">Site</a>
+        <a href="#" class="sidenav-trigger" data-target="mobile-links">
+            <i class="material-icons">menu</i>
+        </a>
+        <ul class="right hide-on-med-and-down">
+            <li><a href="{% url 'contact' %}">Contact</a></li>
+            <li><a href="{% url 'about' %}">About</a></li>
+            <li><a href="{% url 'contact' %}" class="btn-small">Connexion</a></li>
+        </ul>
+    </div>
+</nav>
+
+<ul id="mobile-links" class="sidenav">
+    <li><a href="{% url 'contact' %}">Contact</a></li>
+    <li><a href="{% url 'contact' %}">Connexion</a></li>
+    <li><a href="{% url 'about' %}">About</a></li>
+</ul>
