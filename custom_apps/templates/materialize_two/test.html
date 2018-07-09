@@ -10,33 +10,16 @@
         <!--Import Google Icon Font-->
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="dashboard.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css">
     </head>
     <body>
         <header class="dashboard">
-            <!-- Navbar -->
-            <div class="navbar-fixed">
-                <nav class="teal">
-                    <div class="container">
-                        <div class="nav-wrapper">
-                            <a href="#" class="brand-logo">Brand</a>
-                            <a href="#" class="sidenav-trigger" data-target="mobile-links">
-                                <i class="material-icons">menu</i>
-                            </a>
-                            <ul class="right hide-on-med-and-down">
-                                <li><a href="#" id="contact">Connexion</a></li>
-                            </ul>
-                            <ul class="sidenav" id="mobile-links">
-                                <li><a href="#" id="contact">Connexion</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </nav>
-            </div>
-            <div class="side-nav teal darken-2">
+            <!-- Sidenav -->
+            <div class="side-nav teal darken-2 hide-on-med-and-down">
                 <ul class="li side-nav-items">
                     <a href="" class="side-nav-item">
-                        <li>Title</li>
+                        <li><i class="material-icons">person</i>Profile</li>
                     </a>
                     <a href="" class="side-nav-item">
                         <li>Title</li>
@@ -46,22 +29,92 @@
                     </a>
                 </ul>
             </div>
-            <section class="section section-main-content">
+            <!-- Main page -->
+            <section class="section" id="main-page">
                 <div class="container">
                     <div class="row">
-                        <div class="col l8">
-                            <div class="card">
-                                <div class="card-content">
-                                    Test
+                        {% block main_page %}
+                            <div class="col s12 m12 l12 x12" id="user-details">
+                                <div class="card-panel center">
+                                    <div class="card-content">
+                                        <div class="row">
+                                            <img src="https://unsplash.com/photos/kMgtp2f7yKs" alt="avatar" class="avatar">
+                                            <h4>{{ username }}</h4>
+                                            <p>{{ small_presentation }}</p>
+                                        </div>
+                                        <div class="row">
+                                            <ul class="list-inline center">
+                                                <li id="social-item"><a href="{{ twitter }}"><i class="fab fa-twitter"></i></a></li>
+                                                <li id="social-item"><a href="{{ facebook }}"><i class="fab fa-facebook"></i></a></li>
+                                                <li id="social-item"><a href="{{ linkedin }}"><i class="fab fa-linkedin"></i></a></li>
+                                            </ul>
+                                        </div>
+                                        <!-- Card menu -->
+                                        <div class="row teal" id="card-menu">
+                                            <a href="#profile-details" id="profile-details" data-menu="details">
+                                                <div class="col l4">
+                                                    <i class="material-icons">account_circle</i>
+                                                </div>
+                                            </a>
+                                            <a href="#skills-details" id="skills-details" data-menu="skills">
+                                                <div class="col l4">
+                                                    <i class="material-icons">stars</i>
+                                                </div>
+                                            </a>
+                                            <a href="#contact-details" id="contact-details" data-menu="contact">
+                                                <div class="col l4">
+                                                    <i class="material-icons">email</i>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="row" id="about-me">
+                                            <h5>About me</h5>
+                                            <p>
+                                                {{ about_me }}
+                                            </p>
+                                            <hr id="hr-profile-card">
+                                            <h5>Hobbies</h5>
+                                            <p>
+                                                {{ hobbies }}
+                                            </p>
+                                        </div>
+                                        <div class="row hide" id="skills">
+                                            <h5>Compétences</h5>
+                                            <p>
+                                                {{ skills }}
+                                            </p>
+                                            <hr>
+                                            <h5>Education</h5>
+                                            <p>
+                                                {{ education }}
+                                            </p>
+                                        </div>
+                                        <div class="row hide" id="contact">
+                                            <h5>Contact</h5>
+                                            <p>
+                                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+                                                Exercitationem, rerum ab dolorem totam obcaecati, 
+                                                nulla mollitia expedita corrupti sit esse non autem! 
+                                                Dignissimos omnis aliquid repudiandae 
+                                                cupiditate necessitatibus dolorem accusamus.
+                                            </p>
+                                            <hr>
+                                            <a href="/action/?action=entretien" class="btn-large"><i class="material-icons left white-text">favorite</i>Entretien</a>
+                                            <a href="/action/?action=rejeter" class="btn-large"><i class="material-icons left white-text">remove_circle</i>Rejeter</a>
+                                            <a href="/action/?action=snooze" class="btn-large"><i class="material-icons left white-text">hourglass_empty</i>Snooze</a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        {% endblock main_page %}
                     </div>
                 </div>
             </section>
         </header>
 
 
+        <!-- jQuery -->
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
         <!-- Compiled and minified JavaScript -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
 
@@ -69,10 +122,7 @@
             // Gallery - Images
             const elem = document.querySelectorAll('.materialboxed');
             M.Materialbox.init(elem, {});
-
-            $(document).ready(function() {
-
-            })
         </script>
+        <script src="dashboard.js"></script>
     </body>
 </html>

@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+<div class="col s12 m12 l12 x12">
+    <div class="card">
+        <div class="card-content">
+            <table class="centered responsive-table">
+                <thead>
+                    <tr>
+                        <th>This</th>
+                        <th>That</th>
+                        <th>Another</th>
+                        <th>Modify</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        {% for x in y %}
+                            <td>{{ x.a }}</td>
+                            <td>{{ x.b }}</td>
+                            <td>{{ x.c }}</td>
+                            <td><a href="{% url '' x.id %}"><i class="material-icons">create</i></a></td>
+                        {% endfor %}
+                    </tr>
+                </tbody>
+            </table>
+            <a href="{% url '' %}" class="btn-large">New</a>
+        </div>
+    </div>
+</div>
