@@ -5,6 +5,13 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        {% block meta_description %}
+            <meta name="description" content="">
+        {% endblock meta_description %}
+        {% block meta_keywords %}
+            <meta name="keywords" content="">
+        {% endblock meta_keywords %}
+        <meta name="author" content="{{ author }}">
         <title>{% block title %}{% endblock title %}</title>
 
         <!-- Materialize -->
@@ -12,9 +19,9 @@
         <!-- Google Icon Font-->
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <!-- Fontawesome -->
-
-        <!-- Custom stylesheets and JS -->
-
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css">
+        <!-- Custom stylesheets -->
+        <link rel="stylesheet" href="{% static '.../style.css' %}">
         <!-- Analytics -->
 
         <!-- Tag Manager -->
@@ -25,7 +32,7 @@
         
         {% include "nav.html" %}
         
-        <!-- Header -->
+        <!-- Hero/Header -->
         {% block hero %}
 
             <!-- Main content -->
@@ -46,11 +53,12 @@
 
         <!-- Custom JS -->
         <script>
-            // Navbar
+            // Navbar toggling for mobile
             $(document).ready(function() {
                 $('.sidenav').sidenav();
             })
         </script>
+        <script src="{% static 'style.js' %}"></script>
 
         <!-- Stripe -->
 
