@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+        <!-- Materialize -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+        <!--Import Google Icon Font-->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css">
+    </head>
+    <body>
+        <header class="dashboard">
+            <!-- Navbar -->
+            <div class="navbar-fixed">
+                <nav class="teal">
+                    <div class="container">
+                        <div class="nav-wrapper">
+                            <a href="#" class="brand-logo">Brand</a>
+                            <a href="#" class="sidenav-trigger" data-target="mobile-links">
+                                <i class="material-icons">menu</i>
+                            </a>
+                            <ul class="right hide-on-med-and-down">
+                                <li><a href="#" id="contact">Connexion</a></li>
+                            </ul>
+                            <ul class="sidenav" id="mobile-links">
+                                <li><a href="#" id="contact">Connexion</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <div class="side-nav teal darken-2">
+                <ul class="li side-nav-items">
+                    <a href="" class="side-nav-item">
+                        <li>Title</li>
+                    </a>
+                    <a href="" class="side-nav-item">
+                        <li>Title</li>
+                    </a>
+                    <a href="" class="side-nav-item">
+                        <li>Title</li>
+                    </a>
+                </ul>
+            </div>
+            <section class="section section-main-content">
+                <div class="container">
+                    <div class="row">
+                        <div class="col l8">
+                            <div class="card">
+                                <div class="card-content">
+                                    Test
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </header>
+
+
+        <!-- Compiled and minified JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+
+        <script>
+            // Gallery - Images
+            const elem = document.querySelectorAll('.materialboxed');
+            M.Materialbox.init(elem, {});
+
+            $(document).ready(function() {
+
+            })
+        </script>
+    </body>
+</html>

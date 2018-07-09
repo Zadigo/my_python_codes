@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block hero %}
+    <header style="background-image:url('fashion-1.jpeg');height:100vh;width:100%;background-position: center;background-repeat: no-repeat;background-size: cover;">
+        <section class="call-to-action">
+            <div class="row center-align">
+                <div class="col l12 centralize">
+                    <h1 class="header" id="lead">Learn. Teach. Talk.</h1>
+                </div>
+                <div class="col l12 centralize">
+                    <h4 class="header">Meet the best people around your area to learn french or english</h4>
+                </div>
+                <!-- Recherche -->
+                <div class="col l4 offset-l4 centralize">
+                    <form action="/recherche/" method="GET" enctype="multipart/form-data">
+                        <div class="input-field">
+                            <input type="text" name="recherche" id="chercher-cours" class="white grey-text autocomplete" placeholder="Chercher un cours...">
+                        </div>
+                        <button type="submit" class="btn-large" id="chercher-cours">Rechercher</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </header>
+{% endblock hero %}
