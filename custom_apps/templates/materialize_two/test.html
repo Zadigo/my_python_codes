@@ -14,48 +14,6 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css">
     </head>
     <body>
-        <header style="background-image:url('fashion-1.jpeg');height:100vh;width:100%;background-position: center;background-repeat: no-repeat;background-size: cover;">
-                <section class="section registrations">
-                        <div class="row">
-                            <div class="col l4 offset-l4">
-                                <div class="card">
-                                    <div class="card-content">
-                                        <form method="POST" id="registration-form" enctype="multipart/form-data">
-                                            {% csrf_token %}
-                                            {% if request.path == '/signup/' %}
-                                                <div class="input-field">
-                                                    <input type="text" name="nom" id="nom" placeholder="Nom">
-                                                </div>
-                                                <div class="input-field">
-                                                    <input type="text" name="prenom" id="prenom" placeholder="Prenom">
-                                                </div>
-                                            {% endif %}
-                                            <div class="input-field">
-                                                <input type="email" name="email" id="email" placeholder="Email">
-                                            </div>
-                                            {% if request.path != "/forgot-password/" %}
-                                                <div class="input-field">
-                                                    <input type="password" name="password" id="password" placeholder="Password">
-                                                </div>
-                                            {% endif %}
-                                            {% if request.path == '/signup/' %}
-                                                <p>
-                                                    <label>
-                                                        <input type="checkbox" class="filled-in" id="accept-cgu" name="accept-cgu">
-                                                        <span>Vous consentez à suivre nos règles 
-                                                            inscrites dans nos <a href="{% url 'cgu' %}">CGU</a>
-                                                        </span>
-                                                    </label>
-                                                </p>
-                                            {% endif %}
-                                            <button type="submit" class="btn-large wave-effect">{{ registration_button }}</button>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-        </header>
 
         <!-- jQuery -->
         <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>

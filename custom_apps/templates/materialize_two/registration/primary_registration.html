@@ -1,0 +1,18 @@
+{% block registration_fields %}
+    <div class="input-field">
+        <input type="email" name="email" id="email">
+    </div>
+    {% if request.path != "/forgot-password/" %}
+        <div class="input-field">
+            <input type="password" name="password" id="password">
+        </div>
+    {% endif %}
+    {% if request.path == '/signup/' %}
+        <p class="acceptation-cgu">
+            <label for="cgu">
+                <input type="checkbox" class="filled-in"/ name="acceptation-cgu">
+                <span>Vous consentez à suivre nos règles inscrites dans nos <a href="#">CGU</a></span>
+            </label>
+        </p>
+    {% endif %}
+{% endblock registration_fields %}

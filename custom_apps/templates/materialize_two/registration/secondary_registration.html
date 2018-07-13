@@ -1,0 +1,12 @@
+{% extends "base_registrations.html" %}
+{% block registration_fields %}
+    <div class="input-field">
+        <input type="text" name="nom" id="nom" placeholder="Nom" required>
+    </div>
+    <div class="input-field">
+        <input type="text" name="prenom" id="prenom" placeholder="Prénom" required>
+    </div>
+    <div class="input-field">
+        <input type="text" name="cp" id="code-postal" placeholder="Code postal">
+    </div>
+{% endblock registration_fields %}

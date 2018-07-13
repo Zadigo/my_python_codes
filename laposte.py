@@ -16,8 +16,7 @@ class CheckAdress:
         try:
             self.auth_request  = req.get(
                 BASE_URL,
-                headers={'X-Okapi-Key': self.secret_key
-                }
+                headers={'X-Okapi-Key': self.secret_key}
             )
         except ConnectionError as error:
             print('There was an error connecting'

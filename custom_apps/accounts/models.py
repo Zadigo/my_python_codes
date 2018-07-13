@@ -110,7 +110,7 @@ class MyUserProfile(models.Model):
     code_postal         = models.IntegerField(blank=True, null=True)
 
     def __str__(self):
-        return self.addresse
+        return self.code_postal
 
 # This creates the user profile
 # automatically when a new user

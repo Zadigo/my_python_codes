@@ -1,0 +1,23 @@
+{% load i18n %}
+<div class="footer-basic">
+    <footer>
+        <ul class="list-inline">
+            <li id="accueil" class="list-inline-item">
+                <a href="{% url 'learner' %}">Home</a>
+            </li>
+            <li id="about" class="list-inline-item">
+                <a href="{% url 'help' %}">À propos</a>
+            </li>
+            <li id="cgu" class="list-inline-item">
+                <a href="{% url 'cgu' %}">CGU</a>
+            </li>
+            <li id="cgv" class="list-inline-item">
+                <a href="{% url 'cgv' %}">CGV</a>
+            </li>
+            <!-- <li id="confidentialite" class="list-inline-item">
+                <a href="#">Privacy Policy</a>
+            </li> -->
+        </ul>
+        <p class="copyright">{{ company }} © 2018</p>
+    </footer>
+</div>

@@ -49,7 +49,7 @@ class UserCreationForm(forms.ModelForm):
             user.save()
 
         return user
-        
+
 class UserChangeForm(forms.ModelForm):
     """
     A form for updating users. Includes all the fields on
@@ -88,15 +88,20 @@ class UserLoginForm(AuthenticationForm):
 
         return self.cleaned_data
 
+class UserSignupForm(forms.ModelForm):
+    class Meta:
+        model = MyUser
+        fields = ('nom', 'prenom', 'email', 'password',)
+
 class UserForgotPasswordForm(forms.Form):
     email = EmailField(
-        widget=widgets.EmailInput()
+        widget=widgets.EmailInput(attrs={'placeholder':'email'})
     )
 
 class MyUserTeacherProfileForm(forms.ModelForm):
     class Meta:
         model   = MyUserProfile
-        fields  = []
+        fields  = ['__all__']
 
 class MyUserLearnerProfileForm(forms.ModelForm):
     class Meta:

@@ -1,11 +1,11 @@
-{% extends "accounts/base_accounts.html" %}
-{% load widget_tweaks %}
-{% block title %}Se connecter | Kurrikulam{% endblock title %}
+{% extends "base_registrations.html" %}
+{% load i18n %}
+{% block title %}{% trans 'Se connecter' %} | Kurrikulam{% endblock title %}
 
-{% block form_fields %}
+{% block registration_form %}
     {% for field in form %}
-        <div class="form-group">
-            {{ field|attr:"class:form-control" }}
+        <div class="input-field">
+            {{ field }}
         </div>
     {% endfor %}
-{% endblock form_fields %}
+{% endblock registration_form %}

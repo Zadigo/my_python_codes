@@ -20,3 +20,15 @@
 
 # ta=decorator(e)
 # ta()
+
+class Base(type):
+    def __new__(self, cls, bases, cls_dict):
+        new_class = super().__new__(self, cls, bases, cls_dict)
+        
+        return new_class
+
+class Goog(metaclass=Base):
+    pass
+
+class A(Goog):
+    pass

@@ -30,3 +30,4 @@
 
 # class IntegerTyped(Typed):
 #     ty = int
+

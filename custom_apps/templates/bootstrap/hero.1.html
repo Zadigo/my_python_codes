@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block hero %}
+    <section id="hero" class="d-flex flex-column justify-content-between">
+        <div id="top">
+            {% if request.path == '/learner/' %}
+                {% include 'nav.html' %}
+            {% endif %}
+
+            <div class="container">
+                <div class="row">
+                    <div class="col offset-lg-0">
+
+                        <section id="lead" class="text-white">
+                            <h1 id="lead-phrase" class="text-uppercase">Learn. Speak. Talk</h1>
+                            <h2 id="lead-subtitle">Heading</h2>
+                            <a id="btn-rejoindre" class="btn btn-primary btn-lg" type="button" href="{% url 'signup_learner' %}">Nous rejoindre</a>
+                        </section>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="bottom" class="text-center text-white">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-2 col-md-2 col-lg-2 col-xl-2 offset-sm-0 offset-md-0 offset-lg-3 offset-xl-3">
+                        <a id="btn-social-instagram" href="#"><i class="fab fa-instagram social"></i></a>
+                    </div>
+                    <div class="col-sm-2 col-md-2 col-lg-2 col-xl-2">
+                        <a id="btn-social-twitter" href="#"><i class="fab fa-twitter social"></i></a>
+                    </div>
+                    <div class="col-sm-2 col-md-2 col-lg-2 col-xl-2 social">
+                        <a id="btn-social-facebook" href="#"><i class="fab fa-facebook social"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock hero %}

@@ -1,4 +1,5 @@
-{%load static %}
+{% load static %}
+{% load i18n %}
 <!DOCTYPE html>
 <html lang="fr">
     <head>
@@ -21,7 +22,10 @@
         <!-- Fontawesome -->
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css">
         <!-- Custom stylesheets -->
-        <link rel="stylesheet" href="{% static '.../style.css' %}">
+        <link rel="stylesheet" href="{% static 'accounts/registrations.css' %}">
+        <link rel="stylesheet" href="{% static 'accounts/profile.css' %}">
+        <!-- Favicon -->
+        <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}"/>
         <!-- Analytics -->
 
         <!-- Tag Manager -->
@@ -41,8 +45,8 @@
                 
                 {% endblock body %}
             </div>
-        
-            {% endblock hero %}
+    
+        {% endblock hero %}
             
         {% include "footer.html" %}
         
@@ -61,7 +65,7 @@
         <script src="{% static 'style.js' %}"></script>
 
         <!-- Stripe -->
-
+        <script src="{% static 'accounts/api_stripe.js' %}"></script>
         <!-- Appcues -->
     </body>
 

@@ -1,0 +1,25 @@
+<nav class="navbar navbar-light navbar-expand-sm {% if request.path != '/learner/' %}bg-white fixed-top{% endif %}">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="{% url 'learner' %}">Brand</a>
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1">
+            <span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse"
+            id="navcol-1">
+            <ul class="nav navbar-nav ml-auto">
+                {% if user.is_authenticated %}
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link" href="{% url 'profile' %}">Profil</a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link" href="{% url 'logout' %}">Déconnexion</a>
+                    </li>
+                {% else %}
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link" href="{% url 'login' %}">Connexion</a>
+                    </li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+</nav>

@@ -1,0 +1,40 @@
+#lead {
+    margin-bottom: 0rem;
+}
+
+#secondary-lead {
+    margin-bottom: 2.5rem;
+}
+
+#chercher-cours {
+    padding: 0.6rem !important;
+    border-radius: 0.300rem;
+    font-size: 1.2rem;
+    border: 0px solid #ffffff !important;
+}
+
+#contact.row {
+    margin-bottom: 0.5rem;
+}
+
+#social-media {
+    margin-bottom: 0rem;
+}
+
+footer .col {
+    padding-left: 0rem;
+}
+
+footer i {
+    font-size: 2rem;
+}
+
+.footer-first-row-no-padding {
+    margin-bottom: 0rem;
+}
+
+.list-inline {
+    padding-left: 0;
+    margin-left: -5px;
+    list-style: none;
+}
