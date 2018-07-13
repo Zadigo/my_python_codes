@@ -1,7 +1,8 @@
 $(document).ready(function() {
     // Dynamically masking the fields of
     // the form given the path in the
-    // current url
+    // current url. This is to use with
+    // the complete form template
     var p = window.location.pathname;
     if (p === '/book/') {
         var fld = $('input[name="nom"]');

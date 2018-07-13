@@ -2,7 +2,6 @@
 It is the base page to register the user with an email address
 and a password.
 
-
 # SECONDARY REGISTRATION
 The secondary page asks the user to enter additional information
 once the account has been created.
