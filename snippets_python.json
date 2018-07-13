@@ -55,7 +55,7 @@
 		"prefix": "django-return-context",
 		"body": [
 			"context = {}",
-			"return render(request, '${1}.html', context)",
+			"return render(request, '${1}.html', context)"
 		],
 		"description": "Return render context"
 	},
@@ -80,7 +80,7 @@
 			"\tpass",
 			"\n",
 			"class ${Subname}(${Name}):",
-			"\tpass",
+			"\tpass"
 		],
 		"description": "Subclass"
 	},
@@ -93,7 +93,7 @@
 			"\n",
 			"urlpatterns = [",
 			"\turl(r'^${url}', views.${view_name}.as_view(), name='${name}'),",
-			"]",
+			"]"
 		],
 		"description": "Urls"
 	},
@@ -147,4 +147,18 @@
 		],
 		"description": "Django Field Tweaks"
 	},
+	"Django post save": {
+		"prefix": "django-post-save",
+		"body": [
+			"from django.db.models.signals import post_save",
+			"from django.dispatch import receiver",
+			"\n",
+			"@receiver(post_save, sender=${model})",
+			"def ${defintion_name}(sender, instance, created, **kwargs):",
+			"\tif created:",
+			"\t\tinstance.${object}",
+			"\t\tinstance.save()"
+		],
+		"description": "Django pre save definition"
+	}
 }
