@@ -20,7 +20,7 @@ from django.db.models import Q
 from accounts.models import MyUserProfile
 
 from accounts.forms import MyUserTeacherProfileForm, MyUserLearnerProfileForm, UserLoginForm, UserCreationForm
-from accounts.forms import UserLoginForm, UserForgotPasswordForm
+from accounts.forms import UserLoginForm, UserForgotPasswordForm, user
 
 
 
@@ -30,7 +30,7 @@ MyUser = get_user_model()
 # Accounts
 
 def signup_user(request):
-    context={}
+    context={'form':MyUserSignupForm}
     template_name='registration/signup.html'
 
     if request.method == 'POST':
@@ -52,7 +52,7 @@ def signup_user(request):
 
 def login_user(request):
     context={
-        'form': UserLoginForm,
+        'form': MyUserLoginForm,
     }
     template_name   = 'registration/login.html'
 
@@ -73,11 +73,11 @@ def login_user(request):
 
 def logout_user(request):
     logout(request)
-    return redirect('login.html')
+    return redirect('/login/', permanent=False)
 
 def forgot_password(request):
     context = {
-        'form': UserForgotPasswordForm
+        'form': MyUserForgotPasswordForm
     }
     template_name = 'registration/forgot-password.html'
 
@@ -117,7 +117,7 @@ def forgot_password(request):
 class ProfileView(LoginRequiredMixin, View):
     def get(self, request, *args, **kwargs):
         if request.user.is_admin:
-            return redirect('/admin/')
+            return redirect('/admin/', permanent=False)
         
         return render(request, 'accounts/profile.html', {})
 

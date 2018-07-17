@@ -4,16 +4,17 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.forms import ReadOnlyPasswordHashField
 from django.contrib.auth import get_user_model
 
-from django.forms import EmailField
+from django.forms import EmailField, NumberInput, CharField, ChoiceField, Textarea
 from django.forms import widgets
 from django.forms import Widget
 
 from django.utils.translation import gettext, gettext_lazy as _
 
 from accounts.models import MyUserProfile
+# from accounts.utils import credit_card_months, credit_card_years
 
 
-
+# Registration
 
 MyUser = get_user_model()
 
@@ -49,7 +50,7 @@ class UserCreationForm(forms.ModelForm):
             user.save()
 
         return user
-
+        
 class UserChangeForm(forms.ModelForm):
     """
     A form for updating users. Includes all the fields on
@@ -70,11 +71,11 @@ class UserChangeForm(forms.ModelForm):
 
 class UserLoginForm(AuthenticationForm):
     username=EmailField(
-        label=_("Email"),
+        # label=_("Email"),
         widget=widgets.EmailInput(attrs={'placeholder': 'Email...'})
     )
     password = forms.CharField(
-        label= _("Password"),
+        # label= _("Password"),
         strip=False,
         widget=forms.PasswordInput(attrs={'placeholder': 'Password...'}),
     )
@@ -88,22 +89,48 @@ class UserLoginForm(AuthenticationForm):
 
         return self.cleaned_data
 
-class UserSignupForm(forms.ModelForm):
-    class Meta:
-        model = MyUser
-        fields = ('nom', 'prenom', 'email', 'password',)
-
 class UserForgotPasswordForm(forms.Form):
-    email = EmailField(
-        widget=widgets.EmailInput(attrs={'placeholder':'email'})
-    )
+    password1 = CharField(widget=widgets.PasswordInput(attrs={'placeholder':'Mot de passe'}))
+    password2 = CharField(widget=widgets.PasswordInput(attrs={'placeholder':'Votre mot de passe encore'}))
+
+class UserChangePasswordForm(forms.Form):
+    email = EmailField(widget=widgets.EmailInput(attrs={'placeholder':'Email'}))
 
 class MyUserTeacherProfileForm(forms.ModelForm):
     class Meta:
         model   = MyUserProfile
-        fields  = ['__all__']
+        fields  = ['pays_de_naissance', 'langue', 'addresse', 'code_postal']
 
 class MyUserLearnerProfileForm(forms.ModelForm):
     class Meta:
         model   = MyUserProfile
-        fields  = []
+        fields  = ['pays_de_naissance', 'langue', 'statut', 'addresse', 'code_postal']
+
+class UserSignupForm(forms.Form):
+    nom         = CharField(widget=widgets.TextInput(attrs={'placeholder':'Nom'}))
+    prenom      = CharField(widget=widgets.TextInput(attrs={'placeholder':'Prenom'}))
+    email       = EmailField(widget=widgets.EmailInput(attrs={'placeholder':'Email'}))
+    password    = CharField(widget=widgets.PasswordInput(attrs={'placeholder':'Password'}))
+
+
+# Payments
+
+class PaymentForm(forms.Form):
+    card_holder     = CharField(widget=widgets.TextInput(attrs={'placeholder':'Name on Card'}))
+    card_number     = CharField(widget=widgets.TextInput(attrs={'placeholder':'Numéro de carte'}))
+    # expiry_month    = ChoiceField(choices=credit_card_months())
+    # expiry_year     = ChoiceField(choices=credit_card_years())
+    cvv             = CharField(widget=widgets.TextInput(attrs={'placeholder':'CVV'}))
+
+class BillingInformationForm(forms.Form):
+    full_name           = CharField(widget=widgets.TextInput(attrs={'placeholder':'Nom'}))
+    address_line_one    = CharField(widget=widgets.TextInput(attrs={'placeholder':'Adresse'}))
+    address_line_two    = CharField(widget=widgets.TextInput(attrs={'placeholder':'Adresse'}))
+    city                = CharField(widget=widgets.TextInput(attrs={'placeholder':'City'}))
+    state               = CharField(widget=widgets.TextInput(attrs={'placeholder':'State'}))
+    zip_code            = CharField(widget=widgets.TextInput(attrs={'placeholder':'Code postal'}))
+    # Country           = ChoiceField(choices=())
+    phone_number        = CharField(widget=widgets.TextInput(attrs={'placeholder':'Téléphone'}))
+
+class CommentsForm(forms.Form):
+    comment = CharField(widget=widgets.Textarea())

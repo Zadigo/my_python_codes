@@ -25,3 +25,15 @@
 #profile-section li a {
     margin-top: 0rem;
 }
+
+.card-content .col.border-right {
+    border-right: 1px solid #ececec;
+}
+
+.card .col.box-one {
+    height: 100%;
+}
+
+.padding-top-1 {
+    padding-top: 0.9825rem;
+}

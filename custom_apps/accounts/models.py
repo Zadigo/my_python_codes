@@ -82,6 +82,10 @@ class MyUser(AbstractBaseUser):
     
     objects = MyUserManager()
 
+    # Change in order to make
+    # either the username or
+    # the user email the default
+    # login element
     USERNAME_FIELD      = 'email'
     REQUIRED_FIELDS     = []
 
@@ -105,7 +109,6 @@ class MyUser(AbstractBaseUser):
 
 class MyUserProfile(models.Model):
     myuser_id           = models.ForeignKey(MyUser, on_delete=models.CASCADE)
-
     addresse            = models.CharField(max_length=100, blank=True, null=True)
     code_postal         = models.IntegerField(blank=True, null=True)
 
@@ -119,9 +122,3 @@ class MyUserProfile(models.Model):
 def create_user_profile(sender, instance, created, **kwargs):
     if created:
         MyUserProfile.objects.create(myuser_id=instance)
-
-# @receiver(post_save, sender=MyUser)
-# def save_user_profile(sender, instance, **kwargs):
-#     # instance.myuser_id.save()
-#     pass
-
