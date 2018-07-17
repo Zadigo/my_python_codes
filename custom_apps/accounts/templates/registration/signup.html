@@ -2,7 +2,7 @@
 {% load i18n %}
 {% block title %}{% trans 'Créer un compte' %} | Kurrikulam{% endblock title %}
 
-{% block registration_form %}
+{% block form_fields %}
     {% for field in form %}
         <div class="input-field">
             {{ field }}
@@ -14,4 +14,4 @@
             <span>Vous consentez à suivre nos <a href="{% url 'cgu' %}">CGU</a></span>
         </label>
     </p>
-{% endblock registration_form %}
+{% endblock form_fields %}

@@ -72,12 +72,12 @@ class UserChangeForm(forms.ModelForm):
 class UserLoginForm(AuthenticationForm):
     username=EmailField(
         # label=_("Email"),
-        widget=widgets.EmailInput(attrs={'placeholder': 'Email...'})
+        widget=widgets.EmailInput(attrs={'placeholder': 'Email'})
     )
     password = forms.CharField(
         # label= _("Password"),
         strip=False,
-        widget=forms.PasswordInput(attrs={'placeholder': 'Password...'}),
+        widget=forms.PasswordInput(attrs={'placeholder': 'Password'}),
     )
 
     def clean2(self):
@@ -95,6 +95,12 @@ class UserForgotPasswordForm(forms.Form):
 
 class UserChangePasswordForm(forms.Form):
     email = EmailField(widget=widgets.EmailInput(attrs={'placeholder':'Email'}))
+
+class UserChangePasswordForm(forms.Form):
+    password1 = forms.CharField(widget=widgets.PasswordInput(attrs={'placeholder':'Entrez votre mot de passe ici'}))
+    password2 = forms.CharField(widget=widgets.PasswordInput(attrs={'placeholder':'Entrez encore'}))
+
+# Profile
 
 class MyUserTeacherProfileForm(forms.ModelForm):
     class Meta:
