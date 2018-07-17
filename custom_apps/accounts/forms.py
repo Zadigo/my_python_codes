@@ -92,6 +92,12 @@ class UserSignupForm(forms.ModelForm):
     class Meta:
         model = MyUser
         fields = ('nom', 'prenom', 'email', 'password',)
+        widgets = {
+            'nom':widgets.TextInput(attrs={'placeholder':'Nom'}),
+            'prenom':widgets.TextInput(attrs={'placeholder':'Prenom'}),
+            'email':widgets.EmailInput(attrs={'placeholder':'Email'}),
+            'password':widgets.PasswordInput(attrs={'placeholder':'Mot de passe'}),
+        }
 
 class UserForgotPasswordForm(forms.Form):
     email = EmailField(
