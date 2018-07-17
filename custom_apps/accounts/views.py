@@ -31,7 +31,7 @@ MyUser = get_user_model()
 # Registrations
 
 def signup_user(request):
-    context={'form':UserSignupForm}
+    context={'form':UserSignupForm, 'registration_button':'Se connecter'}
     template_name='registration/signup.html'
 
     if request.method == 'POST':
@@ -51,7 +51,7 @@ def signup_user(request):
     return render(request, template_name, context)
 
 def login_user(request):
-    context={'form': UserLoginForm}
+    context={'form': UserLoginForm, 'registration_button':'S\'enregistrer'}
     template_name   = 'registration/login.html'
 
     if request.method == 'POST':
@@ -73,7 +73,7 @@ def logout_user(request):
     return redirect('/login/', permanent=False)
 
 def forgot_password(request):
-    context = {'form': UserForgotPasswordForm}
+    context = {'form': UserForgotPasswordForm, 'registration_button':'Soumettre'}
     template_name = 'registration/forgot_password.html'
 
     if request.method == 'POST':
@@ -105,7 +105,7 @@ def forgot_password(request):
 
 def change_password(request):
     # TODO
-    context = {'form':UserChangePasswordForm}
+    context = {'form':UserChangePasswordForm, 'registration_button':'Changer'}
     template_name = 'registration/change_password.html'
     form = UserChangePasswordForm(request.POST)
     if form.is_valid():
