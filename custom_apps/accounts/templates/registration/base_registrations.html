@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block body %}
+    <section class="section">
+        <div class="card">
+            <div class="card-content">
+                <form method="post">
+                    {% csrf_token %}
+                    {% block form_fields %}
+            
+                    {% endblock form_fields %}
+                    <button type="submit" class="btn">Login</button>
+                </form>
+            </div>
+        </div>
+    </section>
+{% endblock body %}
+
