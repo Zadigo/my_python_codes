@@ -3,12 +3,12 @@
     <section class="section">
         <div class="card">
             <div class="card-content">
-                <form method="post">
+                <form method="post" id="form-registrations">
                     {% csrf_token %}
                     {% block form_fields %}
             
                     {% endblock form_fields %}
-                    <button type="submit" class="btn">Login</button>
+                    <button type="submit" class="btn">{{ registration_button }}</button>
                 </form>
             </div>
         </div>
