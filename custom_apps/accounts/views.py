@@ -28,7 +28,7 @@ from django.contrib.messages import add_message
 
 MyUser = get_user_model()
 
-# Accounts
+# Registrations
 
 def signup_user(request):
     context={'form':UserSignupForm}
@@ -103,6 +103,15 @@ def forgot_password(request):
 
     return render(request, template_name, context)
 
+def change_password(request):
+    # TODO
+    context = {'form':UserChangePasswordForm}
+    template_name = 'registration/change_password.html'
+    form = UserChangePasswordForm(request.POST)
+    if form.is_valid():
+        add_message(request, messages.INFO, 'Votre mot de passe a été changé', extra_tags='success')
+        return redirect('/login/', permanent=False)
+    return render(request, template_name, context)
 
 # Profile
 

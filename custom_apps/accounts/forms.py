@@ -98,6 +98,12 @@ class UserForgotPasswordForm(forms.Form):
         widget=widgets.EmailInput(attrs={'placeholder':'Email'})
     )
 
+class UserChangePasswordForm(forms.Form):
+    password1 = forms.CharField(widget=widgets.PasswordInput(attrs={'placeholder':'Entrez votre mot de passe ici'}))
+    password2 = forms.CharField(widget=widgets.PasswordInput(attrs={'placeholder':'Entrez encore'}))
+
+# Profile
+
 class MyUserTeacherProfileForm(forms.ModelForm):
     class Meta:
         model   = MyUserProfile
@@ -107,3 +113,5 @@ class MyUserLearnerProfileForm(forms.ModelForm):
     class Meta:
         model   = MyUserProfile
         fields  = []
+
+# Payments
