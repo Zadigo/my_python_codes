@@ -20,9 +20,10 @@ from django.db.models import Q
 from accounts.models import MyUserProfile
 
 from accounts.forms import MyUserTeacherProfileForm, MyUserLearnerProfileForm, UserLoginForm, UserCreationForm
-from accounts.forms import UserLoginForm, UserForgotPasswordForm
+from accounts.forms import UserLoginForm, UserForgotPasswordForm, UserSignupForm
 
-
+from django.contrib import messages
+from django.contrib.messages import add_message
 
 
 MyUser = get_user_model()
@@ -30,7 +31,7 @@ MyUser = get_user_model()
 # Accounts
 
 def signup_user(request):
-    context={}
+    context={'form':UserSignupForm}
     template_name='registration/signup.html'
 
     if request.method == 'POST':
@@ -40,20 +41,17 @@ def signup_user(request):
         password    = request.POST['password']
 
         if MyUser.objects.filter(email__iexact=email).exists():
-            context['alert_class']    ='danger'
-            context['alert']          ='Il semblerait que vous avez déjà un compte chez nous'
+            add_message(request, messages.WARNING, 'Il semblerait que vous ayez déjà un compte chez nous', extra_tags='warning')
         else:
             user = MyUser.objects.create_user(email, nom=nom, prenom=prenom, password=password)
 
             if user:
-                return redirect('/accounts/login/')
+                return redirect('/login/', permanent=False)
 
     return render(request, template_name, context)
 
 def login_user(request):
-    context={
-        'form': UserLoginForm,
-    }
+    context={'form': UserLoginForm}
     template_name   = 'registration/login.html'
 
     if request.method == 'POST':
@@ -66,20 +64,17 @@ def login_user(request):
             return redirect(request.GET.get('next') or 'profile')
 
         else:
-            context['alert_class']    = 'danger'
-            context['alert']          = 'Votre adresse mail ou mot de passe ne sont pas correctes'
+            add_message(request, messages.INFO, 'Votre adresse mail ou mot de passe ne sont pas correctes', extra_tags='warning')
 
     return render(request, template_name, context)
 
 def logout_user(request):
-    logout(request)
-    return redirect('login.html')
+    add_message(request, messages.INFO, 'Vous avez été déconnecté', extra_tags='success')
+    return redirect('/login/', permanent=False)
 
 def forgot_password(request):
-    context = {
-        'form': UserForgotPasswordForm
-    }
-    template_name = 'registration/forgot-password.html'
+    context = {'form': UserForgotPasswordForm}
+    template_name = 'registration/forgot_password.html'
 
     if request.method == 'POST':
         email = request.POST['email']
@@ -96,17 +91,14 @@ def forgot_password(request):
                     fail_silently=False,
                 )
             except BadHeaderError:
-                context['alert_class'] = 'danger'
-                context['alert'] = ''
+                add_message(request, messages.WARNING, 'Une erreur c\'est produite', extra_tags='warning')
                 template_name = 'registration/forgot.html'
             else:
-                context['alert_class'] = 'success'
-                context['alert'] = ''
+                add_message(request, messages.INFO, 'Veuillez consulter votre boite mail', extra_tags='warning')
                 template_name = 'registration/login.html'
         
         else:
-            context['alert_class'] = 'danger'
-            context['alert'] = ''
+            add_message(request, messages.WARNING, 'Nous n\'avons pas réussi à vous trouver dans notre base de données')
             template_name = 'registration/forgot-password.html'
 
     return render(request, template_name, context)
@@ -117,9 +109,9 @@ def forgot_password(request):
 class ProfileView(LoginRequiredMixin, View):
     def get(self, request, *args, **kwargs):
         if request.user.is_admin:
-            return redirect('/admin/')
+            return redirect('/admin/', permanent=False)
         
-        return render(request, 'accounts/profile.html', {})
+        return render(request, 'accounts/profile.html')
 
 class ProfileEditView(LoginRequiredMixin, View):
     def get(self, request, *args, **kwargs):
@@ -135,9 +127,9 @@ class ProfileEditView(LoginRequiredMixin, View):
 
 def accounts_redirection(request):
     if request.user.is_authenticated:
-        template_name = '/accounts/profile/'
+        template_name = '/profile/'
     else:
-        template_name = '/accounts/signup/.../'
+        template_name = '/signup/'
 
     return redirect(template_name, permanent=False)
 
