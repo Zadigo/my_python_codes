@@ -15,7 +15,7 @@
             {% for app in app_list %}
                 <div class="app-{{ app.app_label }} module">
                     <table class="responsive-table highlight">
-                        <caption class="teal" style="display:block;margin-top:2.5rem;margin-bottom:1.4rem;padding:10px">
+                        <caption class="teal" style="margin-top:2.5rem;margin-bottom:1.4rem;padding:10px">
                             <a href="{{ app.app_url }}" class="white-text" title="{% blocktrans with name=app.name %}Models in the {{ name }} application{% endblocktrans %}">{{ app.name }}</a>
                         </caption>
                         {% for model in app.models %}
