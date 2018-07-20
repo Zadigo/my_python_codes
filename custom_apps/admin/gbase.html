@@ -30,42 +30,35 @@
 
         {% if not is_popup %}
             <!-- Header -->
-            <div class="row teal darken-3 white-text" style="padding:1rem;z-index:-2500;">
-                {% block usertools %}
-                    {% if has_permission %}
-                        <div id="user-tools">
-                            {% block welcome-msg %}
-                                {% trans 'Welcome,' %}
-                                <strong>{% firstof user.get_short_name user.get_username %}</strong>.
-                            {% endblock %}
-                            {% block userlinks %}
-                                {% if site_url %}
-                                    <a href="{{ site_url }}">{% trans 'View site' %}</a> /
+            <header class="teal darken-3 white-text">
+                <div class="container">
+                    <div class="row" style="padding:1rem;">
+                        <div class="col">
+                            {% block usertools %}
+                                {% if has_permission %}
+                                    <div id="user-tools">
+                                        {% block welcome-msg %}
+                                            {% trans 'Welcome,' %}
+                                            <strong>{% firstof user.get_short_name user.get_username %}</strong>.
+                                        {% endblock %}
+                                        
+                                        <!--USER LINKS-->
+                                    </div>
                                 {% endif %}
-                                {% if user.is_active and user.is_staff %}
-                                    {% url 'django-admindocs-docroot' as docsroot %}
-                                    {% if docsroot %}
-                                        <a href="{{ docsroot }}">{% trans 'Documentation' %}</a> /
-                                    {% endif %}
-                                {% endif %}
-                                {% if user.has_usable_password %}
-                                    <a href="{% url 'admin:password_change' %}">{% trans 'Change password' %}</a> /
-                                {% endif %}
-                                <a href="{% url 'admin:logout' %}">{% trans 'Log out' %}</a>
                             {% endblock %}
                         </div>
-                    {% endif %}
-                {% endblock %}
-            </div>
-            <!-- END Header -->
-
-            {% block breadcrumbs %}
-                <div class="breadcrumbs">
-                    <a href="{% url 'admin:index' %}">{% trans 'Home' %}</a>
-                    {% if title %} &rsaquo; {{ title }}{% endif %}
+                        <div class="col s12 l4">
+                                {% block breadcrumbs %}
+                                <div class="breadcrumb">
+                                    <a href="{% url 'admin:index' %}">{% trans 'Home' %}</a>
+                                    {% if title %} &rsaquo; {{ title }}{% endif %}
+                                </div>
+                            {% endblock %}
+                        </div>
+                    </div>
+                    <!-- END Header -->
                 </div>
-            {% endblock %}
-
+            </header>
         {% endif %}
         
         <section class="section">
