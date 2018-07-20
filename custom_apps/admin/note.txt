@@ -1,0 +1,21 @@
+GBASE
+<link rel="stylesheet" type="text/css" href="{% block stylesheet %}{% static "admin/css/base.css" %}{% endblock %}">
+<link rel="stylesheet" type="text/css" href="{% static "admin/css/responsive.css" %}">
+
+LOGIN BLOCK EXTRA STYLE
+<link rel="stylesheet" type="text/css" href="{% static "admin/css/login.css" %}">
+
+INDEX BLOCK SUPER
+<link rel="stylesheet" type="text/css" href="{% static "admin/css/dashboard.css" %}">
+
+SUBMIT LINE
+<input type="submit" value="{% trans 'Save' %}" class="default" name="_save">
+
+SEARCH FORM
+<!-- DIV needed for valid HTML -->
+<label for="searchbar"><img src="{% static "admin/img/search.svg" %}" alt="Search"></label>
+
+
+
+                
+

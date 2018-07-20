@@ -3,8 +3,21 @@
 
 {% block title %}{{ title }} | {{ site_title|default:_('Django site admin') }}{% endblock %}
 
-{% block branding %}
-    <h1 id="site-name"><a href="{% url 'admin:index' %}">{{ site_header|default:_('Django administration') }}</a></h1>
+{% block nav-global %}
+    <!-- Nav -->
+    <nav class="teal">
+        <div class="nav-wraper">
+                {% block branding %}
+                    <a href="{% url 'admin:index' %}" class="brand-logo">{{ site_header|default:_('Django administration') }}</a>
+                {% endblock %}
+            <ul id="nav-mobile" class="right">
+                <li><a href="sass.html">Sass</a></li>
+                <!-- Dropdown Trigger -->
+                <li>
+                    <a class="dropdown-trigger" href="#!" data-target="dropdown1">Dropdown<i class="material-icons right">arrow_drop_down</i></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- En Nav -->
 {% endblock %}
-
-{% block nav-global %}{% endblock %}

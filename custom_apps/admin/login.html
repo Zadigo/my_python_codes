@@ -3,7 +3,7 @@
 
 {% block extrastyle %}
     {{ block.super }}
-    <!--<link rel="stylesheet" type="text/css" href="{% static "admin/css/login.css" %}">-->
+    
     {{ form.media }}
 {% endblock %}
 
@@ -32,28 +32,29 @@
         {% endfor %}
     {% endif %}
 
-    <div id="content-main">
-
-        {% if user.is_authenticated %}
-            <p class="errornote">
-                {% blocktrans trimmed %}
-                    You are authenticated as {{ username }}, but are not authorized to
-                    access this page. Would you like to login to a different account?
-                {% endblocktrans %}
-            </p>
-        {% endif %}
-
+        <div id="content-main">
+            {% if user.is_authenticated %}
+                <p class="errornote">
+                    {% blocktrans trimmed %}
+                        You are authenticated as {{ username }}, but are not authorized to
+                        access this page. Would you like to login to a different account?
+                    {% endblocktrans %}
+                </p>
+            {% endif %}
+        </div>
         <div class="row">
-            <div class="col s12 m12 l6 x6">
+            <div class="col s12 m12 l6 x6 offset-l3">
                 <div class="card">
                     <div class="card-content">
                         <form action="{{ app_path }}" method="post" id="login-form">
                             {% csrf_token %}
                             <div class="input-field">
+                                <!-- <i class="material-icons prefix">person</i> -->
                                 {{ form.username.errors }}
                                 {{ form.username.label_tag }} {{ form.username }}
                             </div>
                             <div class="input-field">
+                                <!-- <i class="material-icons prefix">lock</i> -->
                                 {{ form.password.errors }}
                                 {{ form.password.label_tag }} {{ form.password }}
                                 <input type="hidden" name="next" value="{{ next }}">
@@ -64,12 +65,11 @@
                                     <a href="{{ password_reset_url }}">{% trans 'Forgotten your password or username?' %}</a>
                                 </div>
                             {% endif %}
-                            <button type="submit" class="btn-large" >{% trans 'Log in' %}</button>
+                            <button type="submit" class="btn" >{% trans 'Log in' %}</button>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
-
     </div>
 {% endblock %}
