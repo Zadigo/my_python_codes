@@ -1,0 +1,74 @@
+.section.hero {
+    height: 100vh!important;
+}
+
+.section.direction-horizontal,
+.section.hero.direction-horizontal {
+    display: flex!important;
+    -ms-flex-direction: column!important;
+        flex-direction: column!important;
+}
+
+.section.inline.direction-horizontal,
+.section.hero.inline.direction-horizontal {
+    display: -ms-inline-flexbox!important;
+    display: inline-flex!important;
+    -ms-flex-direction: column!important;
+        flex-direction: column!important;
+}
+
+.section.direction-horizontal.justify-content-between,
+.section.hero.direction-horizontal.justify-content-between {
+    -ms-flex-pack:justify!important;
+    justify-content:space-between!important;
+}
+
+.section.direction-horizontal.justify-content-between.align-content-center,
+.section.hero.direction-horizontal.justify-content-between.align-content-center {
+    -ms-flex-align: center!important;
+        align-items: center!important;
+}
+
+.section.hero .row.call-to-action {
+    padding-top: 10rem;
+    text-align: center!important;
+}
+
+.section.hero .row.call-to-action .col {
+
+}
+
+.section.hero .call-to-action h1,
+.section.hero .call-to-action h2,
+.section.hero .call-to-action h3 {
+    margin: 0rem;
+    margin-bottom: 2rem;
+}
+
+.section.hero .call-to-action h1.lead,
+.section.hero .call-to-action h2.lead,
+.section.hero .call-to-action h3.lead {
+    font-weight: 500;
+}
+
+.section.hero .call-to-action h1.lead.uppercase,
+.section.hero .call-to-action h2.lead.uppercase,
+.section.hero .call-to-action h3.lead.uppercase {
+    text-transform: uppercase;
+}
+
+@media (min-width: 300px) {
+    .section.hero .call-to-action h1.lead,
+    .section.hero .call-to-action h2.lead,
+    .section.hero .call-to-action h3.lead {
+        font-size: 2.1rem;
+        font-weight: 500;
+    }
+}
+
+@media (min-width: 576px) {
+    .section.hero .call-to-action h1.lead {
+        font-size: 4.2rem;
+        font-weight: 500;
+    }
+}

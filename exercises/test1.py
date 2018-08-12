@@ -31,3 +31,5 @@
 # class IntegerTyped(Typed):
 #     ty = int
 
+def google(self):
+    print('Google')

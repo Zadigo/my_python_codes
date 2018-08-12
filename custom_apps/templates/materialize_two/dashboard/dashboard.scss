@@ -1,0 +1,38 @@
+@import "https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css";
+
+%hero {
+    height: 100vh !important;
+    background-color: #1565c0;
+    text-align: center;
+    color: white;
+}
+
+@each $w in header, div, section {
+    #{$w}.dashboard {
+        @extend %hero;
+        .dashboard-sidenav {
+            height:100vh !important;
+            width:140px !important;
+            background-color: #2196f3;
+            ul {
+                padding-top:4rem;
+                list-style:none;
+                a {
+                    transition:ease-in-out 0.25s;
+                    display:block;
+                    text-decoration:none;
+                    color:white;
+                    padding:1.5rem !important;
+                    text-align:left;
+                    &:hover {
+                        background-color:#64b5f6;
+                    }
+                }
+                li {
+                    display:block;
+                }
+            }
+        }
+    }
+}
+

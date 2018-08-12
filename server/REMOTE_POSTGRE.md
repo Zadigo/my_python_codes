@@ -6,14 +6,20 @@
 
 `service postgresql start`
 
-`cd ../etc/postgresql/9.5/main`
+`cd ../etc/postgresql/[10]/main`
 
-Edit pg_hba.conf with the following:
+## Edit pg_hba.conf
 
-`host all  all  0.0.0.0/0   trust`
+Add the following to the last paragragh:
 
-Edit postgresql.conf:
+`host all  all  [MY_IP_ADRESS]/24   trust`
 
-`listen_addresses = '*'`
+_P.S. You might need to comment out the lines bove this one in that section._
+
+## Edit postgresql.conf
+
+Uncomment this line and add a star `listen_addresses = '*'`
 
 `service postgresql restart`
+
+Configure as required in PGADMIN.

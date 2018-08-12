@@ -1,40 +1,55 @@
-#lead {
-    margin-bottom: 0rem;
+@import "https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css";
+
+header.hero, div.hero, section.hero {
+  height: 100vh !important;
+  background-color: #1565c0;
+  text-align: center;
+  color: white;
 }
 
-#secondary-lead {
-    margin-bottom: 2.5rem;
+header.hero.transition,
+div.hero.transition,
+section.hero.transition {
+  transition: ease-in-out 1s;
 }
 
-#chercher-cours {
-    padding: 0.6rem !important;
-    border-radius: 0.300rem;
-    font-size: 1.2rem;
-    border: 0px solid #ffffff !important;
+.hero-wraper {
+  margin: 0 auto;
+  max-width: 1280px;
+  width: 90%;
+}
+.hero-wraper .lead {
+  font-weight: 500;
+  margin-bottom: 0rem;
+}
+.hero-wraper .lead.upper {
+  text-transform: uppercase;
+}
+.hero-wraper .lead-subtitle {
+  margin-top: 0.870rem;
+  margin-bottom: 4rem;
 }
 
-#contact.row {
-    margin-bottom: 0.5rem;
+.call-to-action {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+  padding-top: 8.3333%;
 }
-
-#social-media {
-    margin-bottom: 0rem;
+.call-to-action:after {
+  content: "";
+  display: table;
+  clear: both;
 }
-
-footer .col {
-    padding-left: 0rem;
-}
-
-footer i {
-    font-size: 2rem;
-}
-
-.footer-first-row-no-padding {
-    margin-bottom: 0rem;
-}
-
-.list-inline {
-    padding-left: 0;
-    margin-left: -5px;
-    list-style: none;
+.call-to-action .col-hero {
+  float: left;
+  -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+  padding: 0 0.75rem;
+  min-height: 1px;
+  width: 50%;
+  margin-left: auto;
+  left: auto;
+  right: auto;
+  margin-left: 25%;
 }
