@@ -7,3 +7,4 @@ services:
     volume:
       - .:/code
     ports: "8000:8000"
+    
