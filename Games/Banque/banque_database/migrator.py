@@ -16,6 +16,9 @@ class DatabaseMigrator:
                     raise TypeError
 
     def _migrate(self):
+        # 1. We check that the migration folder exits
+        # 2. If it does exist, we create a base migration file —; else, we create the migration folder then the file
+        # 3. We migrate all the application settings in the database
         try:
             sql = ''
             self.connection.execute(sql)
@@ -28,6 +31,10 @@ class DatabaseMigrator:
             return self
 
     def _create_migration_file(self):
+        # 1. We check that the migration folder exits
+        # 2. If it does exist, we create a base migration file —; else, we create the migration folder then the file
+
+
         current_date = datetime.datetime.now().timestamp()
         filename = 'migration_' + str(current_date) + '.py'
         migration_directory = os.path.join('/Users/talentview/Documents/DataAnalysis2/python_django_codes/Games/Banque/migrations', filename)
