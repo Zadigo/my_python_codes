@@ -32,22 +32,26 @@ def retrieve_customer(customer_id):
     """
     return stripe.Customer.retrieve(customer_id)
 
-def create_customer(request, description, email=None, source='tok_visa'):
-    """
-    Create a customer in new customer in Stripe.
-    Returns a customer ID.
+# def create_customer(request='', description, email=None, source='tok_visa'):
+#     """
+#     Create a customer in new customer in Stripe.
+#     Returns a customer ID.
 
-    """
-    # user_id = request.user.id
-    # cust_id_exists = Model.objects.get(id=user_id).stripe_id
-    # if cust_id_exists:
-    #     raise stripe.error.StripeError(message='The customer exits in the database')
+#     """
+#     # user_id = request.user.id
+#     # cust_id_exists = Model.objects.get(id=user_id).stripe_id
+#     # if cust_id_exists:
+#     #     raise stripe.error.StripeError(message='The customer exits in the database')
 
-    customer = stripe.Customer.create(
-        email=email,
-        description=description,
-        source=source
-    )
-    return customer['id']
+#     customer = stripe.Customer.create(
+#         email=email,
+#         description=description,
+#         source=source
+#     )
+#     return customer['id']
 
-print(create_customer('This is a test customer', email='julie@gmail.com'))
+def create_bank_account(customer_id='', source=''):
+    customer = stripe.Customer.retrieve("cus_DDwI2EG2PemOE4")
+    customer.sources.create(source="btok_1CnVz92eZvKYlo2Cmwchuqte")
+
+print(create_bank_account())

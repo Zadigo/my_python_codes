@@ -58,28 +58,53 @@
             
         {% include "footer.html" %}
         
-        <!-- jQuery -->
+        <!-- JQuery -->
         <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-        
+    
         <!-- Compiled and minified JavaScript -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+    
+        <!-- Mark down -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.4.0/marked.min.js"></script>
 
-        <!-- Custom JS -->
         <script>
-            // Navbar toggling for mobile
-            $(document).ready(function() {
+            $(document).ready(function(){
+                // Sidenav
                 $('.sidenav').sidenav();
+                // dropdown
+                $(".dropdown-trigger").dropdown();
+                // select
+                $('select').formSelect();
+                // datepicker
+                $('.datepicker').datepicker();
+    
+                //Mark down
+                $('.content-markdown').ready(function(){
+                    var content = $(this).text();
+                    var markedContent = marked(content);
+                    $(this).html(markedContent);
+                });
             })
         </script>
+        
+        <!-- Custom -->
         <script src="{% static 'style.js' %}"></script>
+
+        <!-- Intercom -->
+        {% block intercom %}{% endblock intercom %}
 
         <!-- Stripe -->
         <script src="https://js.stripe.com/v3/"></script>
 
         <!-- Appcues -->
+        <script src="//fast.appcues.com/36867.js"></script>
+        {% block appcues %}{% endblock appcues %}
 
         <!-- Sign in with Google -->
         <script src="https://apis.google.com/js/platform.js" async defer></script>
+
+        
+        {% include "charts/donut_chart.html" %}
     </body>
 
 </html>

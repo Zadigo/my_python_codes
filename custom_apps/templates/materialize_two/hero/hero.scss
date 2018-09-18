@@ -1,0 +1,76 @@
+@import "https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css";
+
+@mixin hero_transition ($seconds) {
+  transition: ease-in-out #{$seconds};
+}
+
+%hero {
+  height: 100vh !important;
+  background-color: #1565c0;
+  text-align: center;
+  color: white;
+}
+
+@each $w in header, div, section {
+  #{$w}.hero {
+    @extend %hero;
+    &.transition {
+      @include hero_transition(1s);
+    }
+  }
+}
+
+.hero-wraper {
+  margin: 0 auto;
+  max-width: 1280px;
+  width: 90%;
+  @each $tag in h1, h2, h3, h4, h5, p, a {
+    & #{$tag} {
+      margin-top: 0rem;
+    }
+  }
+  .lead {
+    font-weight: 500;
+    margin-bottom:0.987rem;
+    .upper {
+        text : {
+        transform: uppercase;
+      }
+    }
+  }
+  .lead-subtitle {
+    margin-top:0.870rem;
+    margin-bottom:4rem;
+  }
+}
+
+%col {
+  // ??
+  float: left;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0 0.75rem;
+  min-height: 1px;
+}
+
+.call-to-action {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+  padding-top:8.3333%;
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .col-hero {
+    @extend %col;
+    // Size
+    width: 50%;
+    margin-left: auto;
+    left: auto;
+    right: auto;
+    // Offset
+    margin-left: 25%;
+  }
+}
