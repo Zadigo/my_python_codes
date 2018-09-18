@@ -1,9 +1,3 @@
-"""
-Use this class to create a hash
-that can be used for various operations
-withi the program
-"""
-
 import hashlib as hs
 
 def create_hash(name):
@@ -19,9 +13,3 @@ def create_hash(name):
             results.append(result)
         return results
     return _unpack_hash
-
-@create_hash
-def goo(*name):
-    return name
-
-print(goo('a', 'b', 'i'))

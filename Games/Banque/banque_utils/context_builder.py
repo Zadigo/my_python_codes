@@ -1,4 +1,11 @@
 class ContextBuilder:
+    """
+    This class creates chained context
+    whenever an application is called.
+    
+    It stores elements such as the class
+    objects or callable definitions.
+    """
     context = {}
     def __init__(self, *args, **kwargs):
         if args:
@@ -11,11 +18,11 @@ class ContextBuilder:
 
         if kwargs:
             for key, value in kwargs.items():
-                # if callable(value):
-                #     self.context[value.__class__.__name__] = value
+                if callable(value):
+                    self.context[value.__class__.__name__] = value
 
-                # if value.__class__.__name__ == 'cls':
-                #     self.context[value.__class__.__name__] = value()
+                if value.__class__.__name__ == 'cls':
+                    self.context[value.__class__.__name__] = value()
 
                 self.context[key] = value
 
