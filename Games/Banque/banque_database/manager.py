@@ -30,7 +30,6 @@ class Manager(MainManager, BaseMigrator):
         print('-'*10 + '>', 'We then migrate the different settings of the application')
         Klass = BaseMigrator(self.database, commit=True)
         
-
     @property
     def _connection(self):
         return self.database

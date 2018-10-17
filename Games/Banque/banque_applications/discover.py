@@ -1,5 +1,7 @@
 import os
 # from importlib import import_module
+from banque_settings.migrator import Migrator
+from Banque.banque_settings.manager import Manager
 
 class DiscoverApps:
     def __init__(self):
@@ -37,3 +39,10 @@ class BanqueApps(DiscoverApps):
     @property
     def get_available_applications(self):
         return self._applications
+
+class RegisterApps(DiscoverApps, Manager):
+    def __init__(self):
+        apps = self._applications
+        cursor = self._cursor
+        sql = 'INSERT INTO bank__apps (%s, %s, %s, %s)'
+        self.cursor.execute(sql)

@@ -1,6 +1,7 @@
 from importlib import import_module
 import re
 
+
 class Settings:
     def __init__(self):
         settings = import_module('configuration')
