@@ -11,21 +11,14 @@
 			"\t\treturn render(request, '${2}.html', context)",
 			"\n",
 			"\tdef post(self, request):",
-			"\t\tpass",
-			"\n",
-			"\tcontext = {}",
+			"\t\treturn render(request, '${2}.html', context)",
 			"\n",
 			"class ${1}(ListView):",
 			"\t# ListView",
 			"\tmodel = ${model}",
 			"\tcontext_object_name = '${4}'",
-			"\t# queryset = ",
+			"\t# queryset = ''",
 			"\ttemplate_name = '${5}.html'",
-			"\n",
-			"\tdef get_queryset(self):",
-			"\t\t# Return results from database to the view",
-			"\t\tqueryset = Model.objects.filter(${})[:20]",
-			"\t\treturn queryset",
 			"\n",
 			"class ${6}(${LoginRequiredMixin,} CreateView):",
 			"\tmodel = ${model}",
@@ -38,21 +31,18 @@
 			"\tform_class = {13:form}",
 			"\ttemplate_name = '${}/{}.html'",
 			"\tsuccess_url = '/${}/'",
-			"\n",
-			"\tdef get_absolute_url(self):",
-			"\t\treturn reverse('${}', kwargs={'pk': self.pk})"
 		],
 		"description": "Create basic views"
 	},
 	"Return render": {
-		"prefix": "django-return",
+		"prefix": "django-return-render",
 		"body": [
 			"return render(request, '${1}.html', {})"
 		],
 		"description": "Return render"
 	},
 	"Return render context": {
-		"prefix": "django-return-context",
+		"prefix": "django-return-render-context",
 		"body": [
 			"context = {}",
 			"return render(request, '${1}.html', context)"
@@ -87,7 +77,6 @@
 	"Urls": {
 		"prefix": "django-urls",
 		"body": [
-			"from django.http import request",
 			"from django.conf.urls import url",
 			"from $1 import views",
 			"\n",
@@ -106,7 +95,7 @@
 			"\treturn $1",
 			"\n",
 			"def get_absolute_url(self):",
-			"\treturn reverse('${path}', args=[str(self.pk)])",
+			"\treturn reverse('${path}', args=[str(self.pk)])"
 		],
 		"description": "Model"
 	},
@@ -159,7 +148,7 @@
 			"\t\tinstance.${object}",
 			"\t\tinstance.save()"
 		],
-		"description": "Django pre save definition"
+		"description": "Django post save definition"
 	},
 	"Django social registration": {
 		"prefix": "Django Social Networks Registration",
@@ -205,5 +194,69 @@
 			"url(r'^oauth/', include('social_django.urls', namespace='social')),"
 		],
 		"description": "login and signup with social networks"
+	},
+	"Django Settings AWS": {
+		"prefix": "django-aws-settings",
+		"body": [
+			"# https://simpleisbetterthancomplex.com/tutorial/2017/08/01/how-to-setup-amazon-s3-in-a-django-project.html",
+			"# Install boto in the environment",
+			"# pip install django-storages boto3",
+			"# Add 'storages' in installed applications",
+			"'storages'",
+			"\n",
+			"DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'",
+			"\n",
+			"STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'",
+			"\n",
+			"AWS_ACCESS_KEY_ID = ''",
+			"\n",
+			"AWS_SECRET_ACCESS_KEY = ''",
+			"\n",
+			"AWS_STORAGE_BUCKET_NAME = ''",
+			"\n",
+			"AWS_QUERYSTRING_AUTH = False",
+			"\n",
+			"AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME",
+			"\n",
+			"AWS_S3_OBJECT_PARAMETERS = {",
+			"\t'CacheControl': 'max-age=86400'",
+			"}",
+			"\n",
+			"AWS_LOCATION = 'static'",
+			"\n",
+			"STATIC_URL = 'https://%s/%s/' % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)",
+			"\n",
+			"STATIC_ROOT = 'staticfiles'",
+			"\n"
+		],
+		"description": "Django AWS static and media settings"
+	},
+	"Django Model Form": {
+		"prefix": "django-model-form",
+		"body": [
+			"from django import forms",
+			"from django.forms import ModelForm",
+			"from django.forms.widgets import SelectDateWidget, TextInput, Select",
+			"\n",
+			"class ${1}Form(ModelForm):",
+			"\tclass Meta:",
+			"\t\tfields = ['']",
+			"\t\twidgets = {",
+			"\t\t\t\t",			
+			"\t\t}"
+		],
+		"description": "django-model-form"
+	},
+	"Django media and static urls": {
+		"prefix": "django-media-static-urls",
+		"body": [
+			"from django.conf import settings",
+			"from django.conf.urls.static import static",
+			"\n",
+			"if settings.DEBUG:",
+			"\turlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)",
+			"\turlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)"
+		],
+		"description": "Django media and static urls"
 	}
 }

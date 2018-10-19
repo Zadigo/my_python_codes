@@ -1,1 +1,0 @@
-from banque_settings.global_settings import BASE_DIR
