@@ -36,4 +36,3 @@ def _requests(url, headers={}, **kwargs):
             headers.update({'Bearer': kwargs['access_token']})
 
     return requests.get(url, headers)
-
