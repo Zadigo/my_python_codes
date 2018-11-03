@@ -1,9 +1,5 @@
-from global_settings import LINKEDIN_CLIENT_ID, LINKEDIN_CLIENT_SECRET
-from random_string_generator import generator
-import urllib
-import urllib3
-import random
 import requests
+from linkedin_settings import LINKEDIN_CLIENT_ID, LINKEDIN_CLIENT_SECRET, AUTH_QUERY, AUTH_TOKEN, AUTH_LINK
 
 a = 'https://www.linkedin.com/oauth/v2/authorization?'
 
@@ -40,4 +36,3 @@ def _requests(url, headers={}, **kwargs):
             headers.update({'Bearer': kwargs['access_token']})
 
     return requests.get(url, headers)
-
