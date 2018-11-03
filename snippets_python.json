@@ -4,21 +4,23 @@
 		"body": [
 			"from django.http import request",
 			"from django.contrib.auth.mixins import LoginRequiredMixin",
-			"from django.views.generic import ListView, CreateView, UpdateView, DetailView, View",
+			"from django.views.generic import ListView, CreateView, UpdateView, DetailView, View, DeleteView",
 			"\n",
 			"class ${1}(View):",
-			"\tdef get(self, request):",
+			"\tdef get(self, request, *args, **kwargs):",
 			"\t\treturn render(request, '${2}.html', context)",
 			"\n",
-			"\tdef post(self, request):",
+			"\tdef post(self, request, **kwargs):",
 			"\t\treturn render(request, '${2}.html', context)",
 			"\n",
 			"class ${1}(ListView):",
-			"\t# ListView",
 			"\tmodel = ${model}",
 			"\tcontext_object_name = '${4}'",
-			"\t# queryset = ''",
-			"\ttemplate_name = '${5}.html'",
+			"\n",
+			"class ${1}(DetailView):",
+			"\tmodel = ${model}",
+			"\tcontext_object_name = '${4}'",
+			"\ttemplate_name = '${9}/${10}.html'",
 			"\n",
 			"class ${6}(${LoginRequiredMixin,} CreateView):",
 			"\tmodel = ${model}",
@@ -31,8 +33,35 @@
 			"\tform_class = {13:form}",
 			"\ttemplate_name = '${}/{}.html'",
 			"\tsuccess_url = '/${}/'",
+			"\n",
+			"class ${12}Update(${LoginRequiredMixin,} DeleteView):",
+			"\tmodel = ${model}",
+			"\ttemplate_name = '${}/{}.html'",
+			"\tsuccess_url = '/${}/'"
 		],
 		"description": "Create basic views"
+	},
+	"Create basic view": {
+		"prefix": "django-view",
+		"body": [
+			"class ${1}View(View):",
+			"\tdef get(self, request, *args, **kwargs):",
+			"\tcontext = {}",
+			"\t\treturn render(request, '${2}/${3}.html', context)",
+			"\n",
+			"\tdef post(self, request, **kwargs):",
+			"\t\treturn render(request, '{2}/${4}.html')"
+		],
+		"description": "Create basic view"
+	},
+	"Create basic redirect view": {
+		"prefix": "django-redirect-view",
+		"body": [
+			"class ${1}View(View):",
+			"\tdef get(self, request, *args, **kwargs):",
+			"\t\treturn redirect('${2}')"
+		],
+		"description": "Create basic redirect view"
 	},
 	"Return render": {
 		"prefix": "django-return-render",
@@ -84,7 +113,7 @@
 			"\turl(r'^${url}', views.${view_name}.as_view(), name='${name}'),",
 			"]"
 		],
-		"description": "Urls"
+		"description": "Django Urls"
 	},
 	"Model": {
 		"prefix": "django-model",
@@ -98,43 +127,6 @@
 			"\treturn reverse('${path}', args=[str(self.pk)])"
 		],
 		"description": "Model"
-	},
-	"Bootstrap Form Control": {
-		"prefix": "django-form-control",
-		"body": [
-			"{% for field in form %}",
-			"\t<div class=\"form-group\">",
-			"\t<label for=\"id_{{ field.name }}\">{{ field.label }}</label>",
-			"\t{{ field|attr:\"class:form-control\" }}",
-			"</div>",
-			"{% endfor %}"
-		],
-		"description": "Bootstrap Form Control"
-	},
-	"Django Extends blocks": {
-		"prefix": "django-extends-blocks",
-		"body": [
-			"{% extends \"${1}.html\" %}",
-			"\n",
-			"{% block ${2} %}",
-			"\n",
-			"{% endblock ${2} %}"
-		],
-		"description": "Django Extends blocks"
-	},
-	"Django Field Tweaks": {
-		"prefix": "django-field-Tweaks",
-		"body": [
-			"{% load widget_tweaks %}",
-			"\n",
-			"{% for field in form %}",
-			"\t<div class=\"form-group\">",
-			"\t<label for=\"id_{{ field.name }}\">{{ field.label }}</label>",
-			"\t{{ field|attr:\"class:form-control\"|attr:\"placeholder: ...\" }}",
-			"\t</div>",
-            "{% endfor %}"
-		],
-		"description": "Django Field Tweaks"
 	},
 	"Django post save": {
 		"prefix": "django-post-save",
@@ -150,33 +142,46 @@
 		],
 		"description": "Django post save definition"
 	},
+	"Django pre save": {
+		"prefix": "django-pre-save",
+		"body": [
+			"from django.db.models.signals import post_save",
+			"from django.dispatch import receiver",
+			"\n",
+			"@receiver(pre_save, sender=${model})",
+			"def ${defintion_name}(sender, instance, **kwargs):",
+			"\tif instance.${object}:",
+			"\t\tinstance.${object}",
+		],
+		"description": "Django pre save definition"
+	},
 	"Django social registration": {
-		"prefix": "Django Social Networks Registration",
+		"prefix": "Django Social networks registration",
 		"body": [
 			"# Copy each elements in their respective sections",
 			"# See https://simpleisbetterthancomplex.com/tutorial/2016/10/24/how-to-add-social-login-to-django.html for more informations",
 			"# Run 'pip install social-auth-app-django' to install social Django",
 			"\n",
-			"# Installed applications",
+			"# Copy in installed applications",
 			"'social_django',",
 			"\n",
-			"# Middleware",
+			"# Copy in Middleware",
 			"'social_django.middleware.SocialAuthExceptionMiddleware'",
 			"\n",
-			"# Templates context processor",
+			"# Copy in templates context processor",
 			"'social_django.context_processors.backends',",
 			"'social_django.context_processors.login_redirect',",
 			"\n",
-			"# Authentication backend",
+			"# Copy in authentication backend",
 			"'social_core.backends.github.GithubOAuth2'",
 			"'social_core.backends.twitter.TwitterOAuth'",
 			"'social_core.backends.open_id.OpenIdAuth',",
 			"'social_core.backends.google.GoogleOpenId',",
 			"'social_core.backends.google.GoogleOAuth2',",
 			"'social_core.backends.facebook.FacebookOAuth2',",
-			"'social.backends.linkedin.LinkedinOAuth2',"
+			"'social.backends.linkedin.LinkedinOAuth2',",
 			"\n",
-			"# URLS and Keys",
+			"# Copy in settings",
 			"LOGIN_URL = 'login'",
 			"\n",
 			"LOGOUT_URL = 'logout'",
@@ -195,7 +200,7 @@
 			"\n",
 			"SOCIAL_AUTH_LINKEDIN_OAUTH2_SECRET = ''",
 			"\n",
-			"SOCIAL_AUTH_LINKEDIN_SCOPE = [...]",
+			"SOCIAL_AUTH_LINKEDIN_SCOPE = ['r_basicprofile']",
 			"\n",
 			"SOCIAL_AUTH_LINKEDIN_FIELD_SELECTORS = ['email-address', 'headline', 'industry']",
 			"\n",
@@ -206,20 +211,19 @@
                         "\t\t\t\t\t('headline', 'headline'),",
                         "\t\t\t\t\t('industry', 'industry')]",
 			"\n",
-			"# In your registration URLS file",
+			"# Copy in your registration URLS file",
 			"url(r'^oauth/', include('social_django.urls', namespace='social')),"
 		],
-		"description": "login and signup with social networks"
+		"description": "Login and signup with social networks"
 	},
 	"Django Settings AWS": {
 		"prefix": "django-aws-settings",
 		"body": [
 			"# https://simpleisbetterthancomplex.com/tutorial/2017/08/01/how-to-setup-amazon-s3-in-a-django-project.html",
-			"# Install boto in the environment",
-			"# pip install django-storages boto3",
-			"# Add 'storages' in installed applications",
-			"'storages'",
+			"# 1. Install boto3 in the environment: pip install django-storages boto3",
+			"# 2. Add 'storages' in installed applications",
 			"\n",
+			"# Copy the following in settings",
 			"DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'",
 			"\n",
 			"STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'",
@@ -243,7 +247,8 @@
 			"STATIC_URL = 'https://%s/%s/' % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)",
 			"\n",
 			"STATIC_ROOT = 'staticfiles'",
-			"\n"
+			"\n",
+			"MEDIA_URL = 'https://%s/%s/' % (AWS_S3_CUSTOM_DOMAIN, 'media')"
 		],
 		"description": "Django AWS static and media settings"
 	},
@@ -258,7 +263,7 @@
 			"\tclass Meta:",
 			"\t\tfields = ['']",
 			"\t\twidgets = {",
-			"\t\t\t\t",			
+			"\t\t\t\t'field': TextInput(attrs={})",			
 			"\t\t}"
 		],
 		"description": "django-model-form"
@@ -274,5 +279,22 @@
 			"\turlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)"
 		],
 		"description": "Django media and static urls"
+	},
+	"Django email settings": {
+		"prefix": "django-email-settings",
+		"body": [
+			"EMAIL_HOST = 'smtp.gmail.com'",
+			"\n",
+			"EMAIL_HOST_USER = 'email@gmail.com'",
+			"\n",
+			"EMAIL_HOST_PASSWORD = ''",
+			"\n",
+			"EMAIL_USE_TLS = True",
+			"\n",
+			"EMAIL_PORT = 587",
+			"\n",
+			"EMAIL_USE_LOCALTIME = True"
+		],
+		"description": "Django settings for sending emails"
 	}
 }

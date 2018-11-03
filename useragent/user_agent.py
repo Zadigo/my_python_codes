@@ -1,5 +1,6 @@
 from random import randrange
 from collections import namedtuple
+from importlib import import_module
 
 
 AGENTS_LIST = [
@@ -21,6 +22,20 @@ def get_user_agents():
     return agents(AGENTS_LIST)
 
 def get_rand_user_agent():
-    agent_list_lenght = len(_AGENTS_LIST)
-    return AGENTS_LIST[randrange(0, agent_list_lenght)]
+    return AGENTS_LIST[randrange(0, len(AGENTS_LIST))]
+
+class UserAgentManager:
+    def __init__(self):
+        module = import_module('user_agent')
+        module_dict = module.__dict__
+        for item, value in module_dict.items():
+            if callable(value):
+                # self.__setattr__(item, value)
+                setattr(UserAgentManager, item, value)
+
+            if item.upper():
+                self.__setattr__(item, value)
+
+class UserAgent(UserAgentManager):
+    pass
             
