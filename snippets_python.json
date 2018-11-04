@@ -296,5 +296,19 @@
 			"EMAIL_USE_LOCALTIME = True"
 		],
 		"description": "Django settings for sending emails"
+	},
+	"Django database settings": {
+		"prefix": "django-database-settings",
+		"body": [
+			"'default': {",
+			"\t'ENGINE': 'django.db.backends.postgresql',",
+			"\t'NAME': '',",
+			"\t'USER': 'postgres',",
+			"\t'PASSWORD': '',",
+			"\t'HOST': 'localhost',",
+			"\t'PORT': '5432',",
+			"}"
+		],
+		"description": "Django settings for database"
 	}
 }
