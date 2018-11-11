@@ -1,4 +1,4 @@
-from random import randrange
+from random import choice
 from collections import namedtuple
 from importlib import import_module
 
@@ -14,28 +14,13 @@ AGENTS_LIST = [
     "Mozilla/5.0 (iPad; CPU iPhone OS 8_3 like Mac OS X) AppleWebKit/600.1.4 (KHTML, like Gecko) FxiOS/1.0 Mobile/12F69 Safari/600.1.4"
 ]
 
-def get_user_agent(agent_index=0):
-    return AGENTS_LIST[agent_index]
+def get_user_agent(index=0):
+    return AGENTS_LIST[index]
 
 def get_user_agents():
     agents = namedtuple('Agents', ['headers'])
     return agents(AGENTS_LIST)
 
 def get_rand_user_agent():
-    return AGENTS_LIST[randrange(0, len(AGENTS_LIST))]
-
-class UserAgentManager:
-    def __init__(self):
-        module = import_module('user_agent')
-        module_dict = module.__dict__
-        for item, value in module_dict.items():
-            if callable(value):
-                # self.__setattr__(item, value)
-                setattr(UserAgentManager, item, value)
-
-            if item.upper():
-                self.__setattr__(item, value)
-
-class UserAgent(UserAgentManager):
-    pass
+    return choice(AGENTS_LIST)
             
