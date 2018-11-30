@@ -9,7 +9,9 @@ CLIENT_ID = ''
 
 CLIENT_SECRET = ''
 
+AUTH_LINK = 'https://www.linkedin.com/oauth/v2/authorization'
 
+PEOPLE_LINK = 'https://api.linkedin.com/v2/people/{person}'
 
 
 
