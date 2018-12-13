@@ -1,5 +1,6 @@
 *.log
 .vscode
-global_settings.py
 *.pyc
 *.db
+json_key_file.json
+secret.json
