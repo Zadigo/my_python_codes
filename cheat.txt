@@ -1,0 +1,98 @@
+Constance97170-Jac
+
+django-admin makemessages --locale=en
+django-admin compilemessages --locale=en
+
+# Migrate database (works on development server)
+docker-compose run jobsite python /code/manage.py migrate --noinput
+docker-compose run jobsite python /code/manage.py createsuperuser
+docker-compose run jobsite python /code/manage.py collectstatic
+
+# Container already running
+docker start job_startup
+docker-compose exec jobsite python manage.py makemigrations
+docker-compose exec jobsite python manage.py migrate
+docker-compose exec jobsite python manage.py collectstatic
+
+
+docker images
+docker run image
+docker run -i -t image
+docker logs container
+docker run -it -p 8000:8000 -v /home/octo-train/kurrikulam/manage.py 0e1d5725479f
+docker run -i -t -p 3000:3000 0e1d5725479f
+
+docker run --rm -it -p 3000:3000 0e1d5725479f -v code:/home/octo-train/kurrikulam/
+
+docker run -d -p 3000:3000 0e1d5725479f
+
+docker run -p 8000:80 kurrikulam_jobsite jobsite
+docker run -p 8000:80 kurrikulam_enginx
+docker run --name jobsite --entrypoint /bin/bash kurrikulam_jobsite -c "ls -l /; id"
+docker run -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=Constance97170 -e POSTGRES_DB=job_database1 kurrikulam_db
+
+docker ps
+docker ps -a
+
+docker-compose config
+docker-compose rm
+docker-compose run service
+docker-compose images -a
+
+image: kurrikulam_jobsite
+image_id: 0e1d5725479f
+container: job_startup
+service: jobsite
+kurrikulam_enginx
+
+docker ps -aq
+docker container prune
+docker rmi
+
+exit()
+
+docker container port job_startup
+
+sudo apt get update
+sudo apt get upgrade
+
+docker rmi $(docker images -q --filter "dangling=true")
+
+sudo nginx -s stop
+
+
+Migrations issues
+
+
+docker ps -aq --no-trunc -f status=exited | xargs docker rm
+
+docker images -q --filter dangling=true | xargs docker rmi
+
+
+
+sudo apt install docker.io
+sudo curl -L https://github.com/docker/compose/releases/download/1.18.0/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+apt-get upgrade docker-engine
+docker info
+
+# Connect inside database
+docker-compose up
+docker start postgres_database
+docker exec -it postgres_database psql -U postgres
+>> CREATE USER ... WITH ENCRYPTED PASSWORD '...'
+>> CREATE DATABASE ... OWNER ...
+
+# ENV POSTGRES_USER=john
+# ENV POSTGRES_DB=job_database1
+# ENV POSTGRES_PASSWORD=Constance97170
+# ENV POSTGRES_HOST=127.0.0.1
+
+# environment:
+#   - POSTGRES_USER=postgres
+#   - POSTGRES_DB=job_database1
+#   - POSTGRES_PASSWORD=Constance97170
+#   - POSTGRES_HOST=127.0.0.1
+#   - DB_USER=john
+#   - DB_PASSWORD=Constance97170
+#   - DB_DATABASE=job_database1

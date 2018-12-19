@@ -1,0 +1,8 @@
+# https://help.ubuntu.com/community/CronHowto
+# minute (0-59), hour (0-23, 0 = midnight), day (1-31), month (1-12), weekday (0-6, 0 = Sunday)
+01 04 1 1 1 /usr/bin/somedirectory/somecommand
+
+# Every day on Monday's
+01 04 * * * /usr/bin/somedirectory/somecommand
+
+01 04 * * * psql --host host.example.com --port 12345 --dbname nameofdatabase < my.sql
