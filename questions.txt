@@ -1,0 +1,264 @@
+Un CTO est un...
+Un CEO est un...
+Un CMO est un...
+Un CFO est un...
+Une startup est une...
+
+Un MVP est un...
+Qu'es-ce qu'un MVP ?
+Qu'es-ce qu'un Business model ?
+Qu'es-ce qu'un Lean Canvas ?
+Quel est la différence entre MVP et prototype ?
+
+Python est un language de programmation de type...
+Parmis ces librairies, lesquelles permettent de faire de l'analyse de données ?
+Vous souhaitez créer un site internet avec Python, vous utilisez ?
+Vous engagez un développeur. Il vous dit que pour le frontend vous devriez faire ces actions. Qu'est-ce que 'frontend' ?
+Vous engagez un développeur. Il vous dit que pour le backend vous devriez faire ces actions. Qu'est-ce que 'backend' ?
+Selon-vous à quoi peut servir NGINX ?
+Vous souhaitez stocker des données pour votre site. Parmis les options suivantes que pourriez-vous utiliser ?
+Votre patron vous dit qu'il va mettre un API pour son site internet. De quoi parle-t-il ?
+En webdesign qu'est-ce que le flat design ?
+En webdesign qu'est-ce que le line design ?
+En webdesign qu'est-ce que le flat icon ?
+En webdesign qu'est-ce que le negative space ?
+Que veut dire le terme 'responsive' ?
+
+
+Qu'est-ce qu'un VPS ?
+OVH est une entreprise française ?
+Amazon S3 est un...
+Selon-vous qu'est-ce qu'un 'bucket' dans Amazon S3 ?
+Si on vous dit que Docker est un conteneur, selon-vous que peut-il contenir ?
+
+
+Blablacar a été fondé en...
+Free a été fondé en...
+Facebook a été fondé en...
+Qui a fondé Blablacar ?
+Qui a fondé Free ?
+Qui a fondé Facebook ?
+Qui a fondé Apple ?
+Qui a racheté Ouibus en 2018 ?
+Qui a racheté Nokia en ???? ?
+Qui a racheté LinkedIn en 2016 ?
+Instagram appartient à Facebook ?
+Yahoo a refusé d'acheté Google en ???? ?
+Amazon lance des magazins sans caisses. Comment s'appelle-t-ils ?
+
+
+Quel est le nom français pour IPO ?
+Comment appelle-t-on une entrée en bourse ?
+
+
+Qu'est-ce qu'une Landing page ?
+Ce tag HTML '<a></a>' détermine un...
+Ce tag HTML '<main></main>' détermine un...
+Ce tag HTML '<iframe></iframe>' détermine un...
+A quel language correspond cette structure de code :
+    def structure(*args, **kwargs):
+        pass
+
+A quel language correspond cette structure de code :
+    <? ... >< ... ?>
+
+A quel language correspond cette structure de code :
+    function (){
+        ...
+    }
+
+A quel language correspond cette structure de code :
+    $(document).ready(function (){
+        ...
+    })
+
+A quel language correspond cette structure de code :
+    SELECT ...
+    FROM ...
+    WHERE ...;
+
+A quel language correspond cette structure de code : Jinja
+    <... ...="{% url '...' %}"></...>
+
+A quel librairie de webdesign correspond cette structure de code :
+    <... class = "col s12 l12">
+
+A quel librairie de webdesign correspond cette structure de code :
+    <... class = "col col-s12 col-l12">
+
+A quel language correspond cette structure de code : XML
+    < ... >
+        < ... > ... < ... >
+    </ ... >
+
+A quel language correspond cette structure de code :
+    {
+        "..." : {
+            ...
+        }
+    }
+
+
+Vous devez ajouter un ID dans un lien pour Google Tag Manager pour votre site. Quel est la solution ? <a id="..."></a>
+Qu'est-ce que Google Tag Manager ?
+Qu'est-ce que Google Analytics ?
+Qu'est-ce que Google Optimizer ?
+Qu'est-ce qu'un plan media ?
+Qu'est-ce que Google Datastudio ?
+
+
+Selon-vous à quoi correspond le terme acquisition dans Google Analytics ?
+Qu'est-ce que le terme conversion dans Google Analytics ?
+Vous étiez sur http://www.une-adresse.com. En cliquant sur un lien vous vous êtes retrouver sur http://www.une-autre-adresse.com. A quoi correspond la première adresse ? lien référent
+Si 'Facebook' est une source, 'social' est... un médium
+Si 'social' est une médium, 'Facebook' est... une source
+A quoi correspond le "?search=" dans 'http://www.une-autre-adresse.com/?search=" ?
+Vous êtes sur site e-commerce et vous suivez le parcours suivant 'produits > produit > panier > paiement > page initial'. A quoi correspond ce parcours ?
+Votre taux de conversion est de -2.5% et on vous demande de l'inverser. Parmis les options suivantes que feriez-vous ?
+Votre taux d'acquisition est de 2.5% et on vous demande de l'accroitre. Parmis les options suivantes que feriez-vous ?
+Qu'est-ce que le taux de rebond dans Google Analytics ?
+Un patron vous dit qu'il a taux de rebond de 73%. Que lui conseilleriez-vous ?
+Comment appelle-t-on le fait qu'un utilisateur va sur site et en sort immédiatement ? taux de rebond
+Selon-vous quel est la différence entre un 'utilisateur' et une 'session' dans Analytics ?
+A quoi correspond l'élément  'UA-XXXX' dans un script HTML ?
+Qu'est-ce que la longue traine ?
+
+
+
+Vous créer une SAS. Vous y mettez 15 actions à 5€. Quelle est la valeur de votre entreprise ?
+Vous demandez 1000€ pour 10% d'une startup. Quel somme demandez-vous ?
+Vous avez vendu 1000€ de marchandises en 2018. On vous dit que votre multiplicateur de 2.5 est trop élevé lors d'une levée de fonds. Selon-vous que veut dire cette expréssion ?
+
+
+Un stage de 2 mois est payant ?
+Je peux recruter un stagiaire pour 3 ans ?
+Un stage peut être alterné ?
+
+
+Qu'est-ce qu'une IAE ?
+Qu'est-ce qu'une CCI ?
+Qu'est-ce qu'une BGE ?
+Qu'est-ce que la BPI ?
+Qu'est-ce que la RGPD ?
+Qu'est-ce que la RGPD ?
+
+
+En quel année a été mis en place la RGPD ?
+Quel est le nom du scandal qui a ébranlé Facebook il a quelques années ?
+
+
+Tinder a inventé le... swipe
+Snapchat a inventé... stories
+En quel année Instagram ont-ils copié les stories de Snapchat ?
+Parmis les features suivantes, lesquelles sont des actuelles features des stories Instagram ?
+Qu'est-ce qu'un tweet ?
+Quel est la longueur maximale d'un tweet ?
+On peut faire des stories sur YouTube ?
+EnjoyPhoenix est une YouTubeuse et influenceuse. Quel est la différence entre ces deux termes ?
+Qu'est-ce qu'une influenceuse ?
+Vous êtes YouTubeur et vous créer du contenu pour les femmes, 18-35 et qui aiment la mode. Ces critères correspond à votre... cible
+Vous êtes YouTubeur et vous êtes connu pour être spécialiste de maquillage nude. Cela correspond à votre... positionnement
+
+
+Un YouTubeur a créer une polémique dans une forêt en 2018, comment s'appelle-t-elle ?
+Un YouTubeur a créer une polémique dans une forêt en 2018, comment s'appelle-t-il ?
+Un YouTubeur a créer une polémique dans une forêt en 2018, dans quel pays était-ce ?
+La mère d'une très jeune YouTubeuse s'amusait a utiliser les biens immobilier de ses clients pour tourner des clips vidéos. Comment s'appelle cette YouTubeuse ? Lil Tay
+Vous êtes responsable marketing et votre chef vous dis dans le cadre d'une futur campagne qu'il faudra faire attention au influenceurs qui font du 'colorism'. De quoi parle-t-il ?
+... a fait scandal dans une publicité en ... pour .... une marque de boissons gazeuse qui appartient à Coca-cola aux USA. Parmis les options suivantes choississez la personne, la marque et l'année.
+Pour la première fois en 150 ans, nombre d'années depuis la création du Vogue US, un photographe noir a pu prendre des photos dans le cadre d'une campagne pour Rihanna. Comment s'appelle-t-il ?
+Sur YouTube, quel est terme commun utilisé pour par les créateurs pour référencer leurs produits qui sont mise à la vente ? Merch
+Sur Instagram vous pouvez vendre des produits ou services ?
+A quoi correspond le CPM utilisé notemment par YouTube ?
+A quoi correspond le CPC utilisé notemment par Google ?
+A quoi correspond le CTR utilisé notemment par YouTube ?
+Quel est la différence entre CPC, CPM et CPA ?
+Quel est le taux CTR d'une publicité web qui a obtenu 2 clicks pour 100 impréssions ? 2%
+Qu'est-ce qu'une impression notemment utilisé dans les statistiques pour Instagram ?
+Quel est la différence entre une 'impréssion' et un 'pagview' ?
+Quel est la différence entre une action de catégorie A, B et C ?
+Dans le cadre d'un projet votre chef de projet vous dit que vous fonctionnerez par 'test and learn'. Que veut-il dire ?
+Que veut dire stratégie 'Océan bleu' ?
+Que veut dire stratégie 'économie collaborative' ?
+Parmis les entreprises suivantes lesquelles font partie de l'économie collaborative ?
+
+
+
+A quoi correspond cette logique de machine learning : arbre de décision
+        A
+    B       C
+B1      B2  C1
+
+A quoi correspond cette logique de machine learning : neural network
+            Start
+    A1              B1
+A2  A3  A4      B2  B3  B4
+
+C2  C3  C4      D2  D3  D4
+    C1              D1
+            Start
+
+A quoi correspond cette logique de machine learning : classification
+    A-A-A
+            E-E-E
+        C-C-C
+
+Vous avez 100 observations. Vous séparez vos observations en 2, soit 70-30. En machine learning comment appelle-t-on le premier échantillon (70) ?
+Vous êtes une équipe construisant une application métérologique. Vous êtes chef de projet et un coéquipier dit
+
+
+A quoi correspond le terme VBA dans Excel ?
+Votre patron vous dit que la formule = INDEX(... MATCH(...)) vous sera très utile dans votre travail avec Excel. Que fait cette fonction ?
+Vous utilisez Excel et vous avez un coups de génie. Vous utilisez AGGREGATE(..., SUM(...), ...). Que fait AGGREGATE ?
+Vous êtes sur le point de rendre un travail en groupe. Or, la fonction suivante ROW(A1) ne fonctionne pas correctement. Elle devait vous permettre d'incrémenter de 1, 2, 3 ... 100 sans devoir entrer chaque valeurs individuellement. Que devez-vous faire ?
+A quoi peut servir une telle fonction CHOOSE(IF(...), ..., ..., ...) ?
+Comment interprétez-vous le -1 dans la fonction MATCH(..., ..., -1) ?
+Dans la liste suivante (1, 2, 3) je souhaite retourner la dernière valeur avec MATCH(). Que dois-je faire ?
+Mon conjoint a qui j'ai demandé de l'aide me dit que je dois utiliser INDIRECT(A1:A10) dans le cadre de mon travail. Que peut bien faire cette fonction ?
+J'ai une liste (a, a, e) et je souhaiterais obtenir cette liste (TRUE, TRUE, FALSE). Que dois-je faire ? = (A1:A3="a")
+A partir de cette dernière liste je souhaiterais obtenir (TRUE, TRUE, TRUE). Que dois-je faire ? = (A1:A3="a") + (A1:A3="e")
+Que fait les {} dans la formule suivante : {=SUM(...)}
+Quel est l'équivalent de {=SUM((A1:A10 = "...")*(A1:A10))} ? SUMIF(..., "= ...")
+Que fait MID(..., FIND(" ", ..., ), FIND(" ", ..., ) - 1) si on l'utilisait sur "Anastasia Pouryalov" ?
+Que fait LEFT(..., FIND(" ", ..., ) - 1) si on l'utilisait sur "Anastasia Pouryalov" ?
+Que fait cette formule ((... = ...) * (... = ...)) * (...) si on l'appliquait aux listes suivantes :
+    A   Paris   78
+    B   Londres 98
+    A   Tokyo   54
+SMALL(..., ...) est l'équivalent de...
+Vous avez une liste (1, 2, 3) sur laquelle vous faites SMALL(..., 1). Qu'obtenez-vous ?
+Vous avez une liste (1, 2, 3) sur laquelle vous faites LARGE(..., 1). Qu'obtenez-vous ?
+Vous faires CELL(...) sur une céllule. Quels types d'informations obtenez-vous ?
+$A$1:$A$1 est l'exact équivalent de A1:A1 ?
+
+
+Qu'est-ce qu'un fichier XML ?
+Qu'est-ce qu'un fichier CSV ?
+Qu'est-ce qu'un fichier JSON ?
+Qu'est-ce qu'un fichier H ?
+Qu'est-ce qu'un fichier PPTX ?
+Qu'est-ce qu'un fichier XLSX ?
+Qu'est-ce qu'un fichier XLSM ?
+Qu'est-ce qu'un fichier PY ?
+Qu'est-ce qu'un fichier RB ?
+
+Votre patron vous demande de mettre en place des 'zaps' dans le processus de son entreprise. De quoi parle-t-il ?
+A quoi peut servir IFTT ?
+On vient de vous 'slacker' au travail. Que vous a-t-on fait ?
+
+En utilisant Zapier, vous monter un zap qui vous donne un lien http://www.zapier.com/?params=test qui vous permet l'action suivante.
+En effet, dès que vous cliquez sur ce diernier dans votre fichier Excel, vous envoyez automatiquement un email à votre collègue. Comment s'appelle ce type de lien ?
+
+A quoi correspond 'AxR858eE' ? Un mot de passe valide, un token
+
+Vous avez 100€. Vous les prêter et prédisez que la personne ne pourra pas rembourser la dette.
+Vous la vendez pour 100€ et la personnne devra rembourser dorénavant 100€ + x€ d'intérêt.
+Comment s'appelle cette technique boursière ?
+
+Vous empruntez un produit qui coûte 100€ pour 80 car vous êtes certain que le prix va baisser à 80 dans le futur.
+Le prix ayant baisser à 80€ cinq jours plus tard vous achetez donc effectivement le produit, ayant fait une plus value de 20€.
+Comment s'appelle cette technique boursière ?
+
+Vous prêtez 100€ et immédiatement vous divisez cette dette en trois parts de 33.33€ chacunes. Vous vendez ces parts à 50€ (soit 33.33 + 16.67) à votre père,
+votre cousin et votre soeur pour un total de 150€ soit 50€ de bénéfice. En vendant ces parts vous avez donc transférer
+la propriété de la dette. Comment s'appelle cette technique ?
