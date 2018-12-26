@@ -8,3 +8,16 @@ DATABASES = {
 }
 
 IMAGES_PATH = os.path.join(BASE_PATH, 'images')
+
+URI_DOMAIN = 'japan2018'
+
+COUNTRY = 'rus-russia'
+
+# URI_DOMAINS = ['japan2018']
+
+# COUNTRIES = ['chn-china']
+
+PLAYER_PAGE_URI = 'http://%(uridomain)s.fivb.com/en/competition/teams/%(country)s/players' % {
+    'uridomain': URI_DOMAIN,
+    'country': COUNTRY
+}
