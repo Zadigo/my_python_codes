@@ -15,7 +15,12 @@ COUNTRY = 'rus-russia'
 
 # URI_DOMAINS = ['japan2018']
 
-# COUNTRIES = ['chn-china']
+COUNTRIES = ['chn-china']
+
+COUNTRY_CODES = {
+    'china': 1,
+    'usa': 2
+}
 
 PLAYER_PAGE_URI = 'http://%(uridomain)s.fivb.com/en/competition/teams/%(country)s/players' % {
     'uridomain': URI_DOMAIN,

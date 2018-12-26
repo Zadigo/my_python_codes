@@ -1,6 +1,7 @@
 import re
 import requests
 import datetime
+import time
 from bs4 import BeautifulSoup
 from collections import OrderedDict, namedtuple
 from csv_constructor import write_csv
@@ -41,7 +42,7 @@ class Requestor:
         """
         return BeautifulSoup(response.text, 'html.parser')
 
-class TeamProfileLinks(Requestor):
+class TeamProfile(Requestor):
     def __init__(self):
         profile_links = []
         response = super().create_request(PLAYER_PAGE_URI)
@@ -66,16 +67,14 @@ class TeamProfileLinks(Requestor):
                 f.writelines(value)
                 f.writelines('\n')
 
-class PlayerProfile(TeamProfileLinks):
-    def get_player_profile(self, index=0, with_image=False):
+class PlayerProfile(TeamProfile):
+    def get_player(self, player_index=0, with_image=False):
         """
         Get a player's FiVB profile
-
-        To get a specific player use index
         """
         # We get a specific index within the player's
         # profile links that was generated
-        relative_uri = self.profile_links[index]
+        relative_uri = self.profile_links[player_index]
 
         # We send a request using the base uri (team page)
         # and the uri the player profile page that we got
@@ -85,21 +84,49 @@ class PlayerProfile(TeamProfileLinks):
         # This section is to process the main section
         # of the player profile page e.g. middle section
         soup = super().create_soup(response)
+
+        print(self.process_html(soup))
+
+        return self.process_html(soup)
+
+    def get_players(self):
+        responses=[]
+        soups=[]
+        player_datas=[]
+        uris = self.profile_links
+
+        for uri in uris:
+            responses.append(super().create_request(uri))
+            time.sleep(1)
+
+        for response in responses:
+            soups.append(super().create_soup(response))
+
+        for soup in soups:
+            player_data = self.process_html(soup)
+            player_datas.append(player_data)
+
+        return player_datas
+
+    def process_html(self, soup):
+        # Main player profile section
         tags = soup.find('div', class_='person')
+
         player_name = str(tags.find('h4').text).strip()
         height = tags.find(string=re.compile(r'\d+\s?cm'))
         weight = tags.find(string=re.compile(r'\d+\s?kg'))
         date_of_birth = tags.find(string=re.compile(r'\d+\/\d+\/\d{4}'))
 
         # Here we calculate the player's age
-        year_of_birth = datetime.datetime.timetuple(datetime.datetime.strptime(date_of_birth, '%d/%m/%Y'))[0]
-        age = datetime.datetime.now().year - year_of_birth
+        # year_of_birth = datetime.datetime.timetuple(datetime.datetime.strptime(date_of_birth, '%d/%m/%Y'))[0]
+        # age = datetime.datetime.now().year - year_of_birth
+        age = get_age(date_of_birth)
 
-        # Process the image present
-        # on the player's profile page
+        # Process the image present on the player's
+        # profile page
         img = soup.find('img', alt=player_name)
-        player_image_link = self.process_player_image_link(img['src'])
-        
+        player_image_link = self.process_player_image(img['src'])
+
         # This section is to process the side section
         # of the player's profile page
         side_section = soup.find('ul', class_='line-list')
@@ -108,44 +135,52 @@ class PlayerProfile(TeamProfileLinks):
 
         position = re.match(r'(\s+|\n)([a-zA-Z]+\s?[a-zA-Z]+)', tags_text[0]).group(0).strip()
         positions_index = {
-            'setter':1,
-            'opposite spiker':2,
-            'middle blocker':3,
-            'wing spiker':4,
-            'libero':6
+            'Setter':1,
+            'Opposite spiker':2,
+            'Middle blocker':3,
+            'Wing spiker':4,
+            'Libero':6
         }
+
         spike = re.match(r'(\s+|\n+)\d{3}', str(tags_text[3])).group(0).strip()
         block = re.match(r'(\s+|\n+)\d{3}', str(tags_text[-1])).group(0).strip()
 
         # Player data
-        if with_image:
-            player_data = [
-                player_name,
-                date_of_birth,
-                age,
-                height,
-                weight,
-                position,
-                spike,
-                block,
-                player_image_link
-            ]
-        else:
-            player_data = [
-                player_name,
-                date_of_birth,
-                age,
-                height,
-                weight,
-                position,
-                spike,
-                block
-            ]
+        # if with_image:
+        #     player_data = [
+        #         player_name,
+        #         date_of_birth,
+        #         age,
+        #         height,
+        #         weight,
+        #         position,
+        #         spike,
+        #         block,
+        #         player_image_link
+        #     ]
+        # else:
+        #     player_data = [
+        #         player_name,
+        #         date_of_birth,
+        #         age,
+        #         height,
+        #         weight,
+        #         position,
+        #         spike,
+        #         block
+        #     ]
 
-        print(player_data)
+        # We reprocess the height and weight to
+        # take out the metric
+        height = re.match(r'\d+', height).group(0)
+        weight = re.match(r'\d+', weight).group(0)
+
+        player_data = [player_name, date_of_birth, age, height, weight,
+                    position, positions_index[position], spike, block]
+        return player_data
 
     @staticmethod
-    def process_player_image_link(image_uri, width=1200, height=800):
+    def process_player_image(image_uri, width=1200, height=800):
         """
         This definition creates a new link
         with a custom image size
@@ -167,4 +202,5 @@ class PlayerProfile(TeamProfileLinks):
         reconstructed_uri = base[1] + base[2] + '?' + params
         return reconstructed_uri
 
-TeamProfileLinks()
+
+PlayerProfile().get_player()
