@@ -44,6 +44,3 @@ class Prisme:
         c = cls(1478, '2018-12-1', '2018-12-5').get_salaires_moins_impot
         print(s,c)
 
-p=Prisme(1575,'2018-12-1','2018-12-5')
-print(p.get_salaires_moins_impot)
-p._aides_sociales()
