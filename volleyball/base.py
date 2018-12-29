@@ -2,15 +2,20 @@ import re
 import requests
 import datetime
 import time
+import csv
 from bs4 import BeautifulSoup
-from collections import OrderedDict, namedtuple
-from csv_constructor import write_csv
+from collections import namedtuple
 from ua import get_rand_agent
 from urllib.parse import urlparse, urljoin, urlencode
 from utils import get_age
 from vsettings import IMAGES_PATH, PLAYER_PAGE_URI
-# from vdatabase import QuerySelector
 
+
+
+
+class Player(namedtuple('Player', ['player_name', 'height', 'weight', 
+                        'date_of_birth', 'age', 'position', 'spike', 'block', 'country'])):
+    __slots__ = ()
 
 class Requestor:
     def create_request(self, uri):
@@ -25,12 +30,14 @@ class Requestor:
         else:
             return response
 
-    def _ping(self, uri):
+    @classmethod
+    def _ping(cls, uri):
         """
         This method can be used to test the
         validity of a link
         """
-        response = self.create_request(uri)
+        # response = self.create_request(uri)
+        response = cls.create_request(uri)
         if response.status_code == 200:
             return 'Status code: %s' % response.status_code
         return 'The link is not valid'
@@ -107,6 +114,15 @@ class PlayerProfile(TeamProfile):
             player_datas.append(player_data)
 
         return player_datas
+
+    def _write_players(self, titles=[]):
+        players = self.get_players()
+        titles = ['player_name', 'height', 'weight', 'date_of_birth', 
+                    'age', 'position', 'spike', 'block', 'country']
+        with open('test.csv', 'w') as csvfile:
+            csv_writer = csv.writer(csvfile, delimiter=',', quotechar='|', quoting=csv.QUOTE_MINIMAL)                
+            csv_writer.writerow(titles)
+            csv_writer.writerow(players)
 
     def process_html(self, soup):
         # Main player profile section
@@ -203,4 +219,4 @@ class PlayerProfile(TeamProfile):
         return reconstructed_uri
 
 
-PlayerProfile().get_player()
+# PlayerProfile().get_player()

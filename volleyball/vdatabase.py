@@ -1,3 +1,4 @@
+from dataclasses import dataclass
 import sqlite3
 import os
 
@@ -8,12 +9,55 @@ DATABASES = {
     'aliases': []
 }
 
+class QuerySelector(DatabaseModel):
+    def _update(self, table='players', columns=(), values=()):
+        sql = f"INSERT INTO {table}{columns} VALUES {values};"
+        print(sql)
+        # self._meta._cursor(sql)
 
-class Database:
-    def __init__(self):
+class Options:
+   def __init__(self, meta=''):
         database_path = os.path.join(BASE_PATH, DATABASES['name'] + '.sqlite')
         connection = sqlite3.connect(database_path)
-        self.cursor = connection.cursor()
+
+        self._db = connection
+        self.database_name = '%s.sqlite' % DATABASES['name']
+        self._cursor = connection.cursor().execute
+
+class BaseDatabase(type):
+    def __new__(cls, clsname, bases, clsdict):
+        new_class = super().__new__(cls, clsname, bases, clsdict)
+
+        # Create class
+        setattr(new_class, '_meta', Options())
+
+        return new_class
+
+class Database(metaclass=BaseDatabase):
+    def auto_migrate(cls, *args):
+        new_table = """
+        CREATE TABLE players(
+            player_id INTEGER PRIMARY KEY,
+            player_name CHAR(100),
+            player_surname CHAR(100),
+            profile_link CHAR(250),
+            site_id INTEGER
+        );
+        """
+        try:
+            cls._meta._cursor(new_table)
+        except sqlite3.OperationalError as e:
+            raise
+
+class DatabaseModel(Database):
+    def _save(self, cursor, commit=False):
+        # a=sqlite3.connect('a.sqlite')
+        # a.cursor().execute('').save()
+        pass
+
+DatabaseModel()._save()
+
+
 
     # def _aliases(self):
     #     databases=[]
@@ -24,28 +68,6 @@ class Database:
     #     return databases
 
 
-class Migrator(Database):
-    def auto_migrate(self, *args):
-        players_table_sql = """
-        CREATE TABLE players(
-            player_id INTEGER PRIMARY KEY,
-            player_name CHAR(100),
-            player_surname CHAR(100),
-            profile_link CHAR(250),
-            site_id INTEGER
-        );
-        """
-        self.cursor.execute(players_table_sql)
+# QuerySelector()._update('test','a',('a','c'))
 
-
-class QuerySelector:
-    def _update(self, table, columns, values=()):
-        sql = "INSERT INTO {table} ({columns}) VALUES {values};".format(
-            table=table,
-            columns=columns,
-            values=values
-        )
-        print(sql)
-        # self.cursor.execute(sql)
-
-QuerySelector()._update('test','a',('a','c'))
+# QuerySelector()._update(columns=('a','c'),values=('a','c'))

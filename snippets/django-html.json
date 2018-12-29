@@ -1,0 +1,9 @@
+{
+	"Create a link": {
+		"prefix": "django-html-link",
+		"body": [
+			"<a href=\"{% url '${1}' %}\" class=\"\" id=\"\">${2}</a>"
+		],
+		"description": "Log output to console"
+	}
+}
