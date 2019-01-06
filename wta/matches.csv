@@ -1,0 +1,6 @@
+tour,tour_code,tour_country,date,year,month,tour_type,tour_surface,player_rank,player_seed,match_round,match_result,opp_seed,opp_name,opp_profile_link,opp_nationality,opp_rank,match_score,num_sets,first_set_result
+Sumter,SUM,Usa,2008-05-26 00:00:00,2008,5,Itf,Hard,0,None,Round 32,L,[Q],Grace Min,/players/player/316157/title/grace-min-0,USA,-,6-0  6-3,Two,Loss
+Waterloo,WAT,Canada,2008-06-30 00:00:00,2008,6,Itf,Clay,0,None,Round 32,L,[W],Sonja Molnar,/players/player/316323/title/Sonja-Molnar,CAN,-,7-6(2)  6-0,Two,Loss
+Montreal,MON,Canada,2008-07-28 00:00:00,2008,7,Tier i,Hard,9999,None,Round 64 - Q,L,[17],Abigail Spears,/players/player/190771/title/Abigail-Spears,USA,166,6-3  6-4,Two,Loss
+Southlake,SOU,Usa,2008-10-06 00:00:00,2008,10,Itf,Hard,9999,None,Round 32,L,[Q],Nicole Bartnik,/players/player/314287/title/nicole-bartnik,USA,-,6-3  6-0,Two,Loss
+Saguenay,SAG,Canada,2008-10-20 00:00:00,2008,10,Itf,Hard,9999,None,Round 32,L,,Carmen Klaschka,/players/player/311649/title/carmen-klaschka,GER,244,6-1  6-0,Two,Loss
