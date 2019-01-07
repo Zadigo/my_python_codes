@@ -112,20 +112,21 @@ class PlayerData(Start):
         tag = soup.find('div',class_='group-country')
         country_code = tag.find('div',class_='even').text
 
-        return player(constructed_name, formatted_date, age, height, self.convert_height(height), \
+        return player(constructed_name, formatted_date.date(), age, height, self.convert_height(height), \
                     player_playing_hand, _city, _country, country_code)
 
-    def get_datas(self, urls=[], write_mode='w'):
+    def get_datas(self, urls, write_mode='w', sleep_time=1):
         players = []
-        remapped_urls = map(lambda x: urljoin('https://www.wtatennis.com/', x), urls)
-
+        remapped_urls = list(map(lambda x: urljoin('https://www.wtatennis.com/', x), urls))
+        
+        print(len(remapped_urls), 'links to parse')
         print('Getting details from:')
         for url in remapped_urls:
             print(url)
-            player = self.get_data(uri=url)
+            player = self.get_data(uri = url)
             players.append(player)
             
-            time.sleep(2)
+            time.sleep(sleep_time)
         
         with open(Settings().CSV_PLAYERS, write_mode, newline='') as f:
             csv_file = csv.writer(f)
@@ -210,7 +211,9 @@ class PlayerMatchesHtml:
                 if is_seeded:
                     player_tour_seed = self.parse_seeding(is_seeded.group(0))
                 else:
-                    player_tour_seed = 'None'
+                    player_tour_seed = None
+
+                print('Fetching: %s' % tournament_name)
 
                 # NOTE: Here we parse the matches written in
                 # the tables that we have fetched
@@ -227,12 +230,31 @@ class PlayerMatchesHtml:
                         match_opponent_seed = match_opponent.find(class_='opponent-seed').text.strip()
                     else:
                         match_opponent_seed = ''
-                    match_opponent_link = match_opponent.find('a')['href']
-                    match_opponent_name = match_opponent.find('a').text.strip()
-                    if re.search(r'\(([A-Z]+)\)', str(match_opponent)):
-                        match_opponent_nationality = re.search(r'\(([A-Z]+)\)', str(match_opponent)).group(0)
+
+                    # This part breaks because of the BYE
+                    # that sometimes occurs in the start
+                    # of certain tournaments.
+                    # This still generates a csv row so it
+                    # would be interesting to find an alternative
+                    has_opponent_link = match_opponent.find('a')
+                    if has_opponent_link:
+                        match_opponent_link = match_opponent.find('a')['href']
                     else:
-                        match_opponent_nationality = ''
+                        match_opponent_link = None
+
+                    has_opponent_name = match_opponent.find('a')
+                    if has_opponent_name:
+                        match_opponent_name = match_opponent.find('a').text.strip()
+
+                        has_opponent_nationality = re.search(r'\(([A-Z]+)\)', str(match_opponent))
+                        if has_opponent_nationality:
+                            match_opponent_nationality = has_opponent_nationality.group(0)
+
+                        else:
+                            match_opponent_nationality = ''
+
+                    else:
+                        match_opponent_name = None
 
                     match_opponent_rank = data.find('td', class_='rank').text.strip()
                     match_score = data.find('td', class_='score').text.strip()
@@ -273,8 +295,7 @@ class PlayerMatchesHtml:
         # January 7, 2018
         months = ['January', 'February', 'March', 'April', 'May',\
                     'June', 'July', 'August', 'September', 'October', 'November', 'December']
-
-        # raw_month = re.search(r'[a-zA-Z]+', unformatted_date).group(0)
+        
         splitted_date = unformatted_date.split(' ', 3)
 
         # We have to add one to get the real
@@ -284,7 +305,7 @@ class PlayerMatchesHtml:
         y = splitted_date[2]
 
         constructed_date = '%s-%s-%s' % (y, month_index, d)
-        formatted_date = datetime.datetime.strptime(constructed_date, '%Y-%m-%d')
+        formatted_date = datetime.datetime.strptime(constructed_date, '%Y-%m-%d').date()
 
         return [formatted_date, formatted_date.year]
 
@@ -309,18 +330,14 @@ class PlayerMatchesHtml:
         has_value = re.search(r'(\d+|\w+)', seed)
         if has_value:
             return has_value.group(0)
-        return 'None'
+        return None
 
     @staticmethod
     def parse_score(score, match_result):
-        # 6-1 2-6 6-1
-        # 6-4 6-2
-        # 7-6(3) 6-4
-        # 4-6 RET
-        # 4-6 4-0 RET
-        # 1-6 7-5 2-0 RET
+        first_set=''
         splitted_score = score.split(' ')
-        splitted_score.remove('')
+        if '' in splitted_score:
+            splitted_score = [score for score in splitted_score if score != '']
 
         if match_result == 'W':
             has_lost_first_set = re.match(r'([0-4]\-6|[5-6]\-7)', splitted_score[0])
@@ -336,12 +353,16 @@ class PlayerMatchesHtml:
             else:
                 first_set = 'Win'
 
+        number_of_sets=''
+
         if len(splitted_score) == 3:
             number_of_sets = 'Three'
         elif len(splitted_score) == 2:
             number_of_sets = 'Two'
         elif 'RET' in splitted_score:
             number_of_sets = 'RET'
+        else:
+            number_of_sets = None
         
         return [number_of_sets, first_set]
         
@@ -376,6 +397,8 @@ class PlayerMatchesHtml:
                     to_append_second = match[2]
                     constructed_row = tour_characteristics + tour_details + player_tour_infos + to_append_first + to_append_second
                     csv_file.writerow(constructed_row)
+
+        print('Success!')
             
 class Zapier(Start):
     def create_zap(self, zap_uri):
@@ -384,11 +407,3 @@ class Zapier(Start):
         response = super().create_post_request(zap_uri, files=files, data=data)
 
 # PlayerMatchesHtml()._write_csv()
-
-PlayerData().get_datas([
-    '/players/player/316157/title/grace-min-0',
-    '/players/player/316323/title/Sonja-Molnar',
-    '/players/player/190771/title/Abigail-Spears',
-    '/players/player/314287/title/nicole-bartnik',
-    '/players/player/311649/title/carmen-klaschka'
-])

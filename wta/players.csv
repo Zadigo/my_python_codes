@@ -1,5 +1,59 @@
-Grace Min,1994-05-06 00:00:00,25,163,5.3,Right-Handed,Atlanta,"Ga, usa",USA
-Sonja Molnar,1990-04-29 00:00:00,29,N/A,N/A,N/A,N/A,N/A,CAN
-Abigail Spears,1981-07-12 00:00:00,38,175,5.7,Right-Handed,San diego,"Ca, usa",USA
-Nicole Bartnik,1991-10-31 00:00:00,28,N/A,N/A,N/A,N/A,N/A,USA
-Carmen Klaschka,1987-01-08 00:00:00,32,N/A,N/A,N/A,N/A,N/A,GER
+full_name,date_of_birth,age,height_metrique,height_imperialplaying_hand,city_of_birth,state_of_birth,country_code
+Bethanie Mattek-sands,1985-03-23,34,168,5.5,Right-Handed,Rochester,"Mn, usa",USA
+Hao chen Tang,1994-02-21,25,N/A,N/A,N/A,Zheng zhou,China,CHN
+Virginie Razzano,1983-05-12,36,174,5.7,Right-Handed,Dijon (c�te-d'or),France,FRA
+Lauren Davis,1993-10-09,26,157,5.2,Right-Handed,Gates mills,"Oh, usa",USA
+Casey Dellacqua,1985-02-11,34,165,5.4,Left-Handed,Perth,Australia,AUS
+Ana Ivanovic,1987-11-06,32,184,6.0,Right-Handed,Belgrade,Serbia,SRB
+Na Li,1982-02-26,37,172,5.6,Right-Handed,Wuhan,China,CHN
+Jovana Jaksic,1993-09-30,26,180,5.9,Right-Handed,Belgrade,Serbia,SRB
+Vesna Dolonc,1989-07-21,30,170,5.6,Right-Handed,Moscow,Russia,SRB
+Vera Dushevina,1986-10-06,33,180,5.9,Right-Handed,Moscow,Russia,RUS
+Tsvetana Pironkova,1987-09-13,32,180,5.9,Right-Handed,Plovdiv,Bulgaria,BUL
+Annika Beck,1994-02-16,25,170,5.6,Right-Handed,Giessen,Germany,GER
+Lara Arruabarrena,1992-03-20,27,166,5.4,Right-Handed,San sebasti�n,Spain,ESP
+Caroline Garcia,1993-10-16,26,177,5.8,Right-Handed,Saint-germain-en-laye,France,FRA
+Shuai Peng,1986-01-08,33,177,5.8,Right-Handed,Hunan,China,CHN
+Sara Errani,1987-04-29,32,164,5.4,Right-Handed,Bologna,Italy,ITA
+Simona Halep,1991-09-27,28,168,5.5,Right-Handed,Constanta,Romania,ROU
+Elina Svitolina,1994-09-12,25,174,5.7,Right-Handed,Odessa,Ukraine,UKR
+Alla Kudryavtseva,1987-11-03,32,178,5.8,Right-Handed,Moscow,Russia,RUS
+Venus Williams,1980-06-17,39,185,6.1,Right-Handed,Lynwood,"Ca, usa",USA
+Jelena Jankovic,1985-02-28,34,177,5.8,Right-Handed,Belgrade,Serbia,SRB
+Andrea Petkovic,1987-09-09,32,180,5.9,Right-Handed,Tuzla,Bosnia,GER
+Kristina Kucova,1990-05-23,29,163,5.3,Right-Handed,Bratislava,Slovakia,SVK
+Jana Cepelova,1993-05-29,26,168,5.5,Right-Handed,Kosice,Slovakia,SVK
+Alisa Kleybanova,1989-07-15,30,181,5.9,Right-Handed,Moscow,Russia,RUS
+Svetlana Kuznetsova,1985-06-27,34,174,5.7,Right-Handed,St. petersburg,Russia,RUS
+Agnieszka Radwanska,1989-03-06,30,173,5.7,Right-Handed,Krakow,Poland,POL
+Francesca Schiavone,1980-06-23,39,166,5.4,Right-Handed,Milan,Italy,ITA
+Barbora Strycova,1986-03-28,33,164,5.4,Right-Handed,Plzen,Czech republic,CZE
+Anastasia Rodionova,1982-05-12,37,167,5.5,Right-Handed,Tambov,Russia,AUS
+Yaroslava Shvedova,1987-09-12,32,180,5.9,Right-Handed,Moscow,Ussr,KAZ
+Karin Knapp,1987-06-28,32,180,5.9,Right-Handed,Brunico,Italy,ITA
+Karolina Pliskova,1992-03-21,27,186,6.1,Right-Handed,Louny,Czech republic,CZE
+Shahar Peer,1987-05-01,32,170,5.6,Right-Handed,Jerusalem,Israel,ISR
+Julia Goerges,1988-11-02,31,180,5.9,Right-Handed,Bad oldesloe,Germany,GER
+Johanna Larsson,1988-08-17,31,174,5.7,Right-Handed,Boden,Sweden,SWE
+Angelique Kerber,1988-01-18,31,173,5.7,Left-Handed,Bremen,Germany,GER
+Carla Su�rez navarro,1988-09-03,31,162,5.3,Right-Handed,Las palmas de gran canaria,Spain,ESP
+Maria Sharapova,1987-04-19,32,188,6.2,Right-Handed,Nyagan,Russia,RUS
+Vania King,1989-02-03,30,165,5.4,Right-Handed,Monterey park,"Ca, usa",USA
+Daniela Hantuchova,1983-04-23,36,181,5.9,Right-Handed,Poprad,Slovakia,SVK
+S�lvia Soler-espinosa,1987-11-19,32,169,5.5,Right-Handed,Elche,Spain,ESP
+Aliz� Cornet,1990-01-22,29,173,5.7,Right-Handed,Nice,France,FRA
+Shelby Rogers,1992-10-13,27,175,5.7,Right-Handed,Mount pleasant,"Sc, usa",USA
+Bojana Jovanovski petrovic,1991-12-31,28,175,5.7,Right-Handed,Belgrade,Serbia,SRB
+Samantha Stosur,1984-03-30,35,175,5.7,Right-Handed,Brisbane,Australia,AUS
+Olga Govortsova,1988-08-23,31,182,6.0,Right-Handed,Pinsk,Belarus,BLR
+Sorana Cirstea,1990-04-07,29,176,5.8,Right-Handed,Bucharest,Romania,ROU
+Barbora Strycova,1986-03-28,33,164,5.4,Right-Handed,Plzen,Czech republic,CZE
+Ekaterina Makarova,1988-06-07,31,180,5.9,Left-Handed,Moscow,Russia,RUS
+Mona Barthel,1990-07-11,29,185,6.1,Right-Handed,Bad segeberg,Germany,GER
+Alison Riske,1990-07-03,29,175,5.7,Right-Handed,Pittsburgh,"Pa, usa",USA
+Aliz� Cornet,1990-01-22,29,173,5.7,Right-Handed,Nice,France,FRA
+Caroline Wozniacki,1990-07-11,29,177,5.8,Right-Handed,Odense,Denmark,DEN
+Petra Kvitova,1990-03-08,29,182,6.0,Left-Handed,Bilovec,Czech republic,CZE
+Sabine Lisicki,1989-09-22,30,178,5.8,Right-Handed,Troisdorf,Germany,GER
+Patricia Mayr-achleitner,1986-11-08,33,169,5.5,Right-Handed,Innsbruck,Austria,AUT
+Serena Williams,1981-09-26,38,175,5.7,Right-Handed,Saginaw,"Mi, usa",USA

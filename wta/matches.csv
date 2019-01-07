@@ -1,6 +1,77 @@
 tour,tour_code,tour_country,date,year,month,tour_type,tour_surface,player_rank,player_seed,match_round,match_result,opp_seed,opp_name,opp_profile_link,opp_nationality,opp_rank,match_score,num_sets,first_set_result
-Sumter,SUM,Usa,2008-05-26 00:00:00,2008,5,Itf,Hard,0,None,Round 32,L,[Q],Grace Min,/players/player/316157/title/grace-min-0,USA,-,6-0  6-3,Two,Loss
-Waterloo,WAT,Canada,2008-06-30 00:00:00,2008,6,Itf,Clay,0,None,Round 32,L,[W],Sonja Molnar,/players/player/316323/title/Sonja-Molnar,CAN,-,7-6(2)  6-0,Two,Loss
-Montreal,MON,Canada,2008-07-28 00:00:00,2008,7,Tier i,Hard,9999,None,Round 64 - Q,L,[17],Abigail Spears,/players/player/190771/title/Abigail-Spears,USA,166,6-3  6-4,Two,Loss
-Southlake,SOU,Usa,2008-10-06 00:00:00,2008,10,Itf,Hard,9999,None,Round 32,L,[Q],Nicole Bartnik,/players/player/314287/title/nicole-bartnik,USA,-,6-3  6-0,Two,Loss
-Saguenay,SAG,Canada,2008-10-20 00:00:00,2008,10,Itf,Hard,9999,None,Round 32,L,,Carmen Klaschka,/players/player/311649/title/carmen-klaschka,GER,244,6-1  6-0,Two,Loss
+Sydney,SYD,Australia,2014-01-05,2014,1,Premier,Hard,31,,Round 32,L,[Q],Bethanie Mattek-Sands,/players/player/130713/title/bethanie-mattek-sands-0,USA,48,6-4  6-3,Two,Loss
+Australian open,AUS,Australia,2014-01-13,2014,1,Grand slam,Hard,31,30,Round 128,W,[W],Hao Chen Tang,/players/player/317359/title/hao-chen-tang-0,CHN,487,7-5  6-1,Two,Win
+Australian open,AUS,Australia,2014-01-13,2014,1,Grand slam,Hard,31,30,Round 64,W,,Virginie Razzano,/players/player/180384/title/Virginie-RAZZANO,FRA,100,6-2  7-6(10),Two,Win
+Australian open,AUS,Australia,2014-01-13,2014,1,Grand slam,Hard,31,30,Round 32,W,,Lauren Davis,/players/player/317414/title/lauren-davis-0,USA,68,6-2  6-2,Two,Win
+Australian open,AUS,Australia,2014-01-13,2014,1,Grand slam,Hard,31,30,Round 16,W,[W],Casey Dellacqua,/players/player/310730/title/casey-Dellacqua,AUS,120,6-7(5)  6-2  6-0,Three,Loss
+Australian open,AUS,Australia,2014-01-13,2014,1,Grand slam,Hard,31,30,Quarterfinals,W,[14],Ana Ivanovic,/players/player/311710/title/Ana-Ivanovic,SRB,14,5-7  7-5  6-2,Three,Loss
+Australian open,AUS,Australia,2014-01-13,2014,1,Grand slam,Hard,31,30,Semifinals,L,[4],Na Li,/players/player/120330/title/Na-Li,CHN,4,6-2  6-4,Two,Loss
+Fed cup week 1,FED,Canada,2014-02-08,2014,2,R1,Hard,19,,R1,W,,Jovana Jaksic,/players/player/317351/title/jovana-jaksic-0,SRB,149,6-1  6-0,Two,Win
+Fed cup week 1,FED,Canada,2014-02-08,2014,2,R1,Hard,19,,R1,W,,Vesna Dolonc,/players/player/313653/title/vesna-dolonc-0,SRB,117,6-0  6-3,Two,Win
+Doha - doha,DOH,Qatar,2014-02-10,2014,2,Premier 5,Hard,19,15,Round 64,L,,Bethanie Mattek-Sands,/players/player/130713/title/bethanie-mattek-sands-0,USA,42,7-5  6-1,Two,Loss
+Dubai,DUB,United arab emirates,2014-02-17,2014,2,Premier,Hard,19,1,Round 32 - Q,W,,Vera Dushevina,/players/player/310625/title/vera-dushevina,RUS,139,5-7  6-3  6-3,Three,Loss
+Dubai,DUB,United arab emirates,2014-02-17,2014,2,Premier,Hard,19,1,Round 16 - Q,W,,Tsvetana Pironkova,/players/player/311041/title/Tsvetana-PIRONKOVA,BUL,48,6-2  6-4,Two,Win
+Dubai,DUB,United arab emirates,2014-02-17,2014,2,Premier,Hard,19,1,Quarterfinals - Q,L,,Annika Beck,/players/player/316979/title/Annika-Beck,GER,50,6-1  6-4,Two,Loss
+Acapulco - acapulco,ACA,Mexico,2014-02-24,2014,2,International,Hard,19,2,Round 32,W,,Shahar Peer,/players/player/311168/title/Shahar-Peer,ISR,85,6-2  6-2,Two,Win
+Acapulco - acapulco,ACA,Mexico,2014-02-24,2014,2,International,Hard,19,2,Round 16,W,[L],Lara Arruabarrena,/players/player/315296/title/Lara-ARRUABARRENA,ESP,147,7-5  6-2,Two,Win
+Acapulco - acapulco,ACA,Mexico,2014-02-24,2014,2,International,Hard,19,2,Quarterfinals,L,,Caroline Garcia,/players/player/315391/title/caroline-garcia%20,FRA,89,3-6  6-4  6-1,Three,Win
+Indian wells,IND,Usa,2014-03-05,2014,3,Premier mandatory,Hard,19,18,Round 128,W,,,,UKR,-,-,,Win
+Indian wells,IND,Usa,2014-03-05,2014,3,Premier mandatory,Hard,19,18,Round 64,W,,Shuai Peng,/players/player/160471/title/shuai-peng-0,CHN,40,6-2  6-2,Two,Win
+Indian wells,IND,Usa,2014-03-05,2014,3,Premier mandatory,Hard,19,18,Round 32,W,[9],Sara Errani,/players/player/310761/title/Sara-Errani,ITA,10,6-3  6-3,Two,Win
+Indian wells,IND,Usa,2014-03-05,2014,3,Premier mandatory,Hard,19,18,Round 16,L,[6],Simona Halep,/players/player/314320/title/simona-halep%20,ROU,7,6-2  1-6  6-4,Three,Loss
+Miami,MIA,Usa,2014-03-18,2014,3,Premier mandatory,Hard,19,18,Round 128,W,,,,GER,-,-,,Win
+Miami,MIA,Usa,2014-03-18,2014,3,Premier mandatory,Hard,19,18,Round 64,L,,Elina Svitolina,/players/player/316738/title/elina-svitolina%20%20,UKR,42,1-6  6-1  6-2,Three,Win
+Charleston,CHA,Usa,2014-03-31,2014,3,Premier,Clay,20,6,Round 64,W,,,,SVK,-,-,,Win
+Charleston,CHA,Usa,2014-03-31,2014,3,Premier,Clay,20,6,Round 32,W,[Q],Alla Kudryavtseva,/players/player/311362/title/Alla-KUDRYAVTSEVA,RUS,117,6-2  6-0,Two,Win
+Charleston,CHA,Usa,2014-03-31,2014,3,Premier,Clay,20,6,Round 16,W,[11],Venus Williams,/players/player/230220/title/venus-williams-0%20,USA,28,7-6(6)  2-6  6-4,Three,Win
+Charleston,CHA,Usa,2014-03-31,2014,3,Premier,Clay,20,6,Quarterfinals,W,[2],Jelena Jankovic,/players/player/100153/title/jelena-jankovic-0,SRB,8,6-3  4-6  6-3,Three,Win
+Charleston,CHA,Usa,2014-03-31,2014,3,Premier,Clay,20,6,Semifinals,L,[14],Andrea Petkovic,/players/player/310770/title/Andrea-PETKOVIC-0,GER,40,1-6  6-3  7-5,Three,Win
+Fed cup week 2 - playoffs,FED,Canada,2014-04-19,2014,4,R2,Hard,18,,R2,W,,Kristina Kucova,/players/player/312673/title/kristina-kucova-0,SVK,137,7-6(0)  2-6  6-1,Three,Win
+Fed cup week 2 - playoffs,FED,Canada,2014-04-19,2014,4,R2,Hard,18,,R2,W,,Jana Cepelova,/players/player/316774/title/Jana-Cepelova-0,SVK,52,7-6(6)  6-3,Two,Win
+Oeiras (estoril),OEI,Portugal,2014-04-28,2014,4,International,Clay,18,2,Round 32,W,,Alisa Kleybanova,/players/player/311777/title/Alisa-Kleybanova,RUS,87,6-4  6-1,Two,Win
+Oeiras (estoril),OEI,Portugal,2014-04-28,2014,4,International,Clay,18,2,Round 16,W,,Yaroslava Shvedova,/players/player/311137/title/yaroslava-shvedova-0,KAZ,65,6-4  6-2,Two,Win
+Oeiras (estoril),OEI,Portugal,2014-04-28,2014,4,International,Clay,18,2,Quarterfinals,L,[7],Svetlana Kuznetsova,/players/player/110552/title/svetlana-kuznetsova-0,RUS,29,6-4  6-1,Two,Loss
+Madrid - madird,MAD,Spain,2014-05-03,2014,5,Premier mandatory,Clay,18,,Round 64,L,[3],Agnieszka Radwanska,/players/player/312251/title/agnieszka-radwanska-0%20,POL,3,7-6(3)  6-2,Two,Loss
+Rome,ROM,Italy,2014-05-12,2014,5,Premier 5,Clay,20,17,Round 64,L,,Francesca Schiavone,/players/player/190666/title/francesca-schiavone-0,ITA,61,6-4  6-2,Two,Loss
+N„úrnberg - n„úrnberg,N√å,Germany,2014-05-18,2014,5,International,Clay,19,2,Round 32,W,,Barbora Strycova,/players/player/190879/title/barbora-strycova-0,CZE,63,6-0  6-3,Two,Win
+N„úrnberg - n„úrnberg,N√å,Germany,2014-05-18,2014,5,International,Clay,19,2,Round 16,W,[Q],Anastasia Rodionova,/players/player/180356/title/Anastasia-RODIONOVA,AUS,217,6-0  6-1,Two,Win
+N„úrnberg - n„úrnberg,N√å,Germany,2014-05-18,2014,5,International,Clay,19,2,Quarterfinals,W,,Yaroslava Shvedova,/players/player/311137/title/yaroslava-shvedova-0,KAZ,72,7-6(3)  7-6(6),Two,Win
+N„úrnberg - n„úrnberg,N√å,Germany,2014-05-18,2014,5,International,Clay,19,2,Semifinals,W,,Karin Knapp,/players/player/311299/title/karin-knapp-0,ITA,52,6-4  6-3,Two,Win
+N„úrnberg - n„úrnberg,N√å,Germany,2014-05-18,2014,5,International,Clay,19,2,Final,W,,Karolina Pliskova,/players/player/313974/title/karolina-pliskova-0%20,CZE,64,6-2  4-6  6-3,Three,Win
+French open,FRE,France,2014-05-25,2014,5,Grand slam,Clay,16,18,Round 128,W,,Shahar Peer,/players/player/311168/title/Shahar-Peer,ISR,88,6-0  6-2,Two,Win
+French open,FRE,France,2014-05-25,2014,5,Grand slam,Clay,16,18,Round 64,W,,Julia Goerges,/players/player/313381/title/julia-goerges-0,GER,107,2-6  6-2  6-1,Three,Loss
+French open,FRE,France,2014-05-25,2014,5,Grand slam,Clay,16,18,Round 32,W,,Johanna Larsson,/players/player/311593/title/johanna-larsson-0,SWE,99,7-5  6-4,Two,Win
+French open,FRE,France,2014-05-25,2014,5,Grand slam,Clay,16,18,Round 16,W,[8],Angelique Kerber,/players/player/311470/title/angelique-kerber%20%20,GER,9,6-1  6-2,Two,Win
+French open,FRE,France,2014-05-25,2014,5,Grand slam,Clay,16,18,Quarterfinals,W,[14],Carla Su√°rez Navarro,/players/player/311338/title/carla-su%C3%A1rez-navarro-0,ESP,15,7-6(4)  2-6  7-5,Three,Win
+French open,FRE,France,2014-05-25,2014,5,Grand slam,Clay,16,18,Semifinals,L,[7],Maria Sharapova,/players/player/310137/title/maria-sharapova%20,RUS,8,4-6  7-5  6-2,Three,Win
+'s-hertogenbosch,'S-,Netherlands,2014-06-15,2014,6,International,Grass,13,3,Round 32,L,,Vania King,/players/player/311550/title/vania-king-0,USA,75,2-6  6-3  6-3,Three,Win
+Wimbledon,WIM,Great britain,2014-06-23,2014,6,Grand slam,Grass,13,13,Round 128,W,,Daniela Hantuchova,/players/player/80394/title/Daniela-Hantuchova,SVK,34,7-5  7-5,Two,Win
+Wimbledon,WIM,Great britain,2014-06-23,2014,6,Grand slam,Grass,13,13,Round 64,W,[W],S√≠lvia Soler-Espinosa,/players/player/311493/title/s%C3%ADlvia-soler-espinosa-0,ESP,75,7-5  6-1,Two,Win
+Wimbledon,WIM,Great britain,2014-06-23,2014,6,Grand slam,Grass,13,13,Round 32,W,[20],Andrea Petkovic,/players/player/310770/title/Andrea-PETKOVIC-0,GER,20,6-3  6-4,Two,Win
+Wimbledon,WIM,Great britain,2014-06-23,2014,6,Grand slam,Grass,13,13,Round 16,W,[25],Aliz√© Cornet,/players/player/312121/title/aliz%C3%A9-cornet-0,FRA,24,7-6(5)  7-5,Two,Win
+Wimbledon,WIM,Great britain,2014-06-23,2014,6,Grand slam,Grass,13,13,Quarterfinals,W,[9],Angelique Kerber,/players/player/311470/title/angelique-kerber%20%20,GER,7,6-3  6-4,Two,Win
+Wimbledon,WIM,Great britain,2014-06-23,2014,6,Grand slam,Grass,13,13,Semifinals,W,[3],Simona Halep,/players/player/314320/title/simona-halep%20,ROU,3,7-6(5)  6-2,Two,Win
+Wimbledon,WIM,Great britain,2014-06-23,2014,6,Grand slam,Grass,13,13,Final,L,[6],Petra Kvitova,/players/player/314206/title/petra-kvitova-0%20,CZE,6,6-3  6-0,Two,Loss
+Montreal,MON,Canada,2014-08-04,2014,8,Premier 5,Hard,8,5,Round 64,W,,,,RUS,-,-,,Win
+Montreal,MON,Canada,2014-08-04,2014,8,Premier 5,Hard,8,5,Round 32,L,[Q],Shelby Rogers,/players/player/317421/title/shelby-rogers-0,USA,113,6-0  2-6  6-0,Three,Loss
+Cincinnati - cincinnati,CIN,Usa,2014-08-11,2014,8,Premier 5,Hard,8,7,Round 64,W,,,,AUS,-,-,,Win
+Cincinnati - cincinnati,CIN,Usa,2014-08-11,2014,8,Premier 5,Hard,8,7,Round 32,L,,Svetlana Kuznetsova,/players/player/110552/title/svetlana-kuznetsova-0,RUS,24,6-4  3-6  6-2,Three,Loss
+New haven,NEW,Usa,2014-08-17,2014,8,Premier,Hard,8,3,Round 32,W,,Bojana Jovanovski Petrovic,/players/player/314369/title/Bojana-Jovanovski-Petrovic,SRB,35,6-1  6-1,Two,Win
+New haven,NEW,Usa,2014-08-17,2014,8,Premier,Hard,8,3,Round 16,L,[W],Samantha Stosur,/players/player/190787/title/samantha-stosur-0,AUS,25,6-2  6-2,Two,Loss
+Us open,US ,Usa,2014-08-25,2014,8,Grand slam,Hard,8,7,Round 128,W,,Olga Govortsova,/players/player/311243/title/olga-govortsova-0,BLR,117,6-2  6-1,Two,Win
+Us open,US ,Usa,2014-08-25,2014,8,Grand slam,Hard,8,7,Round 64,W,,Sorana Cirstea,/players/player/312469/title/sorana-cirstea-0,ROU,80,6-2  6-7(4)  6-4,Three,Win
+Us open,US ,Usa,2014-08-25,2014,8,Grand slam,Hard,8,7,Round 32,W,[30],Barbora Strycova,/players/player/190879/title/barbora-strycova-0,CZE,29,6-2  6-7(2)  6-4,Three,Win
+Us open,US ,Usa,2014-08-25,2014,8,Grand slam,Hard,8,7,Round 16,L,[17],Ekaterina Makarova,/players/player/311604/title/ekaterina-makarova-0,RUS,18,7-6(2)  6-4,Two,Loss
+Wuhan - wuhan,WUH,China,2014-09-21,2014,9,Premier 5,Hard,9,6,Round 64,W,,,,GER,-,-,,Win
+Wuhan - wuhan,WUH,China,2014-09-21,2014,9,Premier 5,Hard,9,6,Round 32,W,,Mona Barthel,/players/player/315365/title/mona-barthel-0,GER,55,4-6  6-3  6-4,Three,Loss
+Wuhan - wuhan,WUH,China,2014-09-21,2014,9,Premier 5,Hard,9,6,Round 16,W,,Alison Riske,/players/player/312850/title/alison-riske-0,USA,67,6-2  6-3,Two,Win
+Wuhan - wuhan,WUH,China,2014-09-21,2014,9,Premier 5,Hard,9,6,Quarterfinals,W,,Aliz√© Cornet,/players/player/312121/title/aliz%C3%A9-cornet-0,FRA,21,6-3  7-5,Two,Win
+Wuhan - wuhan,WUH,China,2014-09-21,2014,9,Premier 5,Hard,9,6,Semifinals,W,[8],Caroline Wozniacki,/players/player/313402/title/caroline-wozniacki%20%20,DEN,7,6-2  6-3,Two,Win
+Wuhan - wuhan,WUH,China,2014-09-21,2014,9,Premier 5,Hard,9,6,Final,L,[3],Petra Kvitova,/players/player/314206/title/petra-kvitova-0%20,CZE,3,6-3  6-4,Two,Loss
+Beijing - beijing,BEI,China,2014-09-27,2014,9,Premier mandatory,Hard,7,8,Round 64,W,,,,BUL,-,-,,Win
+Beijing - beijing,BEI,China,2014-09-27,2014,9,Premier mandatory,Hard,7,8,Round 32,L,,Sabine Lisicki,/players/player/312520/title/sabine-lisicki-0,GER,25,6-2  6-4,Two,Loss
+Linz,LIN,Austria,2014-10-06,2014,10,International,Hard,6,1,Round 32,W,[W],Patricia Mayr-Achleitner,/players/player/311044/title/Patricia-Mayr-Achleitner,AUT,100,6-4  6-1,Two,Win
+Linz,LIN,Austria,2014-10-06,2014,10,International,Hard,6,1,Round 16,L,,Tsvetana Pironkova,/players/player/311041/title/Tsvetana-PIRONKOVA,BUL,44,-,,Win
+Wta finals,WTA,Singapore,2014-10-20,2014,10,Championship,Hard,5,5,R1,L,[4],Simona Halep,/players/player/314320/title/simona-halep%20,ROU,4,6-2  6-3,Two,Loss
+Wta finals,WTA,Singapore,2014-10-20,2014,10,Championship,Hard,5,5,R1,L,[7],Ana Ivanovic,/players/player/311710/title/Ana-Ivanovic,SRB,7,6-1  6-3,Two,Loss
+Wta finals,WTA,Singapore,2014-10-20,2014,10,Championship,Hard,5,5,R1,L,[1],Serena Williams,/players/player/230234/title/serena-Williams,USA,1,6-1  6-1,Two,Loss
