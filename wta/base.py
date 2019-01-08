@@ -1,9 +1,16 @@
+"""
+This application was created to parse the tables
+of matches present on the WTA website.
+"""
+
+
 import requests
 import re
 import datetime
 import csv
 import itertools
 import time
+import os
 from urllib.parse import urljoin
 from bs4 import BeautifulSoup
 from ua import get_rand_agent
@@ -11,43 +18,88 @@ from collections import namedtuple
 from wta_settings import Settings
 
 
+
+
+# SETTINGS
+
+BASE_PATH = os.path.dirname(os.path.abspath(__file__))
+
+BASE_URLS = [
+    'https://www.wtatennis.com/',
+    'https://www.wtatennis.com/headtohead/{}/{}',
+    'https://www.wtatennis.com/player/matches/{}/{}/0'
+]
+
 PLAYER_URL = 'https://www.wtatennis.com/players/player/316161/title/eugenie-bouchard-0#matches'
+
 PLAYER_HEAD_TO_HEAD_URL = 'https://www.wtatennis.com/headtohead/316161/pb:191071'
+
 HTML_PATH = 'D:\\Programs\\Python\\repositories\\python_codes\wta\\test.html'
 
-class Start:        
-    def create_request(self, uri=None):
+
+
+
+def construct_player_url(path):
+    return urljoin(BASE_URLS[0], path)
+
+class Start:
+    def create_request(self, uri=None, method='get', **kwargs):
         """
         Get a response from a GET request
         """
+        methods = ['get', 'post']
         try:
-            response = requests.get(uri, get_rand_agent())
-        except requests.HTTPError as e:
-            raise
-        else:
-            if response.status_code == 200:
-                return response
-            
-            else:
-                return None
+            if method:
+                if method in methods:
+                    if method == 'get':
+                        response = requests.get(uri, get_rand_agent())
+                    
+                    elif method == 'post':
+                        if 'files' in kwargs:
+                            files = kwargs['files']
+                        
+                        else:
+                            files = None
 
-    def create_post_request(self, uri=None, **kwargs):
-        """
-        Get a response from a POST request
-        """
-        try:
-            response = requests.post(uri, get_rand_agent(), data=kwargs)
+                        response = requests.post(uri, files=files, data=kwargs['data'])
+
+                else:
+                    raise KeyError('Method is not allowed (%s)' % method)
+
+            else:
+                raise KeyError('Did you specify a method? \
+                                    The methods allowed are %s' % methods)
+
         except requests.HTTPError as e:
+            print('There was an error \
+                        with the HTTP request %s' % e.args)
             raise
+
         else:
             if response.status_code == 200:
                 return response
             
             else:
-                return None
+                # If the response is not exploitable
+                # I think its better to just raise an error
+                raise requests.ConnectionError('We could not get a \
+                                                response from the server.')
 
     def _soup(self, response):
         return BeautifulSoup(response.text, 'html.parser')
+
+    def _soup_from_html(self, f):
+        return BeautifulSoup(f, 'html.parser')
+
+
+
+class Zapier(Start):
+    def create_zap(self, zap_uri):
+        files = {'upload_file': open(Settings().CSV_FILE, 'rb')}
+        data = {}
+        response = super().create_request(zap_uri, files=files, data=data)
+
+
 
 class PlayerData(Start):
     def get_data(self, uri=PLAYER_URL):
@@ -96,11 +148,11 @@ class PlayerData(Start):
             height = 'N/A'
 
          # Player's playing hand
-        tag = soup.find('div',class_='field--name-field-playhand')
-        player_playing_hand = tag.find('div',class_='even').text
+        tag = soup.find('div', class_='field--name-field-playhand')
+        player_playing_hand = tag.find('div', class_='even').text
 
         # Player's country and city
-        tag = soup.find('div',class_='field--name-field-birthcity').text
+        tag = soup.find('div', class_='field--name-field-birthcity').text
         if tag != 'N/A':
             city, country = tag.split(',', 1)
             _city = city.strip().lower().capitalize()
@@ -109,8 +161,8 @@ class PlayerData(Start):
             _city = _country = 'N/A'
 
         # Player's country
-        tag = soup.find('div',class_='group-country')
-        country_code = tag.find('div',class_='even').text
+        tag = soup.find('div', class_='group-country')
+        country_code = tag.find('div', class_='even').text
 
         return player(constructed_name, formatted_date.date(), age, height, self.convert_height(height), \
                     player_playing_hand, _city, _country, country_code)
@@ -149,11 +201,15 @@ class PlayerData(Start):
             return 'N/A'
         return round(height / 30.48, 1)
 
+
+
 class PlayerMatchesXHR(Start):
-    def get_matches_from_xhr(self):
+    def response_from_xhr(self):
         response = self.create_request('https://www.wtatennis.com/player/matches/191647/2017/0')
-        
-class PlayerMatchesHtml:
+
+
+
+class PlayerMatchesHtml(Start):
     def get_matches(self):
         """
         Return a named tuple having the following references for a player's WTA matches:
@@ -178,20 +234,22 @@ class PlayerMatchesHtml:
 
         """
         with open(HTML_PATH, 'r') as f:
-            soup = BeautifulSoup(f, 'html.parser')
+            # soup = BeautifulSoup(f, 'html.parser')
+            soup = self._soup_from_html(f)
 
             # This is the section where all
-            # the informations are stored
+            # the informations stored are
+            # parsed as a whole
             tags = soup.find_all('div', class_='wta-table-data')
 
             tournaments_played = []
             tournament = namedtuple('Tournament', ['tour_characteristics', \
                                         'tour_details', 'player_tour_infos', 'matches'])
             matches_played = []
-            s=[]
+            s = []
 
             for tag in tags:
-                # NOTE: This section deals with the upper
+                # This section deals with the upper
                 # section of the matches tables
                 # where all the information about the
                 # tournament is present
@@ -204,7 +262,6 @@ class PlayerMatchesHtml:
                 # Rank with which the player entered
                 # that specific tournament
                 player_tour_rank = re.search(r'\d+', tour_infos_tags[2].text).group(0)
-
                 # Some players may be seeded in 
                 # the tournament and we can catch that
                 is_seeded = re.search(r'\d+', tour_infos_tags[3].text)
@@ -215,8 +272,8 @@ class PlayerMatchesHtml:
 
                 print('Fetching: %s' % tournament_name)
 
-                # NOTE: Here we parse the matches written in
-                # the tables that we have fetched
+                # Here we parse the matches present in
+                # the table that we have fetched above
                 match_table_row = tag.find('table').find('tbody').find_all('tr')
                 for data in match_table_row:
                     match_round = data.find('td', class_='round').text.strip()
@@ -224,34 +281,38 @@ class PlayerMatchesHtml:
 
                     # We have to parse the opponent row
                     # specifically since there are many
-                    # tags in that specific tag
+                    # tags in that specific section
                     match_opponent = data.find('td', class_='opponent')
-                    if match_opponent.find(class_='opponent-seed'):
-                        match_opponent_seed = match_opponent.find(class_='opponent-seed').text.strip()
+                    # Some players might not have a
+                    # seeding! We have to take care
+                    # of that here
+                    has_seeding = match_opponent.find(class_='opponent-seed')
+                    if has_seeding:
+                        match_opponent_seed = has_seeding.text.strip()
                     else:
-                        match_opponent_seed = ''
+                        match_opponent_seed = None
 
                     # This part breaks because of the BYE
                     # that sometimes occurs in the start
                     # of certain tournaments.
-                    # This still generates a csv row so it
+                    # IMPORTANT: This still generates a csv row so it
                     # would be interesting to find an alternative
                     has_opponent_link = match_opponent.find('a')
                     if has_opponent_link:
-                        match_opponent_link = match_opponent.find('a')['href']
+                        match_opponent_link = has_opponent_link['href']
                     else:
                         match_opponent_link = None
 
                     has_opponent_name = match_opponent.find('a')
                     if has_opponent_name:
-                        match_opponent_name = match_opponent.find('a').text.strip()
+                        match_opponent_name = has_opponent_name.text.strip()
 
                         has_opponent_nationality = re.search(r'\(([A-Z]+)\)', str(match_opponent))
                         if has_opponent_nationality:
                             match_opponent_nationality = has_opponent_nationality.group(0)
 
                         else:
-                            match_opponent_nationality = ''
+                            match_opponent_nationality = None
 
                     else:
                         match_opponent_name = None
@@ -260,9 +321,10 @@ class PlayerMatchesHtml:
                     match_score = data.find('td', class_='score').text.strip()
 
                     # Here we determine the amounts of sets played
-                    # so as the if the first set was won or not
+                    # so as if the first set was won or not
                     sets_statistics = self.parse_score(match_score, match_result)
 
+                    # This creates a match data tuple
                     match_data = match_round, match_result, \
                                 [match_opponent_seed, match_opponent_name, \
                                     match_opponent_link, self.parse_nationality(match_opponent_nationality), \
@@ -343,6 +405,7 @@ class PlayerMatchesHtml:
             has_lost_first_set = re.match(r'([0-4]\-6|[5-6]\-7)', splitted_score[0])
             if has_lost_first_set:
                 first_set = 'Loss'
+
             else:
                 first_set = 'Win'
 
@@ -350,6 +413,7 @@ class PlayerMatchesHtml:
             has_won_first_set = re.match(r'^(6\-[0-4]|7\-[5-6])', splitted_score[0])
             if has_won_first_set:
                 first_set = 'Loss'
+
             else:
                 first_set = 'Win'
 
@@ -357,17 +421,19 @@ class PlayerMatchesHtml:
 
         if len(splitted_score) == 3:
             number_of_sets = 'Three'
+
         elif len(splitted_score) == 2:
             number_of_sets = 'Two'
+
         elif 'RET' in splitted_score:
             number_of_sets = 'RET'
+
         else:
             number_of_sets = None
         
         return [number_of_sets, first_set]
         
-
-    def _write_csv(self, values=[], mode='w'):
+    def _write_csv(self, mode='w'):
         # "['Tashkent', 'TAS', 'Uzbekistan']","['September 24, 2018', 'International', 'Hard']","['107', '']","[('Round 32', 'L', ['', 'Nao Hibino', '/players/player/320238/title/Nao-HIBINO', 'JPN', '128', '6-3 6-3'])]"
         matches = list(reversed(self.get_matches()))
 
@@ -399,11 +465,3 @@ class PlayerMatchesHtml:
                     csv_file.writerow(constructed_row)
 
         print('Success!')
-            
-class Zapier(Start):
-    def create_zap(self, zap_uri):
-        files = {'upload_file': open(Settings().CSV_FILE, 'rb')}
-        data = {}
-        response = super().create_post_request(zap_uri, files=files, data=data)
-
-# PlayerMatchesHtml()._write_csv()
