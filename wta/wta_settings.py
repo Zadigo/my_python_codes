@@ -38,4 +38,17 @@ class Settings:
 
         setattr(self, 'CSV_PLAYERS', os.path.join(self.BASE_PATH, settings_dict['CSV_PLAYERS'] + '.csv'))
 
- 
+HTML_FILES_PATH = [
+    os.path.join(os.environ.get('USERPROFILE', None), 'Documents', 'tennis_html'),
+    [
+        os.path.join(BASE_PATH, 'src', 'tennis_html')
+    ]
+]
+
+class Checker:
+    def __init__(self):
+        module = import_module('wta_settings')
+        module_dict = module.__dict__
+        for key, value in module_dict.items():
+            if key.upper():
+                setattr(self, key, value)

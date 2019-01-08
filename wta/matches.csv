@@ -1,4 +1,202 @@
 tour,tour_code,tour_country,date,year,month,tour_type,tour_surface,player_rank,player_seed,match_round,match_result,opp_seed,opp_name,opp_profile_link,opp_nationality,opp_rank,match_score,num_sets,first_set_result
+Sumter,SUM,Usa,2008-05-26,2008,5,Itf,Hard,0,,Round 32,L,[Q],Grace Min,/players/player/316157/title/grace-min-0,USA,-,6-0  6-3,Two,Loss
+Waterloo,WAT,Canada,2008-06-30,2008,6,Itf,Clay,0,,Round 32,L,[W],Sonja Molnar,/players/player/316323/title/Sonja-Molnar,CAN,-,7-6(2)  6-0,Two,Loss
+Montreal,MON,Canada,2008-07-28,2008,7,Tier i,Hard,9999,,Round 64 - Q,L,[17],Abigail Spears,/players/player/190771/title/Abigail-Spears,USA,166,6-3  6-4,Two,Loss
+Southlake,SOU,Usa,2008-10-06,2008,10,Itf,Hard,9999,,Round 32,L,[Q],Nicole Bartnik,/players/player/314287/title/nicole-bartnik,USA,-,6-3  6-0,Two,Loss
+Saguenay,SAG,Canada,2008-10-20,2008,10,Itf,Hard,9999,,Round 32,L,,Carmen Klaschka,/players/player/311649/title/carmen-klaschka,GER,244,6-1  6-0,Two,Loss
+Caserta,CAS,Italy,2009-05-11,2009,5,Itf,Clay,1071,,Round 32,W,[W],Federica Grazioso,/players/player/313026/title/federica-grazioso,ITA,798,6-4  7-6(9),Two,Win
+Caserta,CAS,Italy,2009-05-11,2009,5,Itf,Clay,1071,,Round 16,L,[5],Alexia Virgili,/players/player/310244/title/alexia-virgili,ITA,397,4-6  6-2  6-3,Three,Win
+Tortosa,TOR,Spain,2009-05-25,2009,5,Itf,Clay,1061,,Round 32,W,[Q],Andrea Medina Tomas,/players/player/317195/title/andrea-medina-tomas,ESP,-,6-3  6-1,Two,Win
+Tortosa,TOR,Spain,2009-05-25,2009,5,Itf,Clay,1061,,Round 16,L,[2],Justine Ozga,/players/player/311752/title/Justine-Ozga,GER,330,-,,Win
+Amarante,AMA,Portugal,2009-06-01,2009,6,Itf,Hard,1061,,Round 32,W,[Q],Nadia Abdala,/players/player/312734/title/nadia-abdala,MEX,9999,6-0  6-1,Two,Win
+Amarante,AMA,Portugal,2009-06-01,2009,6,Itf,Hard,1061,,Round 16,L,,Melanie Gloria,/players/player/310892/title/melanie-gloria,CAN,758,6-3  6-7(5)  6-1,Three,Loss
+Toronto,TOR,Canada,2009-08-17,2009,8,Premier 5,Hard,1104,,Round 64 - Q,L,[19],Kateryna Bondarenko,/players/player/20702/title/kateryna-bondarenko-0,UKR,64,6-2  6-0,Two,Loss
+Burnie,BUR,Australia,2010-02-01,2010,2,Itf,Hard,1077,13,Round 32 - Q,W,,Min Liu,/players/player/316191/title/min-liu,CHN,-,2-6  6-3  6-4,Three,Loss
+Burnie,BUR,Australia,2010-02-01,2010,2,Itf,Hard,1077,13,Round 16 - Q,W,[3],Hayley Ericksen,/players/player/313944/title/hayley-ericksen,AUS,660,6-3  6-3,Two,Win
+Burnie,BUR,Australia,2010-02-01,2010,2,Itf,Hard,1077,13,Round 32,L,[6],Erika Sema,/players/player/311832/title/erika-sema-0,JPN,250,7-5  6-4,Two,Loss
+Jackson,JAC,Usa,2010-04-05,2010,4,Itf,Clay,0,,Round 32 - Q,L,[9],Ahsha Rolle,/players/player/310210/title/ahsha-rolle,USA,-,6-2  6-2,Two,Loss
+Osprey,OSP,Usa,2010-04-12,2010,4,Itf,Clay,1056,,Round 32 - Q,W,,Natalia Cheng,/players/player/314875/title/natalia-cheng,BRA,632,6-1  6-2,Two,Win
+Osprey,OSP,Usa,2010-04-12,2010,4,Itf,Clay,1056,,Round 16 - Q,W,,Brittany Augustine,/players/player/313838/title/brittany-augustine,USA,660,6-3  6-3,Two,Win
+Osprey,OSP,Usa,2010-04-12,2010,4,Itf,Clay,1056,,Round 32,W,,Kimberly Couts,/players/player/312389/title/kimberly-couts,USA,284,6-1  6-7(5)  7-6(7),Three,Win
+Osprey,OSP,Usa,2010-04-12,2010,4,Itf,Clay,1056,,Round 16,W,[7],Maria Fernanda Alvarez Teran,/players/player/313564/title/maria-fernanda-alvarez-teran-0,BOL,230,6-4  6-2,Two,Win
+Osprey,OSP,Usa,2010-04-12,2010,4,Itf,Clay,1056,,Quarterfinals,L,[Q],Beatrice Capra,/players/player/314338/title/beatrice-capra,USA,537,6-3  6-4,Two,Loss
+Waterloo,WAT,Canada,2010-07-19,2010,7,Itf,Hard,776,,Round 32,W,[4],Chieh-Yu Hsu,/players/player/314181/title/chieh-yu-hsu-0,TPE,395,7-6(5)  6-2,Two,Win
+Waterloo,WAT,Canada,2010-07-19,2010,7,Itf,Hard,776,,Round 16,W,[Q],Carmen Sandor,/players/player/315764/title/carmen-sandor,CAN,1050,6-1  6-3,Two,Win
+Waterloo,WAT,Canada,2010-07-19,2010,7,Itf,Hard,776,,Quarterfinals,W,,Tiffany Welford,/players/player/230284/title/tiffany-welford,AUS,617,6-3  6-2,Two,Win
+Waterloo,WAT,Canada,2010-07-19,2010,7,Itf,Hard,776,,Semifinals,L,[1],Julia Cohen,/players/player/311380/title/julia-cohen,USA,184,6-4  6-4,Two,Loss
+Vancouver,VAN,Canada,2010-08-02,2010,8,Itf,Hard,593,,Round 32,L,[8],Sania Mirza,/players/player/310112/title/Sania-Mirza,IND,138,6-2  6-2,Two,Loss
+Montreal,MON,Canada,2010-08-16,2010,8,Premier 5,Hard,592,,Round 64 - Q,L,,Alison Riske,/players/player/312850/title/alison-riske-0,USA,156,6-4  6-2,Two,Loss
+Saguenay,SAG,Canada,2010-09-20,2010,9,Itf,Hard,587,,Round 32,W,,Alexandra Mueller,/players/player/310808/title/alexandra-mueller,USA,442,7-6(4)  6-2,Two,Win
+Saguenay,SAG,Canada,2010-09-20,2010,9,Itf,Hard,587,,Round 16,L,[1],Rebecca Marino,/players/player/313485/title/Rebecca-Marino,CAN,137,6-4  7-6(7),Two,Loss
+Kansas city,KAN,Usa,2010-10-04,2010,10,Itf,Hard,545,,Round 32 - Q,W,,Chelsey Gullickson,/players/player/314125/title/chelsey-gullickson,USA,786,6-4  6-4,Two,Win
+Kansas city,KAN,Usa,2010-10-04,2010,10,Itf,Hard,545,,Round 16 - Q,L,[3],Jorgelina Cravero,/players/player/30500/title/jorgelina-cravero,ARG,421,6-3  6-0,Two,Loss
+Burnie,BUR,Australia,2011-01-31,2011,1,Itf,Hard,549,1,Round 32 - Q,W,,,,USA,-,-,,Win
+Burnie,BUR,Australia,2011-01-31,2011,1,Itf,Hard,549,1,Round 16 - Q,W,,Mia Vriens,/players/player/316165/title/mia-vriens,AUS,-,6-1  6-1,Two,Win
+Burnie,BUR,Australia,2011-01-31,2011,1,Itf,Hard,549,1,Round 32,W,[1],Sally Peers,/players/player/314726/title/sally-peers-0,AUS,153,1-6  6-2  6-3,Three,Loss
+Burnie,BUR,Australia,2011-01-31,2011,1,Itf,Hard,549,1,Round 16,W,,Isabella Holland,/players/player/314622/title/Isabella-Holland,AUS,349,6-4  6-1,Two,Win
+Burnie,BUR,Australia,2011-01-31,2011,1,Itf,Hard,549,1,Quarterfinals,W,,Daria Gavrilova,/players/player/315997/title/daria-gavrilova%20,AUS,544,6-1  6-2,Two,Win
+Burnie,BUR,Australia,2011-01-31,2011,1,Itf,Hard,549,1,Semifinals,W,[Q],Nastja Kolar,/players/player/316405/title/nastja-kolar-0,SLO,648,6-3  7-5,Two,Win
+Burnie,BUR,Australia,2011-01-31,2011,1,Itf,Hard,549,1,Final,W,[Q],Saisai Zheng,/players/player/316286/title/Saisai-ZHENG,CHN,403,6-4  6-3,Two,Win
+Surprise,SUR,Usa,2011-02-14,2011,2,Itf,Hard,392,11,Round 32 - Q,W,,Di Zhao,/players/player/316092/title/di-zhao-0,CHN,925,6-3  6-3,Two,Win
+Surprise,SUR,Usa,2011-02-14,2011,2,Itf,Hard,392,11,Round 16 - Q,L,[2],Chanel Simmonds,/players/player/315735/title/chanel-simmonds-0,RSA,374,5-7  6-1  7-6(2),Three,Win
+Surprise,SUR,Usa,2011-02-14,2011,2,Itf,Hard,392,11,Round 32,W,[L],Elizabeth Lumpkin,/players/player/311300/title/elizabeth-lumpkin,USA,554,6-3  6-2,Two,Win
+Surprise,SUR,Usa,2011-02-14,2011,2,Itf,Hard,392,11,Round 16,L,[4],Tetiana Luzhanska,/players/player/120381/title/tetiana-luzhanska,USA,215,0-6  7-6(4)  6-3,Three,Win
+Sibenik,SIB,Croatia,2011-04-04,2011,4,Itf,Clay,370,2,Round 32,W,[W],Mateja Kraljevic,/players/player/317663/title/mateja-kraljevic,SUI,9999,6-2  6-1,Two,Win
+Sibenik,SIB,Croatia,2011-04-04,2011,4,Itf,Clay,370,2,Round 16,W,,Raluca Elena Joitoiu,/players/player/316228/title/Raluca-Elena-Joitoiu,ROU,646,6-2  6-1,Two,Win
+Sibenik,SIB,Croatia,2011-04-04,2011,4,Itf,Clay,370,2,Quarterfinals,W,,Maria Abramovic,/players/player/311275/title/maria-abramovic,CRO,599,6-1  3-1 RET,Three,Win
+Sibenik,SIB,Croatia,2011-04-04,2011,4,Itf,Clay,370,2,Semifinals,W,[8],Amra Sadikovic,/players/player/313355/title/amra-sadikovic-0,SUI,584,6-3  3-6  6-2,Three,Win
+Sibenik,SIB,Croatia,2011-04-04,2011,4,Itf,Clay,370,2,Final,W,[Q],Jessica Ginier,/players/player/316962/title/jessica-ginier,FRA,756,6-2  6-0,Two,Win
+Charlottesville,CHA,Usa,2011-04-25,2011,4,Itf,Clay,379,,Round 32,W,[W],Amanda Fink,/players/player/312786/title/amanda-fink,USA,376,6-3  6-0,Two,Win
+Charlottesville,CHA,Usa,2011-04-25,2011,4,Itf,Clay,379,,Round 16,L,[8],Michelle Larcher De Brito,/players/player/314929/title/michelle-larcher-de-brito-0,POR,187,7-5  4-6  6-2,Three,Loss
+Waterloo,WAT,Canada,2011-07-04,2011,7,Itf,Clay,368,,Round 32,L,[2],Tetiana Luzhanska,/players/player/120381/title/tetiana-luzhanska,USA,159,6-2  4-6  6-1,Three,Loss
+Granby,GRA,Canada,2011-07-11,2011,7,Itf,Hard,374,,Round 32,W,,Remi Tezuka,/players/player/200299/title/remi-tezuka,JPN,410,6-4  6-1,Two,Win
+Granby,GRA,Canada,2011-07-11,2011,7,Itf,Hard,374,,Round 16,L,[4],Ling Zhang,/players/player/313228/title/ling-zhang-0,HKG,194,6-7(3)  7-5  7-5,Three,Win
+Washington dc,WAS,Usa,2011-07-25,2011,7,International,Hard,364,,Round 32,W,,Alison Riske,/players/player/312850/title/alison-riske-0,USA,114,6-3  6-2,Two,Win
+Washington dc,WAS,Usa,2011-07-25,2011,7,International,Hard,364,,Round 16,L,[2/W],Nadia Petrova,/players/player/160379/title/Nadia-Petrova,RUS,32,6-2  6-2,Two,Loss
+Vancouver,VAN,Canada,2011-08-01,2011,8,Itf,Hard,355,,Round 32,L,,Julia Cohen,/players/player/311380/title/julia-cohen,USA,193,7-5  6-4,Two,Loss
+Toronto,TOR,Canada,2011-08-08,2011,8,Premier 5,Hard,351,,Round 64,L,[11],Andrea Petkovic,/players/player/310770/title/Andrea-PETKOVIC-0,GER,10,6-2  6-2,Two,Loss
+Quebec city,QUE,Canada,2011-09-12,2011,9,International,Carpet,346,,Round 32,L,,Varvara Lepchenko,/players/player/120420/title/Varvara-LEPCHENKO,USA,106,6-1  6-7(0)  6-3,Three,Loss
+Kansas city,KAN,Usa,2011-10-03,2011,10,Itf,Hard,352,2,Round 32 - Q,W,,Gabriela Dabrowski,/players/player/314445/title/gabriela-dabrowski-0%20,CAN,452,7-6(2)  7-5,Two,Win
+Kansas city,KAN,Usa,2011-10-03,2011,10,Itf,Hard,352,2,Round 16 - Q,W,,Malou Ejdesgaard,/players/player/314395/title/malou-ejdesgaard,DEN,892,6-0  6-4,Two,Win
+Kansas city,KAN,Usa,2011-10-03,2011,10,Itf,Hard,352,2,Quarterfinals - Q,W,[8],Alyona Sotnikova,/players/player/314903/title/alyona-sotnikova-0,UKR,436,6-1  6-2,Two,Win
+Kansas city,KAN,Usa,2011-10-03,2011,10,Itf,Hard,352,2,Round 32,W,[W],Maria Sanchez,/players/player/313958/title/Maria-SANCHEZ,USA,710,7-6(1)  1-6  6-2,Three,Win
+Kansas city,KAN,Usa,2011-10-03,2011,10,Itf,Hard,352,2,Round 16,L,,Olga Puchkova,/players/player/310717/title/olga-puchkova,RUS,253,6-2  6-3,Two,Loss
+Troy,TRO,Usa,2011-10-10,2011,10,Itf,Hard,332,4,Round 32 - Q,W,,Amanda Mcdowell,/players/player/316279/title/amanda-mcdowell,USA,457,6-2  6-3,Two,Win
+Troy,TRO,Usa,2011-10-10,2011,10,Itf,Hard,332,4,Round 16 - Q,L,,Shelby Rogers,/players/player/317421/title/shelby-rogers-0,USA,558,6-4  1-6  6-3,Three,Loss
+Rock hill,ROC,Usa,2011-10-17,2011,10,Itf,Hard,330,,Round 32,L,,Sesil Karatantcheva,/players/player/311810/title/sesil-karatantcheva-0,BUL,205,6-3  6-4,Two,Loss
+Saguenay,SAG,Canada,2011-10-24,2011,10,Itf,Hard,333,,Round 32,W,[Q],Sheng-Nan Sun,/players/player/310798/title/sheng-nan-sun,CHN,360,7-6(2)  4-6  6-3,Three,Win
+Saguenay,SAG,Canada,2011-10-24,2011,10,Itf,Hard,333,,Round 16,L,[3],Timea Babos,/players/player/317070/title/timea-babos-0,HUN,181,6-2  6-4,Two,Loss
+Toronto,TOR,Canada,2011-10-31,2011,10,Itf,Hard,317,,Round 32,W,[3],Alexa Glatch,/players/player/312214/title/Alexa-Glatch,USA,146,6-0  6-2,Two,Win
+Toronto,TOR,Canada,2011-10-31,2011,10,Itf,Hard,317,,Round 16,W,,Amanda Fink,/players/player/312786/title/amanda-fink,USA,280,6-2  7-6(6),Two,Win
+Toronto,TOR,Canada,2011-10-31,2011,10,Itf,Hard,317,,Quarterfinals,L,[Q],Amra Sadikovic,/players/player/313355/title/amra-sadikovic-0,SUI,350,6-1  6-1,Two,Loss
+Phoenix,PHO,Usa,2011-11-07,2011,11,Itf,Hard,302,2,Round 32 - Q,W,,Elizabeth Lumpkin,/players/player/311300/title/elizabeth-lumpkin,USA,745,6-3  6-4,Two,Win
+Phoenix,PHO,Usa,2011-11-07,2011,11,Itf,Hard,302,2,Round 16 - Q,L,,Anne-Liz Jeukeng,/players/player/318400/title/Anne-Liz-Jeukeng,USA,641,7-6(5)  2-6  6-3,Three,Loss
+Burnie - burnie,BUR,Australia,2012-01-30,2012,1,Itf,Hard,305,,Round 32,W,[Q],Ayumi Oka,/players/player/311412/title/ayumi-oka,JPN,465,6-2  6-2,Two,Win
+Burnie - burnie,BUR,Australia,2012-01-30,2012,1,Itf,Hard,305,,Round 16,W,,Melanie South,/players/player/310620/title/melanie-south,GBR,323,6-2  4-6  7-5,Three,Win
+Burnie - burnie,BUR,Australia,2012-01-30,2012,1,Itf,Hard,305,,Quarterfinals,L,,Irina Khromacheva,/players/player/317915/title/irina-khromacheva-0,RUS,282,6-1  6-3,Two,Loss
+Fort walton beach,FOR,Usa,2012-03-05,2012,3,Itf,Hard,362,,Round 32,W,,Naomi Broady,/players/player/313941/title/Naomi-Broady,GBR,192,2-6  6-4  6-1,Three,Loss
+Fort walton beach,FOR,Usa,2012-03-05,2012,3,Itf,Hard,362,,Round 16,W,[Q],Breaunna Addison,/players/player/317295/title/breaunna-addison,USA,-,6-3  3-6  6-1,Three,Win
+Fort walton beach,FOR,Usa,2012-03-05,2012,3,Itf,Hard,362,,Quarterfinals,L,,Madison Brengle,/players/player/312328/title/madison-brengle-0,USA,188,6-0  6-2,Two,Loss
+Clearwater,CLE,Usa,2012-03-12,2012,3,Itf,Hard,362,,Round 32 - Q,W,[16],Sofia Shapatava,/players/player/312623/title/sofia-shapatava-0,GEO,263,6-0  6-4,Two,Win
+Clearwater,CLE,Usa,2012-03-12,2012,3,Itf,Hard,362,,Round 16 - Q,L,[4],Margalita Chakhnashvili-Ranzinger,/players/player/30470/title/margalita-chakhnashvili-ranzinger,GEO,185,-,,Win
+Osprey,OSP,Usa,2012-03-26,2012,3,Itf,Clay,340,,Round 32,W,,Laura Robson,/players/player/316629/title/laura-robson-0,GBR,120,6-3  6-7(6)  6-4,Three,Win
+Osprey,OSP,Usa,2012-03-26,2012,3,Itf,Clay,340,,Round 16,L,[1],Lucie Hradecka,/players/player/310849/title/lucie-hradecka-0,CZE,68,7-5  6-1,Two,Loss
+Jackson,JAC,Usa,2012-04-02,2012,4,Itf,Clay,327,3,Round 32 - Q,W,,Carol Jane Elliott,/players/player/320043/title/carol-jane-elliott,USA,-,3-0 RET,Two,Win
+Jackson,JAC,Usa,2012-04-02,2012,4,Itf,Clay,327,3,Round 16 - Q,W,,Miyu Kato,/players/player/317612/title/Miyu-Kato-0,JPN,792,6-3  7-5,Two,Win
+Jackson,JAC,Usa,2012-04-02,2012,4,Itf,Clay,327,3,Round 32,L,[3],Alexa Glatch,/players/player/312214/title/Alexa-Glatch,USA,180,6-3  6-2,Two,Loss
+Pelham,PEL,Usa,2012-04-09,2012,4,Itf,Clay,324,11,Round 32 - Q,W,,Olga Ianchuk,/players/player/317148/title/Olga-Ianchuk,UKR,582,6-3  6-2,Two,Win
+Pelham,PEL,Usa,2012-04-09,2012,4,Itf,Clay,324,11,Round 16 - Q,L,[5],Sofia Shapatava,/players/player/312623/title/sofia-shapatava-0,GEO,266,6-4  1-6  6-2,Three,Loss
+Dothan,DOT,Usa,2012-04-16,2012,4,Itf,Clay,343,,Round 32,L,[Q],Sacha Jones,/players/player/313617/title/Sacha-Jones,AUS,219,4-6  6-4  6-2,Three,Win
+Bastad,BAS,Sweden,2012-05-07,2012,5,Itf,Clay,352,1,Round 32,W,,Laura Schaeder,/players/player/317433/title/laura-schaeder-0,GER,932,6-2  6-3,Two,Win
+Bastad,BAS,Sweden,2012-05-07,2012,5,Itf,Clay,352,1,Round 16,W,,Agata Baranska,/players/player/317096/title/agata-baranska,POL,858,6-4  6-3,Two,Win
+Bastad,BAS,Sweden,2012-05-07,2012,5,Itf,Clay,352,1,Quarterfinals,W,,Barbara Sobaszkiewicz,/players/player/314208/title/barbara-sobaszkiewicz,POL,617,6-1  6-4,Two,Win
+Bastad,BAS,Sweden,2012-05-07,2012,5,Itf,Clay,352,1,Semifinals,W,[5],Hilda Melander,/players/player/314813/title/Hilda-Melander,SWE,462,6-2  6-3,Two,Win
+Bastad,BAS,Sweden,2012-05-07,2012,5,Itf,Clay,352,1,Final,W,,Katharina Lehnert,/players/player/317832/title/katharina-lehnert-0,PHI,740,7-6(4)  6-0,Two,Win
+Bastad 2,BAS,Sweden,2012-05-14,2012,5,Itf,Clay,352,3,Round 32,W,,Andrea Norlander,/players/player/319956/title/andrea-norlander,SWE,-,6-1  6-0,Two,Win
+Bastad 2,BAS,Sweden,2012-05-14,2012,5,Itf,Clay,352,3,Round 16,W,[Q],Indy De Vroome,/players/player/319266/title/Indy-de-Vroome,NED,1020,6-4  6-2,Two,Win
+Bastad 2,BAS,Sweden,2012-05-14,2012,5,Itf,Clay,352,3,Quarterfinals,W,,Barbara Sobaszkiewicz,/players/player/314208/title/barbara-sobaszkiewicz,POL,650,6-1  6-2,Two,Win
+Bastad 2,BAS,Sweden,2012-05-14,2012,5,Itf,Clay,352,3,Semifinals,W,,Sandra Roma,/players/player/312387/title/sandra-roma,SWE,945,6-2  6-2,Two,Win
+Bastad 2,BAS,Sweden,2012-05-14,2012,5,Itf,Clay,352,3,Final,W,[4],Milana Spremo,/players/player/314627/title/milana-spremo-0,SRB,402,6-3  6-0,Two,Win
+Maribor,MAR,Slovenia,2012-05-28,2012,5,Itf,Clay,328,4,Round 32 - Q,W,,Julija Jauk,/players/player/318132/title/julija-jauk,SLO,9999,6-0  6-1,Two,Win
+Maribor,MAR,Slovenia,2012-05-28,2012,5,Itf,Clay,328,4,Round 16 - Q,W,,Petra Sunic,/players/player/313059/title/petra-sunic,CRO,878,6-0  6-1,Two,Win
+Maribor,MAR,Slovenia,2012-05-28,2012,5,Itf,Clay,328,4,Round 32,W,[Q],Natalie Piquion,/players/player/313014/title/natalie-piquion,FRA,385,3-6  6-4  6-2,Three,Loss
+Maribor,MAR,Slovenia,2012-05-28,2012,5,Itf,Clay,328,4,Round 16,W,[6],Elena Bogdan,/players/player/314318/title/elena-bogdan-0,ROU,203,7-5  6-1,Two,Win
+Maribor,MAR,Slovenia,2012-05-28,2012,5,Itf,Clay,328,4,Quarterfinals,L,[Q],Anna-Lena Friedsam,/players/player/319091/title/Anna-Lena-Friedsam,GER,455,3-6  6-4  6-3,Three,Win
+'s-hertogenbosch,'S-,Netherlands,2012-06-17,2012,6,International,Grass,305,,Round 16 - Q,L,[6],Arantxa Parra Santonja,/players/player/160451/title/Arantxa-PARRA-SANTONJA,ESP,220,6-3  6-4,Two,Loss
+Granby,GRA,Canada,2012-07-16,2012,7,Itf,Hard,312,,Round 32,W,[6],Sharon Fichman,/players/player/313283/title/sharon-fichman-0,CAN,195,6-3  6-2,Two,Win
+Granby,GRA,Canada,2012-07-16,2012,7,Itf,Hard,312,,Round 16,W,[W],Francoise Abanda,/players/player/320421/title/francoise-abanda-0,CAN,-,6-2  7-5,Two,Win
+Granby,GRA,Canada,2012-07-16,2012,7,Itf,Hard,312,,Quarterfinals,W,[2],Alison Riske,/players/player/312850/title/alison-riske-0,USA,157,6-3  5-7  6-2,Three,Win
+Granby,GRA,Canada,2012-07-16,2012,7,Itf,Hard,312,,Semifinals,W,[4],Julie Coin,/players/player/30548/title/julie-coin,FRA,214,6-4  6-2,Two,Win
+Granby,GRA,Canada,2012-07-16,2012,7,Itf,Hard,312,,Final,W,[1],Stéphanie Dubois,/players/player/310290/title/stephanie-dubois,CAN,126,6-2  5-2 RET,Three,Win
+Washington dc - washington dc,WAS,Usa,2012-07-29,2012,7,International,Hard,294,,Round 32,W,,Karin Knapp,/players/player/311299/title/karin-knapp-0,ITA,121,6-2  7-6(4),Two,Win
+Washington dc - washington dc,WAS,Usa,2012-07-29,2012,7,International,Hard,294,,Round 16,W,[8],Olga Govortsova,/players/player/311243/title/olga-govortsova-0,BLR,82,1-6  6-0  6-3,Three,Loss
+Washington dc - washington dc,WAS,Usa,2012-07-29,2012,7,International,Hard,294,,Quarterfinals,L,[3],Sloane Stephens,/players/player/315683/title/sloane-stephens-0,USA,50,6-4  6-4,Two,Loss
+Montreal,MON,Canada,2012-08-07,2012,8,Premier 5,Hard,237,,Round 64,W,,Shahar Peer,/players/player/311168/title/Shahar-Peer,ISR,56,3-6  6-2  7-5,Three,Loss
+Montreal,MON,Canada,2012-08-07,2012,8,Premier 5,Hard,237,,Round 32,L,[10],Na Li,/players/player/120330/title/Na-Li,CHN,11,6-4  6-4,Two,Loss
+Dallas - dallas,DAL,Usa,2012-08-19,2012,8,International,Hard,194,5,Round 16 - Q,W,,Nicole Melichar,/players/player/316713/title/Nicole-MELICHAR,USA,409,6-1  6-2,Two,Win
+Dallas - dallas,DAL,Usa,2012-08-19,2012,8,International,Hard,194,5,Quarterfinals - Q,W,[1],Melinda Czink,/players/player/30557/title/Melinda-Czink,HUN,90,6-4  6-2,Two,Win
+Dallas - dallas,DAL,Usa,2012-08-19,2012,8,International,Hard,194,5,Round 16,L,,Aleksandra Wozniak,/players/player/310494/title/Aleksandra-Wozniak,CAN,50,6-2  6-2,Two,Loss
+Dallas - dallas,DAL,Usa,2012-08-19,2012,8,International,Hard,194,5,Round 32,W,,Galina Voskoboeva,/players/player/310419/title/Galina-Voskoboeva,KAZ,79,6-4  6-3,Two,Win
+Quebec city,QUE,Canada,2012-09-10,2012,9,International,Carpet,178,,Round 32,W,,Grace Min,/players/player/316157/title/grace-min-0,USA,180,6-4  6-3,Two,Win
+Quebec city,QUE,Canada,2012-09-10,2012,9,International,Carpet,178,,Round 16,L,[8],Lucie Hradecka,/players/player/310849/title/lucie-hradecka-0,CZE,60,7-6(2)  2-6  7-6(4),Three,Loss
+Beijing - beijing,BEI,China,2012-09-29,2012,9,Premier mandatory,Hard,169,,Round 32 - Q,L,[9],Elena Vesnina,/players/player/311220/title/elena-vesnina-0,RUS,78,6-3  2-6  6-1,Three,Loss
+Osaka,OSA,Japan,2012-10-08,2012,10,International,Hard,173,3,Round 32 - Q,W,,Eri Hozumi,/players/player/317138/title/Eri-HOZUMI,JPN,486,2-6  6-4  6-4,Three,Loss
+Osaka,OSA,Japan,2012-10-08,2012,10,International,Hard,173,3,Round 16 - Q,W,,Daria Gavrilova,/players/player/315997/title/daria-gavrilova%20,AUS,232,4-6  6-1  6-4,Three,Loss
+Osaka,OSA,Japan,2012-10-08,2012,10,International,Hard,173,3,Quarterfinals - Q,L,[7],Luksika Kumkhum,/players/player/317033/title/luksika-kumkhum-0,THA,212,6-1  6-2,Two,Loss
+Saguenay,SAG,Canada,2012-10-22,2012,10,Itf,Hard,169,6,Round 32,W,,Julia Boserup,/players/player/313832/title/julia-boserup-0,USA,255,6-4  6-4,Two,Win
+Saguenay,SAG,Canada,2012-10-22,2012,10,Itf,Hard,169,6,Round 16,W,,Samantha Crawford,/players/player/319220/title/samantha-crawford-0,USA,302,6-2  6-2,Two,Win
+Saguenay,SAG,Canada,2012-10-22,2012,10,Itf,Hard,169,6,Quarterfinals,W,,Sharon Fichman,/players/player/313283/title/sharon-fichman-0,CAN,193,6-3  6-3,Two,Win
+Saguenay,SAG,Canada,2012-10-22,2012,10,Itf,Hard,169,6,Semifinals,W,[1],Melanie Oudin,/players/player/313963/title/melanie-oudin-0,USA,98,6-2  6-2,Two,Win
+Saguenay,SAG,Canada,2012-10-22,2012,10,Itf,Hard,169,6,Final,L,[7],Madison Keys,/players/player/316959/title/Madison-Keys-0%20,USA,173,6-4  6-2,Two,Loss
+Toronto,TOR,Canada,2012-10-29,2012,10,Itf,Hard,160,4,Round 32,W,,Nicole Rottmann,/players/player/313545/title/nicole-rottmann-0,AUT,336,6-0  6-3,Two,Win
+Toronto,TOR,Canada,2012-10-29,2012,10,Itf,Hard,160,4,Round 16,W,,Alexandra Mueller,/players/player/310808/title/alexandra-mueller,USA,450,6-1  6-0,Two,Win
+Toronto,TOR,Canada,2012-10-29,2012,10,Itf,Hard,160,4,Quarterfinals,W,,Michaela Honcova,/players/player/315597/title/michaela-honcova-0,SVK,284,6-1  6-0,Two,Win
+Toronto,TOR,Canada,2012-10-29,2012,10,Itf,Hard,160,4,Semifinals,W,[1],Maria Sanchez,/players/player/313958/title/Maria-SANCHEZ,USA,149,7-5  6-2,Two,Win
+Toronto,TOR,Canada,2012-10-29,2012,10,Itf,Hard,160,4,Final,W,[5],Sharon Fichman,/players/player/313283/title/sharon-fichman-0,CAN,179,6-1  6-2,Two,Win
+Phoenix,PHO,Usa,2012-11-05,2012,11,Itf,Hard,144,,Round 32,L,[8],Maria Sanchez,/players/player/313958/title/Maria-SANCHEZ,USA,139,7-5  6-3,Two,Loss
+Auckland - auckland,AUC,New zealand,2013-12-31,2013,12,International,Hard,147,,Round 32,L,,Elena Vesnina,/players/player/311220/title/elena-vesnina-0,RUS,68,7-5  6-3,Two,Loss
+Sydney,SYD,Australia,2013-01-06,2013,1,Premier,Hard,145,,Round 64 - Q,L,[W],Storm Sanders,/players/player/317810/title/storm-sanders-0,AUS,674,7-6(6)  7-6(6),Two,Loss
+Australian open,AUS,Australia,2013-01-14,2013,1,Grand slam,Hard,145,24,Round 128 - Q,W,,Teliana Pereira,/players/player/311647/title/teliana-pereira-0,BRA,162,4-6  6-3  6-2,Three,Loss
+Australian open,AUS,Australia,2013-01-14,2013,1,Grand slam,Hard,145,24,Round 64 - Q,L,,Daria Gavrilova,/players/player/315997/title/daria-gavrilova%20,AUS,223,7-6(7)  7-6(6),Two,Loss
+Cali - cali,CAL,Colombia,2013-02-11,2013,2,125k series,Clay,138,,Round 32,W,[Q],Laura Thorpe,/players/player/311629/title/laura-thorpe,FRA,327,7-5  6-2,Two,Win
+Cali - cali,CAL,Colombia,2013-02-11,2013,2,125k series,Clay,138,,Round 16,L,[4],Alexandra Panova,/players/player/311956/title/alexandra-panova-0,RUS,106,3-6  7-5  7-6(4),Three,Win
+Bogota,BOG,Colombia,2013-02-18,2013,2,International,Clay,132,2,Round 32 - Q,W,,Richel Hogenkamp,/players/player/317263/title/richel-hogenkamp-0,NED,208,6-4  6-0,Two,Win
+Bogota,BOG,Colombia,2013-02-18,2013,2,International,Clay,132,2,Round 16 - Q,L,,Arantxa Parra Santonja,/players/player/160451/title/Arantxa-PARRA-SANTONJA,ESP,232,6-4  7-5,Two,Loss
+Acapulco - acapulco,ACA,Mexico,2013-02-25,2013,2,International,Clay,130,2,Round 32 - Q,W,[W],Ana Sofia Sánchez,/players/player/316694/title/ana-sofia-s%C3%81nchez,MEX,463,6-2  6-7(4)  7-5,Three,Win
+Acapulco - acapulco,ACA,Mexico,2013-02-25,2013,2,International,Clay,130,2,Round 16 - Q,W,,Katarzyna Piter,/players/player/313806/title/katarzyna-piter-0,POL,354,6-3  6-3,Two,Win
+Acapulco - acapulco,ACA,Mexico,2013-02-25,2013,2,International,Clay,130,2,Quarterfinals - Q,W,[5],Mariana Duque-Mariño,/players/player/312572/title/mariana-duque-mari%C3%B1o-0,COL,143,6-3  6-3,Two,Win
+Acapulco - acapulco,ACA,Mexico,2013-02-25,2013,2,International,Clay,130,2,Round 32,W,,Eva Birnerova,/players/player/20596/title/eva-birnerova,CZE,138,7-6(5)  6-3,Two,Win
+Acapulco - acapulco,ACA,Mexico,2013-02-25,2013,2,International,Clay,130,2,Round 16,L,[1],Sara Errani,/players/player/310761/title/Sara-Errani,ITA,8,7-6(4)  6-2,Two,Loss
+Indian wells,IND,Usa,2013-03-06,2013,3,Premier mandatory,Hard,123,,Round 64 - Q,L,[4],Elina Svitolina,/players/player/316738/title/elina-svitolina%20%20,UKR,88,7-6(2)  5-7  6-2,Three,Loss
+Miami,MIA,Usa,2013-03-19,2013,3,Premier mandatory,Hard,123,,Round 128,W,[Q],Shahar Peer,/players/player/311168/title/Shahar-Peer,ISR,116,4-6  6-1  6-4,Three,Loss
+Miami,MIA,Usa,2013-03-19,2013,3,Premier mandatory,Hard,123,,Round 64,L,[3],Maria Sharapova,/players/player/310137/title/maria-sharapova%20,RUS,2,6-2  6-0,Two,Loss
+Charleston,CHA,Usa,2013-04-01,2013,4,Premier,Clay,114,6,Round 32 - Q,W,,Katalin Marosi,/players/player/130497/title/katalin-marosi,HUN,456,7-5  6-2,Two,Win
+Charleston,CHA,Usa,2013-04-01,2013,4,Premier,Clay,114,6,Round 16 - Q,W,,Paula Cristina Goncalves,/players/player/314419/title/paula-cristina-goncalves-0,BRA,329,6-1  6-0,Two,Win
+Charleston,CHA,Usa,2013-04-01,2013,4,Premier,Clay,114,6,Round 32,W,[16],Laura Robson,/players/player/316629/title/laura-robson-0,GBR,42,6-4  3-6  6-1,Three,Win
+Charleston,CHA,Usa,2013-04-01,2013,4,Premier,Clay,114,6,Round 16,W,[3],Samantha Stosur,/players/player/190787/title/samantha-stosur-0,AUS,9,6-1  2-0 RET,Three,Win
+Charleston,CHA,Usa,2013-04-01,2013,4,Premier,Clay,114,6,Round 64,W,[Q],Nastassja Burnett,/players/player/314192/title/nastassja-burnett-0,ITA,145,6-2  6-3,Two,Win
+Charleston,CHA,Usa,2013-04-01,2013,4,Premier,Clay,114,6,Quarterfinals,L,[9],Jelena Jankovic,/players/player/100153/title/jelena-jankovic-0,SRB,18,6-2  6-1,Two,Loss
+Strasbourg,STR,France,2013-05-20,2013,5,International,Clay,93,,Round 32,W,,Sílvia Soler-Espinosa,/players/player/311493/title/s%C3%ADlvia-soler-espinosa-0,ESP,84,6-3  6-3,Two,Win
+Strasbourg,STR,France,2013-05-20,2013,5,International,Clay,93,,Round 16,W,,Camila Giorgi,/players/player/314610/title/camila-giorgi-0,ITA,88,6-3  6-0,Two,Win
+Strasbourg,STR,France,2013-05-20,2013,5,International,Clay,93,,Quarterfinals,W,,Anna Tatishvili,/players/player/312962/title/anna-tatishvili-0,USA,83,6-3  6-2,Two,Win
+Strasbourg,STR,France,2013-05-20,2013,5,International,Clay,93,,Semifinals,L,[3],Alizé Cornet,/players/player/312121/title/aliz%C3%A9-cornet-0,FRA,31,7-5  6-7(5)  6-3,Three,Loss
+French open,FRE,France,2013-05-26,2013,5,Grand slam,Clay,77,,Round 128,W,,Tsvetana Pironkova,/players/player/311041/title/Tsvetana-PIRONKOVA,BUL,59,6-1  7-6(2),Two,Win
+French open,FRE,France,2013-05-26,2013,5,Grand slam,Clay,77,,Round 64,L,[2],Maria Sharapova,/players/player/310137/title/maria-sharapova%20,RUS,2,6-2  6-4,Two,Loss
+Nottingham,NOT,Great britain,2013-06-03,2013,6,Itf,Grass,77,4,Round 32,W,[Q],Madison Brengle,/players/player/312328/title/madison-brengle-0,USA,199,6-4  2-6  7-5,Three,Win
+Nottingham,NOT,Great britain,2013-06-03,2013,6,Itf,Grass,77,4,Round 16,L,,Irina Falconi,/players/player/314545/title/irina-falconi-0,USA,137,4-6  6-2  6-1,Three,Win
+Birmingham - birmingham,BIR,Great britain,2013-06-10,2013,6,International,Grass,67,,Round 64,L,[13],Bojana Jovanovski Petrovic,/players/player/314369/title/Bojana-Jovanovski-Petrovic,SRB,40,5-7  6-3  6-2,Three,Win
+Eastbourne,EAS,Great britain,2013-06-17,2013,6,Premier,Grass,67,5,Round 32 - Q,W,[W],Lucy Brown,/players/player/316837/title/lucy-brown-0,GBR,720,6-3  6-3,Two,Win
+Eastbourne,EAS,Great britain,2013-06-17,2013,6,Premier,Grass,67,5,Round 16 - Q,L,,Yuliya Beygelzimer,/players/player/20652/title/Yuliya-Beygelzimer,UKR,187,2-6  6-4  6-4,Three,Win
+Wimbledon,WIM,Great britain,2013-06-24,2013,6,Grand slam,Grass,66,,Round 128,W,[Q],Galina Voskoboeva,/players/player/310419/title/Galina-Voskoboeva,KAZ,88,5-7  7-6(5)  6-4,Three,Loss
+Wimbledon,WIM,Great britain,2013-06-24,2013,6,Grand slam,Grass,66,,Round 64,W,[12],Ana Ivanovic,/players/player/311710/title/Ana-Ivanovic,SRB,12,6-3  6-3,Two,Win
+Wimbledon,WIM,Great britain,2013-06-24,2013,6,Grand slam,Grass,66,,Round 32,L,[19],Carla Suárez Navarro,/players/player/311338/title/carla-su%C3%A1rez-navarro-0,ESP,18,7-5  6-2,Two,Loss
+Washington,WAS,Dc - washington dc,2013-07-29,2013,7,International,Hard,58,,Round 32,L,[3],Ekaterina Makarova,/players/player/311604/title/ekaterina-makarova-0,RUS,27,6-4  6-2,Two,Loss
+Toronto,TOR,Canada,2013-08-05,2013,8,Premier 5,Hard,62,,Round 64,W,[P],Alisa Kleybanova,/players/player/311777/title/Alisa-Kleybanova,RUS,599,6-3  6-1,Two,Win
+Toronto,TOR,Canada,2013-08-05,2013,8,Premier 5,Hard,62,,Round 32,L,[6],Petra Kvitova,/players/player/314206/title/petra-kvitova-0%20,CZE,7,6-3  6-2,Two,Loss
+Cincinnati - cincinnati,CIN,Usa,2013-08-12,2013,8,Premier 5,Hard,62,13,Round 64 - Q,W,,Anabel Medina Garrigues,/players/player/130611/title/Anabel-Medina-Garrigues,ESP,89,6-0  6-3,Two,Win
+Cincinnati - cincinnati,CIN,Usa,2013-08-12,2013,8,Premier 5,Hard,62,13,Round 32 - Q,W,,Vesna Dolonc,/players/player/313653/title/vesna-dolonc-0,SRB,94,6-3  6-1,Two,Win
+Cincinnati - cincinnati,CIN,Usa,2013-08-12,2013,8,Premier 5,Hard,62,13,Round 64,W,[Q],Monica Puig,/players/player/317755/title/monica-puig-0,PUR,53,6-3  6-4,Two,Win
+Cincinnati - cincinnati,CIN,Usa,2013-08-12,2013,8,Premier 5,Hard,62,13,Round 32,L,[1],Serena Williams,/players/player/230234/title/serena-Williams,USA,1,4-6  6-2  6-2,Three,Win
+Us open,US ,Usa,2013-08-26,2013,8,Grand slam,Hard,59,,Round 128,W,,Karolina Pliskova,/players/player/313974/title/karolina-pliskova-0%20,CZE,72,4-6  6-4  7-5,Three,Loss
+Us open,US ,Usa,2013-08-26,2013,8,Grand slam,Hard,59,,Round 64,L,[8],Angelique Kerber,/players/player/311470/title/angelique-kerber%20%20,GER,9,6-4  2-6  6-3,Three,Loss
+Quebec city,QUE,Canada,2013-09-09,2013,9,International,Carpet,53,5,Round 32,W,,Sofia Arvidsson,/players/player/10334/title/Sofia-Arvidsson,SWE,103,6-1  2-6  7-6(0),Three,Win
+Quebec city,QUE,Canada,2013-09-09,2013,9,International,Carpet,53,5,Round 16,W,[Q],Sesil Karatantcheva,/players/player/311810/title/sesil-karatantcheva-0,BUL,150,7-6(2)  6-4,Two,Win
+Quebec city,QUE,Canada,2013-09-09,2013,9,International,Carpet,53,5,Quarterfinals,W,[2],Kristina Mladenovic,/players/player/315616/title/kristina-mladenovic-0%20,FRA,40,6-3  6-2,Two,Win
+Quebec city,QUE,Canada,2013-09-09,2013,9,International,Carpet,53,5,Semifinals,L,[3/W],Lucie Safarova,/players/player/310553/title/lucie-safarova-0,CZE,48,3-6  6-3  6-2,Three,Win
+Tokyo - tokyo,TOK,Japan,2013-09-22,2013,9,Premier 5,Hard,46,,Round 64,W,,Monica Puig,/players/player/317755/title/monica-puig-0,PUR,44,6-0  6-4,Two,Win
+Tokyo - tokyo,TOK,Japan,2013-09-22,2013,9,Premier 5,Hard,46,,Round 32,W,[9],Sloane Stephens,/players/player/315683/title/sloane-stephens-0,USA,13,5-7  7-6(7)  6-3,Three,Loss
+Tokyo - tokyo,TOK,Japan,2013-09-22,2013,9,Premier 5,Hard,46,,Round 16,W,[6],Jelena Jankovic,/players/player/100153/title/jelena-jankovic-0,SRB,10,7-5  6-2,Two,Win
+Tokyo - tokyo,TOK,Japan,2013-09-22,2013,9,Premier 5,Hard,46,,Quarterfinals,L,,Venus Williams,/players/player/230220/title/venus-williams-0%20,USA,63,6-3  6-7(4)  6-3,Three,Loss
+Beijing - beijing,BEI,China,2013-09-28,2013,9,Premier mandatory,Hard,36,1,Round 32 - Q,W,[W],Saisai Zheng,/players/player/316286/title/Saisai-ZHENG,CHN,151,6-2  6-3,Two,Win
+Beijing - beijing,BEI,China,2013-09-28,2013,9,Premier mandatory,Hard,36,1,Round 16 - Q,W,,Anna Karolina Schmiedlova,/players/player/318203/title/anna-karolina-schmiedlova-0,SVK,85,4-6  6-0  6-3,Three,Loss
+Beijing - beijing,BEI,China,2013-09-28,2013,9,Premier mandatory,Hard,36,1,Round 32,L,[11],Sloane Stephens,/players/player/315683/title/sloane-stephens-0,USA,13,6-1  1-6  6-4,Three,Loss
+Beijing - beijing,BEI,China,2013-09-28,2013,9,Premier mandatory,Hard,36,1,Round 64,W,,Magdalena Rybarikova,/players/player/312580/title/magdalena-rybarikova%20,SVK,35,6-4  6-1,Two,Win
+Osaka,OSA,Japan,2013-10-07,2013,10,International,Hard,35,5,Round 32,W,,Varvara Lepchenko,/players/player/120420/title/Varvara-LEPCHENKO,USA,55,6-3  6-0,Two,Win
+Osaka,OSA,Japan,2013-10-07,2013,10,International,Hard,35,5,Round 16,W,[Q],Luksika Kumkhum,/players/player/317033/title/luksika-kumkhum-0,THA,119,6-2  6-2,Two,Win
+Osaka,OSA,Japan,2013-10-07,2013,10,International,Hard,35,5,Quarterfinals,W,[Q],Barbora Strycova,/players/player/190879/title/barbora-strycova-0,CZE,108,2-6  6-4  6-1,Three,Loss
+Osaka,OSA,Japan,2013-10-07,2013,10,International,Hard,35,5,Semifinals,W,[W],Kurumi Nara,/players/player/314344/title/kurumi-nara-0,JPN,87,6-2  6-2,Two,Win
+Osaka,OSA,Japan,2013-10-07,2013,10,International,Hard,35,5,Final,L,[3],Samantha Stosur,/players/player/190787/title/samantha-stosur-0,AUS,20,3-6  7-5  6-2,Three,Win
+Luxembourg,LUX,Luxembourg,2013-10-14,2013,10,International,Hard,32,7,Round 32,L,,Andrea Petkovic,/players/player/310770/title/Andrea-PETKOVIC-0,GER,40,2-6  7-5  6-1,Three,Win
 Sydney,SYD,Australia,2014-01-05,2014,1,Premier,Hard,31,,Round 32,L,[Q],Bethanie Mattek-Sands,/players/player/130713/title/bethanie-mattek-sands-0,USA,48,6-4  6-3,Two,Loss
 Australian open,AUS,Australia,2014-01-13,2014,1,Grand slam,Hard,31,30,Round 128,W,[W],Hao Chen Tang,/players/player/317359/title/hao-chen-tang-0,CHN,487,7-5  6-1,Two,Win
 Australian open,AUS,Australia,2014-01-13,2014,1,Grand slam,Hard,31,30,Round 64,W,,Virginie Razzano,/players/player/180384/title/Virginie-RAZZANO,FRA,100,6-2  7-6(10),Two,Win
@@ -33,11 +231,11 @@ Oeiras (estoril),OEI,Portugal,2014-04-28,2014,4,International,Clay,18,2,Round 16
 Oeiras (estoril),OEI,Portugal,2014-04-28,2014,4,International,Clay,18,2,Quarterfinals,L,[7],Svetlana Kuznetsova,/players/player/110552/title/svetlana-kuznetsova-0,RUS,29,6-4  6-1,Two,Loss
 Madrid - madird,MAD,Spain,2014-05-03,2014,5,Premier mandatory,Clay,18,,Round 64,L,[3],Agnieszka Radwanska,/players/player/312251/title/agnieszka-radwanska-0%20,POL,3,7-6(3)  6-2,Two,Loss
 Rome,ROM,Italy,2014-05-12,2014,5,Premier 5,Clay,20,17,Round 64,L,,Francesca Schiavone,/players/player/190666/title/francesca-schiavone-0,ITA,61,6-4  6-2,Two,Loss
-N�rnberg - n�rnberg,NÌ,Germany,2014-05-18,2014,5,International,Clay,19,2,Round 32,W,,Barbora Strycova,/players/player/190879/title/barbora-strycova-0,CZE,63,6-0  6-3,Two,Win
-N�rnberg - n�rnberg,NÌ,Germany,2014-05-18,2014,5,International,Clay,19,2,Round 16,W,[Q],Anastasia Rodionova,/players/player/180356/title/Anastasia-RODIONOVA,AUS,217,6-0  6-1,Two,Win
-N�rnberg - n�rnberg,NÌ,Germany,2014-05-18,2014,5,International,Clay,19,2,Quarterfinals,W,,Yaroslava Shvedova,/players/player/311137/title/yaroslava-shvedova-0,KAZ,72,7-6(3)  7-6(6),Two,Win
-N�rnberg - n�rnberg,NÌ,Germany,2014-05-18,2014,5,International,Clay,19,2,Semifinals,W,,Karin Knapp,/players/player/311299/title/karin-knapp-0,ITA,52,6-4  6-3,Two,Win
-N�rnberg - n�rnberg,NÌ,Germany,2014-05-18,2014,5,International,Clay,19,2,Final,W,,Karolina Pliskova,/players/player/313974/title/karolina-pliskova-0%20,CZE,64,6-2  4-6  6-3,Three,Win
+N�rnberg - n�rnberg,NÌ,Germany,2014-05-18,2014,5,International,Clay,19,2,Round 32,W,,Barbora Strycova,/players/player/190879/title/barbora-strycova-0,CZE,63,6-0  6-3,Two,Win
+N�rnberg - n�rnberg,NÌ,Germany,2014-05-18,2014,5,International,Clay,19,2,Round 16,W,[Q],Anastasia Rodionova,/players/player/180356/title/Anastasia-RODIONOVA,AUS,217,6-0  6-1,Two,Win
+N�rnberg - n�rnberg,NÌ,Germany,2014-05-18,2014,5,International,Clay,19,2,Quarterfinals,W,,Yaroslava Shvedova,/players/player/311137/title/yaroslava-shvedova-0,KAZ,72,7-6(3)  7-6(6),Two,Win
+N�rnberg - n�rnberg,NÌ,Germany,2014-05-18,2014,5,International,Clay,19,2,Semifinals,W,,Karin Knapp,/players/player/311299/title/karin-knapp-0,ITA,52,6-4  6-3,Two,Win
+N�rnberg - n�rnberg,NÌ,Germany,2014-05-18,2014,5,International,Clay,19,2,Final,W,,Karolina Pliskova,/players/player/313974/title/karolina-pliskova-0%20,CZE,64,6-2  4-6  6-3,Three,Win
 French open,FRE,France,2014-05-25,2014,5,Grand slam,Clay,16,18,Round 128,W,,Shahar Peer,/players/player/311168/title/Shahar-Peer,ISR,88,6-0  6-2,Two,Win
 French open,FRE,France,2014-05-25,2014,5,Grand slam,Clay,16,18,Round 64,W,,Julia Goerges,/players/player/313381/title/julia-goerges-0,GER,107,2-6  6-2  6-1,Three,Loss
 French open,FRE,France,2014-05-25,2014,5,Grand slam,Clay,16,18,Round 32,W,,Johanna Larsson,/players/player/311593/title/johanna-larsson-0,SWE,99,7-5  6-4,Two,Win
@@ -75,3 +273,176 @@ Linz,LIN,Austria,2014-10-06,2014,10,International,Hard,6,1,Round 16,L,,Tsvetana 
 Wta finals,WTA,Singapore,2014-10-20,2014,10,Championship,Hard,5,5,R1,L,[4],Simona Halep,/players/player/314320/title/simona-halep%20,ROU,4,6-2  6-3,Two,Loss
 Wta finals,WTA,Singapore,2014-10-20,2014,10,Championship,Hard,5,5,R1,L,[7],Ana Ivanovic,/players/player/311710/title/Ana-Ivanovic,SRB,7,6-1  6-3,Two,Loss
 Wta finals,WTA,Singapore,2014-10-20,2014,10,Championship,Hard,5,5,R1,L,[1],Serena Williams,/players/player/230234/title/serena-Williams,USA,1,6-1  6-1,Two,Loss
+Australian open,AUS,Australia,2015-01-19,2015,1,Grand slam,Hard,7,7,Round 128,W,,Anna-Lena Friedsam,/players/player/319091/title/Anna-Lena-Friedsam,GER,98,6-2  6-4,Two,Win
+Australian open,AUS,Australia,2015-01-19,2015,1,Grand slam,Hard,7,7,Round 64,W,,Kiki Bertens,/players/player/314584/title/kiki-bertens%20,NED,72,6-0  6-3,Two,Win
+Australian open,AUS,Australia,2015-01-19,2015,1,Grand slam,Hard,7,7,Round 32,W,,Caroline Garcia,/players/player/315391/title/caroline-garcia%20,FRA,36,7-5  6-0,Two,Win
+Australian open,AUS,Australia,2015-01-19,2015,1,Grand slam,Hard,7,7,Round 16,W,,Irina-Camelia Begu,/players/player/313169/title/irina-camelia-begu%20,ROU,42,6-1  5-7  6-2,Three,Win
+Australian open,AUS,Australia,2015-01-19,2015,1,Grand slam,Hard,7,7,Quarterfinals,L,[2],Maria Sharapova,/players/player/310137/title/maria-sharapova%20,RUS,2,6-3  6-2,Two,Loss
+Antwerp - antwerp,ANT,Belgium,2015-02-09,2015,2,Premier,Hard,7,1,Round 32,W,,,,UKR,-,-,,Win
+Antwerp - antwerp,ANT,Belgium,2015-02-09,2015,2,Premier,Hard,7,1,Round 16,L,,Mona Barthel,/players/player/315365/title/mona-barthel-0,GER,42,4-6  6-1  6-2,Three,Win
+Indian wells,IND,Usa,2015-03-11,2015,3,Premier mandatory,Hard,7,6,Round 128,W,,,,GER,-,-,,Win
+Indian wells,IND,Usa,2015-03-11,2015,3,Premier mandatory,Hard,7,6,Round 64,W,[Q],Lucie Hradecka,/players/player/310849/title/lucie-hradecka-0,CZE,122,6-2  6-2,Two,Win
+Indian wells,IND,Usa,2015-03-11,2015,3,Premier mandatory,Hard,7,6,Round 32,W,[30],Coco Vandeweghe,/players/player/314464/title/coco-vandeweghe%20%20,USA,36,6-3  6-2,Two,Win
+Indian wells,IND,Usa,2015-03-11,2015,3,Premier mandatory,Hard,7,6,Round 16,L,[Q],Lesia Tsurenko,/players/player/315295/title/lesia-tsurenko-0,UKR,85,6-7(5)  7-5  6-4,Three,Win
+Miami,MIA,Usa,2015-03-24,2015,3,Premier mandatory,Hard,7,6,Round 128,W,,,,USA,-,-,,Win
+Miami,MIA,Usa,2015-03-24,2015,3,Premier mandatory,Hard,7,6,Round 64,L,[Q],Tatjana Maria,/players/player/310440/title/tatjana-maria-0,GER,113,6-0  7-6(4),Two,Loss
+Charleston,CHA,Usa,2015-04-06,2015,4,Premier,Clay,7,1,Round 64,W,,,,ROU,-,-,,Win
+Charleston,CHA,Usa,2015-04-06,2015,4,Premier,Clay,7,1,Round 32,L,,Lauren Davis,/players/player/317414/title/lauren-davis-0,USA,66,6-3  6-1,Two,Loss
+Fed cup week 2 - playoffs,FED,Canada,2015-04-18,2015,4,R2,Hard,7,,R2,L,,Alexandra Dulgheru,/players/player/312712/title/alexandra-dulgheru-0,ROU,69,6-4  6-4,Two,Loss
+Fed cup week 2 - playoffs,FED,Canada,2015-04-18,2015,4,R2,Hard,7,,R2,L,,Andreea Mitu,/players/player/314050/title/andreea-mitu-0,ROU,104,4-6  6-4  6-1,Three,Win
+Madrid - madrid,MAD,Spain,2015-05-02,2015,5,Premier mandatory,Clay,6,6,Round 64,L,,Barbora Strycova,/players/player/190879/title/barbora-strycova-0,CZE,23,0-6  6-3  6-3,Three,Win
+Rome,ROM,Italy,2015-05-11,2015,5,Premier 5,Clay,6,6,Round 64,W,,,,FRA,-,-,,Win
+Rome,ROM,Italy,2015-05-11,2015,5,Premier 5,Clay,6,6,Round 32,W,,Zarina Diyas,/players/player/315696/title/zarina-diyas-0,KAZ,34,6-3  6-4,Two,Win
+Rome,ROM,Italy,2015-05-11,2015,5,Premier 5,Clay,6,6,Round 16,L,[10],Carla Suárez Navarro,/players/player/311338/title/carla-su%C3%A1rez-navarro-0,ESP,10,6-7(2)  7-5  7-6(7),Three,Win
+French open,FRE,France,2015-05-24,2015,5,Grand slam,Clay,6,6,Round 128,L,,Kristina Mladenovic,/players/player/315616/title/kristina-mladenovic-0%20,FRA,44,6-4  6-4,Two,Loss
+'s-hertogenbosch,'S-,Netherlands,2015-06-08,2015,6,International,Grass,11,1,Round 32,L,,Yaroslava Shvedova,/players/player/311137/title/yaroslava-shvedova-0,KAZ,76,6-4  1-6  6-4,Three,Loss
+Birmingham - birmingham,BIR,Great britain,2015-06-15,2015,6,Premier,Grass,11,5,Round 64,W,,,,SUI,-,-,,Win
+Birmingham - birmingham,BIR,Great britain,2015-06-15,2015,6,Premier,Grass,11,5,Round 32,L,,Kristina Mladenovic,/players/player/315616/title/kristina-mladenovic-0%20,FRA,43,6-3  4-6  6-0,Three,Loss
+Eastbourne,EAS,Great britain,2015-06-21,2015,6,Premier,Grass,12,7,Round 64,W,,,,CHN,-,-,,Win
+Eastbourne,EAS,Great britain,2015-06-21,2015,6,Premier,Grass,12,7,Round 32,W,,Alison Riske,/players/player/312850/title/alison-riske-0,USA,42,7-6(5)  6-3,Two,Win
+Eastbourne,EAS,Great britain,2015-06-21,2015,6,Premier,Grass,12,7,Round 16,L,,Belinda Bencic,/players/player/319001/title/belinda-bencic-0%20,SUI,31,6-4  3-0 RET,Three,Loss
+Wimbledon,WIM,Great britain,2015-06-29,2015,6,Grand slam,Grass,12,12,Round 128,L,[Q],Yingying Duan,/players/player/314492/title/Ying-Ying-Duan-0,CHN,117,7-6(3)  6-4,Two,Loss
+Toronto,TOR,Canada,2015-08-10,2015,8,Premier 5,Hard,25,,Round 64,L,,Belinda Bencic,/players/player/319001/title/belinda-bencic-0%20,SUI,20,6-0  5-7  6-2,Three,Loss
+Cincinnati - cincinnati,CIN,Usa,2015-08-17,2015,8,Premier 5,Hard,24,,Round 64,W,[Q],Kateryna Bondarenko,/players/player/20702/title/kateryna-bondarenko-0,UKR,103,7-6(2)  7-6(5),Two,Win
+Cincinnati - cincinnati,CIN,Usa,2015-08-17,2015,8,Premier 5,Hard,24,,Round 32,L,[14],Elina Svitolina,/players/player/316738/title/elina-svitolina%20%20,UKR,20,7-6(6)  7-5,Two,Loss
+New haven,NEW,Usa,2015-08-23,2015,8,Premier,Hard,25,,Round 32,L,[Q],Roberta Vinci,/players/player/220214/title/Roberta-Vinci,ITA,47,6-1  6-0,Two,Loss
+Us open,US ,Usa,2015-08-31,2015,8,Grand slam,Hard,25,25,Round 128,W,,Alison Riske,/players/player/312850/title/alison-riske-0,USA,57,6-4  6-3,Two,Win
+Us open,US ,Usa,2015-08-31,2015,8,Grand slam,Hard,25,25,Round 64,W,,Polona Hercog,/players/player/313968/title/Polona-Hercog,SLO,64,6-3  6-7(2)  6-3,Three,Win
+Us open,US ,Usa,2015-08-31,2015,8,Grand slam,Hard,25,25,Round 32,W,,Dominika Cibulkova,/players/player/312894/title/dominika-cibulkova%20,SVK,50,7-6(9)  4-6  6-3,Three,Win
+Us open,US ,Usa,2015-08-31,2015,8,Grand slam,Hard,25,25,Round 16,L,,Roberta Vinci,/players/player/220214/title/Roberta-Vinci,ITA,43,-,,Win
+Beijing - beijing,BEI,China,2015-10-03,2015,10,Premier mandatory,Hard,38,,Round 64,L,[13],Andrea Petkovic,/players/player/310770/title/Andrea-PETKOVIC-0,GER,21,6-2  1-1 RET,Three,Loss
+Shenzhen - shenzhen,SHE,China,2016-01-03,2016,1,International,Hard,49,6,Round 32,W,,Donna Vekic,/players/player/318516/title/donna-vekic-0,CRO,103,6-4  1-6  7-5,Three,Win
+Shenzhen - shenzhen,SHE,China,2016-01-03,2016,1,International,Hard,49,6,Round 16,W,[Q],Nicole Gibbs,/players/player/315279/title/nicole-gibbs-0%20,USA,109,6-4  6-2,Two,Win
+Shenzhen - shenzhen,SHE,China,2016-01-03,2016,1,International,Hard,49,6,Quarterfinals,L,,Timea Babos,/players/player/317070/title/timea-babos-0,HUN,70,6-4  6-4,Two,Loss
+Hobart - hobart,HOB,Australia,2016-01-10,2016,1,International,Hard,47,,Round 32,W,,Bethanie Mattek-Sands,/players/player/130713/title/bethanie-mattek-sands-0,USA,64,6-2  6-1,Two,Win
+Hobart - hobart,HOB,Australia,2016-01-10,2016,1,International,Hard,47,,Round 16,W,[8],Alison Van Uytvanck,/players/player/317819/title/alison-van-uytvanck-0,BEL,44,6-4  7-5,Two,Win
+Hobart - hobart,HOB,Australia,2016-01-10,2016,1,International,Hard,47,,Quarterfinals,W,[2],Camila Giorgi,/players/player/314610/title/camila-giorgi-0,ITA,35,6-3  6-2,Two,Win
+Hobart - hobart,HOB,Australia,2016-01-10,2016,1,International,Hard,47,,Semifinals,W,[3],Dominika Cibulkova,/players/player/312894/title/dominika-cibulkova%20,SVK,37,6-1  4-6  6-4,Three,Win
+Hobart - hobart,HOB,Australia,2016-01-10,2016,1,International,Hard,47,,Final,L,[7],Alizé Cornet,/players/player/312121/title/aliz%C3%A9-cornet-0,FRA,42,6-1  6-2,Two,Loss
+Australian open,AUS,Australia,2016-01-18,2016,1,Grand slam,Hard,37,,Round 128,W,,Aleksandra Krunic,/players/player/316344/title/aleksandra-krunic-0,SRB,119,6-3  6-4,Two,Win
+Australian open,AUS,Australia,2016-01-18,2016,1,Grand slam,Hard,37,,Round 64,L,[4],Agnieszka Radwanska,/players/player/312251/title/agnieszka-radwanska-0%20,POL,4,6-4  6-2,Two,Loss
+Doha - doha,DOH,Qatar,2016-02-21,2016,2,Premier 5,Hard,61,,Round 64,W,[Q],Anastasija Sevastova,/players/player/313987/title/anastasija-sevastova%20,LAT,95,5-7  6-3  7-6(4),Three,Loss
+Doha - doha,DOH,Qatar,2016-02-21,2016,2,Premier 5,Hard,61,,Round 32,W,,Denisa Allertova,/players/player/316550/title/denisa-allertova-0,CZE,62,7-6(0)  7-5,Two,Win
+Doha - doha,DOH,Qatar,2016-02-21,2016,2,Premier 5,Hard,61,,Round 16,L,,Saisai Zheng,/players/player/316286/title/Saisai-ZHENG,CHN,73,7-6(1)  6-1,Two,Loss
+Kuala lumpur - kuala lumpur,KUA,Malaysia,2016-02-29,2016,2,International,Hard,52,6,Round 32,W,[W],Ling Zhang,/players/player/313228/title/ling-zhang-0,HKG,278,6-3  6-1,Two,Win
+Kuala lumpur - kuala lumpur,KUA,Malaysia,2016-02-29,2016,2,International,Hard,52,6,Round 16,W,,Kurumi Nara,/players/player/314344/title/kurumi-nara-0,JPN,82,6-1  6-2,Two,Win
+Kuala lumpur - kuala lumpur,KUA,Malaysia,2016-02-29,2016,2,International,Hard,52,6,Quarterfinals,W,,Cagla Buyukakcay,/players/player/312292/title/Cagla-BUYUKAKCAY,TUR,128,6-1  6-4,Two,Win
+Kuala lumpur - kuala lumpur,KUA,Malaysia,2016-02-29,2016,2,International,Hard,52,6,Semifinals,W,,Naomi Broady,/players/player/313941/title/Naomi-Broady,GBR,96,6-4  6-3,Two,Win
+Kuala lumpur - kuala lumpur,KUA,Malaysia,2016-02-29,2016,2,International,Hard,52,6,Final,L,[2/W],Elina Svitolina,/players/player/316738/title/elina-svitolina%20%20,UKR,19,6-7(5)  6-4  7-5,Three,Win
+Indian wells,IND,Usa,2016-03-09,2016,3,Premier mandatory,Hard,42,,Round 128,W,[Q],Risa Ozaki,/players/player/318704/title/risa-ozaki-0,JPN,125,2-6  6-4  6-2,Three,Loss
+Indian wells,IND,Usa,2016-03-09,2016,3,Premier mandatory,Hard,42,,Round 64,W,[21],Sloane Stephens,/players/player/315683/title/sloane-stephens-0,USA,22,7-5  7-5,Two,Win
+Indian wells,IND,Usa,2016-03-09,2016,3,Premier mandatory,Hard,42,,Round 32,L,[12],Timea Bacsinszky,/players/player/311579/title/timea-bacsinszky-0,SUI,21,6-2  5-7  6-2,Three,Loss
+Miami,MIA,Usa,2016-03-22,2016,3,Premier mandatory,Hard,45,,Round 128,L,,Lucie Hradecka,/players/player/310849/title/lucie-hradecka-0,CZE,85,6-4  3-6  6-2,Three,Loss
+Charleston,CHA,Usa,2016-04-04,2016,4,Premier,Clay,46,,Round 64,W,,Alexandra Dulgheru,/players/player/312712/title/alexandra-dulgheru-0,ROU,97,6-3  6-4,Two,Win
+Charleston,CHA,Usa,2016-04-04,2016,4,Premier,Clay,46,,Round 32,L,,Lourdes Domínguez Lino,/players/player/40300/title/lourdes-dominguez-lino,ESP,112,6-4  1-6  1-0 RET,RET,Loss
+Madrid - madrid,MAD,Spain,2016-04-30,2016,4,Premier mandatory,Clay,46,,Round 64,L,,Irina-Camelia Begu,/players/player/313169/title/irina-camelia-begu%20,ROU,34,6-4  3-6  6-4,Three,Loss
+Rome,ROM,Italy,2016-05-09,2016,5,Premier 5,Clay,46,,Round 64,W,,Jelena Jankovic,/players/player/100153/title/jelena-jankovic-0,SRB,25,6-4  2-6  6-3,Three,Win
+Rome,ROM,Italy,2016-05-09,2016,5,Premier 5,Clay,46,,Round 32,W,[2],Angelique Kerber,/players/player/311470/title/angelique-kerber%20%20,GER,2,6-1  5-7  7-5,Three,Win
+Rome,ROM,Italy,2016-05-09,2016,5,Premier 5,Clay,46,,Round 16,L,,Barbora Strycova,/players/player/190879/title/barbora-strycova-0,CZE,36,6-1  6-0,Two,Loss
+French open,FRE,France,2016-05-22,2016,5,Grand slam,Clay,47,,Round 128,W,,Laura Siegemund,/players/player/310926/title/laura-siegemund-0,GER,37,6-2  6-2,Two,Win
+French open,FRE,France,2016-05-22,2016,5,Grand slam,Clay,47,,Round 64,L,[8],Timea Bacsinszky,/players/player/311579/title/timea-bacsinszky-0,SUI,9,6-4  6-4,Two,Loss
+'s-hertogenbosch,'S-,Netherlands,2016-06-06,2016,6,International,Grass,46,7,Round 32,L,[Q],Elise Mertens,/players/player/317964/title/elise-mertens%20%20,BEL,171,6-2  6-0,Two,Loss
+Mallorca  - mallorca,MAL,Spain,2016-06-13,2016,6,International,Grass,47,8,Round 32,W,,Danka Kovinic,/players/player/317684/title/danka-kovinic-0,MNE,53,6-3  7-5,Two,Win
+Mallorca  - mallorca,MAL,Spain,2016-06-13,2016,6,International,Grass,47,8,Round 16,L,,Anastasija Sevastova,/players/player/313987/title/anastasija-sevastova%20,LAT,82,6-3  6-3,Two,Loss
+Eastbourne,EAS,Great britain,2016-06-19,2016,6,Premier,Grass,48,,Round 64,W,[Q],Varvara Lepchenko,/players/player/120420/title/Varvara-LEPCHENKO,USA,64,6-1  6-2,Two,Win
+Eastbourne,EAS,Great britain,2016-06-19,2016,6,Premier,Grass,48,,Round 32,W,[15],Irina-Camelia Begu,/players/player/313169/title/irina-camelia-begu%20,ROU,27,6-3  6-1,Two,Win
+Eastbourne,EAS,Great britain,2016-06-19,2016,6,Premier,Grass,48,,Round 16,L,[1],Agnieszka Radwanska,/players/player/312251/title/agnieszka-radwanska-0%20,POL,3,6-3  6-3,Two,Loss
+Wimbledon,WIM,Great britain,2016-06-27,2016,6,Grand slam,Grass,48,,Round 128,W,,Magdalena Rybarikova,/players/player/312580/title/magdalena-rybarikova%20,SVK,94,6-3  6-4,Two,Win
+Wimbledon,WIM,Great britain,2016-06-27,2016,6,Grand slam,Grass,48,,Round 64,W,[16],Johanna Konta,/players/player/313907/title/johanna-konta-0,GBR,19,6-3  1-6  6-1,Three,Win
+Wimbledon,WIM,Great britain,2016-06-27,2016,6,Grand slam,Grass,48,,Round 32,L,[19],Dominika Cibulkova,/players/player/312894/title/dominika-cibulkova%20,SVK,18,6-4  6-3,Two,Loss
+Washington dc - washington dc,WAS,Usa,2016-07-18,2016,7,International,Hard,41,5,Round 32,L,,Camila Giorgi,/players/player/314610/title/camila-giorgi-0,ITA,77,7-5  6-4,Two,Loss
+Montreal,MON,Canada,2016-07-25,2016,7,Premier 5,Hard,42,,Round 64,W,,Lucie Safarova,/players/player/310553/title/lucie-safarova-0,CZE,28,6-3  3-6  7-6(3),Three,Win
+Montreal,MON,Canada,2016-07-25,2016,7,Premier 5,Hard,42,,Round 32,W,[11],Dominika Cibulkova,/players/player/312894/title/dominika-cibulkova%20,SVK,10,6-2  6-0,Two,Win
+Montreal,MON,Canada,2016-07-25,2016,7,Premier 5,Hard,42,,Round 16,L,[Q],Kristina Kucova,/players/player/312673/title/kristina-kucova-0,SVK,121,3-6  6-4  6-3,Three,Win
+Olympics,OLY,Brazil,2016-08-06,2016,8,,Hard,40,,Round 64,W,,Sloane Stephens,/players/player/315683/title/sloane-stephens-0,USA,28,6-3  6-3,Two,Win
+Olympics,OLY,Brazil,2016-08-06,2016,8,,Hard,40,,Round 32,L,,Angelique Kerber,/players/player/311470/title/angelique-kerber%20%20,GER,2,6-4  6-2,Two,Loss
+Cincinnati - cincinnati,CIN,Usa,2016-08-15,2016,8,Premier 5,Hard,40,2,Round 64 - Q,W,,Carina Witthoeft,/players/player/317536/title/carina-witthoeft-0,GER,101,6-4  6-1,Two,Win
+Cincinnati - cincinnati,CIN,Usa,2016-08-15,2016,8,Premier 5,Hard,40,2,Round 32 - Q,W,[21],Viktorija Golubic,/players/player/316296/title/viktorija-golubic-0,SUI,68,6-4  6-2,Two,Win
+Cincinnati - cincinnati,CIN,Usa,2016-08-15,2016,8,Premier 5,Hard,40,2,Round 64,L,,Barbora Strycova,/players/player/190879/title/barbora-strycova-0,CZE,20,6-4  6-0,Two,Loss
+New haven,NEW,Usa,2016-08-21,2016,8,Premier,Hard,40,,Round 32,W,[Q],Annika Beck,/players/player/316979/title/Annika-Beck,GER,42,6-2  6-1,Two,Win
+New haven,NEW,Usa,2016-08-21,2016,8,Premier,Hard,40,,Round 16,L,[6],Petra Kvitova,/players/player/314206/title/petra-kvitova-0%20,CZE,15,6-3  6-2,Two,Loss
+Us open,US ,Usa,2016-08-29,2016,8,Grand slam,Hard,39,,Round 128,L,,Katerina Siniakova,/players/player/320301/title/katerina-siniakova-0%20,CZE,72,6-3  3-6  6-2,Three,Loss
+Quebec city,QUE,Canada,2016-09-12,2016,9,International,Carpet,48,1,Round 32,W,,Mandy Minella,/players/player/310431/title/mandy-minella-0,LUX,108,6-3  6-4,Two,Win
+Quebec city,QUE,Canada,2016-09-12,2016,9,International,Carpet,48,1,Round 16,L,,Alla Kudryavtseva,/players/player/311362/title/Alla-KUDRYAVTSEVA,RUS,162,6-2  6-3,Two,Loss
+Linz,LIN,Austria,2016-10-10,2016,10,International,Hard,45,,Round 32,L,,Anett Kontaveit,/players/player/318425/title/anett-kontaveit-0,EST,121,7-6(5)  6-4,Two,Loss
+Luxembourg,LUX,Luxembourg,2016-10-17,2016,10,International,Hard,46,7,Round 32,L,,Denisa Allertova,/players/player/316550/title/denisa-allertova-0,CZE,100,3-6  6-3  6-3,Three,Win
+Brisbane,BRI,Australia,2017-01-01,2017,1,Premier,Hard,46,,Round 32,L,,Shelby Rogers,/players/player/317421/title/shelby-rogers-0,USA,59,6-2  2-6  6-1,Three,Loss
+Sydney,SYD,Australia,2017-01-08,2017,1,Premier,Hard,49,,Round 32,W,,Shuai Zhang,/players/player/311779/title/shuai-zhang-0,CHN,23,7-6(1)  6-2,Two,Win
+Sydney,SYD,Australia,2017-01-08,2017,1,Premier,Hard,49,,Round 16,W,[3],Dominika Cibulkova,/players/player/312894/title/dominika-cibulkova%20,SVK,6,6-4  6-3,Two,Win
+Sydney,SYD,Australia,2017-01-08,2017,1,Premier,Hard,49,,Quarterfinals,W,,Anastasia Pavlyuchenkova,/players/player/313796/title/anastasia-pavlyuchenkova-0,RUS,27,6-2  6-3,Two,Win
+Sydney,SYD,Australia,2017-01-08,2017,1,Premier,Hard,49,,Semifinals,L,[6],Johanna Konta,/players/player/313907/title/johanna-konta-0,GBR,10,6-2  6-2,Two,Loss
+Australian open,AUS,Australia,2017-01-16,2017,1,Grand slam,Hard,47,,Round 128,W,,Louisa Chirico,/players/player/320218/title/louisa-chirico-0,USA,65,6-0  6-4,Two,Win
+Australian open,AUS,Australia,2017-01-16,2017,1,Grand slam,Hard,47,,Round 64,W,,Shuai Peng,/players/player/160471/title/shuai-peng-0,CHN,83,7-6(5)  6-2,Two,Win
+Australian open,AUS,Australia,2017-01-16,2017,1,Grand slam,Hard,47,,Round 32,L,,Coco Vandeweghe,/players/player/314464/title/coco-vandeweghe%20%20,USA,35,6-4  3-6  7-5,Three,Loss
+Acapulco - acapulco,ACA,Mexico,2017-02-27,2017,2,International,Hard,46,6,Round 32,L,,Ajla Tomljanovic,/players/player/315232/title/Ajla-Tomljanovic,AUS,-,7-6(4)  6-1,Two,Loss
+Indian wells,IND,Usa,2017-03-08,2017,3,Premier mandatory,Hard,53,,Round 128,L,,Annika Beck,/players/player/316979/title/Annika-Beck,GER,61,3-6  6-2  6-2,Three,Win
+Miami,MIA,Usa,2017-03-21,2017,3,Premier mandatory,Hard,56,,Round 128,L,[W],Ashleigh Barty,/players/player/318033/title/ashleigh-barty%20,AUS,91,6-4  5-7  6-3,Three,Loss
+Monterrey - monterrey,MON,Mexico,2017-04-03,2017,4,International,Hard,56,,Round 32,L,,Sara Sorribes Tormo,/players/player/318872/title/sara-sorribes-tormo-0,ESP,98,7-6(8)  6-3,Two,Loss
+Indian harbour beach,IND,Usa,2017-04-10,2017,4,Itf,Clay,56,1,Round 32,W,[Q],Brianna Morgan,/players/player/318565/title/brianna-morgan-0,USA,601,6-4  2-6  6-4,Three,Win
+Indian harbour beach,IND,Usa,2017-04-10,2017,4,Itf,Clay,56,1,Round 16,W,[P],Anhelina Kalinina,/players/player/320567/title/anhelina-kalinina-0,UKR,305,7-5  6-4,Two,Win
+Indian harbour beach,IND,Usa,2017-04-10,2017,4,Itf,Clay,56,1,Quarterfinals,L,[W],Victoria Duval,/players/player/317901/title/victoria-duval-0,USA,896,6-0  6-3,Two,Loss
+Istanbul - istanbul,IST,Turkey,2017-04-24,2017,4,International,Clay,59,4,Round 32,L,,Jana Cepelova,/players/player/316774/title/Jana-Cepelova-0,SVK,97,6-0  6-4,Two,Loss
+Madrid - madrid,MAD,Spain,2017-05-06,2017,5,Premier mandatory,Clay,60,,Round 64,W,,Alizé Cornet,/players/player/312121/title/aliz%C3%A9-cornet-0,FRA,44,6-4  4-6  6-1,Three,Win
+Madrid - madrid,MAD,Spain,2017-05-06,2017,5,Premier mandatory,Clay,60,,Round 32,W,[W],Maria Sharapova,/players/player/310137/title/maria-sharapova%20,RUS,258,7-5  2-6  6-4,Three,Win
+Madrid - madrid,MAD,Spain,2017-05-06,2017,5,Premier mandatory,Clay,60,,Round 16,W,[1],Angelique Kerber,/players/player/311470/title/angelique-kerber%20%20,GER,2,6-3  5-0 RET,Three,Win
+Madrid - madrid,MAD,Spain,2017-05-06,2017,5,Premier mandatory,Clay,60,,Quarterfinals,L,[8],Svetlana Kuznetsova,/players/player/110552/title/svetlana-kuznetsova-0,RUS,9,6-4  6-0,Two,Loss
+French open,FRE,France,2017-05-28,2017,5,Grand slam,Clay,57,,Round 128,W,,Risa Ozaki,/players/player/318704/title/risa-ozaki-0,JPN,72,2-6  6-3  6-2,Three,Loss
+French open,FRE,France,2017-05-28,2017,5,Grand slam,Clay,57,,Round 64,L,[17],Anastasija Sevastova,/players/player/313987/title/anastasija-sevastova%20,LAT,19,6-3  6-0,Two,Loss
+Mallorca - mallorca,MAL,Spain,2017-06-19,2017,6,International,Grass,56,,Round 32,L,[W],Francesca Schiavone,/players/player/190666/title/francesca-schiavone-0,ITA,73,6-7(5)  6-4  6-3,Three,Win
+Eastbourne,EAS,Great britain,2017-06-25,2017,6,Premier,Grass,61,,Round 64,L,,Barbora Strycova,/players/player/190879/title/barbora-strycova-0,CZE,23,6-3  3-6  6-2,Three,Loss
+Wimbledon,WIM,Great britain,2017-07-03,2017,7,Grand slam,Grass,61,,Round 128,L,[25],Carla Suárez Navarro,/players/player/311338/title/carla-su%C3%A1rez-navarro-0,ESP,27,1-6  6-1  6-1,Three,Win
+Washington dc - washington dc,WAS,Usa,2017-07-31,2017,7,International,Hard,73,,Round 32,W,[8],Christina Mchale,/players/player/314917/title/christina-mchale-0,USA,61,7-6(6)  6-0,Two,Win
+Washington dc - washington dc,WAS,Usa,2017-07-31,2017,7,International,Hard,73,,Round 16,L,,Andrea Petkovic,/players/player/310770/title/Andrea-PETKOVIC-0,GER,102,6-2  4-6  6-0,Three,Loss
+Toronto,TOR,Canada,2017-08-07,2017,8,Premier 5,Hard,70,,Round 64,L,[Q],Donna Vekic,/players/player/318516/title/donna-vekic-0,CRO,51,6-3  6-4,Two,Loss
+New haven,NEW,Usa,2017-08-20,2017,8,Premier,Hard,74,,Round 32,W,,Lauren Davis,/players/player/317414/title/lauren-davis-0,USA,34,6-1  6-3,Two,Win
+New haven,NEW,Usa,2017-08-20,2017,8,Premier,Hard,74,,Round 16,L,[1],Agnieszka Radwanska,/players/player/312251/title/agnieszka-radwanska-0%20,POL,10,6-3  7-5,Two,Loss
+Us open,US ,Usa,2017-08-28,2017,8,Grand slam,Hard,76,,Round 128,L,,Evgeniya Rodina,/players/player/312584/title/evgeniya-rodina-0,RUS,89,7-6(2)  6-1,Two,Loss
+Beijing - beijing,BEI,China,2017-09-30,2017,9,Premier mandatory,Hard,79,,Round 64,L,,Magdalena Rybarikova,/players/player/312580/title/magdalena-rybarikova%20,SVK,28,6-4  6-3,Two,Loss
+Hong kong - hong kong,HON,Hong-kong,2017-10-09,2017,10,International,Hard,78,,Round 32,L,[3],Caroline Wozniacki,/players/player/313402/title/caroline-wozniacki%20%20,DEN,6,6-1  6-1,Two,Loss
+Luxembourg,LUX,Luxembourg,2017-10-16,2017,10,International,Hard,80,,Round 32,L,,Johanna Larsson,/players/player/311593/title/johanna-larsson-0,SWE,79,2-6  6-2  6-3,Three,Win
+Hobart,HOB,Australia,2018-01-07,2018,1,International,Hard,83,,Round 32,L,,Aryna Sabalenka,/players/player/320760/title/aryna-sabalenka-0,BLR,69,6-4  6-3,Two,Loss
+Australian open,AUS,Australia,2018-01-15,2018,1,Grand slam,Hard,112,,Round 128,W,,Oceane Dodin,/players/player/319436/title/oceane-dodin-0,FRA,85,6-3  7-6(5),Two,Win
+Australian open,AUS,Australia,2018-01-15,2018,1,Grand slam,Hard,112,,Round 64,L,[1],Simona Halep,/players/player/314320/title/simona-halep%20,ROU,1,6-2  6-2,Two,Loss
+Taipei city,TAI,Chinese taipei,2018-01-29,2018,1,International,Hard,121,,Round 32,W,,Lin Zhu,/players/player/317306/title/lin-zhu-0,CHN,116,1-6  7-5  2-0 RET,RET,Loss
+Taipei city,TAI,Chinese taipei,2018-01-29,2018,1,International,Hard,121,,Round 16,W,,Ana Bogdan,/players/player/315427/title/ana-bogdan-0,ROU,89,7-5  7-5,Two,Win
+Taipei city,TAI,Chinese taipei,2018-01-29,2018,1,International,Hard,121,,Quarterfinals,L,,Yafan Wang,/players/player/317510/title/Yafan-Wang,CHN,152,6-4  6-0,Two,Loss
+Indian wells,IND,Usa,2018-03-07,2018,3,Premier mandatory,Hard,116,,Round 128,L,[Q],Sachia Vickery,/players/player/317443/title/sachia-vickery-0,USA,100,6-3  6-4,Two,Loss
+Miami,MIA,Usa,2018-03-20,2018,3,Premier mandatory,Hard,114,22,Round 64 - Q,W,[W],Allie Kiick,/players/player/319042/title/Allie-Kiick,USA,357,6-2  6-2,Two,Win
+Miami,MIA,Usa,2018-03-20,2018,3,Premier mandatory,Hard,114,22,Round 32 - Q,L,,Rebecca Peterson,/players/player/317771/title/rebecca-peterson-0,SWE,116,6-4  6-3,Two,Loss
+Charleston,CHA,Usa,2018-04-02,2018,4,Premier,Clay,111,,Round 64,L,[W],Sara Errani,/players/player/310761/title/Sara-Errani,ITA,95,6-4  6-4,Two,Loss
+Roland garros,ROL,France,2018-05-27,2018,5,Grand slam,Clay,164,,Round 128 - Q,L,[13],Dalila Jakupovic,/players/player/315294/title/dalila-jakupovic-0,SLO,121,6-0  2-1 RET,Three,Loss
+Birmingham,BIR,Great britain,2018-06-18,2018,6,Premier,Grass,193,,Round 32 - Q,W,,Caroline Dolehide,/players/player/322052/title/Caroline-Dolehide,USA,111,7-5  6-4,Two,Win
+Birmingham,BIR,Great britain,2018-06-18,2018,6,Premier,Grass,193,,Round 16 - Q,W,,Priscilla Hon,/players/player/320543/title/priscilla-hon-0,AUS,168,6-3  6-4,Two,Win
+Birmingham,BIR,Great britain,2018-06-18,2018,6,Premier,Grass,193,,Quarterfinals - Q,L,[5],Jennifer Brady,/players/player/318358/title/Jennifer-Brady,USA,77,7-6(7)  4-6  6-4,Three,Loss
+Wimbledon,WIM,Great britain,2018-07-02,2018,7,Grand slam,Grass,188,,Round 128 - Q,W,[18],Lin Zhu,/players/player/317306/title/lin-zhu-0,CHN,129,6-0  6-2,Two,Win
+Wimbledon,WIM,Great britain,2018-07-02,2018,7,Grand slam,Grass,188,,Round 64 - Q,W,,Karolina Muchova,/players/player/322191/title/karolina-muchova-0,CZE,223,6-2  2-6  6-3,Three,Win
+Wimbledon,WIM,Great britain,2018-07-02,2018,7,Grand slam,Grass,188,,Round 32 - Q,W,[2],Mariana Duque-Mariño,/players/player/312572/title/mariana-duque-mari%C3%B1o-0,COL,96,6-3  6-2,Two,Win
+Wimbledon,WIM,Great britain,2018-07-02,2018,7,Grand slam,Grass,188,,Round 128,W,[W],Gabriella Taylor,/players/player/321034/title/gabriella-taylor-0,GBR,180,6-0  4-6  6-3,Three,Win
+Wimbledon,WIM,Great britain,2018-07-02,2018,7,Grand slam,Grass,188,,Round 64,L,[17],Ashleigh Barty,/players/player/318033/title/ashleigh-barty%20,AUS,17,6-4  7-5,Two,Loss
+Contrexeville,CON,France,2018-07-10,2018,7,Itf,Clay,0,,Round 32,L,,Paula Badosa Gibert,/players/player/320124/title/paula-badosa-gibert-0,ESP,-,6-2  3-6  6-3,Three,Loss
+Gstaad,GST,Switzerland,2018-07-16,2018,7,International,Clay,146,,Round 32,W,,Timea Bacsinszky,/players/player/311579/title/timea-bacsinszky-0,SUI,761,4-6  7-6(1)  6-4,Three,Loss
+Gstaad,GST,Switzerland,2018-07-16,2018,7,International,Clay,146,,Round 16,W,[8],Viktorija Golubic,/players/player/316296/title/viktorija-golubic-0,SUI,110,7-6(2)  7-6(7),Two,Win
+Gstaad,GST,Switzerland,2018-07-16,2018,7,International,Clay,146,,Quarterfinals,W,[Q],Veronika Kudermetova,/players/player/319526/title/veronika-kudermetova-0,RUS,141,7-5  6-0,Two,Win
+Gstaad,GST,Switzerland,2018-07-16,2018,7,International,Clay,146,,Semifinals,L,[1],Alizé Cornet,/players/player/312121/title/aliz%C3%A9-cornet-0,FRA,48,7-6(5)  1-0 RET,Three,Loss
+Montreal,MON,Canada,2018-08-06,2018,8,Premier 5,Hard,129,,Round 64,L,[14],Elise Mertens,/players/player/317964/title/elise-mertens%20%20,BEL,15,6-2  6-4,Two,Loss
+Vancouver,VAN,Canada,2018-08-14,2018,8,Itf,Hard,128,,Round 32,W,,Veronica Cepede Royg,/players/player/314793/title/veronica-cepede-royg-0,PAR,140,6-2  6-2,Two,Win
+Vancouver,VAN,Canada,2018-08-14,2018,8,Itf,Hard,128,,Round 16,W,[1],Kateryna Kozlova,/players/player/316739/title/kateryna-kozlova-0,UKR,90,6-4  5-7  6-1,Three,Win
+Vancouver,VAN,Canada,2018-08-14,2018,8,Itf,Hard,128,,Quarterfinals,L,,Nao Hibino,/players/player/320238/title/Nao-HIBINO,JPN,130,3-6  6-1  6-3,Three,Win
+Us open,US ,Usa,2018-08-27,2018,8,Grand slam,Hard,137,16,Round 128 - Q,W,,Carol Zhao,/players/player/317805/title/carol-zhao-0,CAN,161,6-0  6-1,Two,Win
+Us open,US ,Usa,2018-08-27,2018,8,Grand slam,Hard,137,16,Round 64 - Q,W,,Ekaterine Gorgodze,/players/player/314660/title/ekaterine-gorgodze-0,GEO,167,6-1  6-2,Two,Win
+Us open,US ,Usa,2018-08-27,2018,8,Grand slam,Hard,137,16,Round 32 - Q,W,,Jamie Loeb,/players/player/319411/title/jamie-loeb-0,USA,163,6-0  6-3,Two,Win
+Us open,US ,Usa,2018-08-27,2018,8,Grand slam,Hard,137,16,Round 128,W,[W],Harmony Tan,/players/player/320016/title/harmony-tan-0,FRA,396,6-3  6-1,Two,Win
+Us open,US ,Usa,2018-08-27,2018,8,Grand slam,Hard,137,16,Round 64,L,,Marketa Vondrousova,/players/player/323027/title/marketa-vondrousova-0,CZE,103,6-4  6-3,Two,Loss
+Chicago,CHI,Usa,2018-09-04,2018,9,125k series,Hard,0,,Round 32,L,[Q],Kristie Ahn,/players/player/316159/title/Kristie-AHN,USA,-,7-6(3)  6-4,Two,Loss
+Hiroshima,HIR,Japan,2018-09-10,2018,9,International,Hard,111,,Round 32,L,[W],Nao Hibino,/players/player/320238/title/Nao-HIBINO,JPN,138,6-4  6-4,Two,Loss
+Tokyo,TOK,Japan,2018-09-17,2018,9,Premier,Hard,115,4,Round 32 - Q,W,[W],Moyuka Uchijima,/players/player/327241/title/Moyuka-Uchijima,JPN,372,6-1  6-1,Two,Win
+Tokyo,TOK,Japan,2018-09-17,2018,9,Premier,Hard,115,4,Round 16 - Q,W,[W],Chihiro Muramatsu,/players/player/323095/title/Chihiro-Muramatsu,JPN,387,6-1  2-6  7-5,Three,Win
+Tokyo,TOK,Japan,2018-09-17,2018,9,Premier,Hard,115,4,Round 32,L,[Q],Alison Riske,/players/player/312850/title/alison-riske-0,USA,75,6-4  6-4,Two,Loss
+Tashkent,TAS,Uzbekistan,2018-09-24,2018,9,International,Hard,107,,Round 32,L,,Nao Hibino,/players/player/320238/title/Nao-HIBINO,JPN,128,6-3  6-3,Two,Loss
+Luxembourg,LUX,Luxembourg,2018-10-15,2018,10,International,Hard,108,5,Round 32 - Q,W,,Raluka Serban,/players/player/321280/title/raluka-serban,CYP,267,6-1  2-6  6-1,Three,Win
+Luxembourg,LUX,Luxembourg,2018-10-15,2018,10,International,Hard,108,5,Round 16 - Q,W,,Jil Teichmann,/players/player/320926/title/jil-teichmann-0,SUI,144,6-3  6-1,Two,Win
+Luxembourg,LUX,Luxembourg,2018-10-15,2018,10,International,Hard,108,5,Quarterfinals - Q,W,,Jessika Ponchet,/players/player/319421/title/Jessika-Ponchet,FRA,229,6-2  7-5,Two,Win
+Luxembourg,LUX,Luxembourg,2018-10-15,2018,10,International,Hard,108,5,Round 32,W,,Timea Babos,/players/player/317070/title/timea-babos-0,HUN,63,6-4  6-2,Two,Win
+Luxembourg,LUX,Luxembourg,2018-10-15,2018,10,International,Hard,108,5,Round 16,W,[3],Carla Suárez Navarro,/players/player/311338/title/carla-su%C3%A1rez-navarro-0,ESP,24,6-1  6-0,Two,Win
+Luxembourg,LUX,Luxembourg,2018-10-15,2018,10,International,Hard,108,5,Quarterfinals,W,,Andrea Petkovic,/players/player/310770/title/Andrea-PETKOVIC-0,GER,67,4-6  4-0 RET,Three,Loss
+Luxembourg,LUX,Luxembourg,2018-10-15,2018,10,International,Hard,108,5,Semifinals,L,[1],Julia Goerges,/players/player/313381/title/julia-goerges-0,GER,9,6-7(3)  7-5  6-1,Three,Win

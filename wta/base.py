@@ -34,13 +34,15 @@ PLAYER_URL = 'https://www.wtatennis.com/players/player/316161/title/eugenie-bouc
 
 PLAYER_HEAD_TO_HEAD_URL = 'https://www.wtatennis.com/headtohead/316161/pb:191071'
 
-HTML_PATH = 'D:\\Programs\\Python\\repositories\\python_codes\wta\\test.html'
+HTML_PATH = 'D:\\Programs\\Repositories\\my_python_codes\\wta\\src\\tennis_html\\matches.html'
 
 
 
 
 def construct_player_url(path):
     return urljoin(BASE_URLS[0], path)
+
+
 
 class Start:
     def create_request(self, uri=None, method='get', **kwargs):
@@ -340,7 +342,7 @@ class PlayerMatchesHtml(Start):
                     )
                 )
 
-                # NOTE We have to reset this list
+                # NOTE: We have to reset this list
                 # to prevent the new values to be
                 # appended to the previous values
                 # on which we iterated
@@ -465,3 +467,5 @@ class PlayerMatchesHtml(Start):
                     csv_file.writerow(constructed_row)
 
         print('Success!')
+
+PlayerMatchesHtml()._write_csv(mode='a')

@@ -4,10 +4,14 @@ import datetime
 import random
 import math
 import requests
-from collections import namedtuple
+import collections
 from urllib.parse import urljoin
 from wta_settings import Settings
 from base import PlayerData
+
+def csv_handle():
+    csv_file = open(Settings().CSV_PLAYERS, 'r+', newline='')
+    return [csv.reader(csv_file), csv.writer(csv_file), csv_file]
 
 def obtain_csv_urls():
     with open(Settings().CSV_FILE, 'r', newline='') as f:
@@ -104,10 +108,27 @@ class PlayerLinkCreator:
     def __str__(self):
         return 'PlayerLinkCreator(%s)' % self.__iter__()
 
-class A(PlayerLinkCreator):
-    def __init__(self, iterable):
-        return super().__init__('http://www.google.com/c/', iterable)
+# class A(PlayerLinkCreator):
+#     def __init__(self, iterable):
+#         return super().__init__('http://www.google.com/c/', iterable)
 
-print(tuple(A(['a'])))
+def get_duplicates():
+    handle = csv_handle()
+    csv_list = list(handle[0])
+    s=collections.deque()
+    h=[]
+    for i in range(0,len(csv_list)):
+        h.append(csv_list[i][0])
+        if i == 0:
+            pass
+        if i == 1:
+            s.append(csv_list[i])
+        if i > 1:
+            player = csv_list[i][0]
+            if player not in h:
+                s.append(csv_list[i])
+        else:
+            pass
+    handle[2].close()
 
-# print(list(PlayerLinkCreator('http://www.google.com/', ['a'])))
+get_duplicates()
