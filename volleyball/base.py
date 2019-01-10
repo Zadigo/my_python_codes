@@ -4,7 +4,7 @@ import datetime
 import time
 import csv
 from bs4 import BeautifulSoup
-from collections import namedtuple
+from collections import namedtuple, deque
 from ua import get_rand_agent
 from urllib.parse import urlparse, urljoin, urlencode
 from utils import get_age
@@ -12,17 +12,99 @@ from vsettings import IMAGES_PATH, PLAYER_PAGE_URI
 
 
 
+PLAYER_PAGE_URI = 'http://%s.fivb.com/en/competition/teams/%s/players' 
+
+COUNTRIES = ['arg-argentina', 'aze-azerbaijan', 'bra-brazil',
+            'bul-bulgaria', 'cmr-cameroon', 'can-canada',
+            'chn-china', 'cub-cuba', 'dom-dominican%20republic',
+            'ger-germany', 'ita-italy', 'jpn-japan', 'kaz-kazakhstan',
+            'ken-kenya', 'kor-korea', 'mex-mexico',
+            'ned-netherlands', 'pur-puerto%20rico', 'rus-russia',
+            'srb-serbia', 'tha-thailand', 'tto-trinidad%20%20tobago',
+            'tur-turkey', 'usa-usa']
+
+
+class Mixins:
+    main_url = 'http://%s.fivb.com/'
+    database = {
+        'name': 'volleyball',
+        'aliases': []
+    }
+    
+    def __setattr__(self, name, value):
+        if name == 'database':
+            if not isinstance(value, dict):
+                raise
+
+            else:
+                if 'name' not in value:
+                    raise
+                if 'aliases' not in value:
+                    value.update({'aliases': []})
+
+        if name == 'main_url':
+            check = re.match(r'http\:\/\/(www)?\.\w+\.\w+', value)
+            if not check:
+                raise
+
+        return super().__setattr__(name, value)
+
+    def __getattr__(self, name):
+        if name == 'database':
+            database = self.database.get('name')
+            aliases = self.database.get('aliases')
+            return aliases.append('database')
+
+        return self['database']
+
+
+class PlayerPages(dict):
+    def __init__(self, domain):
+        # Converts a the COUNTRIES list to a
+        # usable dict that can be used for
+        # various tasks
+        for country in COUNTRIES:
+            search = re.match(r'(\w{3}\-(\w.*))',country)
+            
+            if not search:
+                print('%s is badly constructed. \
+                        Did you mean %s-%s' % (country, country[:3], country))
+
+            else:
+                uri = f'http://{domain}.fivb.com/en/competition/teams/{country}/players'
+                data = [search.group(0), uri]
+
+                self.update({search.group(2): data})
+
+    def __repr__(self):
+        return 'PlayerPages(%s)' % self.__class__
+
+    def get_link(self, country):
+        return self.get(country)[1]
+
 
 class Player(namedtuple('Player', ['player_name', 'height', 'weight', 
                         'date_of_birth', 'age', 'position', 'spike', 'block', 'country'])):
     __slots__ = ()
 
+
+class ProfileLinks(list, Mixins):
+    @property
+    def remove_duplicate(self):
+        # We pop duplicates with the set() technique
+        return list(set(self.__iter__()))
+
+    def _append(self, path, domain=None):
+        full_url = urljoin(self.main_url.format(domain), path)
+        self.append(full_url)
+        return self.__str__()
+
+    def __str__(self):
+        return super().__str__()
+
+
 class Requestor:
     def create_request(self, uri):
-        """
-        Return a simple response object 
-        from a request
-        """
         try:
             response = requests.get(uri, get_rand_agent())
         except requests.HTTPError as e:
@@ -32,11 +114,6 @@ class Requestor:
 
     @classmethod
     def _ping(cls, uri):
-        """
-        This method can be used to test the
-        validity of a link
-        """
-        # response = self.create_request(uri)
         response = cls.create_request(uri)
         if response.status_code == 200:
             return 'Status code: %s' % response.status_code
@@ -44,38 +121,32 @@ class Requestor:
 
     @staticmethod
     def create_soup(response):
-        """
-        Return a soup object from BeautifulSoup
-        """
         return BeautifulSoup(response.text, 'html.parser')
 
-class TeamProfile(Requestor):
-    def __init__(self):
-        profile_links = []
-        response = super().create_request(PLAYER_PAGE_URI)
 
-        soup =  BeautifulSoup(response.text, 'html.parser')
+class TeamProfile(Requestor):
+    def __init__(self, domain=None, country='russia'):
+        pages = PlayerPages(domain)
+        response = super().create_request(pages.get_link(country))
+        soup =  self.create_soup(response)
+
         # Get all the links where the href is equals to
         # the regex e.g. /en/competition/teams/chn-china/players/yixin-zheng?id=69285
+        # By doing so we can send a request to get each
+        # player's profile
         links = soup.find_all(href=re.compile(r'\/en\/competition\/teams\/\w.*\?id=\d+'))
 
+        profile_links = ProfileLinks()
         for link in links:
             relative_link = link['href']
             profile_links.append(relative_link)
+        
+        # We pop duplicates with the set() technique
+        self.profile_links = profile_links.remove_duplicate
 
-        # We pop duplicates with
-        # the set() technique
-        self.profile_links = list(set(profile_links))
-
-    @staticmethod
-    def _output(values=[]):
-        with open('', 'w', encoding='utf-8') as f:
-            for value in values:
-                f.writelines(value)
-                f.writelines('\n')
 
 class PlayerProfile(TeamProfile):
-    def get_player(self, player_index=0, with_image=False):
+    def get_player(self, player_index=0):
         """
         Get a player's FiVB profile
         """
@@ -91,9 +162,7 @@ class PlayerProfile(TeamProfile):
         # This section is to process the main section
         # of the player profile page e.g. middle section
         soup = super().create_soup(response)
-
-        print(self.process_html(soup))
-
+        
         return self.process_html(soup)
 
     def get_players(self):
@@ -161,38 +230,16 @@ class PlayerProfile(TeamProfile):
         spike = re.match(r'(\s+|\n+)\d{3}', str(tags_text[3])).group(0).strip()
         block = re.match(r'(\s+|\n+)\d{3}', str(tags_text[-1])).group(0).strip()
 
-        # Player data
-        # if with_image:
-        #     player_data = [
-        #         player_name,
-        #         date_of_birth,
-        #         age,
-        #         height,
-        #         weight,
-        #         position,
-        #         spike,
-        #         block,
-        #         player_image_link
-        #     ]
-        # else:
-        #     player_data = [
-        #         player_name,
-        #         date_of_birth,
-        #         age,
-        #         height,
-        #         weight,
-        #         position,
-        #         spike,
-        #         block
-        #     ]
-
         # We reprocess the height and weight to
         # take out the metric
         height = re.match(r'\d+', height).group(0)
         weight = re.match(r'\d+', weight).group(0)
 
+        # Player(player_name, date_of_birth, age, height, weight,
+        #        position, positions_index[position], spike, block)
         player_data = [player_name, date_of_birth, age, height, weight,
-                    position, positions_index[position], spike, block]
+                    position, positions_index[position], spike, block, player_image_link]
+
         return player_data
 
     @staticmethod
