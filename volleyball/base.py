@@ -11,6 +11,7 @@ from utils import get_age
 from vsettings import IMAGES_PATH, PLAYER_PAGE_URI
 
 
+PLAYER_CSV='D:\\Programs\\Repositories\\my_python_codes\\volleyball\\test.csv'
 
 PLAYER_PAGE_URI = 'http://%s.fivb.com/en/competition/teams/%s/players' 
 
@@ -95,7 +96,7 @@ class ProfileLinks(list, Mixins):
         return list(set(self.__iter__()))
 
     def _append(self, path, domain=None):
-        full_url = urljoin(self.main_url.format(domain), path)
+        full_url = urljoin(self.main_url % domain, path)
         self.append(full_url)
         return self.__str__()
 
@@ -126,6 +127,12 @@ class Requestor:
 
 class TeamProfile(Requestor):
     def __init__(self, domain=None, country='russia'):
+        if not domain:
+            print('WARNING: No domain was specified')
+
+        print('Getting  links on %s\'s team volleyball page' % country.capitalize())
+        print('-' * 60)
+
         pages = PlayerPages(domain)
         response = super().create_request(pages.get_link(country))
         soup =  self.create_soup(response)
@@ -139,7 +146,7 @@ class TeamProfile(Requestor):
         profile_links = ProfileLinks()
         for link in links:
             relative_link = link['href']
-            profile_links.append(relative_link)
+            profile_links._append(relative_link, domain=domain)
         
         # We pop duplicates with the set() technique
         self.profile_links = profile_links.remove_duplicate
@@ -172,6 +179,7 @@ class PlayerProfile(TeamProfile):
         uris = self.profile_links
 
         for uri in uris:
+            print('Fetching: %s' % uri)
             responses.append(super().create_request(uri))
             time.sleep(1)
 
@@ -183,15 +191,6 @@ class PlayerProfile(TeamProfile):
             player_datas.append(player_data)
 
         return player_datas
-
-    def _write_players(self, titles=[]):
-        players = self.get_players()
-        titles = ['player_name', 'height', 'weight', 'date_of_birth', 
-                    'age', 'position', 'spike', 'block', 'country']
-        with open('test.csv', 'w') as csvfile:
-            csv_writer = csv.writer(csvfile, delimiter=',', quotechar='|', quoting=csv.QUOTE_MINIMAL)                
-            csv_writer.writerow(titles)
-            csv_writer.writerow(players)
 
     def process_html(self, soup):
         # Main player profile section
@@ -219,28 +218,45 @@ class PlayerProfile(TeamProfile):
         tags_text = [values.text for values in side_section_tags]
 
         position = re.match(r'(\s+|\n)([a-zA-Z]+\s?[a-zA-Z]+)', tags_text[0]).group(0).strip()
-        positions_index = {
-            'Setter':1,
-            'Opposite spiker':2,
-            'Middle blocker':3,
-            'Wing spiker':4,
-            'Libero':6
-        }
 
-        spike = re.match(r'(\s+|\n+)\d{3}', str(tags_text[3])).group(0).strip()
-        block = re.match(r'(\s+|\n+)\d{3}', str(tags_text[-1])).group(0).strip()
+        spike = re.match(r'(\s+|\n+)\d{3}', str(tags_text[3]))
+        block = re.match(r'(\s+|\n+)\d{3}', str(tags_text[-1]))
+        if spike:
+            spike_data = spike.group(0).strip()
+        else:
+            spike_data = 0
+        if block:
+            block_data = block.group(0).strip()
+        else:
+            spike_data = 0
 
-        # We reprocess the height and weight to
-        # take out the metric
+        # We have to reprocess the height 
+        # and weight to take out the metric
         height = re.match(r'\d+', height).group(0)
         weight = re.match(r'\d+', weight).group(0)
 
         # Player(player_name, date_of_birth, age, height, weight,
         #        position, positions_index[position], spike, block)
         player_data = [player_name, date_of_birth, age, height, weight,
-                    position, positions_index[position], spike, block, player_image_link]
+                        position, spike_data, block_data, player_image_link]
 
         return player_data
+
+    def _write_players(self, filename='volleyball', titles=[], mode='w'):
+        players = self.get_players()
+        titles =  ['player_name', 'date_of_birth', 'age', 'height', 'weight',
+                    'position', 'spike', 'block', 'player_image_link']
+
+        with open(PLAYER_CSV, mode, newline='') as csvfile:
+            print('Writing players...')
+
+            csv_writer = csv.writer(csvfile, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)                
+            csv_writer.writerow(titles)
+
+            for player in players:
+                csv_writer.writerow(player)
+        
+        print('Success!')
 
     @staticmethod
     def process_player_image(image_uri, width=1200, height=800):
@@ -265,5 +281,5 @@ class PlayerProfile(TeamProfile):
         reconstructed_uri = base[1] + base[2] + '?' + params
         return reconstructed_uri
 
-
-# PlayerProfile().get_player()
+start = PlayerProfile(domain='japan2018', country='brazil')
+start._write_players(mode='a')
