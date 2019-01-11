@@ -1,10 +1,9 @@
-import tweepy
-from googlesearch import search
+from googlesearch.googlesearch import GoogleSearch
 
 
 class WebSearch:
-    def __init__(self):
-        res=list(search('Ekaterina Efimova', num=5))
-        print(res)
+    def __init__(self, q):
+        result = list(GoogleSearch().search(q, num_results=5))
+        print(result)
 
-WebSearch()
+WebSearch('Ekaterina Efimova')
