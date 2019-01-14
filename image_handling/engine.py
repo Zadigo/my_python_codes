@@ -1,7 +1,9 @@
 import os
-import conf
 from collections import OrderedDict
+
+import conf
 from utils import check_settings, folder_exists, has_pictures
+
 
 class Engine:
     def __init__(self):

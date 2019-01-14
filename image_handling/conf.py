@@ -9,9 +9,7 @@ IMAGES_PATHS = {
 }
 
 IMAGES_TYPE = (
-    'jpeg',
-    'jpg',
-    'png',
-    'PNG'
+    'jpeg','jpg',
+    'png','PNG'
 )
 

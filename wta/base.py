@@ -59,7 +59,6 @@ class Start:
                     elif method == 'post':
                         if 'files' in kwargs:
                             files = kwargs['files']
-                        
                         else:
                             files = None
 
@@ -468,4 +467,65 @@ class PlayerMatchesHtml(Start):
 
         print('Success!')
 
-PlayerMatchesHtml()._write_csv(mode='a')
+import json
+
+class StatisticCreator(Start):
+    # def __init__(self):
+    #     path = os.path.join(BASE_PATH, 'match_stats.html')
+    #     path_to_write = os.path.join(BASE_PATH, 'match_stats.txt')
+    #     with open(path, 'r', encoding='utf-8') as f:
+    #         soup = super()._soup_from_html(f)
+
+    #         links = soup.find_all(href=re.compile(r'https\:\/\/matchstat.com\/tennis\/match\-stats\/w\/\d+$'))
+    #         with open(path_to_write, 'w', encoding='utf-8') as f_to_write:
+    #             for link in links:
+    #                 f_to_write.writelines(link['href'])
+    #                 f_to_write.writelines('\n')
+
+    def get_statistics(self):
+        path = os.path.join(BASE_PATH, 'test.json')
+        response = super().create_request('https://matchstat.com/tennis/match-stats/w/8561159')
+        statistics = response.json()['stats']
+
+        # We have to clean the data
+        statistics[0].pop('match_stats_id')
+        statistics[0].pop('team')
+        statistics[0].pop('serve_speed_fastest')
+        statistics[0].pop('serve_speed_1st_avg')
+        statistics[0].pop('serve_speed_2nd_avg')
+        statistics[0].pop('net_approaches')
+        statistics[0].pop('odds')
+        statistics[0].pop('match')
+
+        statistics[1].pop('match_stats_id')
+        statistics[1].pop('team')
+        statistics[1].pop('serve_speed_fastest')
+        statistics[1].pop('serve_speed_1st_avg')
+        statistics[1].pop('serve_speed_2nd_avg')
+        statistics[1].pop('net_approaches')
+        statistics[1].pop('odds')
+        statistics[1].pop('match')
+
+        # Rows
+        statisctic_row = [statistics[0]['serve_1st_attempts'],
+                            statistics[0]['player_fullname'],
+                            statistics[0]['total_points'],
+                            statistics[0]['points_won'],
+                            statistics[0]['serve_games_total'],
+                            statistics[0]['serve_games_won'],
+                            statistics[0]['aces'],
+                            statistics[0]['double_faults'],
+                            statistics[0]['serve_1st_total'],
+                            statistics[0]['serve_1st_won'],
+                            statistics[0]['serve_2nd_total'],
+                            statistics[0]['serve_2nd_won'],
+                            statistics[0]['return_points_total'],
+                            statistics[0]['return_points_won'],
+                            statistics[0]['return_break_points_total'],
+                            statistics[0]['return_break_points_won'],
+                            statistics[0]['winners'],
+                            statistics[0]['unforced_errors']]
+        
+        print(statisctic_row)
+            
+StatisticCreator().get_statistics()

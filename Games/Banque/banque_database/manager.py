@@ -1,42 +1,44 @@
-import sqlite3 as db
-from migrator import BaseMigrator
+import sqlite3
 
-class MainManagerBase(type):
-    def __new__(cls, name, bases, cls_dict):
-        new_class = super().__new__(cls, name, bases, cls_dict)
+import psycopg2
+
+from model_fields import CharField, IntegerField
+
+# from django.db.models.fields import CharField
+        
+
+
+
+class Options:
+    def __init__(self):
+        self.db = 'test'
+        self.db_table = ''
+
+class BaseModel(type):
+    def __new__(cls, cls_name, bases, cls_dict):
+        super_new = super().__new__
+        new_class = super_new(cls, cls_name, bases, cls_dict)
+        new_class.add_to_class('_meta', Options())
+
+        # On récupère les sous-classes
+        parents = [b for b in bases if issubclass(Model, b)]
+
+        # On récupère tous les attributs des
+        # sous-classes
+        for field_name, field_value in cls_dict.items():
+            new_class.add_to_class(field_name, field_value)
+        
         return new_class
 
-class MainManager(metaclass=MainManagerBase):
-    pass
+    def add_to_class(cls, name, value):
+        setattr(cls, name, value)
 
-class Manager(MainManager, BaseMigrator):
-    """
-    This is the main manager for the local database. It connects 
-    to the database and then returns the cursor.
+class Model(metaclass=BaseModel):
+    def __init__(self, *args, **kwargs):
+        pass
 
-    The manager contains elements from the migrator class.
-    """
-    def __init__(self):
-        try:
-            print('-'*10 + '>', 'We try to connect to the database')
-            # self.database = db.connect('/Users/talentview/Documents/DataAnalysis2/python_django_codes/Games/Banque/banque_database/db.sqlite')
-            self.database = db.connect('D:\\Programs\\Python\\repositories\\python_codes\\Games\\Banque\\banque_database\\db.sqlite')
-        except db.Error:
-            print('Was not able to find database db.sqlite')
-            raise
-        else:
-            pass
+class TestTable(Model):
+    nom = CharField(max_length=255)
 
-        print('-'*10 + '>', 'We then migrate the different settings of the application')
-        Klass = BaseMigrator(self.database, commit=True)
-        
-    @property
-    def _connection(self):
-        return self.database
 
-    @property
-    def _cursor(self):
-        return self.database.cursor()
-
-w = Manager()._cursor
-# print(w)
+print(TestTable()._meta.db)

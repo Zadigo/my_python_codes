@@ -15,6 +15,8 @@ COUNTRY = 'rus-russia'
 
 # URI_DOMAINS = ['japan2018']
 
+COUNTRIES_PATH = ''
+
 COUNTRIES = [
     'arg-argentina',
     'aze-azerbaijan',
