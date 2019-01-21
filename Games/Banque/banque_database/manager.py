@@ -41,4 +41,4 @@ class TestTable(Model):
     nom = CharField(max_length=255)
 
 
-print(TestTable()._meta.db)
+# print(TestTable()._meta.db)

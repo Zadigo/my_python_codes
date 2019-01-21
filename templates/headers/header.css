@@ -1,0 +1,75 @@
+@import "https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css";
+@import "https://use.fontawesome.com/releases/v5.1.0/css/all.css";
+@import "https://fonts.googleapis.com/icon?family=Material+Icons";
+
+.header{
+    background-color: #303f9f;
+    color: white;
+    height: auto;
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.header-title{
+    height: 120px;
+    line-height: 56px;
+}
+
+.header-title h1,
+.header-title h3,
+.header-title h4{
+    padding: 24px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    height: 100%;
+}
+
+.header-navigation{
+    position: relative;
+    background-color: #1a237e;
+    padding: 0px 24px 0px 24px;
+    height: auto;
+    line-height: 56px;
+}
+
+.header-navigation-wrapper{
+    position: relative;
+    height: 100%;
+}
+
+.header-navigation a{
+    color: #fff;
+}
+
+.header-navigation ul{
+    list-style: none;
+    margin: 0 auto;
+    overflow-x: auto;
+    overflow-y: hidden;
+    width: 100%;
+    white-space: nowrap;
+    transition: background-color .3s;
+}
+
+.header-navigation ul li{
+    display: inline-block;
+    height: 100%;
+    font-size: 14px;
+    text-transform: uppercase;
+    /* float: left; */
+    padding: 0 15px;
+    cursor: pointer;
+    text-align: center;
+    line-height: 48px;
+    transition: background-color .3s;
+}
+
+.header-navigation ul li:hover{
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.header-navigation ul li.active{
+    border-bottom: 3px solid #f5f5f5;
+}

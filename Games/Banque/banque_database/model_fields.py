@@ -1,5 +1,5 @@
 class Fields:
-    def __init__(self, max_length=255, verbose_name=None, *args):
+    def __init__(self, max_length=None, verbose_name=None, *args):
         self.max_length = max_length
         self.verbose_name = verbose_name
 
