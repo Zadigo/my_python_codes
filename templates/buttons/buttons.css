@@ -1,0 +1,61 @@
+@import "https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css";
+@import "https://use.fontawesome.com/releases/v5.1.0/css/all.css";
+@import "https://fonts.googleapis.com/icon?family=Material+Icons";
+
+
+.increment-buttons div{
+    display: inline-block;
+}
+
+.input-item {
+    position: relative;
+}
+
+input[type="text"].increment-buttons-container{
+    width: 44px;
+    height: 51px;
+    text-align: center;
+}
+
+.input-buttons {
+    
+}
+
+.input-buttons button:last-child {
+    margin-top: 5px;
+}
+
+.up, .down {
+    display: block;
+    border: none;
+    border-radius: 2px;
+    padding: 0 16px;
+    height: 20px;
+    width: 1%;
+    text-decoration: none;
+    color: #fff;
+    background-color: #26a69a;
+    text-align: center;
+    letter-spacing: .5px;
+    -webkit-transition: background-color .2s ease-out;
+    transition: background-color .2s ease-out;
+    cursor: pointer;
+    font-size: 14px;
+    outline: 0;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+}
+
+.up:focus, .down:focus {
+    background-color: #1d7d74;
+}
+
+.up:hover, .down:hover {
+    background-color: #2bbbad;
+  }
+
+.up i, .down i {
+    font-size: 1.3rem;
+    line-height: inherit;
+}

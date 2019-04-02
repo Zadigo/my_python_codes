@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+        <title>Forms</title>
+
+        <link rel="stylesheet" type="text/css" media="screen" href="forms.css" />
+    </head>
+
+    <body>
+
+        <main>
+            <section class="section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col s7 l4 offset-s3 offset-l3">
+                            <div class="card-panel">
+                                <form id="a">
+                                    <input type="text" name="testa" id="testa">
+                                    <button type="submit" class="btn">Press</button>
+                                </form>
+                            </div>
+                            
+                            <div class="card-panel">
+                                <form id="b">
+                                    <input type="text" name="testb" id="testb">
+                                    <button type="submit" class="btn">Press</button>
+                                </form>
+                            </div>
+                            
+                            <div class="card-panel">
+                                <form id="signup">
+                                    <div class="input-field">
+                                        <input type="text" name="testc" id="testc">
+                                    </div>
+                                    <p>
+                                        <label>
+                                            <input type="checkbox" />
+                                            <span>Red</span>
+                                        </label>
+                                    </p>
+                                    <button type="submit" class="btn disabled">Press</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <script src="forms.js"></script>
+    </body>
+</html>
