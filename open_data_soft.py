@@ -9,9 +9,8 @@ class BaseOpenDataSoft:
         
         if not isinstance(dataset, str):
             raise TypeError('Received %s instead of a string' %
-                dataset.__class__.__name__ 
-            )
-        params.update({'dataset':dataset})
+                dataset.__class__.__name__)
+        params.update({'dataset': dataset})
 
         if kwargs:
             for key, value in kwargs.items():
