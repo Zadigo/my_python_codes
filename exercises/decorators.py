@@ -1,32 +1,25 @@
-from functools import wraps
+def start(func):
+    def wrap():
+        print(func('Start decorator'))
+    return wrap
 
-def simple1(func):
-    save = {}
-    def show():
-       save[func] = func()
-       print(save)
-    return show
+def start2(func):
+    def wrap(**kwargs):
+        print(func(f"Start decorator {kwargs['text']}"))
+    return wrap
 
-def simple2(func):
-    save = {}
-    def show(*args):
-       save[func] = func(), args
-       print(save)
-    return show
+def start3(func, value):
+    def wrap():
+        def inside(*args, **kwargs):
+            print(func(f"Start decorator"))
+        return inside
+    return wrap()
 
-def simple3(prefix=''):
-    save = {}
-    def decorator(func):
-        wraps(func)
-        def show(*args):
-            save[func] = func(), prefix, args
-            print(save)
-        return show
-    return decorator
+def z(text):
+    pass
 
+@start3(z,'a')
+def master(text):
+    return text
 
-# @simple3('prefix')
-# def test(*args):
-#     return 'This is a test'
-
-# test('args')
+master
