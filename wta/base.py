@@ -94,11 +94,11 @@ class Start:
 
 
 
-class Zapier(Start):
-    def create_zap(self, zap_uri):
-        files = {'upload_file': open(Settings().CSV_FILE, 'rb')}
-        data = {}
-        response = super().create_request(zap_uri, files=files, data=data)
+# class Zapier(Start):
+#     def create_zap(self, zap_uri):
+#         files = {'upload_file': open(Settings().CSV_FILE, 'rb')}
+#         data = {}
+#         response = super().create_request(zap_uri, files=files, data=data)
 
 
 
@@ -204,9 +204,9 @@ class PlayerData(Start):
 
 
 
-class PlayerMatchesXHR(Start):
-    def response_from_xhr(self):
-        response = self.create_request('https://www.wtatennis.com/player/matches/191647/2017/0')
+# class PlayerMatchesXHR(Start):
+#     def response_from_xhr(self):
+#         response = self.create_request('https://www.wtatennis.com/player/matches/191647/2017/0')
 
 
 
@@ -528,4 +528,4 @@ class StatisticCreator(Start):
         
         print(statisctic_row)
             
-StatisticCreator().get_statistics()
+# StatisticCreator().get_statistics()
