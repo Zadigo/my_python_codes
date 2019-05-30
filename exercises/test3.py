@@ -1,49 +1,15 @@
-from collections import OrderedDict
-
-class Descriptor:
-    def __init__(self, name=None):
-        self.name = name
-
-    def __set__(self, instance, value):
-        instance.__dict__[self.name] = value
-
-class Typed(Descriptor):
-    ty = object
-    def __set__(self, instance, value):
-        if not isinstance(value, self.ty):
-            raise TypeError('There was an error.'
-            ' Expected "%s"' % self.ty.__name__)
-        super().__set__(instance, value)
-
-class Integer(Typed):
-    ty = int
+import flask
 
 
-class Structure(type):
-    @classmethod
-    def __prepare__(cls, name, bases):
-        return OrderedDict()
+# e = types.ModuleType('test')
+# e.__file__='rest'
+# print(e)
 
-    def __new__(cls, clsname, bases, clsdict):
-        # Method 1
-        # new_class = super().__new__(cls, clsname, bases, clsdict)
-        # for value in new_class.values:
-        #     setattr(new_class, value, value)
+# with open('C:\\Users\\Zadigo\\Documents\\Programs\\my_python_codes\\exercises\\test4.py', mode='rb') \
+#         as config_file:
+#         exec(compile(config_file.read(1024), 'test', 'exec'), {})
+#         print(config_file)
 
-        # Method to collect descriptors
-        fields = [key for key, val in clsdict.items() if isinstance(val, Descriptor)]
-        for name in fields:
-            clsdict[name].name = name
-        new_class = super().__new__(cls, clsname, bases, dict(clsdict))
-        return new_class
+app=flask.Flask(__name__)
 
-class SubStructure(metaclass=Structure):
-    # values = []
-    pass
-
-class A(SubStructure):
-    value = Integer()
-    price = Integer()
-    # values = ['price', 'value']
-
-A().value = 175
+app.config
