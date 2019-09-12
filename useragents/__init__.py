@@ -1,0 +1,2 @@
+import useragents.customuseragents
+from useragents.customuseragents import get_rand_user_agent, get_user_agent, get_user_agents

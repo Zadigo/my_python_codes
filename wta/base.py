@@ -92,16 +92,6 @@ class Start:
     def _soup_from_html(self, f):
         return BeautifulSoup(f, 'html.parser')
 
-
-
-# class Zapier(Start):
-#     def create_zap(self, zap_uri):
-#         files = {'upload_file': open(Settings().CSV_FILE, 'rb')}
-#         data = {}
-#         response = super().create_request(zap_uri, files=files, data=data)
-
-
-
 class PlayerData(Start):
     def get_data(self, uri=PLAYER_URL):
         player = namedtuple('Player', ['name', 'date_of_birth', 'age', 'height', 'height_feet', \
@@ -192,8 +182,7 @@ class PlayerData(Start):
 
     @staticmethod
     def convert_height(height):
-        """
-        Convert player's height from centimeters
+        """Convert player's height from centimeters
         to empiric feet
         """
         # The incoming height to convert
@@ -201,13 +190,6 @@ class PlayerData(Start):
         if height == 'N/A' or not isinstance(height, (int, float)):
             return 'N/A'
         return round(height / 30.48, 1)
-
-
-
-# class PlayerMatchesXHR(Start):
-#     def response_from_xhr(self):
-#         response = self.create_request('https://www.wtatennis.com/player/matches/191647/2017/0')
-
 
 
 class PlayerMatchesHtml(Start):
@@ -529,3 +511,9 @@ class StatisticCreator(Start):
         print(statisctic_row)
             
 # StatisticCreator().get_statistics()
+
+
+# REGEX score
+# ^(6|7)\-?(\d)\s?(\1)\-?(\2)$
+# ^(6|7)\-?([0-4])\s?(6|7)\-?([0-4])$
+# 6-0 6-0 ^(6\-0)\s?(\1)$

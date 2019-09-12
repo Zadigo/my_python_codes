@@ -1,9 +1,9 @@
-question,reponse_une,reponse_deux,reponse_trois,reponse_quatre
 Un CTO est un...
 Un CEO est un...
 Un CMO est un...
 Un CFO est un...
 Une startup est une...
+
 
 Un MVP est un...
 Qu'es-ce qu'un MVP ?
@@ -11,19 +11,22 @@ Qu'es-ce qu'un Business model ?
 Qu'es-ce qu'un Lean Canvas ?
 Quel est la différence entre MVP et prototype ?
 
+
 Python est un language de programmation de type...
 Parmis ces librairies, lesquelles permettent de faire de l'analyse de données ?
 Vous souhaitez créer un site internet avec Python, vous utilisez ?
-Vous engagez un développeur. Il vous dit que pour le frontend vous devriez faire ces actions. Qu'est-ce que 'frontend' ?
-Vous engagez un développeur. Il vous dit que pour le backend vous devriez faire ces actions. Qu'est-ce que 'backend' ?
+Vous engagez un développeur. Il vous dit que pour le "frontend" vous devriez faire ces actions. Qu'est-ce que "frontend" ?
+Vous engagez un développeur. Il vous dit que pour le "backend" vous devriez faire ces actions. Qu'est-ce que "backend" ?
 Selon-vous à quoi peut servir NGINX ?
 Vous souhaitez stocker des données pour votre site. Parmis les options suivantes que pourriez-vous utiliser ?
-Votre patron vous dit qu'il va mettre un API pour son site internet. De quoi parle-t-il ?
-En webdesign qu'est-ce que le flat design ?
-En webdesign qu'est-ce que le line design ?
-En webdesign qu'est-ce que le flat icon ?
-En webdesign qu'est-ce que le negative space ?
+Votre patron vous dit qu'il va mettre une "API" pour son site internet. De quoi parle-t-il ? RE: [Il va permettre a des personnes tierces d'accéder au contenu de son site programatiquemment,]
+En webdesign qu'est-ce que le "flat design" ?
+En webdesign qu'est-ce que le "line design" ?
+En webdesign qu'est-ce que le "flat icon" ?
+En webdesign qu'est-ce que le "negative space" ?
 Que veut dire le terme 'responsive' ?
+VueJs est un framework dit 'frontend'. Que veut dire ce terme ?
+Un developeur dans le cadre d'un projet vous dit que le 'backend' pourra être crée en 5 jours. Selon-vous que veut dire le terme 'backend' ?
 
 
 Qu'est-ce qu'un VPS ?
@@ -46,6 +49,7 @@ Qui a racheté LinkedIn en 2016 ?
 Instagram appartient à Facebook ?
 Yahoo a refusé d'acheté Google en ???? ?
 Amazon lance des magazins sans caisses. Comment s'appelle-t-ils ?
+Station F a été crée en ... par ... RE: [2000 - Xavier Niel,]
 
 
 Quel est le nom français pour IPO ?
@@ -99,29 +103,40 @@ A quel language correspond cette structure de code :
         }
     }
 
+A quel language(s) correspond cette structure de code:
+    <template>
+        ...
+    <template/>
 
-Vous devez ajouter un ID dans un lien pour Google Tag Manager pour votre site. Quel est la solution ? <a id="..."></a>
+
+Vous devez ajouter un balise ID dans un lien pour afin de générer un évènement dans Google Tag Manager pour votre site internet. Quel est la solution ? <a id="..."></a>
 Qu'est-ce que Google Tag Manager ?
 Qu'est-ce que Google Analytics ?
 Qu'est-ce que Google Optimizer ?
 Qu'est-ce qu'un plan media ?
 Qu'est-ce que Google Datastudio ?
+Pour un projet de groupe, vous avez mis en place GTM. Vous voyez ceci:
+    {
+        event: click,
+        link: http://www.mon_projet.com/a_propos
+    }
+Selon-vous, que s'est-il passé ?
 
 
-Selon-vous à quoi correspond le terme acquisition dans Google Analytics ?
-Qu'est-ce que le terme conversion dans Google Analytics ?
-Vous étiez sur http://www.une-adresse.com. En cliquant sur un lien vous vous êtes retrouver sur http://www.une-autre-adresse.com. A quoi correspond la première adresse ? lien référent
-Si 'Facebook' est une source, 'social' est... un médium
-Si 'social' est une médium, 'Facebook' est... une source
-A quoi correspond le "?search=" dans 'http://www.une-autre-adresse.com/?search=" ?
+Selon-vous à quoi correspond le terme "acquisition" dans Google Analytics ?
+Qu'est-ce que le terme "conversion" dans Google Analytics ?
+Vous étiez sur http://www.une-adresse.com. En cliquant sur un lien vous vous êtes retrouver sur http://www.une-autre-adresse.com. A quoi correspond la première adresse ? RE: lien référent
+Si "Facebook" est une source, "social" est... un médium
+Si "social" est une médium, "Facebook" est... une source
+A quoi correspond le "?search=" dans "http://www.une-adresse.com/?search=" ? RE: paramètre de l'url
 Vous êtes sur site e-commerce et vous suivez le parcours suivant 'produits > produit > panier > paiement > page initial'. A quoi correspond ce parcours ?
 Votre taux de conversion est de -2.5% et on vous demande de l'inverser. Parmis les options suivantes que feriez-vous ?
 Votre taux d'acquisition est de 2.5% et on vous demande de l'accroitre. Parmis les options suivantes que feriez-vous ?
 Qu'est-ce que le taux de rebond dans Google Analytics ?
 Un patron vous dit qu'il a taux de rebond de 73%. Que lui conseilleriez-vous ?
 Comment appelle-t-on le fait qu'un utilisateur va sur site et en sort immédiatement ? taux de rebond
-Selon-vous quel est la différence entre un 'utilisateur' et une 'session' dans Analytics ?
-A quoi correspond l'élément  'UA-XXXX' dans un script HTML ?
+Selon-vous quel est la différence entre un "utilisateur" et une "session" dans Analytics ?
+A quoi correspond l'élément  "UA-XXXX" dans un script HTML ?
 Qu'est-ce que la longue traine ?
 
 
@@ -146,6 +161,10 @@ Qu'est-ce que la RGPD ?
 
 En quel année a été mis en place la RGPD ?
 Quel est le nom du scandal qui a ébranlé Facebook il a quelques années ?
+Amazon organize chaque année des soldes qui s'appellent... Amazon Prime Day
+Citer au moins une entreprise de trotinnette électique à Paris ?
+Quel est la vitesse maximale d'une trotinnette électrique à Paris ?
+Elon Musk a créer un lance-flamme qu'il avait mit en vente sur Twitter. Comment s'appelle-t-il ?
 
 
 Tinder a inventé le... swipe
@@ -154,29 +173,34 @@ En quel année Instagram ont-ils copié les stories de Snapchat ?
 Parmis les features suivantes, lesquelles sont des actuelles features des stories Instagram ?
 Qu'est-ce qu'un tweet ?
 Quel est la longueur maximale d'un tweet ?
-On peut faire des stories sur YouTube ?
+Peut-on faire des stories sur YouTube ?
+Peut-on vendre de la marchandise sur YouTube ?
+Comment est-ce les YouTubeurs appellent-ils la marchandise qu'ils mettent en vente sur la plateforme ?
 EnjoyPhoenix est une YouTubeuse et influenceuse. Quel est la différence entre ces deux termes ?
 Qu'est-ce qu'une influenceuse ?
 Vous êtes YouTubeur et vous créer du contenu pour les femmes, 18-35 et qui aiment la mode. Ces critères correspond à votre... cible
-Vous êtes YouTubeur et vous êtes connu pour être spécialiste de maquillage nude. Cela correspond à votre... positionnement
+Vous êtes YouTubeur et vous êtes connu pour être spécialiste du maquillage nude. Cela correspond à votre... positionnement
+Vous êtes YouTubeur et par rapport à concurrence, vous proposer du maquillage pour peaux noires et votre vidéo est filmée en pleine nature. Cela correspond à votre... valeure ajoutée
+Si en plus de proposer du maquillage, vous faites des vlogs, cela correspond à votre... offre support
+Dans toute vos vidéo, vous traduisez ce vous dites en texte pour les internationaux. Cela correspond à un service... facilitateur
 
 
 Un YouTubeur a créer une polémique dans une forêt en 2018, comment s'appelle-t-elle ?
-Un YouTubeur a créer une polémique dans une forêt en 2018, comment s'appelle-t-il ?
-Un YouTubeur a créer une polémique dans une forêt en 2018, dans quel pays était-ce ?
+Un YouTubeur a créer une polémique dans une forêt en 2018, comment s'appelle-t-il ? Jake Paul
+Un YouTubeur a créer une polémique dans une forêt en 2018, dans quel pays était-ce ? Japon
 La mère d'une très jeune YouTubeuse s'amusait a utiliser les biens immobilier de ses clients pour tourner des clips vidéos. Comment s'appelle cette YouTubeuse ? Lil Tay
 Vous êtes responsable marketing et votre chef vous dis dans le cadre d'une futur campagne qu'il faudra faire attention au influenceurs qui font du 'colorism'. De quoi parle-t-il ?
 ... a fait scandal dans une publicité en ... pour .... une marque de boissons gazeuse qui appartient à Coca-cola aux USA. Parmis les options suivantes choississez la personne, la marque et l'année.
 Pour la première fois en 150 ans, nombre d'années depuis la création du Vogue US, un photographe noir a pu prendre des photos dans le cadre d'une campagne pour Rihanna. Comment s'appelle-t-il ?
 Sur YouTube, quel est terme commun utilisé pour par les créateurs pour référencer leurs produits qui sont mise à la vente ? Merch
-Sur Instagram vous pouvez vendre des produits ou services ?
-A quoi correspond le CPM utilisé notemment par YouTube ?
-A quoi correspond le CPC utilisé notemment par Google ?
-A quoi correspond le CTR utilisé notemment par YouTube ?
+Sur Instagram vous pouvez vendre des produits ou services ? R: Oui
+A quoi correspond le CPM utilisé notemment par YouTube ? R: Cost Per 
+A quoi correspond le CPC utilisé notemment par Google ? R: Cost Per Click
+A quoi correspond le CTR utilisé notemment par YouTube ? R: Cost Through Rate
 Quel est la différence entre CPC, CPM et CPA ?
 Quel est le taux CTR d'une publicité web qui a obtenu 2 clicks pour 100 impréssions ? 2%
 Qu'est-ce qu'une impression notemment utilisé dans les statistiques pour Instagram ?
-Quel est la différence entre une 'impréssion' et un 'pagview' ?
+Quel est la différence entre une 'impréssion' et un 'pageview' ?
 Quel est la différence entre une action de catégorie A, B et C ?
 Dans le cadre d'un projet votre chef de projet vous dit que vous fonctionnerez par 'test and learn'. Que veut-il dire ?
 Que veut dire stratégie 'Océan bleu' ?
@@ -192,11 +216,11 @@ B1      B2  C1
 
 A quoi correspond cette logique de machine learning : neural network
             Start
-    A1              B1
-A2  A3  A4      B2  B3  B4
+    A1                B1
+A2  A3  A4        B2  B3  B4
 
-C2  C3  C4      D2  D3  D4
-    C1              D1
+C2  C3  C4        D2  D3  D4
+    C1                D1
             Start
 
 A quoi correspond cette logique de machine learning : classification
@@ -204,7 +228,7 @@ A quoi correspond cette logique de machine learning : classification
             E-E-E
         C-C-C
 
-Vous avez 100 observations. Vous séparez vos observations en 2, soit 70-30. En machine learning comment appelle-t-on le premier échantillon (70) ?
+Vous avez 100 observations. Vous séparez vos observations en 2, soit 70-30. En machine learning comment appelle-t-on le premier échantillon (70) ? Echantillon d'apprentissage
 Vous êtes une équipe construisant une application métérologique. Vous êtes chef de projet et un coéquipier dit
 
 
@@ -216,21 +240,26 @@ A quoi peut servir une telle fonction CHOOSE(IF(...), ..., ..., ...) ?
 Comment interprétez-vous le -1 dans la fonction MATCH(..., ..., -1) ?
 Dans la liste suivante (1, 2, 3) je souhaite retourner la dernière valeur avec MATCH(). Que dois-je faire ?
 Mon conjoint a qui j'ai demandé de l'aide me dit que je dois utiliser INDIRECT(A1:A10) dans le cadre de mon travail. Que peut bien faire cette fonction ?
-J'ai une liste (a, a, e) et je souhaiterais obtenir cette liste (TRUE, TRUE, FALSE). Que dois-je faire ? = (A1:A3="a")
+J'ai une liste (a, a, e) et je souhaiterais obtenir cette liste (TRUE, TRUE, FALSE). Que dois-je faire ? RE: =(A1:A3="a")
 A partir de cette dernière liste je souhaiterais obtenir (TRUE, TRUE, TRUE). Que dois-je faire ? = (A1:A3="a") + (A1:A3="e")
-Que fait les {} dans la formule suivante : {=SUM(...)}
-Quel est l'équivalent de {=SUM((A1:A10 = "...")*(A1:A10))} ? SUMIF(..., "= ...")
-Que fait MID(..., FIND(" ", ..., ), FIND(" ", ..., ) - 1) si on l'utilisait sur "Anastasia Pouryalov" ?
+Que fait les {} dans la formule suivante : {=SUM(...)} RE: Elle créer une dictionnaire de a valeures
+Quel est l'équivalent dans Excel de {=SUM((A1:A10 = "...")*(A1:A10))} ? RE: SUMIF(..., "= ...")
+Que fait MID(..., FIND(" ", ..., ), FIND(" ", ..., ) - 1) si on l'utilisait sur "Anastasia Pouryalov" ? RE: On récupère le prénom Anastasia
 Que fait LEFT(..., FIND(" ", ..., ) - 1) si on l'utilisait sur "Anastasia Pouryalov" ?
-Que fait cette formule ((... = ...) * (... = ...)) * (...) si on l'appliquait aux listes suivantes :
+
+Que fait cette formule ((... = ...) * (... = ...)) * (...) si on l'appliquait aux listes suivantes et qu'on obtenait le résultat (78, 98, 54) :
     A   Paris   78
     B   Londres 98
     A   Tokyo   54
+RE: Elle multiplie la première colonne par la deuxième. On obtient alors une liste de type (0, 1, 0) que l'on multiplie par la troisième colonne
+
 SMALL(..., ...) est l'équivalent de...
 Vous avez une liste (1, 2, 3) sur laquelle vous faites SMALL(..., 1). Qu'obtenez-vous ?
 Vous avez une liste (1, 2, 3) sur laquelle vous faites LARGE(..., 1). Qu'obtenez-vous ?
-Vous faires CELL(...) sur une céllule. Quels types d'informations obtenez-vous ?
-$A$1:$A$1 est l'exact équivalent de A1:A1 ?
+Vous faites CELL(...) sur une céllule. Quels types d'informations obtenez-vous ?
+$A$1:$A$1 est-il l'exact équivalent de A1:A1 ? RE: Faux
+A quoi peut correspondre une telle formule INDIRECT("A" + ":" + 1) ? RE: Elle retourne la valeure de la cellule A1
+Votre patron vous dit que cela ne sert à rien de tirer votre selection vers le bas mais d'utiliser cette formule : ROW($A$1:A1). Que peut bien faire cette formule ? RE: [Elle bloque la partie supérieure de la sélection et incrémente de +1 à chaque fois que l'on tire vers le bas]
 
 
 Qu'est-ce qu'un fichier XML ?
@@ -242,24 +271,16 @@ Qu'est-ce qu'un fichier XLSX ?
 Qu'est-ce qu'un fichier XLSM ?
 Qu'est-ce qu'un fichier PY ?
 Qu'est-ce qu'un fichier RB ?
+Qu'est-ce qu'un fichier Vue ?
 
-Votre patron vous demande de mettre en place des 'zaps' dans le processus de son entreprise. De quoi parle-t-il ?
+Votre patron vous demande de mettre en place des "zaps" dans le processus de son entreprise. De quoi parle-t-il ?
 A quoi peut servir IFTT ?
-On vient de vous 'slacker' au travail. Que vous a-t-on fait ?
+On vient de vous "slacker" au travail. Que vous a-t-on fait ?
 
-En utilisant Zapier, vous monter un zap qui vous donne un lien http://www.zapier.com/?params=test qui vous permet l'action suivante.
-En effet, dès que vous cliquez sur ce diernier dans votre fichier Excel, vous envoyez automatiquement un email à votre collègue. Comment s'appelle ce type de lien ?
+En utilisant Zapier, vous monter un bouton zap qui vous donne un lien http://www.zapier.com/?params=test qui vous permet d'effectuer l'action suivante. En effet, dès que vous cliquez sur ce diernier, vous envoyez automatiquement un email à votre collègue. Comment s'appelle ce type de lien ? RE: 
 
-A quoi correspond 'AxR858eE' ? Un mot de passe valide, un token
+A quoi correspond "AxR858eE" ? RE: [Un mot de passe valide, Un token]
 
-Vous avez 100€. Vous les prêter et prédisez que la personne ne pourra pas rembourser la dette.
-Vous la vendez pour 100€ et la personnne devra rembourser dorénavant 100€ + x€ d'intérêt.
-Comment s'appelle cette technique boursière ?
-
-Vous empruntez un produit qui coûte 100€ pour 80 car vous êtes certain que le prix va baisser à 80 dans le futur.
-Le prix ayant baisser à 80€ cinq jours plus tard vous achetez donc effectivement le produit, ayant fait une plus value de 20€.
-Comment s'appelle cette technique boursière ?
-
-Vous prêtez 100€ et immédiatement vous divisez cette dette en trois parts de 33.33€ chacunes. Vous vendez ces parts à 50€ (soit 33.33 + 16.67) à votre père,
-votre cousin et votre soeur pour un total de 150€ soit 50€ de bénéfice. En vendant ces parts vous avez donc transférer
-la propriété de la dette. Comment s'appelle cette technique ?
+Vous avez 100€. Vous les prêter et prédisez que la personne ne pourra pas les rembourser. Vous vendez donc cette dette pour 100€ et la personnne devra rembourser dorénavant 100€ + x€ d'intérêt. Comment s'appelle cette technique boursière ?
+Vous empruntez un produit qui coûte 100€ pour 80 car vous êtes certain que le prix va baisser à 80 dans le futur. Le prix ayant baisser à 80€ cinq jours plus tard vous achetez donc effectivement le produit, ayant fait une plus value de 20€. Comment s'appelle cette technique boursière dont Elon Musk ce plaint très souvent ? RE: [short,]
+Vous prêtez 100€ et immédiatement vous divisez cette dette en trois parts de 33.33€ chacunes. Vous vendez ces parts à 50€ (soit 33.33 + 16.67) à votre père, votre cousin et votre soeur pour un total de 150€ soit 50€ de bénéfice. En vendant ces parts vous avez donc transférer la propriété de la dette. Comment s'appelle cette technique de bourse ?

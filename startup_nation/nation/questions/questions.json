@@ -1,0 +1,56 @@
+{
+    "questions": [
+        {
+            "id": 1,
+            "reference": "6c92f4dd86ce",
+            "subject": "business",
+            "question": "Un CTO est un...",
+            "answers": [
+                {
+                    "id": 1,
+                    "answer": ""
+                }
+            ],
+            "tag": "business organization"
+        },
+        {
+            "id": 2,
+            "reference": "610945402ba4",
+            "subject": "business",
+            "question": "Un CMO est un...",
+            "answers": [
+                {
+                    "id": 1,
+                    "answer": ""
+                }
+            ],
+            "tag": "business organization"
+        },
+        {
+            "id": 3,
+            "reference": "a5313ce96db0",
+            "subject": "business",
+            "question": "Un CFO est un...",
+            "answers": [
+                {
+                    "id": 1,
+                    "answer": ""
+                }
+            ],
+            "tag": "business organization"
+        },
+        {
+            "id": 4,
+            "reference": "8080bbaed010",
+            "subject": "business",
+            "question": "Un CFO est un...",
+            "answers": [
+                {
+                    "id": 1,
+                    "answer": ""
+                }
+            ],
+            "tag": "business organization"
+        }
+    ]
+}

@@ -8,14 +8,25 @@ class Database:
         # Get the user preference
 
         # Connect to database
+        database = sqlite3.connect('db.sqlite')
+        cursor = database.cursor()
+        self.connection = database, cursor
 
-        pass
+    def run_sql(self, sql, *values):
+        """Run an SQL to the database
+        """
+        self.connection[0].execute(sql)
 
     def save(self, commit=True):
-        pass
+        """Commit a change to the database such as
+        when using XXX
+        """
+        self.connection[1].commit()
 
 class Migrator(Database):
     def _init(self):
+        # Check if the base models exists
+        # and create them if necessary
         pass
 
     def migrate_model(self):

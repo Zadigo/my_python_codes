@@ -1,18 +1,16 @@
 class ContextBuilder:
     """
-    This class creates chained context
-    whenever an application is called.
+    Creates chained context whenever an application is called.
     
-    It stores elements such as the class
-    objects or callable definitions.
+    It stores elements such as the class objects or callable definitions.
     """
     context = {}
     def __init__(self, *args, **kwargs):
         if args:
             for arg in args:
                 if isinstance(arg, list) or isinstance(arg, tuple):
-                    for a in args:
-                        self.context[a] = a
+                    for value in args:
+                        self.context[value] = value
                 else:
                     self.context[arg] = arg
 
