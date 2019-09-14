@@ -19,7 +19,7 @@ class Expressions:
 
         # For create and insert, we need
         # parameters such as (1, a, b)
-        if self.for_create:
+        if not self.for_create:
             for key, value in values.items():
                 new_values.append(value)
             return str(tuple(new_values))
@@ -46,19 +46,20 @@ class SQLStatement(Expressions):
         }
     }
     templates = {
-        'insert': """INSERT INTO %(table)s VALUES(%(parameters)s)"""
+        'insert': """INSERT INTO {} VALUES{}""",
+        'create': """CREATE TABLE {} {}""",
+        'select': """SELECT {} FROM {}"""
     }
 
-    def create_statement(self, table=None, template=None, **parameters):
-        template = """{}({}) VALUES('{}')"""
+    def create_statement(self, table=None, template=None, for_create=False, **parameters):
+        self.for_create = for_create
+        # template = """{}({}) VALUES('{}')"""
         # Get the corresponding template to use
-        # statement_template = self.templates[template]
-        # # Resolve the parameters and transform
-        # # them to a readable SQL statement
-        # resolved_parameters = self.resolve(**parameters)
-        # statement_template % {
-        #     'table': table,
-        #     'parameters': resolved_parameters
-        # }
-        # print(statement_template)
-        return template.format('CREATE stars', 'science')
+        statement_template = self.templates[template]
+        # Resolve the parameters and transform
+        # them to a readable SQL statement
+        resolved_parameters = self.resolve(**parameters)
+        return statement_template.format(table, resolved_parameters)
+
+s = SQLStatement().create_statement(table='stars', template='insert', name='Kendall', surname='Jenner')
+print(s)

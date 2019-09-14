@@ -54,6 +54,6 @@ class Database:
         sql = """SELECT name FROM sqlite_master WHERE type='table' AND name NOT LIKE 'sqlite_%'"""
         return self.manager._run_sql(sql)
 
-# test = Database()
-# test.tables()
-# test.db.close()
+test = Database()
+print(test.manager._all())
+test.db.close()

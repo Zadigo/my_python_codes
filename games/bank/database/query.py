@@ -1,3 +1,7 @@
+import sqlite3
+from games.bank.database.expressions import SQLStatement
+
+
 class QuerySet:
     """A wrapper class used to construct database
     queries in more functionnal manner
@@ -13,8 +17,10 @@ class QuerySet:
     objs_cache = None
 
     def __init__(self, objs, **kwargs):
-        # Cache objects
-        self.objs_cache = objs.copy()
+        # Cache objects -;
+        # When using the objs once,
+        # you cannot access them another time
+        # self.objs_cache = list(objs).copy()
         # obj is the .cursor() method
         # object returned by an SQL instruction
         # such as SELECT
