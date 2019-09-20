@@ -23,11 +23,19 @@ class TestConnection(unittest.TestCase):
         # are wrapped in the QuerySet
         # class, thus an instance 
         sql = 'SELECT * FROM stars'
-        value = self.db.run_sql(sql)
+        value = self.db.manager._run_sql(sql)
         self.assertIsInstance(value, QuerySet)
 
     def tearDown(self):
-        self.db.database.close()
+        self.db.db.close()
+
+class TestQuerySet(unittest.TestCase):
+    def setUp(self):
+        objs = Database().manager._all()
+        self.queryset = QuerySet(objs)
+
+    def test_is_list(self):
+        self.assertIsInstance(self.queryset, list)
 
 if __name__ == "__main__":
     unittest.main()

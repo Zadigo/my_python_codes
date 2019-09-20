@@ -1,9 +1,9 @@
 import sqlite3
-from games.bank.database.query import QuerySet, Manager
+from games.bank.database.manager import Manager
+from games.bank.database import expressions
 from collections import OrderedDict
 
 TEST_PATH = 'C:\\Users\\Zadigo\\Documents\\Programs\\my_python_codes\\games\\bank\\database\\db.sqlite'
-
 
 class Database:
     manager = Manager()
@@ -53,7 +53,3 @@ class Database:
     def tables(self):
         sql = """SELECT name FROM sqlite_master WHERE type='table' AND name NOT LIKE 'sqlite_%'"""
         return self.manager._run_sql(sql)
-
-test = Database()
-print(test.manager._all())
-test.db.close()
