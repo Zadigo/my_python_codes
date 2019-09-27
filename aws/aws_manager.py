@@ -8,11 +8,11 @@ SETTINGS = {
     'url': 'https://s3.%s.amazonaws.com/%s/%s',
 
     'bucket_name': 'jobswebsite',
-    'bucket_region': 'eu-west-3',
+    'region_name': 'eu-west-3',
 
     'access_keys': {
-        'secret_key': os.environ.get('AWS_ACCESS_KEY_ID'),
-        'access_key': os.environ.get('AWS_SECRET_ACCESS_KEY')
+        'secret_key': os.environ.get('AWS_SECRET_ACCESS_KEY'),
+        'access_key': os.environ.get('AWS_ACCESS_KEY_ID')
     }
 }
 
@@ -43,7 +43,8 @@ def object_size_creator(image_or_path):
 
     return images_size
 
-def create_object_url(object_path, region=None, bucket=None):
+def create_object_url(object_path, region=SETTINGS['region_name'], 
+                        bucket=SETTINGS['bucket_name']):
     """
     Create a base url for an object that was previously
     created in a bucket in order to save it to a local
@@ -72,7 +73,7 @@ def unique_path_creator(folder, filename, rename=False):
     ----------
 
     `folder` is the folder to access within the bucket. You can
-    use a path such as path/to/
+    also use a path such as path/to/
 
     `filename` is the name of the file
 
@@ -196,28 +197,74 @@ class TransferManager(AWS):
             return response
     
     def upload_from_local(self, file_to_upload, model=None, request=None):
+        """Uploads a file from a local path
+        """
         is_local_file = os.path.isfile(file_to_upload)
         if is_local_file:
             item_name = os.path.basename(file_to_upload)
-            contenttype = guess_type(file_to_upload)
+            # Guess the type of the file for AWS
+            # .. Transform to list to have better flexibility
+            # as opposed to using a tuple
+            contenttype = list(guess_type(file_to_upload))
+
+            # HACK: If content type is none, we
+            # have to find something here!
+            if contenttype[0] is None:
+                contenttype[0] = 'image/jpeg'
 
             with open(file_to_upload, 'rb') as f:
                 data = f.read()
-                # Create paths
-                path = unique_path_creator('test', item_name)
-                # Upload file
+                # Create the unique path for the file
+                path = unique_path_creator('nawoka/shop', item_name)
                 response = self.upload(data, path['object_path'], contenttype[0])
             return response
+
+    def local_to_existing(self, file_to_upload, aws_path):
+        """Upload a file to an existing folder path
+        """
+        is_local_file = os.path.isfile(file_to_upload)
+        if is_local_file:
+            item_name = os.path.basename(file_to_upload)
+            # Guess the type of the file for AWS
+            # .. Transform to list to have better flexibility
+            # as opposed to using a tuple
+            contenttype = list(guess_type(file_to_upload))
+
+            # HACK: If content type is none, we
+            # have to find something here!
+            if contenttype[0] is None:
+                contenttype[0] = 'image/jpeg'
+
+            with open(file_to_upload, 'rb') as f:
+                data = f.read()
+                complete_path = aws_path + '/' + item_name
+                response = self.upload(data, complete_path, contenttype[0])
+                print('[AWS MANAGER] : File uploaded. (%s)' % complete_path)
+            return response
+
+
+
 
 # bucket_name = 'jobswebsite'
 # access_key = 'AKIAJQZHLNUQVX7Q5QFA'
 # secret_key = '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'
 # region_name = 'eu-west-3'
 
-# s=QueryManager(bucket_name, access_key, secret_key, region_name)
-# s.get_file_url('test', '3e7e208c6a3b27df0ca556e0f5d1207748e3f277/sophie.jpg')
+bucket_name = SETTINGS.get('bucket_name')
+region_name = SETTINGS.get('region_name')
+access_key = SETTINGS.get('access_keys')['access_key']
+secret_key = SETTINGS.get('access_keys')['secret_key']
 
-# path1='C:\\Users\\Zadigo\\Documents\\Koding\\scrappers\\scrappers\\config\\http\\ASt4ksl.jpg'
-# t=TransferManager(bucket_name, access_key, secret_key, region_name)
-# # print(unique_path_creator('test', 'test.jpg'))
-# t.upload_from_local(path1)
+q = QueryManager(bucket_name, access_key, secret_key, region_name)
+# s.get_file_url('test', '3e7e208c6a3b27df0ca556e0f5d1207748e3f277/sophie.jpg')
+# items = q.list_folder_urls('nawoka/shop')
+# print(list(items))
+
+# path='C:\\Users\\Zadigo\\Pictures\\nawoka\\shop\\chain_crystal1.webp'
+# t = TransferManager(bucket_name, access_key, secret_key, region_name)
+# t.upload_from_local(path)
+
+# path = 'C:\\Users\\Zadigo\\Pictures\\nawoka\\shop\\chain_crystal4.webp'
+# t = TransferManager(bucket_name, access_key, secret_key, region_name)
+# t.local_to_existing(path, 'nawoka/shop/85683d41a91f84cbea6e45b1229931014474a693')
+
