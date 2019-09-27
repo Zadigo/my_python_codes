@@ -11,10 +11,37 @@ SETTINGS = {
     'bucket_region': 'eu-west-3',
 
     'access_keys': {
-        'secret_key': 'AKIAJQZHLNUQVX7Q5QFA',
-        'access_key': 'hoNNquy7hrEMqqVauJNH5Cg9WcFhV0z7TXuLotUz'
+        'secret_key': os.environ.get('AWS_ACCESS_KEY_ID'),
+        'access_key': os.environ.get('AWS_SECRET_ACCESS_KEY')
     }
 }
+
+def object_size_creator(image_or_path):
+    """
+    Create three different types of image sizes for the
+    S3 bucket. The original one, small, medium and large.
+
+    Creates a dictionnary of values such as:
+        {
+            original: file.txt, 
+            small: file-small.txt, 
+            medium: file-medium.txt, 
+            large: file-large.txt
+        }
+    """
+    name, extension = image_or_path.split('.', 1)
+    images_size = {
+        'original': image_or_path,
+        'small': name + '-small',
+        'medium': name + '-medium',
+        'large': name + '-large'
+    }
+
+    for key, value in images_size.items():
+        if key != 'original':
+            images_size.update({key: value + '.' + extension})
+
+    return images_size
 
 def create_object_url(object_path, region=None, bucket=None):
     """
@@ -102,7 +129,7 @@ class QueryManager(AWS):
         self.bucket_name = bucket_name
         self.region_name = region_name
 
-    def retrieve_bucket_items(self):
+    def list_bucket(self):
         return [item for item in self.bucket.objects.all()]
 
     def list_folder(self, folder):
@@ -111,7 +138,7 @@ class QueryManager(AWS):
         Description
         -----------
 
-        For example, let's return the folder ./test in a bucket:
+        For example, return the folder ./test in a bucket:
 
             (
                 ('test/', 'item'), 
