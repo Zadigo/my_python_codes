@@ -4,8 +4,12 @@ Django website
 
 try:
     import stripe
-except:
+    from mailchimp import Stores
+except ImportError:
     pass
+else:
+    stores = Stores('us15', '')
+import os
 import re
 
 from django.http.response import JsonResponse
@@ -13,7 +17,6 @@ from django.http.response import JsonResponse
 from accounts.models import MyAnonymousUser
 from shop.models import AnonymousCart
 from shop.utilities import create_reference
-import os
 
 # Use production key in production
 # and development key on DEBUG sessions
@@ -98,7 +101,7 @@ class ProcessPayment:
         # process has been done
         self.anonymous_user = None
 
-    def payment_processor(self, **kwargs):
+    def payment_processor(self, model:type=None, fields:dict=None, **kwargs):
         """Process a payment and get the charge as an object
         for further processing.
 
@@ -106,6 +109,15 @@ class ProcessPayment:
         -----------
 
             StripeCharge(charge)
+
+        Parameters
+        ----------
+
+            model: pass a database model if you wish to process the
+                   the user in your database
+
+            **fields: represent the fields that you wish to use when
+                      creating the user in the database
         """
         total_of_products_to_buy = 0
 
@@ -177,6 +189,7 @@ class ProcessPayment:
                 # And then create and anonymous customer
                 # so that we can keep track from our
                 # admin interface
+                # self.anonymous_user = self.create_anonymous_user('', fields)
                 self.anonymous_user = self.create_anonymous_user(cart_id)
                 # Now associate the products to the user
                 products.update(user=self.anonymous_user)
@@ -184,6 +197,21 @@ class ProcessPayment:
                 # Now we can create the order in our
                 # database for each product that was
                 # paid for by the customer
+
+                # We can also process the new order and customer
+                # with Mailchimp's API
+                # try:
+                #     from mailchimp import Stores
+                # except:
+                #     pass
+                # else:
+                #     stores = Stores('', '')
+                #     customer = {
+                #         'id': '',
+                #         'email_address': self.anonymous_user.email
+                #     }
+                #     new_order = stores.new_order(self.order_reference, '', 
+                #                             customer, amount, 0, amount, [])
 
                 # Now this the response that will be returned
                 # to the AJAX function that called to process
@@ -215,17 +243,12 @@ class ProcessPayment:
         status = self.base_response['status']
         return JsonResponse(self.base_response, safe=False, status=status, content_type='json')
 
-    def create_customer(self):
-        """This function can used in order to create a customer
-        in Stripe before or during the payment process
-        """
-        pass
-
-    def create_anonymous_user(self, cart_id):
+    def create_anonymous_user(self, cart_id, model:type=None, **fields):
         """Create an anonymous user in our database for marketing and remarketing
         reasons. This also serves as way to keep a link between what was ordered
         by which customer with his related details.
         """
+        # user = model.objects.create(**fields)
         user = MyAnonymousUser.objects.create(cart=cart_id, email=self.user_infos['email'],
                         address=self.user_infos['address'], zip_code=self.user_infos['zip_code'])
         return user

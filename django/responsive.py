@@ -1,5 +1,44 @@
 import re
 
+class Mobiles:
+    def __init__(self, name=None):
+        self.name = name
+        self.mobiles = {
+            'samsung': {
+                's5': { 'height': 640, 'width': 360 },
+                's9': { 'height': 812, 'width': 374 },
+                's9 plus': { 'height': 740, 'width': 360 }
+            },
+            'iphone': {
+                '5': { 'height': 568, 'width': 320 },
+                '6': { 'height': 667, 'width': 375 },
+                '6s': { 'height': 667, 'width': 375 },
+                '6 plus': { 'height': 736, 'width': 414 },
+                '6s plus': { 'height': 736, 'width': 414 },
+                '7': { 'height': 667, 'width': 375 },
+                '7 plus': { 'height': 736, 'width': 414 },
+                '8': { 'height': 667, 'width': 375 },
+                '8 plus': { 'height': 736, 'width': 414 },
+                'x': { 'height': 812, 'width': 375 },
+                'xr': { 'height': 896, 'width': 414 },
+                'xs': { 'height': 812, 'width': 375 },
+                'xs max': { 'height': 896, 'width': 414 }
+            }
+        }
+
+    def __repr__(self):
+        return self.__unicode__()
+
+    def __unicode__(self):
+        if self.name:
+            return str(self.mobiles[self.name])
+        return str(self.mobiles)
+
+    def __getitem__(self, name):
+        return self.mobiles[name]
+
+print(Mobiles(name='samsung'))
+
 class Responsive:
     """A class that detects if a request comes from a mobile
     or not by testing the User-Agent of the request.
