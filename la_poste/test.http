@@ -1,2 +1,0 @@
-GET  https://api.laposte.fr/controladresse/v1/adresses?q=36 rue de Suède HTTP/1.1
-Authorization: X-Okapi-Key

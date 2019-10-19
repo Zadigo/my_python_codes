@@ -1,0 +1,9 @@
+{
+	"JSON script": {
+		"prefix": "js-json-script",
+		"body": [
+			"var value = JSON.parse($('#hello-data').text);"
+		],
+		"description": "Line used to parse a json script object"
+	}
+}
