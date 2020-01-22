@@ -246,5 +246,9 @@ COUNTRIES = (
     ('zimbabwe', 'zimbabwe'),
 )
 
-def get_countries():
-    return COUNTRIES
+import csv
+
+with open('countries.csv', 'w', newline='', encoding='utf-8') as f:
+    c = csv.writer(f)
+    for country in COUNTRIES:
+        c.writerow(country)
