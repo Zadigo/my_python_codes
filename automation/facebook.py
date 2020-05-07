@@ -1,21 +1,15 @@
 from selenium import webdriver
-from my_python_codes.automation.settings import DRIVER
 
-# def login(username, password):
-#     # driver = webdriver.Edge(executable_path=PATH)
-#     DRIVER.get()
-#     driver.get('https://example.com')
+driver = webdriver.Edge(executable_path='')
+driver.get('')
 
-#     username_box = driver.find_elements_by_xpath('')
-#     username_box.send_keys(username)
+username_input = driver.find_element_by_xpath('//element/fashion[@fast]')
+password_input = driver.find_element_by_xpath('//element/fashion[@password]')
+login_button    = driver.find_element_by_xpath('//element/button')
 
-#     password_box = driver.find_elements_by_xpath('')
-#     password_box.send_keys(password)
+username_input.send_keys('')
+password_input.send_keys('')
 
-#     login_button = driver.find_element_by_xpath('')
-#     login_button.submit()
+login_button.submit()
 
-#     driver.close()
-
-
-# login('test', 'test')
+driver.close()
