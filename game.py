@@ -1,25 +1,80 @@
-class Rating:
-    total = 1000
-    def __init__(self, score, **kwargs):
-        pass
-    
-    @property
-    def is_negative(self):
-        return self.total <= 0
+# import getpass
+# import telnetlib
 
-    @property
-    def is_over_thousand(self):
-        return self.total >= 1000
+# HOST = "http://localhost:8000/"
+# user = raw_input("Enter your remote account: ")
+# password = getpass.getpass()
 
-    def __call__(self, value):
-        result = self.__add__(value)
-        if result > 1000:
-            print(result)
+# tn = telnetlib.Telnet(HOST)
 
-    def __add__(self, n):
-        if n <= 0:
-            raise ValueError('%s should be over 0' % n)
-        return self.total + n
+# tn.read_until("login: ")
+# tn.write(user + "\n")
+# if password:
+#     tn.read_until("Password: ")
+#     tn.write(password + "\n")
 
-s = Rating(14)
-print(s(4))
+# tn.write("ls\n")
+# tn.write("exit\n")
+
+# print tn.read_all()
+
+
+
+
+"""
+Retrieve messages from an email inbox
+"""
+# import poplib
+
+# mailbox = poplib.POP3_SSL('pop.googlemail.com', '995')
+# mailbox.user('inglish.contact@gmail.com')
+# mailbox.pass_('KendallJenner97170-Jagaciak')
+# num_of_messages = len(mailbox.list()[1])
+# with open('retrieved_messages.txt', 'w', encoding='utf-8') as f:
+#     for i in range(num_of_messages):
+#         for msg in mailbox.retr(i + 1):
+#             f.write(str(msg))
+#             f.write('\n')
+#             f.write('\n')
+# mailbox.quit()
+
+
+"""
+FTP
+"""
+# import ftplib
+
+# def get_file(ftp, filename):
+#     try:
+#         ftp.retrbinary('RETR ' + filename, open(filename, 'wb').write())
+#     except:
+#         print('Error')
+
+# def store_file(ftp, filename):
+#     data = open(filename, 'rb')
+#     ftp.storbinary('STOR ' + data, open(filename, 'rb'))
+
+# ftp = ftplib.FTP('ftp.a.b')
+# ftp.login('user', 'password')
+# # ftp.dir()
+# # ftp.cwd('//')
+# get_file(ftp, '')
+# ftp.quit()
+
+# PROXY SERVER
+
+# import requests
+
+# proxies = {
+#     'http': '265.24.11.6:8080'
+# }
+
+# response = requests.get('https://www.twitter.com', proxies=proxies)
+# print(response.headers)
+
+
+import redis
+
+client = redis.Redis(host='169.254.55.21', port=6379)
+client.set('language', 'Python')
+print(client.get('language'))

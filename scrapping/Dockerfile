@@ -13,7 +13,7 @@ EXPOSE 4000
 RUN pip3 install pipenv
 RUN pipenv install --deploy --system
 
-RUN [ "ython", "-m", "server.py" ]
+RUN [ "python", "-m", "server.py" ]
 
 
 
